@@ -2,7 +2,6 @@ import React from "react";
 
 export const Navbar = () => {
 	return (
-<<<<<<< HEAD
 		<div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4">
 			{/*<p>
 				<img src={rigoImageUrl} />
@@ -51,16 +50,6 @@ export const Navbar = () => {
 				<a className="btn btn-outline-primary" href="#">
 					Iniciar sesión
 				</a>
-=======
-		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in actionaa</button>
-				</Link>
->>>>>>> 798d7a5b818ffa87c4acf319382ef8fe3516472b
 			</div>
 		</div>
 	);
