@@ -1,62 +1,58 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Button } from "react-router-dom";
+import logo from "../../img/golondrina.png";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light">
-			<div className="container">
-				<a className="navbar-brand" href="#">
-					<img
-						src="src/front/img/golondrinablanco.png"
-						width="30"
-						height="30"
-						className="d-inline-block align-top"
-						alt="Logo"
-					/>
-				</a>
+		<>
+			<nav className="navbar navbar-expand-lg navbar-light bg-light">
+				<p className="navbar-brand">
+					<img src={logo} width="50" height="50" className="d-inline-block align-top" alt="Logo" />
+				</p>
 				<button
 					className="navbar-toggler"
 					type="button"
 					data-toggle="collapse"
-					data-target="#navbarScroll"
-					aria-controls="navbarScroll"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
 					aria-expanded="false"
 					aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon" />
 				</button>
-				<div className="collapse navbar-collapse" id="navbarScroll">
-					<ul className="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style={{ maxheight: "100px" }}>
+
+				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul className="navbar-nav mr-auto">
 						<li className="nav-item active">
-							<a className="nav-link" href="#">
-								Inicio <span className="sr-only">(current)</span>
-							</a>
+							<Link to="/">
+								<a className="nav-link" href="#">
+									Inicio <span className="sr-only">(current)</span>
+								</a>
+							</Link>
 						</li>
 						<li className="nav-item">
 							<a className="nav-link" href="#">
-								Quienes Somos
+								Quienes somos
 							</a>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link" href="#">
-								Que hacemos
-							</a>
+							<a className="nav-link">Que hacemos</a>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link" href="#">
-								Destinos
-							</a>
+							<a className="nav-link">Destinos</a>
 						</li>
-					</ul>
-					<div className="d-flex">
-						<button className="btn btn-outline-success" type="submit">
-							Registrarse
-						</button>
-						<button className="btn btn-outline-success" type="submit">
-							Iniciar Sesion
-						</button>
-					</div>
+					</ul>{" "}
+					<form className="form-inline my-2 my-lg-0">
+						<Link to="/signup">
+							<div className="nav-link">Registrarse</div>
+						</Link>
+						<Link to="/login">
+							<button className="btn btn-dark my-2 my-sm-0" type="submit">
+								Iniciar sesion
+							</button>
+						</Link>
+					</form>
 				</div>
-			</div>
-		</nav>
+			</nav>
+		</>
 	);
 };

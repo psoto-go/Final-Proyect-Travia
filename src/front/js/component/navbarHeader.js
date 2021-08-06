@@ -47,22 +47,20 @@ export const NavbarHeader = () => {
 								</a>
 							</li>
 						</ul>
-						<div className="d-flex">
-							<ul
-								className="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll"
-								style={{ maxheight: "100px" }}>
-								<li className="nav-item active">
-									<a className="nav-link" href="#">
-										Registrarse
-									</a>
-								</li>
-								<li className="nav-item active">
-									<a className="nav-link" href="#">
-										Iniciar Sesion
-									</a>
-								</li>
-							</ul>
-						</div>
+						<ul
+							className="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll"
+							style={{ maxheight: "100px" }}>
+							<li className="nav-item active">
+								<Link to="/signup">
+									<button className="nav-link">Registrarse</button>
+								</Link>
+							</li>
+							<li className="nav-item active">
+								<Link to="/login">
+									<button className="nav-link">Iniciar Sesion</button>
+								</Link>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</nav>
