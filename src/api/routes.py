@@ -52,15 +52,22 @@ def sign_in_user():
         return jsonify({"msg" : "Error en el email o en la contraseña"}), 401
     
     user = User.query.filter_by(email=email).one_or_none()
-    if not user or not user.check_password(password) :
-        return jsonify("Your credentials are wrong, please try again"), 401
-    
-    # administrador = Administrador.query.filter_by(email=email).one_or_none()
-    # if not administrador or not administrador.check_password(password):
-    #     return jsonify("Your credentials are wrong, please try again"), 401
+    admin = Administrador.query.filter_by(email=email).one_or_none()
 
-    access_token = create_access_token(identity=user.serialize())
-    return jsonify({"access_token":  access_token, "user": user.serialize()}), 200
+    if not user and not admin :
+        return jsonify("Your credentials are wrong, please try again"), 401
+
+
+    if user and user.check_password(password):
+        access_token = create_access_token(identity=user.serialize())
+        return jsonify({"access_token":  access_token, "user": user.serialize()}), 200
+    
+    elif admin and admin.check_password(password):
+        access_token = create_access_token(identity=admin.serialize())
+        return jsonify({"access_token":  access_token, "admin": admin.serialize()}), 200
+        
+
+    return jsonify({"hola"}), 200
 
    #User
  # --------------------------------------------------------------------------------------------

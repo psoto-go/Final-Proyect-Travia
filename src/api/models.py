@@ -40,3 +40,5 @@ class Administrador(db.Model):
             "id": self.id,
             "email": self.email
         }
+    def check_password(self, password_param):
+        return safe_str_cmp(self.password.encode('utf-8'),password_param.encode('utf-8'))
