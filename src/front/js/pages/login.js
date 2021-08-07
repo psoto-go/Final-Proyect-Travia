@@ -26,9 +26,13 @@ export const Login = () => {
 		actions.signin_user(loginValue);
 	};
 
-	if (actions.isUserAuth()) {
+	if (actions.isNormalUserAuth()) {
 		console.log("me");
-		history.push("/");
+		history.push("/user");
+	}
+	if (actions.isAdminAuth()) {
+		console.log("me");
+		history.push("/admin");
 	}
 	return (
 		<div className="offset-4 col-4 my-auto text-center">

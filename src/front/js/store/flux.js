@@ -49,7 +49,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(result => {
 						if (result["user"]) {
 							setStore({ accesToken: result["access_token"], user: result });
-						} else {
+						} else if (result["admin"]) {
 							setStore({ accesToken: result["access_token"], admin: result });
 						}
 
@@ -62,6 +62,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			isUserAuth: () => {
 				const store = getStore();
 				return store.accesToken !== null;
+			},
+			isNormalUserAuth: () => {
+				const store = getStore();
+				return store.user !== null;
+			},
+			isAdminAuth: () => {
+				const store = getStore();
+				return store.admin !== null;
 			},
 			register: paramsForm => {
 				const raw = JSON.stringify(paramsForm);
