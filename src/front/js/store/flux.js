@@ -47,7 +47,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(api_url + "/api/sign_in", requestPost)
 					.then(response => response.json())
 					.then(result => {
-						setStore({ accesToken: result["access_token"], user: result });
+						if (result["user"]) {
+							setStore({ accesToken: result["access_token"], user: result });
+						} else if (result["admin"]) {
+							setStore({ accesToken: result["access_token"], admin: result });
+						}
+
 						console.log("bien");
 						const store = getStore();
 						console.log(store.user);
@@ -57,6 +62,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			isUserAuth: () => {
 				const store = getStore();
 				return store.accesToken !== null;
+			},
+			isNormalUserAuth: () => {
+				const store = getStore();
+				return store.user !== null;
+			},
+			isAdminAuth: () => {
+				const store = getStore();
+				return store.admin !== null;
 			},
 			register: paramsForm => {
 				const raw = JSON.stringify(paramsForm);

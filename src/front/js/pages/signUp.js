@@ -9,7 +9,7 @@ import apple from "../../img/apple.png";
 export const Signup = () => {
 	const { store, actions } = useContext(Context);
 	const [loginValue, setLoginValue] = useState(firstValue);
-	const [confirmValue, setConfirmValue] = useState(confirm);
+	const [confirmValue, setConfirmValue] = useState();
 	let history = useHistory();
 
 	const firstValue = {
@@ -18,20 +18,17 @@ export const Signup = () => {
 		email: "",
 		password: ""
 	};
-	const confirm = {
-		password: ""
-	};
 
 	const changeInput = e => {
 		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
 	};
 	const changeInputConfirm = e => {
-		setLoginValue({ ...confirmValue, [e.target.name]: e.target.value });
+		setConfirmValue(e.target.value);
 	};
 
 	const submitForm = e => {
 		e.preventDefault();
-		if (firstValue.password === confirm.password) {
+		if (loginValue.password === confirmValue) {
 			actions.register(loginValue);
 			history.push("/welcome");
 		} else {
