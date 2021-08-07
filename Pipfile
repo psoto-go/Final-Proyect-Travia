@@ -20,6 +20,7 @@ flask-admin = "*"
 flask_jwt_extended = "*"
 werkzeug = "*"
 
+
 [requires]
 python_version = "3.8"
 

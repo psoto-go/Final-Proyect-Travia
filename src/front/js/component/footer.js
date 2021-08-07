@@ -2,9 +2,6 @@ import React, { Component } from "react";
 
 export const Footer = () => (
 	<footer className="footer mt-auto py-3 text-center">
-		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
-		</p>
+		<p className="text-center mt-5 mb-3 text-muted">Todos los derechos reservados Copyright (2021) - Travia.es™</p>
 	</footer>
 );

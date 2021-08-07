@@ -26,6 +26,7 @@ else:
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config["JWT_SECRET_KEY"] = "topsecretpa"
+jwt = JWTManager(app)
 MIGRATE = Migrate(app, db)
 db.init_app(app)
 
@@ -34,6 +35,8 @@ CORS(app)
 
 # add the admin
 setup_admin(app)
+
+
 
 # Add all endpoints form the API with a "api" prefix
 app.register_blueprint(api, url_prefix='/api')
