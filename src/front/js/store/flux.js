@@ -47,7 +47,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(api_url + "/api/sign_in", requestPost)
 					.then(response => response.json())
 					.then(result => {
-						setStore({ accesToken: result["access_token"], user: result });
+						if (result["user"]) {
+							setStore({ accesToken: result["access_token"], user: result });
+						} else {
+							setStore({ accesToken: result["access_token"], admin: result });
+						}
+
 						console.log("bien");
 						const store = getStore();
 						console.log(store.user);
