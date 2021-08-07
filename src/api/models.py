@@ -3,6 +3,8 @@ from werkzeug.security import safe_str_cmp
 
 db = SQLAlchemy()
 
+
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -46,8 +48,8 @@ class Hotel(db.Model):
     rooms = db.relationship('Room', backref='hotel', lazy=True)
     reviews = db.relationship('Review', backref='hotel', lazy=True)
     questions = db.relationship('Question', backref='hotel', lazy=True)
-    services = db.relationship('service', secondary=services, lazy='subquery',
-        backref=db.backref('hotels', lazy=True))
+    # services = db.relationship('service', secondary=services, lazy='subquery',
+    #     backref=db.backref('hotels', lazy=True))
     city_id = db.Column(db.Integer, db.ForeignKey('city.id'),
         nullable=False)
     bookings = db.relationship('Booking', backref='hotel', lazy=True)
@@ -62,7 +64,7 @@ class Hotel(db.Model):
             "rooms": list(map(lambda x:x.serialize(), self.rooms)),
             "reviews": list(map(lambda x:x.serialize(), self.reviews)),
             "questions": list(map(lambda x:x.serialize(), self.questions)),
-            "services": list(map(lambda x:x.serialize(), self.services))
+            # "services": list(map(lambda x:x.serialize(), self.services))
 
             # do not serialize the password, its a security breach
         }
@@ -119,23 +121,23 @@ class Question(db.Model):
             # do not serialize the password, its a security breach
         }
 
-services = db.Table('services',
-    db.Column('service_id', db.Integer, db.ForeignKey('service.id'), primary_key=True),
-    db.Column('hotel_id', db.Integer, db.ForeignKey('hotel.id'), primary_key=True)
-)
+# services = db.Table('services',
+#     db.Column('id', db.Integer, db.ForeignKey('service.id'), primary_key=True),
+#     db.Column('id', db.Integer, db.ForeignKey('hotel.id'), primary_key=True)
+# )
 
-class Service(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120), unique=False, nullable=True)
-    description = db.Column(db.String(1000), unique=False, nullable=False)
+# class Service(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String(120), unique=False, nullable=True)
+#     description = db.Column(db.String(1000), unique=False, nullable=False)
 
-    def serialize(self):
-        return {
-            "id": self.id,
-            "title": self.title,
-            "description": self.description
-            # do not serialize the password, its a security breach
-        }
+#     def serialize(self):
+#         return {
+#             "id": self.id,
+#             "title": self.title,
+#             "description": self.description
+#             # do not serialize the password, its a security breach
+#         }
 
 class City(db.Model):
     id = db.Column(db.Integer, primary_key=True)
