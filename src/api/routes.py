@@ -12,16 +12,6 @@ from flask_jwt_extended import jwt_required
 api = Blueprint('api', __name__)
 
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend"
-    }
-
-    return jsonify(response_body), 200
-
-
 @api.route('/sign_up', methods=['POST']) 
 def sign_up_user():
 
@@ -88,5 +78,3 @@ def sign_up_admin():
     db.session.commit()
 
     return jsonify({"msg": "El usuario fue creado exitosamente"}), 200
-
-
