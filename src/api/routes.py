@@ -78,3 +78,15 @@ def sign_up_admin():
     db.session.commit()
 
     return jsonify({"msg": "El usuario fue creado exitosamente"}), 200
+
+
+@api.route("/me", methods=["GET", "PUT"])
+@jwt_required()
+def user_profile():
+    identity = get_jwt_identity()
+    user = current_user(get_jwt_identity())
+    return jsonify(user.serialize())
+
+def current_user(identity):
+  print(identity["id"])
+  return User.query.get(identity["id"])
