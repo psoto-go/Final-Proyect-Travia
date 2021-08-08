@@ -8,15 +8,32 @@ export const ListGroup = props => {
 		actions.loadUsers();
 	}, []);
 	let allusers = store.allusers.map((item, index) => {
-		return <ItemList key={index} name={item.name} last_name={item.last_name} kind={item.kind} email={item.email} />;
+		return (
+			<ItemList
+				key={index}
+				name={item.name}
+				last_name={item.last_name}
+				kind={item.kind}
+				email={item.email}
+				date={item.created_date}
+			/>
+		);
 	});
 
 	return (
 		<div>
-			<h1>Usuarios</h1>
-			<div className="list-group list-group-horizontal-xl">
-				{allusers.length > 0 ? allusers : "Loading users..."}
-			</div>
+			<table className="table text-center">
+				<thead>
+					<tr>
+						<th scope="col">Nombre</th>
+						<th scope="col">Apellido</th>
+						<th scope="col">Email</th>
+						<th scope="col">Tipo de usuario</th>
+						<th scope="col">Fecha de creacion</th>
+					</tr>
+				</thead>
+				<tbody>{allusers.length > 0 ? allusers : "Loading users..."}</tbody>
+			</table>
 		</div>
 	);
 };

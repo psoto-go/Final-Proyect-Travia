@@ -3,7 +3,7 @@ import "../../styles/footer.scss";
 import golon from "../../img/golonnnn.png";
 
 export const Footer = () => (
-	<footer className="footerFondo container-fluid text-center">
+	<footer className=" footerFondo container-fluid text-center">
 		<article className="row">
 			<div className="col-md-12 col-xl-12 col-lg-12">
 				<img src={golon} alt="243" />

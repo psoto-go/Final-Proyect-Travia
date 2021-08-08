@@ -14,6 +14,7 @@ import { Login } from "./pages/login";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Admin } from "./pages/admin";
+import { NewUser } from "./pages/newUser";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -44,6 +45,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/admin">
 							<Admin />
+						</Route>
+						<Route exact path="/newuser">
+							<NewUser />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

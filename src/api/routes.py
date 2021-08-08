@@ -22,10 +22,11 @@ def sign_up_user():
     email = body_params.get("email", None)
     password = body_params.get("password", None)
     kind = body_params.get("kind", "user")
+    created_date = body_params.get("created_date", None)
 
 
     
-    user1 = User(name=name, last_name = last_name, email=email, password=password, kind=kind)
+    user1 = User(name=name, last_name = last_name, email=email, password=password, kind=kind, created_date=created_date)
     db.session.add(user1)
     db.session.commit()
 

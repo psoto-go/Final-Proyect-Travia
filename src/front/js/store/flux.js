@@ -86,7 +86,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(api_url + "/api/sign_up", requestPost)
 					.then(response => response.json())
 					.then(result => {
-						console.log("registrado");
+						console.log("registrado user");
+					})
+					.catch(error => console.log("Error", error));
+			},
+			register_admin: paramsForm => {
+				const raw = JSON.stringify(paramsForm);
+
+				const requestPost = {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: raw
+				};
+
+				fetch(api_url + "/api/sign_up_admin", requestPost)
+					.then(response => response.json())
+					.then(result => {
+						console.log("registrado admin");
 					})
 					.catch(error => console.log("Error", error));
 			},
