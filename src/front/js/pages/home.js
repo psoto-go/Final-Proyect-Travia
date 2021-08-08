@@ -5,6 +5,7 @@ import "../../styles/home.scss";
 import "../../styles/cards.scss";
 import { Header } from "../component/header";
 import { Cities } from "../component/cities";
+import { Countries } from "../component/cardCountry";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -12,6 +13,7 @@ export const Home = () => {
 	return (
 		<>
 			<Header />
+			<Countries />
 			<Cities />
 		</>
 	);
