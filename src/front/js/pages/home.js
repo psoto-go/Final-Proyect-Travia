@@ -4,7 +4,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import "../../styles/cards.scss";
 import { Header } from "../component/header";
-import { Cities } from "../component/cities";
+
 import { Countries } from "../component/cardCountry";
 
 export const Home = () => {
@@ -14,7 +14,7 @@ export const Home = () => {
 		<>
 			<Header />
 			<Countries />
-			<Cities />
+			
 		</>
 	);
 };
