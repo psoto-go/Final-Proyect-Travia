@@ -6,10 +6,13 @@ import { Context } from "../store/appContext";
 export const ItemList = props => {
 	return (
 		<>
-			<li className="list-group-item">{props.name}</li>
-			<li className="list-group-item">{props.last_name}</li>
-			<li className="list-group-item">{props.email}</li>
-			<li className="list-group-item">{props.kind}</li>
+			<tr>
+				<td>{props.name}</td>
+				<td>{props.last_name}</td>
+				<td>{props.email}</td>
+				<td>{props.kind}</td>
+				<td>{props.date}</td>
+			</tr>
 		</>
 	);
 };
@@ -18,5 +21,6 @@ ItemList.propTypes = {
 	name: PropTypes.string,
 	last_name: PropTypes.string,
 	kind: PropTypes.string,
-	email: PropTypes.string
+	email: PropTypes.string,
+	date: PropTypes.string
 };

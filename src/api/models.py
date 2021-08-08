@@ -1,5 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import safe_str_cmp
+import datetime
+from sqlalchemy import Column, Integer, DateTime
+from sqlalchemy.ext.declarative import declarative_base
 
 db = SQLAlchemy()
 
@@ -12,6 +15,7 @@ class User(db.Model):
     name = db.Column(db.String(120), unique=False, nullable=True)
     password = db.Column(db.String(80), unique=False, nullable=False)
     kind = db.Column(db.String(10), unique=False, nullable=False)
+    created_date = Column(DateTime, default=datetime.datetime.utcnow)
     reviews = db.relationship('Review', backref='user', lazy=True)
     bookings = db.relationship('Booking', backref='user', lazy=True)
     
@@ -21,7 +25,8 @@ class User(db.Model):
             "email": self.email,
             "kind": self.kind,
             "name": self.name,
-            "last_name": self.last_name
+            "last_name": self.last_name,
+            "created_date": self.created_date
             
         }
 
@@ -35,6 +40,7 @@ class Administrador(db.Model):
     name = db.Column(db.String(120), unique=False, nullable=True)
     password = db.Column(db.String(80), unique=False, nullable=False)
     kind = db.Column(db.String(10), unique=False, nullable=False)
+    created_date = Column(DateTime, default=datetime.datetime.utcnow)
 
     def serialize(self):
         return {
@@ -42,7 +48,8 @@ class Administrador(db.Model):
             "email": self.email,
             "kind": self.kind,
             "name": self.name,
-            "last_name": self.last_name
+            "last_name": self.last_name,
+            "created_date": self.created_date
         }
     def check_password(self, password_param):
         return safe_str_cmp(self.password.encode('utf-8'),password_param.encode('utf-8'))

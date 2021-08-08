@@ -16,7 +16,7 @@ export const Countries = () => {
 						<Link to="/">
 							<p style={{ color: "black" }}>4 hoteles</p>
 						</Link>
-						<h3>Asturias</h3> <Card.Text></Card.Text>
+						<h3>Asturias</h3> <Card.Text />
 					</Card.Title>
 				</Card.Body>
 			</Card>
