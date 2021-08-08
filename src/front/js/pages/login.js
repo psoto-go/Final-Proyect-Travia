@@ -24,6 +24,7 @@ export const Login = () => {
 	const submitForm = e => {
 		e.preventDefault();
 		actions.signin_user(loginValue);
+		actions.loadUsers();
 	};
 
 	if (actions.isNormalUserAuth()) {

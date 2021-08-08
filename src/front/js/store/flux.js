@@ -3,9 +3,12 @@ import { api_url } from "../constants";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			admin: null,
-			user: null,
-			accesToken: null
+			admin: [],
+			user: [],
+			accesToken: [],
+			users: [],
+			admins: [],
+			allusers: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -61,15 +64,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			isUserAuth: () => {
 				const store = getStore();
-				return store.accesToken !== null;
+				return store.accesToken.length !== 0;
 			},
 			isNormalUserAuth: () => {
 				const store = getStore();
-				return store.user !== null;
+				return store.user.length !== 0;
 			},
 			isAdminAuth: () => {
 				const store = getStore();
-				return store.admin !== null;
+				return store.admin.length !== 0;
 			},
 			register: paramsForm => {
 				const raw = JSON.stringify(paramsForm);
@@ -91,6 +94,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				store.user = null;
 				store.accesToken = null;
+			},
+			loadUsers: () => {
+				fetch(api_url + "/api/allusers")
+					.then(res => {
+						return res.json();
+					})
+					.then(data => {
+						setStore({ allusers: data });
+					})
+					.catch(error => console.log("Error loading message from backend", error));
 			}
 		}
 	};

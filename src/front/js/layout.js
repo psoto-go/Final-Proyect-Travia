@@ -13,7 +13,7 @@ import { Signup } from "./pages/signUp";
 import { Login } from "./pages/login";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { NavbarHeader } from "./component/navbarHeader";
+import { Admin } from "./pages/admin";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -41,6 +41,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/welcome">
 							<Welcome />
+						</Route>
+						<Route exact path="/admin">
+							<Admin />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
