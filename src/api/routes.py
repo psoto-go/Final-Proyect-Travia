@@ -21,14 +21,48 @@ def sign_up_user():
     last_name = body_params.get("last_name", None)
     email = body_params.get("email", None)
     password = body_params.get("password", None)
+    kind = body_params.get("kind", "user")
+
 
     
-    user1 = User(name=name, last_name = last_name, email=email, password=password)
+    user1 = User(name=name, last_name = last_name, email=email, password=password, kind=kind)
     db.session.add(user1)
     db.session.commit()
 
     return jsonify({"msg": "El usuario fue creado exitosamente"}), 200
 
+@api.route('/allusers', methods=['GET'])
+def handle_hello():
+    user = User.query.all()
+    administrador = Administrador.query.all()
+    response = []
+    for x in user:
+        response.append(x.serialize())
+    for x in administrador:
+        response.append(x.serialize())
+    
+    return jsonify(response), 200
+
+@api.route('/users', methods=['GET'])
+def handle_hello2():
+    user = User.query.all()
+    administrador = Administrador.query.all()
+    response = []
+    for x in user:
+        response.append(x.serialize())
+    
+    return jsonify(response), 200
+
+
+@api.route('/admins', methods=['GET'])
+def handle_hello3():
+    user = User.query.all()
+    administrador = Administrador.query.all()
+    response = []
+    for x in administrador:
+        response.append(x.serialize())
+    
+    return jsonify(response), 200
 
 @api.route('/sign_in', methods=['POST']) 
 def sign_in_user():
@@ -72,8 +106,9 @@ def sign_up_admin():
     last_name = body_params.get("last_name", None)
     email = body_params.get("email", None)
     password = body_params.get("password", None)
+    kind = body_params.get("kind", "admin")
     
-    user1 = Administrador(name=name, last_name = last_name, email=email, password=password)
+    user1 = Administrador(name=name, last_name = last_name, email=email, password=password, kind=kind)
     db.session.add(user1)
     db.session.commit()
 

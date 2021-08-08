@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";

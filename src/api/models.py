@@ -11,6 +11,7 @@ class User(db.Model):
     last_name = db.Column(db.String(120), unique=False, nullable=True)
     name = db.Column(db.String(120), unique=False, nullable=True)
     password = db.Column(db.String(80), unique=False, nullable=False)
+    kind = db.Column(db.String(10), unique=False, nullable=False)
     reviews = db.relationship('Review', backref='user', lazy=True)
     bookings = db.relationship('Booking', backref='user', lazy=True)
     
@@ -18,6 +19,9 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "kind": self.kind,
+            "name": self.name,
+            "last_name": self.last_name
             
         }
 
@@ -30,11 +34,15 @@ class Administrador(db.Model):
     last_name = db.Column(db.String(120), unique=False, nullable=True)
     name = db.Column(db.String(120), unique=False, nullable=True)
     password = db.Column(db.String(80), unique=False, nullable=False)
+    kind = db.Column(db.String(10), unique=False, nullable=False)
 
     def serialize(self):
         return {
             "id": self.id,
-            "email": self.email
+            "email": self.email,
+            "kind": self.kind,
+            "name": self.name,
+            "last_name": self.last_name
         }
     def check_password(self, password_param):
         return safe_str_cmp(self.password.encode('utf-8'),password_param.encode('utf-8'))
