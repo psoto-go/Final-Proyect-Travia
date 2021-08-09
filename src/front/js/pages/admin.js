@@ -8,9 +8,12 @@ import { Context } from "../store/appContext";
 
 export const Admin = () => {
 	const { store, actions } = useContext(Context);
-	useEffect(() => {
-		actions.loadUsers();
-	}, []);
+	if (actions.isAdminAuth()) {
+		useEffect(() => {
+			actions.loadUsers();
+		}, []);
+	}
+
 	return (
 		<>
 			<div>

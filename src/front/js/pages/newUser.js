@@ -56,7 +56,7 @@ export const NewUser = () => {
 						<img src={aaa} alt="..." className="img-thumbnail" />
 					</div>
 					<div className="col">
-						<form className="form-signin" onSubmit={submitForm}>
+						<form className="form-signin">
 							<div className="form-check">
 								<input
 									className="form-check-input"
@@ -164,9 +164,6 @@ export const NewUser = () => {
 									</div>
 								</div>
 							</div>
-							<button className="btn btn-lg btn-primary btn-block" type="submit">
-								Crear cuenta
-							</button>
 						</form>
 					</div>
 					<div className="col">colcolcolcol</div>
@@ -180,7 +177,11 @@ export const NewUser = () => {
 						<p>asdf</p>
 					</div>
 					<div className="col">colcolcolcol</div>
-					<div className="col" />
+					<div className="col">
+						<button className="btn btn-lg btn-primary btn-block" type="submit" onClick={submitForm}>
+							Crear cuenta
+						</button>
+					</div>
 				</div>
 			</div>
 		</>
