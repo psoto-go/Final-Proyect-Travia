@@ -7,6 +7,7 @@ import { Header } from "../component/header";
 
 import { Countries } from "../component/cardCountry";
 
+
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
