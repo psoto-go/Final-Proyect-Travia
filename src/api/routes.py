@@ -2,11 +2,13 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Hotel, HotelArchives
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+import cloudinary
+import cloudinary.uploader
 
 
 api = Blueprint('api', __name__)
@@ -113,6 +115,64 @@ def sign_in_user():
 #     db.session.commit()
 
 #     return jsonify({"msg": "El usuario fue creado exitosamente"}), 200
+
+@api.route('/hotel/<int:hotel_id>/image', methods=['POST','PUT'])
+def handle_upload(hotel_id):
+
+    # validate that the front-end request was built correctly
+    if 'hotel_image' in request.files:
+        # upload file to uploadcare
+        result = cloudinary.uploader.upload(request.files['hotel_image'])
+
+        # fetch for the user
+        hotel = Hotel.query.filter_by(id = hotel_id).one_or_none()
+        if not hotel :
+            return jsonify("Your hotel is not found"), 404
+        # update the user with the given cloudinary image UR
+
+        hotel_archive = HotelArchives(hotel_id = hotel.id, url= result['secure_url'])
+        db.session.add(hotel_archive)
+        db.session.commit()
+
+        return jsonify(hotel_archive.serialize()), 200
+    else:
+        raise APIException('Missing profile_image on the FormData')
+
+@api.route('/new_hotel', methods=['POST']) 
+def new_hotel():
+
+    body_params = request.get_json()
+    print(body_params)
+    name = body_params.get("name", None)
+    description = body_params.get("description", None)
+    longitude = body_params.get("longitude", None)
+    latitude = body_params.get("latitude", None)
+
+
+    
+    user1 = User(name=name, description = description, longitude=longitude, latitude=latitude)
+    db.session.add(user1)
+    db.session.commit()
+
+    return jsonify({"msg": "El hotel fue creado exitosamente"}), 200
+
+@api.route('/new_city', methods=['POST']) 
+def new_city():
+
+    body_params = request.get_json()
+    print(body_params)
+    name = body_params.get("name", None)
+    description = body_params.get("description", None)
+    
+
+
+    
+    user1 = User(name=name, description = description)
+    db.session.add(user1)
+    db.session.commit()
+
+    return jsonify({"msg": "La ciudad fue creada exitosamente"}), 200
+
 
 
 @api.route("/me", methods=["GET", "PUT"])

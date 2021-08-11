@@ -54,7 +54,8 @@ class Hotel(db.Model):
             "id": self.id,
             "name": self.name,
             "description": self.description,
-            "location": self.location,
+            "longitude": self.longitude,
+            "latitude": self.latitude,
             "rooms": list(map(lambda x:x.serialize(), self.rooms)),
             "reviews": list(map(lambda x:x.serialize(), self.reviews)),
             "questions": list(map(lambda x:x.serialize(), self.questions)),
@@ -187,8 +188,8 @@ class HotelArchives(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "name": self.name,
-            "hotels": list(map(lambda x:x.serialize(), self.hotels))
+            "url": self.url,
+            "hotel_id": self.hotel_id
             # do not serialize the password, its a security breach
         }
 
