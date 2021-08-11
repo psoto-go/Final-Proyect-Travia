@@ -3,6 +3,7 @@ from werkzeug.security import safe_str_cmp
 import datetime
 from sqlalchemy import Column, Integer, DateTime
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship, backref
 
 db = SQLAlchemy()
 
@@ -45,7 +46,7 @@ class Hotel(db.Model):
     city_id = db.Column(db.Integer, db.ForeignKey('city.id'),
         nullable=False)
     bookings = db.relationship('Booking', backref='hotel', lazy=True)
-    # hotels = db.relationship('Hotel', backref='city', lazy=True)
+    HotelArchives = db.relationship('HotelArchives', backref='Hotel', lazy=True)
 
 
     def serialize(self):
@@ -134,19 +135,7 @@ class Reviews(db.Model):
 #         }
 
 
-class Services(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    hotel_id = db.Column(db.Integer, db.ForeignKey('hotel.id'))
-    service_id = db.Column(db.Integer, db.ForeignKey('service.id'))
-    hotel = db.relationship(Hotel, backref=backref("services", cascade="all, delete-orphan"))
-    service = db.relationship(Service, backref=backref("services", cascade="all, delete-orphan"))
 
-    def serialize(self):
-        return {
-            "hotel_id": list(map(lambda x:x.serialize(), self.hotel_id)),
-            "service_id": list(map(lambda x:x.serialize(), self.service_id))
-            # do not serialize the password, its a security breach
-        }
 
 
 class Service(db.Model):
@@ -158,6 +147,20 @@ class Service(db.Model):
         return {
             "id": self.id,
             "title": self.title,
+            # do not serialize the password, its a security breach
+        }
+
+class Services(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    hotel_id = db.Column(db.Integer, db.ForeignKey('hotel.id'))
+    service_id = db.Column(db.Integer, db.ForeignKey('service.id'))
+    hotel = db.relationship(Hotel, backref=backref("services", cascade="all, delete-orphan"))
+    service = db.relationship(Service, backref=backref("services", cascade="all, delete-orphan"))
+
+    def serialize(self):
+        return {
+            "hotel_id": list(map(lambda x:x.serialize(), self.hotel_id)),
+            "service_id": list(map(lambda x:x.serialize(), self.service_id))
             # do not serialize the password, its a security breach
         }
 
