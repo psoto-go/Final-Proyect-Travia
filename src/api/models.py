@@ -40,7 +40,7 @@ class Hotel(db.Model):
     longitude = db.Column(db.String(100), unique=False, nullable=False)
     latitude = db.Column(db.String(100), unique=False, nullable=False)
     rooms = db.relationship('Room', backref='hotel', lazy=True)
-    questions = db.relationship('Question', backref='hotel', lazy=True)
+    # questions = db.relationship('Question', backref='hotel', lazy=True)
     services = db.relationship("Service", secondary="services")
     reviews = db.relationship("User", secondary="reviews")
     city_id = db.Column(db.Integer, db.ForeignKey('city.id'),
@@ -103,8 +103,8 @@ class Reviews(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     hotel_id = db.Column(db.Integer, db.ForeignKey('hotel.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    hotel = db.relationship(Hotel, backref=backref("reviews", cascade="all, delete-orphan"))
-    user = db.relationship(User, backref=backref("reviews", cascade="all, delete-orphan"))
+    hotel = db.relationship(Hotel, backref=backref("Reviews", cascade="all, delete-orphan"))
+    user = db.relationship(User, backref=backref("Reviews", cascade="all, delete-orphan"))
     description = db.Column(db.String(1000), unique=False, nullable=False)
     characteristic = db.Column(db.String(200), unique=False, nullable=False)
 
@@ -154,8 +154,8 @@ class Services(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     hotel_id = db.Column(db.Integer, db.ForeignKey('hotel.id'))
     service_id = db.Column(db.Integer, db.ForeignKey('service.id'))
-    hotel = db.relationship(Hotel, backref=backref("services", cascade="all, delete-orphan"))
-    service = db.relationship(Service, backref=backref("services", cascade="all, delete-orphan"))
+    hotel = db.relationship(Hotel, backref=backref("Services", cascade="all, delete-orphan"))
+    service = db.relationship(Service, backref=backref("Services", cascade="all, delete-orphan"))
 
     def serialize(self):
         return {

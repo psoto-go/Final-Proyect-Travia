@@ -44,15 +44,14 @@ def sign_up_user():
     
 #     return jsonify(response), 200
 
-# @api.route('/users', methods=['GET'])
-# def handle_hello2():
-#     user = User.query.all()
-#     administrador = Administrador.query.all()
-#     response = []
-#     for x in user:
-#         response.append(x.serialize())
+@api.route('/users', methods=['GET'])
+def handle_hello2():
+    user = User.query.all()
+    response = []
+    for x in user:
+        response.append(x.serialize())
     
-#     return jsonify(response), 200
+    return jsonify(response), 200
 
 
 # @api.route('/admins', methods=['GET'])
@@ -79,8 +78,8 @@ def sign_in_user():
     user = User.query.filter_by(email=email).one_or_none()
     # admin = Administrador.query.filter_by(email=email).one_or_none()
 
-    # if not user and not admin :
-    #     return jsonify("Your credentials are wrong, please try again"), 401
+    if not user :
+        return jsonify("Your credentials are wrong, please try again"), 401
 
 
     if user and user.check_password(password):
