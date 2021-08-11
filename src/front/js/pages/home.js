@@ -4,17 +4,22 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import "../../styles/cards.scss";
 import { Header } from "../component/header";
-
-import { Countries } from "../component/cardCountry";
-
-
+import { Carrousel } from "../component/carrousel";
+import { Resenas } from "../component/resenas";
+import { Destinos } from "../component/destinos";
+import { Destacados } from "../component/destacados";
+import { Suscribete } from "../component/suscribete";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<>
 			<Header />
-			<Countries />
+			<Destacados />
+			<Destinos />
+
+			<Resenas />
+			<Suscribete />
 		</>
 	);
 };

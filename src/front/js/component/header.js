@@ -3,18 +3,20 @@ import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 import logo from "../../img/golondrinablanco.png";
 import header from "../../img/header.png";
-
+import { Search } from "./search";
 export const Header = () => {
 	return (
-		<header className="header">
-			<div className="container">
-				<div className="row">
-					<div className="col">Lorem ipsum dolor sit amet</div>
-					<div className="col">
-						<img src={header} width="629px" height="493.08px" />
-					</div>
+		<div>
+			<header className="header">
+				<div className="contenedor">
+					<h1>Lorem ipsum dolor sit amet</h1>
+					<h3>Lorem ipsum dolor sit amet</h3>
 				</div>
-			</div>
-		</header>
+				<div id="landingImg">
+					<img src={header} />
+				</div>
+			</header>
+			<Search />
+		</div>
 	);
 };

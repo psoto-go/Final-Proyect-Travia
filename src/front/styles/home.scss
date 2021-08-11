@@ -1,14 +1,55 @@
+.contenedor{
+    margin: 5rem;
+    padding: 5em;
+    
+    
+}
+.container{
+    display: inline-block;
+    
+}
+.resenasStyle{
+     margin: 3rem;
+    padding: 4em;
+    
+}
+.lugares{
+   padding-left: 105px;
+}
+#myTab{
+    padding-right: 55px;
+}
 .header {
   background: linear-gradient(180deg, #8BD996 0%, rgba(121, 139, 242, 0.06) 100%) no-repeat center;
   background-size: cover;
   min-height: 100vh;
+  //height: 1800px;
+  
+  
+  //display: flex;
+  display: inline-flex;
+}
+
+.palNav{
+ background: #8BD996;
+ 
+}
+
+ul{
+    color: white;
 }
 .header .navbar {
   background-color: transparent !important;
+
 } 
 
 .btn { 
-    background-color: #278B96;
+ 
+ border-radius: 25px;
+ margin-left: 5px;
+ margin-bottom: 10px;
+ width: 100px;
+ height: 40px;
 }
 .push-right {
   margin-left: auto;
@@ -51,12 +92,48 @@
   display: flex;
   flex: 1 1 auto;
 }
-.picture{
-  height: 300px;
-}
+
 //---------------------------------------
 /* SEARCH */
+#searchBar{
+    filter: drop-shadow(5px 5px 10px #444);
+    background-color: whitesmoke;
+    margin: auto;
+    padding-top: 2px ;    
+    width: 1200px;
+    top: -250px;
+    position: relative;
+  
+  
+    border-radius: 120px; 
+     
+     
+}
 
+.bgcolor-searchBar{
+    padding-bottom: 12px ;
+    width: 1200px;    
+    margin-top: 10px;
+    border-radius: 120px;    
+    font-size: 20px;
+   
+    
+}
+
+.textMargin{
+    display: inline;
+    padding: 1em;
+}
 
 //---------------------------------------
 
+#landingImg{
+    margin-left: 400px; 
+    margin-top: 30px;
+    
+}
+
+.botonCenter{
+    display: flex;
+    
+}
