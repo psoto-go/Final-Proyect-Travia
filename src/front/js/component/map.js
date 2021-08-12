@@ -20,7 +20,7 @@ export const Map = () => {
 
 		<div style={{ height: "500px", width: "500px" }}>
 			<GoogleMapReact
-				bootstrapURLKeys={{ key: "AIzaSyBOftjuA_Gb7vY8PSv8ExXEIW_CDCvRYMU" }} // api key hidden
+				bootstrapURLKeys={{ key: "AIzaSyDaq_DXg5Oe1n6XQFUFMQu8EusN8NOXhZY" }} // api key hidden
 				defaultCenter={center.center}
 				defaultZoom={center.zoom}
 				yesIWantToUseGoogleMapApiInternals
