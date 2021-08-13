@@ -96,9 +96,9 @@ class Reviews(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "user_id": list(map(lambda x:x.serialize(), self.user_id)),
+            "user_id": self.user_id,
             "description": self.description,
-            "hotel_id": list(map(lambda x:x.serialize(), self.hotel_id)),
+            "hotel_id": self.hotel_id,
             "characteristic": self.characteristic
             # do not serialize the password, its a security breach
         }
