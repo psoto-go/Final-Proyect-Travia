@@ -136,13 +136,15 @@ class City(db.Model):
     name = db.Column(db.String(120), unique=False, nullable=True)
     description = db.Column(db.String(5000), unique=False, nullable=True)
     hotels = db.relationship('Hotel', backref='city', lazy=True)
+    url = db.Column(db.String(500), unique=False, nullable=True)
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
             "description": self.description,
-            "hotels": list(map(lambda x:x.serialize(), self.hotels))
+            "hotels": list(map(lambda x:x.serialize(), self.hotels)),
+            "url": self.url
             # do not serialize the password, its a security breach
         }
 
@@ -162,7 +164,7 @@ class HotelArchives(db.Model):
 
 class RoomArchives(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-   room_id = db.Column(db.Integer, db.ForeignKey('room.id'),
+    room_id = db.Column(db.Integer, db.ForeignKey('room.id'),
         nullable=False)
     url = db.Column(db.String(500), unique=False, nullable=True)
 

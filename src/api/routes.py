@@ -118,7 +118,7 @@ def sign_in_user():
 #cloudinary
 
 @api.route('/hotel/<int:hotel_id>/image', methods=['POST','PUT'])
-def handle_upload(hotel_id):
+def image_hotel(hotel_id):
 
     # validate that the front-end request was built correctly
     if 'hotel_image' in request.files:
@@ -140,7 +140,7 @@ def handle_upload(hotel_id):
         raise APIException('Missing profile_image on the FormData')
 
 @api.route('/room/<int:room_id>/image', methods=['POST','PUT'])
-def handle_upload(room_id):
+def image_room(room_id):
 
     # validate that the front-end request was built correctly
     if 'room_image' in request.files:
@@ -158,6 +158,28 @@ def handle_upload(room_id):
         db.session.commit()
 
         return jsonify(room_archive.serialize()), 200
+    else:
+        raise APIException('Missing profile_image on the FormData')
+
+@api.route('/city/<int:city_id>/image', methods=['POST','PUT'])
+def image_city(city_id):
+
+    # validate that the front-end request was built correctly
+    if 'city_image' in request.files:
+        # upload file to uploadcare
+        result = cloudinary.uploader.upload(request.files['city_image'])
+
+        # fetch for the user
+        city = City.query.filter_by(id = city_id).one_or_none()
+        if not room :
+            return jsonify("Your city is not found"), 404
+        # update the user with the given cloudinary image UR
+
+        city.url = (result['secure_url'])
+        db.session.add(city)
+        db.session.commit()
+
+        return jsonify(city.serialize()), 200
     else:
         raise APIException('Missing profile_image on the FormData')
 
