@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Hotel, HotelArchives
+from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -12,6 +12,8 @@ import cloudinary.uploader
 
 
 api = Blueprint('api', __name__)
+
+#Users + jwt
 
 
 @api.route('/sign_up', methods=['POST']) 
@@ -34,6 +36,15 @@ def sign_up_user():
 
     return jsonify({"msg": "El usuario fue creado exitosamente"}), 200
 
+@api.route('/users', methods=['GET'])
+def handle_hello2():
+    user = User.query.all()
+    response = []
+    for x in user:
+        response.append(x.serialize())
+    
+    return jsonify(response), 200
+
 # @api.route('/allusers', methods=['GET'])
 # def handle_hello():
 #     user = User.query.all()
@@ -45,15 +56,6 @@ def sign_up_user():
 #         response.append(x.serialize())
     
 #     return jsonify(response), 200
-
-@api.route('/users', methods=['GET'])
-def handle_hello2():
-    user = User.query.all()
-    response = []
-    for x in user:
-        response.append(x.serialize())
-    
-    return jsonify(response), 200
 
 
 # @api.route('/admins', methods=['GET'])
@@ -95,9 +97,6 @@ def sign_in_user():
 
     return jsonify({"hola"}), 200
 
-   #User
- # --------------------------------------------------------------------------------------------
-   #Admin 
 
 # @api.route('/sign_up_admin', methods=['POST']) 
 # def sign_up_admin():
@@ -115,6 +114,8 @@ def sign_in_user():
 #     db.session.commit()
 
 #     return jsonify({"msg": "El usuario fue creado exitosamente"}), 200
+
+#cloudinary
 
 @api.route('/hotel/<int:hotel_id>/image', methods=['POST','PUT'])
 def handle_upload(hotel_id):
@@ -138,6 +139,8 @@ def handle_upload(hotel_id):
     else:
         raise APIException('Missing profile_image on the FormData')
 
+#Hotel
+
 @api.route('/new_hotel', methods=['POST']) 
 def new_hotel():
 
@@ -155,6 +158,9 @@ def new_hotel():
     db.session.commit()
 
     return jsonify({"msg": "El hotel fue creado exitosamente"}), 200
+
+
+#City
 
 @api.route('/new_city', methods=['POST']) 
 def new_city():
@@ -185,3 +191,27 @@ def user_profile():
 def current_user(identity):
   print(identity["id"])
   return User.query.get(identity["id"])
+
+
+
+#seed_data
+@api.route('/seed_data', methods=['GET']) 
+def seed_data():
+    user = User()
+    hotel = Hotel()
+    room = Room()
+    review = Reviews()
+    services = Services()
+    hotearchive = HotelArchives()
+    booking = Booking()
+
+    user.create_user()
+    hotel.create_data()
+    room.create_room()
+    review.create_review()
+    services.create_data()
+    hotearchive.create_archives()
+    booking.create_booking()
+
+    return jsonify({"msg":"datos creados"}), 200
+

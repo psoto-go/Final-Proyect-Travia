@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 512fefde78a7
+Revision ID: eae693d162c4
 Revises: 
-Create Date: 2021-08-11 18:23:05.314581
+Create Date: 2021-08-13 11:53:43.686374
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '512fefde78a7'
+revision = 'eae693d162c4'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,7 +21,7 @@ def upgrade():
     op.create_table('city',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=120), nullable=True),
-    sa.Column('description', sa.String(length=120), nullable=True),
+    sa.Column('description', sa.String(length=5000), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('service',
@@ -42,10 +42,10 @@ def upgrade():
     )
     op.create_table('hotel',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('name', sa.String(length=120), nullable=False),
-    sa.Column('description', sa.String(length=1000), nullable=False),
-    sa.Column('longitude', sa.String(length=100), nullable=False),
-    sa.Column('latitude', sa.String(length=100), nullable=False),
+    sa.Column('name', sa.String(length=120), nullable=True),
+    sa.Column('description', sa.String(length=5000), nullable=True),
+    sa.Column('longitude', sa.String(length=100), nullable=True),
+    sa.Column('latitude', sa.String(length=100), nullable=True),
     sa.Column('city_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['city_id'], ['city.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -61,7 +61,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('hotel_id', sa.Integer(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.Column('description', sa.String(length=1000), nullable=False),
+    sa.Column('description', sa.String(length=5000), nullable=False),
     sa.Column('characteristic', sa.String(length=200), nullable=False),
     sa.ForeignKeyConstraint(['hotel_id'], ['hotel.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
@@ -71,7 +71,8 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('kind', sa.String(length=120), nullable=False),
     sa.Column('number_of_beds', sa.Integer(), nullable=False),
-    sa.Column('availability', sa.Date(), nullable=False),
+    sa.Column('start_date', sa.String(length=120), nullable=True),
+    sa.Column('end_date', sa.String(length=120), nullable=True),
     sa.Column('hotel_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['hotel_id'], ['hotel.id'], ),
     sa.PrimaryKeyConstraint('id')
