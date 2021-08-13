@@ -5,7 +5,7 @@ import { Destacados } from "../component/destacados";
 export const List = () => {
 	return (
 		<>
-			<div id="">
+			<div id="testing">
 				<Search />
 				<div>
 					<button type="button" className="btn btn-light ">
