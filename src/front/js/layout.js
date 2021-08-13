@@ -7,7 +7,7 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 
 import injectContext from "./store/appContext";
-
+import { List } from "./pages/list";
 import { Welcome } from "./pages/welcome";
 import { Signup } from "./pages/signUp";
 import { Login } from "./pages/login";
@@ -48,6 +48,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/newuser">
 							<NewUser />
+						</Route>
+						<Route exact path="/list">
+							<List />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
