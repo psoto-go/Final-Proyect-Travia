@@ -27,14 +27,14 @@ export const Login = () => {
 		actions.loadUsers();
 	};
 
-	if (actions.isNormalUserAuth()) {
-		console.log("me");
+	if (actions.isUserAuth()) {
+		console.log("pri");
 		history.push("/user");
 	}
-	if (actions.isAdminAuth()) {
-		console.log("me");
-		history.push("/admin");
-	}
+	// if (actions.isAdminAuth()) {
+	// 	console.log("me");
+	// 	history.push("/admin");
+	// }
 	return (
 		<div className="offset-4 col-4 my-auto text-center">
 			<form className="form-signin" onSubmit={submitForm}>

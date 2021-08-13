@@ -3,12 +3,12 @@ import { api_url } from "../constants";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			admin: [],
-			user: [],
-			accesToken: [],
-			users: [],
-			admins: [],
-			allusers: []
+			// admin: [],
+			user: null,
+			accesToken: null,
+			users: []
+			// admins: [],
+			// allusers: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -52,9 +52,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(result => {
 						if (result["user"]) {
 							setStore({ accesToken: result["access_token"], user: result });
-						} else if (result["admin"]) {
-							setStore({ accesToken: result["access_token"], admin: result });
 						}
+						//  else if (result["admin"]) {
+						// 	setStore({ accesToken: result["access_token"], admin: result });
+						// }
 
 						console.log("bien");
 						const store = getStore();
@@ -64,16 +65,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			isUserAuth: () => {
 				const store = getStore();
-				return store.accesToken.length !== 0;
+				return store.accesToken !== null;
 			},
-			isNormalUserAuth: () => {
-				const store = getStore();
-				return store.user.length !== 0;
-			},
-			isAdminAuth: () => {
-				const store = getStore();
-				return store.admin.length !== 0;
-			},
+			// isNormalUserAuth: () => {
+			// 	const store = getStore();
+			// 	return store.user.length !== 0;
+			// },
+			// isAdminAuth: () => {
+			// 	const store = getStore();
+			// 	return store.admin.length !== 0;
+			// },
 			register: paramsForm => {
 				const raw = JSON.stringify(paramsForm);
 
@@ -90,22 +91,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("Error", error));
 			},
-			register_admin: paramsForm => {
-				const raw = JSON.stringify(paramsForm);
+			// register_admin: paramsForm => {
+			// 	const raw = JSON.stringify(paramsForm);
 
-				const requestPost = {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: raw
-				};
+			// 	const requestPost = {
+			// 		method: "POST",
+			// 		headers: { "Content-Type": "application/json" },
+			// 		body: raw
+			// 	};
 
-				fetch(api_url + "/api/sign_up_admin", requestPost)
-					.then(response => response.json())
-					.then(result => {
-						console.log("registrado admin");
-					})
-					.catch(error => console.log("Error", error));
-			},
+			// 	fetch(api_url + "/api/sign_up_admin", requestPost)
+			// 		.then(response => response.json())
+			// 		.then(result => {
+			// 			console.log("registrado admin");
+			// 		})
+			// 		.catch(error => console.log("Error", error));
+			// },
 			logOut: () => {
 				const store = getStore();
 				store.user = null;
