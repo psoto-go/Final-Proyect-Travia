@@ -7,7 +7,6 @@ import { Search } from "./search";
 export const Header = () => {
 	return (
 		<div>
-			<Header />
 			<div className="contenedor">
 				<h1>Lorem ipsum dolor sit amet</h1>
 				<h3>Lorem ipsum dolor sit amet</h3>
