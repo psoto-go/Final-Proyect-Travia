@@ -139,6 +139,28 @@ def handle_upload(hotel_id):
     else:
         raise APIException('Missing profile_image on the FormData')
 
+@api.route('/room/<int:room_id>/image', methods=['POST','PUT'])
+def handle_upload(room_id):
+
+    # validate that the front-end request was built correctly
+    if 'room_image' in request.files:
+        # upload file to uploadcare
+        result = cloudinary.uploader.upload(request.files['room_image'])
+
+        # fetch for the user
+        room = Room.query.filter_by(id = room_id).one_or_none()
+        if not room :
+            return jsonify("Your room is not found"), 404
+        # update the user with the given cloudinary image UR
+
+        room_archive = RoomArchives(room_id = room.id, url= result['secure_url'])
+        db.session.add(room_archive)
+        db.session.commit()
+
+        return jsonify(room_archive.serialize()), 200
+    else:
+        raise APIException('Missing profile_image on the FormData')
+
 #Hotel
 
 @api.route('/new_hotel', methods=['POST']) 
@@ -210,4 +232,3 @@ def seed_data():
     
 
     return jsonify({"msg":"datos creados"}), 200
-

@@ -32,7 +32,6 @@ class User(db.Model):
     def check_password(self, password_param):
         return safe_str_cmp(self.password.encode('utf-8'), password_param.encode('utf-8'))
 
-
 class Hotel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=True)
@@ -42,12 +41,12 @@ class Hotel(db.Model):
     rooms = db.relationship('Room', backref='hotel', lazy=True)
     # questions = db.relationship('Question', backref='hotel', lazy=True)
     services = db.relationship("Service", secondary="services")
-    reviews = db.relationship("User", secondary="reviews")
+    users = db.relationship("User", secondary="reviews")
+    reviews = db.relationship('Reviews', backref='Hotel', lazy=True)
     city_id = db.Column(db.Integer, db.ForeignKey('city.id'),
         nullable=False)
     bookings = db.relationship('Booking', backref='hotel', lazy=True)
     HotelArchives = db.relationship('HotelArchives', backref='Hotel', lazy=True)
-
 
     def serialize(self):
         return {
@@ -61,26 +60,6 @@ class Hotel(db.Model):
             # "questions": list(map(lambda x:x.serialize(), self.questions)),
             "services": list(map(lambda x:x.serialize(), self.services))
 
-            # do not serialize the password, its a security breach
-        }
-
-
-class Room(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    kind = db.Column(db.String(120), unique=False, nullable=False)
-    number_of_beds = db.Column(db.Integer, unique=False, nullable=False)
-    start_date= db.Column(db.String(120), unique=False, nullable=True)
-    end_date= db.Column(db.String(120), unique=False, nullable=True)
-    hotel_id = db.Column(db.Integer, db.ForeignKey('hotel.id'),
-        nullable=False)
-    bookings = db.relationship('Booking', backref='room', lazy=True)
-    def serialize(self):
-        return {
-            "id": self.id,
-            "kind": self.kind,
-            "number_of_beds": self.number_of_beds,
-            "start_date": self.start_date,
-            "end_date": self.end_date
             # do not serialize the password, its a security breach
         }
 
@@ -103,6 +82,28 @@ class Reviews(db.Model):
             # do not serialize the password, its a security breach
         }
 
+class Room(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    kind = db.Column(db.String(120), unique=False, nullable=False)
+    number_of_beds = db.Column(db.Integer, unique=False, nullable=False)
+    start_date= db.Column(db.String(120), unique=False, nullable=True)
+    end_date= db.Column(db.String(120), unique=False, nullable=True)
+    hotel_id = db.Column(db.Integer, db.ForeignKey('hotel.id'),
+        nullable=False)
+    bookings = db.relationship('Booking', backref='room', lazy=True)
+    roomArchives = db.relationship('RoomArchives', backref='Room', lazy=True)
+    def serialize(self):
+        return {
+            "id": self.id,
+            "kind": self.kind,
+            "number_of_beds": self.number_of_beds,
+            "start_date": self.start_date,
+            "end_date": self.end_date
+            # do not serialize the password, its a security breach
+        }
+
+
+
 class Service(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=True)
@@ -112,7 +113,7 @@ class Service(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            # do not serialize the password, its a security breach
+            # do not serialize the password, its a security breach]
         }
     
 
@@ -156,6 +157,20 @@ class HotelArchives(db.Model):
             "id": self.id,
             "url": self.url,
             "hotel_id": self.hotel_id
+            # do not serialize the password, its a security breach
+        }
+
+class RoomArchives(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+   room_id = db.Column(db.Integer, db.ForeignKey('room.id'),
+        nullable=False)
+    url = db.Column(db.String(500), unique=False, nullable=True)
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "url": self.url,
+            "room_id": self.room_id
             # do not serialize the password, its a security breach
         }
 
