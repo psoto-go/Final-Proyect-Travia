@@ -3,7 +3,6 @@ import React from "react";
 export const Destacados = () => {
 	return (
 		<>
-			<h3 className="mx-auto">Destacados</h3>
 			<div className="card" style={{ width: "500px" }}>
 				<div className="row no-gutters">
 					<div className="col-sm-5">

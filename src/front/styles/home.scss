@@ -23,11 +23,9 @@
   background: linear-gradient(180deg, #8BD996 0%, rgba(121, 139, 242, 0.06) 100%) no-repeat center;
   background-size: cover;
   min-height: 100vh;
-  //height: 1800px;
   
+   
   
-  //display: flex;
-  display: inline-flex;
 }
 
 .palNav{
@@ -99,16 +97,58 @@ ul{
     filter: drop-shadow(5px 5px 10px #444);
     background-color: whitesmoke;
     margin: auto;
-    padding-top: 2px ;    
-    width: 1200px;
-    top: -250px;
+    padding-top: 1em ; 
+    padding-left: 1em;   
+    width: 80rem;
+    top: -13em;
     position: relative;
-  
-  
     border-radius: 120px; 
+    display: flex;
      
      
 }
+#testing{
+  position: relative;
+  padding-top: 2em ; 
+  padding-right: 28em;     
+  top: 13em;
+  display: flex;
+  
+  
+}
+#testing2{
+  
+  padding-top: 15em ; 
+  padding-left: 4em;       
+  position: absolute;
+  
+}
+#testing3{
+  
+  padding-top: 14.5em ; 
+  padding-left: 65em;       
+  position: absolute;
+  display: inline;
+  
+}
+
+.botones{
+  border-color: black;
+  border-width: 0.5px;
+  border-style: solid;
+  
+}
+.botonBest{
+  height: 3em;
+  width: 8em;
+  
+}
+.listHotels{
+  padding-top: 16em ; 
+  
+  display: inline;
+}
+
 
 .bgcolor-searchBar{
     padding-bottom: 12px ;
@@ -128,8 +168,10 @@ ul{
 //---------------------------------------
 
 #landingImg{
-    margin-left: 400px; 
-    margin-top: 30px;
+    //margin-left: 400px; 
+    //margin-top: 30px;
+    position: inherit;
+    margin: -15em 0 12em 64em;
     
 }
 

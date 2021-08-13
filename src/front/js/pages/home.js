@@ -15,9 +15,9 @@ export const Home = () => {
 	return (
 		<>
 			<Header />
+			<h3 className="mx-auto">Destacados</h3>
 			<Destacados />
 			<Destinos />
-
 			<Resenas />
 			<Suscribete />
 		</>

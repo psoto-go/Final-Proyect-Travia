@@ -7,15 +7,15 @@ import { Search } from "./search";
 export const Header = () => {
 	return (
 		<div>
-			<header className="header">
-				<div className="contenedor">
-					<h1>Lorem ipsum dolor sit amet</h1>
-					<h3>Lorem ipsum dolor sit amet</h3>
-				</div>
-				<div id="landingImg">
-					<img src={header} />
-				</div>
-			</header>
+			<Header />
+			<div className="contenedor">
+				<h1>Lorem ipsum dolor sit amet</h1>
+				<h3>Lorem ipsum dolor sit amet</h3>
+			</div>
+			<div id="landingImg">
+				<img src={header} />
+			</div>
+
 			<Search />
 		</div>
 	);
