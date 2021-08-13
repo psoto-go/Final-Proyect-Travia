@@ -4,9 +4,11 @@ import { ItemList } from "./itemList";
 
 export const ListGroup = props => {
 	const { store, actions } = useContext(Context);
-	useEffect(() => {
-		actions.loadUsers();
-	}, []);
+	// if (actions.isAdminAuth()) {
+	// 	useEffect(() => {
+	// 		actions.loadUsers();
+	// 	}, []);
+	// }
 	let allusers = store.allusers.map((item, index) => {
 		return (
 			<ItemList
