@@ -96,16 +96,21 @@ ul{
 #searchBar{
     filter: drop-shadow(5px 5px 10px #444);
     background-color: whitesmoke;
-    margin: auto;
+    margin: 0em 0em 0em 25em;
     padding-top: 1em ; 
     padding-left: 1em;   
     width: 80rem;
-    top: -13em;
+    top: -10em;
     position: relative;
     border-radius: 120px; 
     display: flex;
-     
-     
+          
+}
+
+#searchListBar{
+  margin: -4em 0 0 -23em; 
+  position: relative;
+
 }
 #testing{
   position: absolute;
@@ -136,17 +141,32 @@ ul{
   border-color: black;
   border-width: 0.5px;
   border-style: solid;
+  width: fit-content;
   
 }
-.botonBest{
-  height: 3em;
-  width: 8em;
+#botonBest{
+  margin: -9em 0em 0em 3em; 
+  
+    
+}
+.fixP{
+  display: inline-block
   
 }
-.listHotels{
-  padding-top: 16em ; 
-  
+.fixP2{
   display: inline;
+  float: right;
+  
+}
+
+.listHotels{
+  //padding-top: 16em ; 
+  height: fit-content;
+  width: fit-content;
+  margin-top: -30em;
+  
+  display: grid;
+  
 }
 
 
@@ -170,8 +190,8 @@ ul{
 #landingImg{
     //margin-left: 400px; 
     //margin-top: 30px;
-    position: inherit;
-    margin: -15em 0 12em 64em;
+    display: inline-flex;    
+    margin: -26em 0 12em 64em;
     
 }
 

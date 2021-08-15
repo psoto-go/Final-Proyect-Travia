@@ -31,3 +31,63 @@
   width: 420px;
   height: 275px;
 }
+.cardPriceContent{
+  display: inline-flex;
+  float: right;
+  
+  
+ 
+}
+.cardPrice{
+  display: inline;
+  float: right;
+  padding: 10%;
+}
+
+.mapFrame{
+  width: fit-content;
+  position: relative;
+  margin-top: 12em;
+  
+  margin-left: 60em;
+  //margin-bottom: 20em;
+  
+  
+  
+}
+
+.gallery{
+  display: inline-flexbox;
+  width: fit-content;
+  padding: 1em;
+  //background-color: red;
+  
+}
+
+.gallery img, h2, a, p{
+  width: fit-content;
+  padding: 1em;
+  display: inline-flexbox;
+  
+  //background-color: yellow;
+}
+.advice{
+  display: flex;
+  float: right;
+  margin-right: 4em;
+  background-color: lightseagreen;
+  width: 20em;
+  //margin: 0 1em -1em 0.5em;
+  border-radius: 10%;
+}
+.hotelDetailContainer p, h3, ul {
+  
+  display: grid;
+  padding: 1em
+}
+.resenasDetail{
+  
+  background-color:rgba(139, 217, 150, 0.5)
+  
+  
+}

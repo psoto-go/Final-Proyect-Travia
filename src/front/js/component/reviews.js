@@ -1,8 +1,6 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
-export const Resenas = () => {
+export const Reviews = () => {
 	return (
 		<div className="resenasStyle">
 			<h1>Lorem impsun</h1>

@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, Button } from "react-router-dom";
+
 import { Carrousel } from "./carrousel";
-export const Destinos = () => {
+export const Destinations = () => {
 	return (
 		<div className="lugares">
 			<ul className="nav nav-tabs" id="myTab" role="tablist">
