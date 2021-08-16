@@ -37,20 +37,20 @@ export const Admindash = () => {
 						</div>
 					</div>
 				</div>
-				<div className="container2">
-					<div className="item-1 ">
+				<div className="row">
+					<div className="col-6">
 						<Link to="/adminHoteles">
 							<HotelDash />
 						</Link>
 					</div>
-
-					<div className="item-2 ">
+					<div className="col-6">
 						<UserDash />
-					</div>
-					<div className="item-3">
-						<Link to="/adminProvincias">
-							<CarrouselDash />
-						</Link>
+
+						<div className="row m-0 p-0">
+							<Link to="/adminProvincias">
+								<CarrouselDash />
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>

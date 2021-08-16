@@ -3,18 +3,20 @@ import "../../styles/userDash.scss";
 
 export const UserDash = () => {
 	return (
-		<main>
-			<div className="grid">
-				<div className="item">
-					<div className="item-image">
-						<img
-							src="https://www.hiltonhotels.com/assets/img/brands/Conrad/11835%20[WA]_Translation_Pages_Images_1440x561_CONRAD_Muraka.jpg"
-							alt=""
-						/>
-					</div>
-				</div>
+		<div>
+			<div className="row">
+				<div className="col-4">Nombre</div>
+				<div className="col-4">Apellido</div>
+				<div className="col-4">Email</div>
 			</div>
-			<h2>Usuarios</h2>
-		</main>
+			<div className="row">
+				<div className="col-4">Alejandro</div>
+				<div className="col-4">Moran</div>
+				<div className="col-4">alejandro@gmail.com</div>
+			</div>
+			<div>
+				<h2>Usuarios</h2>
+			</div>
+		</div>
 	);
 };
