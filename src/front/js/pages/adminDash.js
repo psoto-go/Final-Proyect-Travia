@@ -39,14 +39,18 @@ export const Admindash = () => {
 				</div>
 				<div className="container2">
 					<div className="item-1 ">
-						<HotelDash />
-					</div>
-					<div className="item-2">
-						<CarrouselDash />
+						<Link to="/adminHoteles">
+							<HotelDash />
+						</Link>
 					</div>
 
-					<div className="item-3 ">
+					<div className="item-2 ">
 						<UserDash />
+					</div>
+					<div className="item-3">
+						<Link to="/adminProvincias">
+							<CarrouselDash />
+						</Link>
 					</div>
 				</div>
 			</div>

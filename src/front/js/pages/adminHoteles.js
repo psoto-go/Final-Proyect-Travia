@@ -36,6 +36,179 @@ export const AdminHoteles = () => {
 						</div>
 					</div>
 				</div>
+
+				<div className="hotels">
+					<div className="list-group">
+						<button type="button" className="buttonHotels list-group-item list-group-item-action">
+							<div className="hotelImg">
+								<img src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" />
+								<div className="content-1">
+									<div className="card">
+										<div className="card-body">
+											<h5 className="card-title">Card title</h5>
+											<Link>
+												<p>Link del sitio del hotel</p>
+											</Link>
+
+											<p className="card-text">
+												Some quick example text to build on the card title and make up the bulk
+												of the cards content.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div className="content-2">
+									<h5>4.8 Reseñas</h5>
+									<h5>★★★★</h5>
+									<div>
+										<button type="button" className="reseñas btn btn-secondary">
+											Mostrar Reseñas
+										</button>
+									</div>
+								</div>
+								<div className="content-3">
+									<div className="dropdown">
+										<button
+											className="btn"
+											type="button"
+											id="dropdownMenuButton"
+											data-toggle="dropdown"
+											aria-haspopup="true"
+											aria-expanded="false">
+											<i className="fas fa-ellipsis-v" />
+										</button>
+									</div>
+								</div>
+							</div>
+						</button>
+						<button type="buttonHotels" className=" buttonHotels  list-group-item list-group-item-action">
+							<div className="hotelImg">
+								<img src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" />
+								<div className="content-1">
+									<div className="card">
+										<div className="card-body">
+											<h5 className="card-title">Card title</h5>
+											<Link>
+												<p>Link del sitio del hotel</p>
+											</Link>
+
+											<p className="card-text">
+												Some quick example text to build on the card title and make up the bulk
+												of the cards content.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div className="content-2">
+									<h5>4.8 Reseñas</h5>
+									<h5>★★★★</h5>
+									<div>
+										<button type="button" className="reseñas btn btn-secondary">
+											Mostrar Reseñas
+										</button>
+									</div>
+								</div>
+								<div className="content-3">
+									<div className="dropdown">
+										<button
+											className="btn"
+											type="button"
+											id="dropdownMenuButton"
+											data-toggle="dropdown"
+											aria-haspopup="true"
+											aria-expanded="false">
+											<i className="fas fa-ellipsis-v" />
+										</button>
+									</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" className=" buttonHotels list-group-item list-group-item-action">
+							<div className="hotelImg">
+								<img src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" />
+								<div className="content-1">
+									<div className="card">
+										<div className="card-body">
+											<h5 className="card-title">Card title</h5>
+											<Link>
+												<p>Link del sitio del hotel</p>
+											</Link>
+
+											<p className="card-text">
+												Some quick example text to build on the card title and make up the bulk
+												of the cards content.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div className="content-2">
+									<h5>4.8 Reseñas</h5>
+									<h5>★★★★</h5>
+									<div>
+										<button type="button" className="reseñas btn btn-secondary">
+											Mostrar Reseñas
+										</button>
+									</div>
+								</div>
+								<div className="content-3">
+									<div className="dropdown">
+										<button
+											className="btn"
+											type="button"
+											id="dropdownMenuButton"
+											data-toggle="dropdown"
+											aria-haspopup="true"
+											aria-expanded="false">
+											<i className="fas fa-ellipsis-v" />
+										</button>
+									</div>
+								</div>
+							</div>
+						</button>
+						<button type="button" className="buttonHotels list-group-item list-group-item-action" disabled>
+							<div className="hotelImg">
+								<img src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" />
+								<div className="content-1">
+									<div className="card">
+										<div className="card-body">
+											<h5 className="card-title">Card title</h5>
+											<Link>
+												<p>Link del sitio del hotel</p>
+											</Link>
+
+											<p className="card-text">
+												Some quick example text to build on the card title and make up the bulk
+												of the cards content.
+											</p>
+										</div>
+									</div>
+								</div>
+								<div className="content-2">
+									<h5>4.8 Reseñas</h5>
+									<h5>★★★★</h5>
+									<div>
+										<button type="button" className="reseñas btn btn-secondary">
+											Mostrar Reseñas
+										</button>
+									</div>
+								</div>
+								<div className="content-3">
+									<div className="dropdown">
+										<button
+											className="btn"
+											type="button"
+											id="dropdownMenuButton"
+											data-toggle="dropdown"
+											aria-haspopup="true"
+											aria-expanded="false">
+											<i className="fas fa-ellipsis-v" />
+										</button>
+									</div>
+								</div>
+							</div>
+						</button>
+					</div>
+				</div>
 			</div>
 			<div />
 		</>
