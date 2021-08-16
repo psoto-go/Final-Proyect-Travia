@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/home.scss";
+import "../../styles/admDash.scss";
 import { ListGroup } from "../component/listGroup";
+import { CarrouselDash } from "../component/carrouselDash";
+import { HotelDash } from "../component/hotelDash";
+import { UserDash } from "../component/userDash";
 
 export const Admindash = () => {
 	return (
@@ -9,56 +12,41 @@ export const Admindash = () => {
 			<div>
 				<div className="container text-center">
 					<div className="row">
-						<div className="col">
+						<div className="col-md-4">
 							<h1>Dashboard</h1>
 						</div>
-						<div className="col">
-							<p>
-								<Link to="#">Panel admin</Link> / Dashboard
-							</p>
+						<div className="col-md-4 ml-auto">
+							<Link to="#">Panel admin</Link> / Dashboard
 							<div className="col" />
 						</div>
 					</div>
 				</div>
-				<div id="custom-search-input">
-					<div className="input-group col-md-12">
-						<input type="text" className="form-control input-lg" placeholder="Buscar" />
-						<span className="input-group-btn">
-							<button className="btn btn-info btn-lg" type="button">
-								<i className="bi bi-search" />
-							</button>
-						</span>
+				<div className=" container text-left">
+					<div className="row">
+						<div className="col-md-12">
+							<div className="search" id="custom-search-input">
+								<div className="input-group col-md-12">
+									<input type="text" className="form-control input-lg" placeholder="Buscar" />
+									<span className="input-group-btn">
+										<button className="btn btn-info " type="button">
+											<i className="fas fa-search" />
+										</button>
+									</span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div className="container">
-					<div className="row">
-						<div className="col-md-6">
-							<img
-								className="img-responsive"
-								src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg"
-							/>
-							<div>HOTELES</div>
-						</div>
-						<div className="col-md-6">
-							<div className="row">
-								<div className="col-sm-12">
-									<img
-										className="img-responsive"
-										src="https://lh3.googleusercontent.com/proxy/LhhdRjDxIxZ34Tgq5_s4vEUWah62KsJRRR3Xe0LLFg0MiXf-VS3t4DTEsIwiQ89RlZzSBc5vbsMMuUI4DqXkm9f8he88onpI7r3x"
-									/>
-									<div>USUARIOS</div>
-								</div>
-							</div>
-							<div className="row bottom-right">
-								<div className="col-sm-12">
-									<img
-										className="img-responsive"
-										src="https://lh3.googleusercontent.com/proxy/LhhdRjDxIxZ34Tgq5_s4vEUWah62KsJRRR3Xe0LLFg0MiXf-VS3t4DTEsIwiQ89RlZzSBc5vbsMMuUI4DqXkm9f8he88onpI7r3x"
-									/>
-									<div>CIUDADES</div>
-								</div>
-							</div>
-						</div>
+				<div className="container2">
+					<div className="item-1 ">
+						<HotelDash />
+					</div>
+					<div className="item-2">
+						<CarrouselDash />
+					</div>
+
+					<div className="item-3 ">
+						<UserDash />
 					</div>
 				</div>
 			</div>

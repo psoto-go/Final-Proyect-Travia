@@ -182,11 +182,19 @@ ul{
 
 //-------------------------------------
 
+
 #custom-search-input{
+  align-items: stretch;
+    display: flex;
+  
   width: 30%;
-  padding: 3px;
+  margin-left:100px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
   border: solid 1px #E4E4E4;
-  border-radius: 6px;
+  border-radius: 20px;
   background-color: #fff;
 }
 
@@ -214,4 +222,5 @@ ul{
 #custom-search-input .glyphicon-search{
   font-size: 23px;
 }
+
 

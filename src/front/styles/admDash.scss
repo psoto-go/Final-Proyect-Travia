@@ -1,0 +1,41 @@
+.row{
+    
+    margin-left: 100px;
+    margin-right: 100px;
+    right:200em;
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.container{
+    max-width: 2000px;
+    margin-top: 30px;
+    padding: -10px;
+}
+
+.container2{
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 300px ;
+  }
+
+  .item-1 {
+    grid-row: 1 / 4;
+   }
+   .item-2{
+    grid-row: 1/2;
+   }
+   .item-3{
+    grid-row: 3/4;
+   }
+.item{
+    max-width: 1200px !important;
+}
