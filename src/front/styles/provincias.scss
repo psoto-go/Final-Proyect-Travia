@@ -1,0 +1,30 @@
+.container3{
+    
+    margin-top: 30px;
+    margin-left: 250px;
+    margin-right: 250px;
+    display: grid;
+    grid-template-columns: repeat(5, 300px);
+    grid-template-rows: 300px;
+    grid-gap: 30px;
+  }
+
+.item>img{
+    width: 100%;
+    height: calc(100% - 30px);
+    object-fit: contain;  
+}
+.item{
+    border-radius: 30px;
+}
+
+.create{
+    background-color: #278B96;
+    color: white;
+    width: 213px;
+    height: 42px;
+    left: 973px;
+    top: 207px;
+    border-radius: 10px;
+}
+

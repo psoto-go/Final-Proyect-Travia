@@ -16,6 +16,8 @@ import { Footer } from "./component/footer";
 import { Admin } from "./pages/admin";
 import { NewUser } from "./pages/newUser";
 import { Admindash } from "./pages/adminDash";
+import { AdminProvincias } from "./pages/adminProvincias";
+import { AdminHoteles } from "./pages/adminHoteles";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -55,6 +57,12 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/adminDash">
 							<Admindash />
+						</Route>
+						<Route exact path="/adminProvincias">
+							<AdminProvincias />
+						</Route>
+						<Route exact path="/adminHoteles">
+							<AdminHoteles />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
