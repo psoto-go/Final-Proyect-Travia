@@ -38,6 +38,7 @@ class Hotel(db.Model):
     description = db.Column(db.String(5000), unique=False, nullable=True)
     longitude = db.Column(db.String(100), unique=False, nullable=True)
     latitude = db.Column(db.String(100), unique=False, nullable=True)
+    home = db.Column(db.Boolean, default=False, nullable=False)
     rooms = db.relationship('Room', backref='hotel', lazy=True)
     # questions = db.relationship('Question', backref='hotel', lazy=True)
     services = db.relationship("Service", secondary="services")
@@ -53,6 +54,7 @@ class Hotel(db.Model):
             "id": self.id,
             "name": self.name,
             "description": self.description,
+            "home": self.home,
             "longitude": self.longitude,
             "latitude": self.latitude,
             "rooms": list(map(lambda x:x.serialize(), self.rooms)),
@@ -89,6 +91,7 @@ class Room(db.Model):
     number_of_persons = db.Column(db.Integer, unique=False, nullable=False)
     start_date= db.Column(db.String(120), unique=False, nullable=True)
     end_date= db.Column(db.String(120), unique=False, nullable=True)
+    price = db.Column(db.Integer, unique=False, nullable=False)
     hotel_id = db.Column(db.Integer, db.ForeignKey('hotel.id'),
         nullable=False)
     bookings = db.relationship('Booking', backref='room', lazy=True)
@@ -100,7 +103,8 @@ class Room(db.Model):
             "number_of_beds": self.number_of_beds,
             "number_of_persons": self.number_of_persons,
             "start_date": self.start_date,
-            "end_date": self.end_date
+            "end_date": self.end_date,
+            "price": self.price
             # do not serialize the password, its a security breach
         }
 
@@ -188,6 +192,7 @@ class Booking(db.Model):
         nullable=False)
     start_date= db.Column(db.String(120), unique=False, nullable=True)
     end_date= db.Column(db.String(120), unique=False, nullable=True)
+    price = db.Column(db.Integer, unique=False, nullable=False)
     
     
 
@@ -198,7 +203,8 @@ class Booking(db.Model):
             "user_id": self.user_id,
             "room_id": self.room_id,
             "start_date": self.start_date,
-            "end_date": self.end_date         
+            "end_date": self.end_date,
+            "price": self.price        
             # do not serialize the password, its a security breach
         }
 
@@ -244,11 +250,11 @@ class SeedDataEmployee:
         db.session.commit()
     
     def create_room(self):
-        self.room = Room(kind = "doble", number_of_beds = 2, number_of_persons=2, start_date = "11/10/2021", end_date = "20/10/2021", hotel_id = self.hotel.id)
-        self.room1 = Room(kind = "doble", number_of_beds = 2, number_of_persons = 2, start_date = "11/10/2021", end_date = "20/10/2021", hotel_id = self.hotel1.id)
-        self.room2 = Room(kind = "individual", number_of_beds = 1, number_of_persons = 1, start_date = "17/10/2021", end_date = "24/10/2021", hotel_id = self.hotel1.id)
-        self.room3 = Room(kind = "suite", number_of_beds = 1, number_of_persons = 2, start_date = "13/10/2021", end_date = "21/10/2021", hotel_id = self.hotel2.id)
-        self.room4 = Room(kind = "matrimonio", number_of_beds = 1, number_of_persons = 2, start_date = "18/10/2021", end_date = "21/10/2021", hotel_id = self.hotel3.id)
+        self.room = Room(kind = "doble", number_of_beds = 2, number_of_persons=2, start_date = "11/10/2021", end_date = "20/10/2021", hotel_id = self.hotel.id, price = 50)
+        self.room1 = Room(kind = "doble", number_of_beds = 2, number_of_persons = 2, start_date = "11/10/2021", end_date = "20/10/2021", hotel_id = self.hotel1.id, price = 50)
+        self.room2 = Room(kind = "individual", number_of_beds = 1, number_of_persons = 1, start_date = "17/10/2021", end_date = "24/10/2021", hotel_id = self.hotel1.id, price = 50)
+        self.room3 = Room(kind = "suite", number_of_beds = 1, number_of_persons = 2, start_date = "13/10/2021", end_date = "21/10/2021", hotel_id = self.hotel2.id, price = 40)
+        self.room4 = Room(kind = "matrimonio", number_of_beds = 1, number_of_persons = 2, start_date = "18/10/2021", end_date = "21/10/2021", hotel_id = self.hotel3.id, price = 30)
         db.session.add(self.room)
         db.session.add(self.room1)
         db.session.add(self.room2)
