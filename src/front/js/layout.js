@@ -18,7 +18,6 @@ import { NewUser } from "./pages/newUser";
 import { Admindash } from "./pages/adminDash";
 import { AdminProvincias } from "./pages/adminProvincias";
 import { AdminHoteles } from "./pages/adminHoteles";
-import { HotelDetail } from "./pages/hotelDetail";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
