@@ -3,7 +3,7 @@ import React from "react";
 export const Subscribe = () => {
 	return (
 		<>
-			<h2 className="mx-auto">Lorem impsun</h2>
+			<h2 className="mx-auto">Afiliate a nuestro Newsletter</h2>
 			<form className="mx-auto form-inline my-2 my-lg-0">
 				<input
 					className="form-control mr-sm-2"

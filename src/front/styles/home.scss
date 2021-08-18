@@ -30,6 +30,7 @@
 
 .palNav{
  background: #8BD996;
+ padding-left: 5%
  
 }
 
@@ -89,6 +90,7 @@ ul{
 .card-horizontal {
   display: flex;
   flex: 1 1 auto;
+  
 }
 
 //---------------------------------------
@@ -96,26 +98,28 @@ ul{
 #searchBar{
     filter: drop-shadow(5px 5px 10px #444);
     background-color: whitesmoke;
-    margin: 0em 0em 0em 25em;
+    margin: 0em 0em 0em 0em;
     padding-top: 1em ; 
     padding-left: 1em;   
-    width: 80rem;
+    width: 100rem;
+    margin:auto;
     top: -10em;
     position: relative;
     border-radius: 120px; 
     display: flex;
-          
+      
 }
 
-#searchListBar{
-  margin: -4em 0 0 -23em; 
+
+.searchListBar{
+  margin: -4em 0 0 13em; 
+ 
   position: relative;
 
 }
 #testing{
   position: absolute;
   padding-top: 7em ; 
-  padding-right: 28em;     
   top: 13em;
   display: flex;
   
@@ -143,19 +147,41 @@ ul{
   border-style: solid;
   width: fit-content;
   
+  
 }
-#botonBest{
-  margin: -9em 0em 0em 3em; 
+
+.inline-div{
+  
+  display: inline-flex;
+  
+
+}
+.botonMargin{
+  margin-left: 5%;
+}
+
+.botonBest{
+  margin: -9em 5em 5em 10em; 
   
     
 }
 .fixP{
-  display: inline-block
+  display: inline-block;
+  
+  
+  
+}
+.serviciosHotel{
+  display: inline;
+  float: right;
+  padding-right: 10%;
+
   
 }
 .fixP2{
   display: inline;
   float: right;
+  
   
 }
 
@@ -171,13 +197,19 @@ ul{
 
 
 .bgcolor-searchBar{
-    padding-bottom: 12px ;
-    width: 1200px;    
-    margin-top: 10px;
-    border-radius: 120px;    
-    font-size: 20px;
+    padding-bottom: 2% ;
+    margin-left: 0.75%;
+    width: fit-content;         
+    font-size: 150%;
    
     
+}
+.botonHuge{
+  width: 8%;
+  height: 7%;
+  margin-left: 3%;
+  font-size: 150%;
+  
 }
 
 .textMargin{
@@ -191,7 +223,8 @@ ul{
     //margin-left: 400px; 
     //margin-top: 30px;
     display: inline-flex;    
-    margin: -26em 0 12em 64em;
+    margin: -26em 0 11em 55em;
+    //margin-right: 5%;
     
     
 }

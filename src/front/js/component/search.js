@@ -12,10 +12,10 @@ export const Search = () => {
 				<input type="date" id="date" />
 				<i className="fas fa-user-friends textMargin" />
 				<input type="number" min="1" max="5" placeholder="0" />
-				<Link to={"/list"} type="button" className="btn btn-warning">
-					<div>Buscar</div>
-				</Link>
 			</div>
+			<Link to={"/list"} type="button" className="btn btn-warning botonHuge">
+				<div>Buscar</div>
+			</Link>
 		</div>
 	);
 };
