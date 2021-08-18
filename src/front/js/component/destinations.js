@@ -56,7 +56,14 @@ export const Destinations = () => {
 			</ul>
 			<div className="tab-content" id="myTabContent">
 				<div className="tab-pane fade show active" id="Asturias" role="tabpanel" aria-labelledby="Asturias-tab">
-					<h2>Descubre $Lugar</h2>
+					<h2>
+						Descubre <strong>Asturias</strong>
+					</h2>
+					<p className="p-2">
+						Asturias ofrece infinidad de opciones donde elegir, para disfrutar de unas vacaciones
+						inolvidables. Ya sea en la costa o en la playa, en la montaña o en el valle, siempre hay un
+						lugar, una actividad o un momento a la medida de tus gustos y tus sueños.
+					</p>
 					<hr />
 
 					<div className="container-fluid">
@@ -73,11 +80,10 @@ export const Destinations = () => {
 											/>
 										</div>
 										<div className="card-body">
-											<h4 className="card-title">Lorem impsum dolor</h4>
+											<h4 className="card-title">Belmonte de Miranda</h4>
 											<p className="card-text">
 												Lorem Ipsum is simply dummy text of the printing and typesetting
-												industry. Lorem Ipsum has been the industrys standard dummy text ever
-												since the 1500s
+												industry.
 											</p>
 										</div>
 									</div>

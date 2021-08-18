@@ -14,8 +14,9 @@
   margin-bottom: 2rem;
   border: 0;
   flex-basis: 33.333%;
-  flex-grow: 0;
-  flex-shrink: 0;
+  margin-left: 2%;
+  
+
 }
 
 .card > img {
@@ -60,6 +61,7 @@
   display: inline-flexbox;
   width: fit-content;
   padding: 1em;
+  margin-left: 5%;
   //background-color: red;
   
 }
@@ -81,7 +83,7 @@
   border-radius: 10%;
 }
 .hotelDetailContainer p, h3, ul {
-  
+  margin-left: 5%;
   display: grid;
   padding: 1em
 }
