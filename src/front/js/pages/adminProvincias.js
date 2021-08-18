@@ -10,10 +10,10 @@ export const AdminProvincias = () => {
 				<div className="container text-center">
 					<div className="row">
 						<div className="col-md-4">
-							<h1>Provincias</h1>
+							<h1>Ciudades</h1>
 						</div>
 						<div className="col-md-4 ml-auto">
-							<Link to="#">Dashboard</Link> / Provincias
+							<Link to="#">Dashboard</Link> / Ciudades
 							<div className="col" />
 						</div>
 					</div>
@@ -33,7 +33,7 @@ export const AdminProvincias = () => {
 							</div>
 						</div>
 						<div className="col-2">
-							<button className=" create">+ Crear provincia</button>
+							<button className=" create">+ Crear ciudad</button>
 						</div>
 					</div>
 				</div>

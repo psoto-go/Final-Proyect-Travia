@@ -57,7 +57,7 @@ export const CarrouselDash = () => {
 			</div>
 			<div>
 				<Link to="/adminProvincias">
-					<Link to="#">
+					<Link to="/adminProvincias">
 						<h2 className="mt-5 titulo">Ciudades</h2>
 					</Link>
 				</Link>
