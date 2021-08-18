@@ -17,11 +17,10 @@ export const Home = () => {
 		<>
 			<Header />
 			<h3 className="pepito mx-auto">Destacados</h3>
-			<Destacados />
-			<Destinos />
-			<Resenas />
-			<Suscribete />
-
+			<Featured />
+			<Destinations />
+			<Reviews />
+			<Subscribe />
 		</>
 	);
 };
