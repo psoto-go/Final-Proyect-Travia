@@ -33,7 +33,7 @@ export const Map = () => {
 	return (
 		// Important! Always set the container height explicitly
 
-		<div style={{ height: "500px", width: "500px" }}>
+		<div style={{ height: "30em", width: "30em" }}>
 			<GoogleMapReact
 				bootstrapURLKeys={{ key: "AIzaSyDaq_DXg5Oe1n6XQFUFMQu8EusN8NOXhZY" }} // api key hidden
 				defaultCenter={center.center}

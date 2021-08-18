@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Destacados = () => {
+export const Featured = () => {
 	return (
 		<>
 			<div className="card" style={{ width: "500px" }}>

@@ -1,16 +1,14 @@
 import React, { Component, useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
+
 import "../../styles/home.scss";
 
 import { Header } from "../component/header";
-import { Map } from "../component/map";
-import { Countries } from "../component/Countries";
-import { Carrousel } from "../component/carrousel";
-import { Resenas } from "../component/resenas";
-import { Destinos } from "../component/destinos";
-import { Destacados } from "../component/destacados";
-import { Suscribete } from "../component/suscribete";
+
+import { Reviews } from "../component/reviews";
+import { Destinations } from "../component/destinations";
+import { Featured } from "../component/featured";
+import { Subscribe } from "../component/subscribe";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -23,6 +21,7 @@ export const Home = () => {
 			<Destinos />
 			<Resenas />
 			<Suscribete />
+
 		</>
 	);
 };
