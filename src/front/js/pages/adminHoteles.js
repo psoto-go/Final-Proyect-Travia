@@ -6,8 +6,8 @@ export const AdminHoteles = () => {
 	return (
 		<>
 			<div>
-				<div className="container text-center">
-					<div className="row">
+				<div className="container  text-center">
+					<div className="row conjunto">
 						<div className="col-md-4">
 							<h1>Hoteles</h1>
 						</div>
@@ -19,7 +19,7 @@ export const AdminHoteles = () => {
 				</div>
 				<div className="container">
 					<div className="row">
-						<div className="col-10">
+						<div className="col-9">
 							<div className="search" id="custom-search-input">
 								<div className="input-group col-md-12">
 									<input type="text" className="form-control input-lg" placeholder="Buscar" />
@@ -31,7 +31,7 @@ export const AdminHoteles = () => {
 								</div>
 							</div>
 						</div>
-						<div className="col-2">
+						<div className="col-3 text-center">
 							<button className=" create">+ Crear hotel</button>
 						</div>
 					</div>
@@ -58,8 +58,8 @@ export const AdminHoteles = () => {
 									</div>
 								</div>
 								<div className="content-2">
-									<h5>4.8 Reseñas</h5>
-									<h5>★★★★</h5>
+									<h5 className="resePunto">4.8 Reseñas</h5>
+									<h5 className="resePunto">★★★★</h5>
 									<div>
 										<button type="button" className="reseñas btn btn-secondary">
 											Mostrar Reseñas
@@ -100,8 +100,8 @@ export const AdminHoteles = () => {
 									</div>
 								</div>
 								<div className="content-2">
-									<h5>4.8 Reseñas</h5>
-									<h5>★★★★</h5>
+									<h5 className="resePunto">4.8 Reseñas</h5>
+									<h5 className="resePunto">★★★★</h5>
 									<div>
 										<button type="button" className="reseñas btn btn-secondary">
 											Mostrar Reseñas
@@ -142,8 +142,8 @@ export const AdminHoteles = () => {
 									</div>
 								</div>
 								<div className="content-2">
-									<h5>4.8 Reseñas</h5>
-									<h5>★★★★</h5>
+									<h5 className="resePunto">4.8 Reseñas</h5>
+									<h5 className="resePunto">★★★★</h5>
 									<div>
 										<button type="button" className="reseñas btn btn-secondary">
 											Mostrar Reseñas
@@ -184,8 +184,8 @@ export const AdminHoteles = () => {
 									</div>
 								</div>
 								<div className="content-2">
-									<h5>4.8 Reseñas</h5>
-									<h5>★★★★</h5>
+									<h5 className="resePunto">4.8 Reseñas</h5>
+									<h5 className="resePunto">★★★★</h5>
 									<div>
 										<button type="button" className="reseñas btn btn-secondary">
 											Mostrar Reseñas

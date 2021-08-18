@@ -7,18 +7,7 @@
 
 
 
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 800px;
-    height: 400px;
-    padding: 20px;
-    background: white;
-    border-radius: 2px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    overflow-x: hidden;
-}
+
 
 .grid {
     display: flex;
@@ -30,20 +19,18 @@ main{
     align-items: center;
 }
 
-.item {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 200px;
-    max-width: 210px;
-    max-height: 290px;
-    padding: 8px;
-    margin: 0 4px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    justify-content: flex-start;
-    align-items: center;
-}
+
 
 .item-image img {
     max-width: 100%;
+    border-radius: 40px;
+}
+.provdash{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    
+}
+.titulo{
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
