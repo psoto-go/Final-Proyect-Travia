@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export const HotelServices = () => {
 	return (
-		<>
+		<div className="serviciosHotel">
 			<h3>Servicios del Hotel</h3>
 
 			<button type="button" className="btn btn-light">
@@ -18,6 +18,6 @@ export const HotelServices = () => {
 			</button>
 			<br />
 			<a href="/">ver todos</a>
-		</>
+		</div>
 	);
 };

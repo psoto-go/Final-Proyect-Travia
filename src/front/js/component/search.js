@@ -70,6 +70,9 @@ export const Search = () => {
 					</button>
 				</form>
 			</div>
+			<Link to={"/list"} type="button" className="btn btn-warning botonHuge">
+				<div>Buscar</div>
+			</Link>
 		</div>
 	);
 };
