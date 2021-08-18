@@ -78,6 +78,8 @@
 	"dependencies": {
 		"bootstrap": "^4.3.1",
 		"google-map-react": "^2.1.10",
+		"i": "^0.3.6",
+		"npm": "^7.20.6",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-bootstrap": "^1.6.1",
