@@ -13,7 +13,6 @@ export const Search = () => {
 		dateout: "",
 		number: ""
 	};
-
 	const changeInput = e => {
 		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
 	};
