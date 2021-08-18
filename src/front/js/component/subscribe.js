@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Suscribete = () => {
+export const Subscribe = () => {
 	return (
 		<>
 			<h2 className="mx-auto">Lorem impsun</h2>

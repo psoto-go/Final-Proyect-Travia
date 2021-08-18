@@ -15,6 +15,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Admin } from "./pages/admin";
 import { NewUser } from "./pages/newUser";
+import { HotelDetail } from "./pages/hotelDetail";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -27,7 +28,9 @@ export const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-
+						<Route exact path="/hotelDetail">
+							<HotelDetail />
+						</Route>
 						<Route exact path="/demo">
 							<Demo />
 						</Route>

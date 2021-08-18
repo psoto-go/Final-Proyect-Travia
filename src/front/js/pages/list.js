@@ -1,39 +1,20 @@
 import React, { Component } from "react";
-import { Search } from "../component/search";
-import { Destacados } from "../component/destacados";
+import { Map } from "../component/map";
+import { ChoiceHotel } from "../component/choiceHotel";
+import { SearchList } from "../component/searchList";
 
 export const List = () => {
 	return (
 		<>
-			<div id="testing">
-				<Search />
-				<div>
-					<button type="button" className="btn btn-light ">
-						Precio
-					</button>
-					<button type="button" className="btn btn-light ">
-						Filtros
-					</button>
-				</div>{" "}
-				<div>
-					<a>ordenar por</a>
-					<button type="button" className="btn btn-light botones">
-						Recomendados
-					</button>
-				</div>
+			{" "}
+			<div className="mapFrame">
+				<Map />
 			</div>
-			{/*<ul id="testing2">
-				
-			</ul>
-			<div id="testing3">
-				
-			</div> -->*/}
-
+			<div id="testing">
+				<SearchList />
+			</div>
 			<div className="listHotels">
-				<Destacados />
-				<Destacados />
-				<Destacados />
-				<Destacados />
+				<ChoiceHotel />
 			</div>
 		</>
 	);

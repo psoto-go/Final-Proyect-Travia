@@ -6,7 +6,7 @@ import header from "../../img/header.png";
 import { Search } from "./search";
 export const Header = () => {
 	return (
-		<div>
+		<div className="header">
 			<div className="contenedor">
 				<h1>Lorem ipsum dolor sit amet</h1>
 				<h3>Lorem ipsum dolor sit amet</h3>
