@@ -2,7 +2,7 @@ import React, { Component, useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 
 import "../../styles/home.scss";
-import "../../styles/cards.scss";
+
 import { Header } from "../component/header";
 
 import { Reviews } from "../component/reviews";
@@ -16,11 +16,12 @@ export const Home = () => {
 	return (
 		<>
 			<Header />
-			<h3 className="mx-auto">Destacados</h3>
-			<Featured />
-			<Destinations />
-			<Reviews />
-			<Subscribe />
+			<h3 className="pepito mx-auto">Destacados</h3>
+			<Destacados />
+			<Destinos />
+			<Resenas />
+			<Suscribete />
+
 		</>
 	);
 };

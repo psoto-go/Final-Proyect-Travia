@@ -1,0 +1,51 @@
+.row{
+    margin-left: 100px;
+    margin-right: 100px;
+    right:200em;
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.container{
+    max-width: 2000px;
+    margin-top: 30px;
+    padding: -10px;
+}
+
+.hotels{
+    border-radius: 20%;
+    margin: 200px;
+    margin-top: 40px;
+}
+
+.hotelImg{
+   border-radius: 10px;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.content-1{
+    width: 100%;
+    margin-left: 0px;
+}
+.hotelDiv{
+    width: 300px;
+}
+.contentAdm{
+    align-items: stretch;
+    margin-top: 40px;
+   margin-left: 200px;
+}
+
+.buttonHotel{
+    border-radius: 50px;
+}
+
+.resePunto{
+    padding: 3px;
+}

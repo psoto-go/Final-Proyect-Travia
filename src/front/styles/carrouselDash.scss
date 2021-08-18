@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.grid {
+    display: flex;
+    flex: 1;
+    max-height: 320px;
+    overflow-x: scroll;
+   
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.item-image img {
+    max-width: 100%;
+    border-radius: 40px;
+}
+.provdash{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    
+}
+.titulo{
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
