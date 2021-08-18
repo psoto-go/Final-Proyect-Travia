@@ -7,7 +7,9 @@ export const Navbar = () => {
 		<>
 			<nav className="navbar navbar-expand-lg navbar-light palNav">
 				<p className="navbar-brand">
-					<img src={logo} width="50" height="50" className="d-inline-block align-top" alt="Logo" />
+					<Link to="/">
+						<img src={logo} width="50" height="50" className="d-inline-block align-top" alt="Logo" />
+					</Link>
 				</p>
 				<button
 					className="navbar-toggler"
