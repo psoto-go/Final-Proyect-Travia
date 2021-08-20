@@ -1,24 +1,26 @@
-import React, { useContext } from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
+
 import "../../styles/home.scss";
+
+import { Header } from "../component/header";
+
+import { Reviews } from "../component/reviews";
+import { Destinations } from "../component/destinations";
+import { Featured } from "../component/featured";
+import { Subscribe } from "../component/subscribe";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-
+	const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDaq_DXg5Oe1n6XQFUFMQu8EusN8NOXhZY`;
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">{store.message || "Loading message from the backend..."}</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://github.com/4GeeksAcademy/react-flask-hello/tree/95e0540bd1422249c3004f149825285118594325/docs">
-					Read documentation
-				</a>
-			</p>
-		</div>
+		<>
+			<Header />
+			<h3 className="pepito mx-auto">Destacados</h3>
+			<Featured />
+			<Destinations />
+			<Reviews />
+			<Subscribe />
+		</>
 	);
 };

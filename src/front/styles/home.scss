@@ -1,0 +1,374 @@
+.contenedor{
+    margin: 5rem;
+    padding: 5em;
+    
+    
+}
+.container{
+    display: inline-block;
+    
+}
+.resenasStyle{
+     margin: 3rem;
+    padding: 4em;
+    
+}
+.lugares{
+  margin: 5em;
+  
+}
+.positionText{
+ display: inline-block;
+ position: relative;
+ top: -18em;
+ left: 35em;
+
+}
+
+.header {
+  background: linear-gradient(180deg, #8BD996 0%, #b7bfe7 100%) no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  
+   
+  
+}
+
+.posiFeat{
+  position: relative;
+  top: -15em;
+  left: 9em;
+}
+
+
+.imgRedonda img{
+ // padding: 5em ;
+ // width:300px;
+ // height:300px;
+ 
+ position: relative;
+ left: 5em;
+ width: 20em;
+ height: 20em;
+ overflow: hidden;
+ border-radius: 80%;
+ border-top:10px solid rgb(255, 230, 0) ;
+ border-left:10px solid rgb(255, 230, 0) ;
+
+}
+
+.palNav{
+ background: #8BD996;
+ padding-left: 5%
+ 
+}
+
+ul{
+    color: white;
+}
+.header .navbar {
+  background-color: transparent ;
+
+} 
+
+.btn { 
+ 
+ border-radius: 25px;
+ margin-left: 5px;
+ margin-bottom: 10px;
+ width: 100px;
+ height: 40px;
+}
+.push-right {
+  margin-left: auto;
+}
+
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+  &:before {
+    content: '';
+    // use the linear-gradient for the fading effect
+    // use a solid background color for a solid bar
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+  &:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+
+    padding: 0 .5em;
+    line-height: 1.5em;
+    // this is really the only tricky part, you need to specify the background color of the container element...
+    color: #818078;
+    background-color: #fcfcfa;
+  }
+}
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+  
+}
+
+//---------------------------------------
+/* SEARCH */
+#searchBar{
+    filter: drop-shadow(5px 5px 10px #444);
+    background-color: whitesmoke;
+    position: relative;
+    display: flex;
+    margin:auto;
+    top: -9em;
+    padding-left: 2em; 
+    height: 8em;  
+    width: 110rem;
+    border-radius: 120px; 
+    
+      
+    
+      
+}
+
+.form-signin{
+  display: inline-block;
+  padding-top: 1%;
+  font-size: 120%;
+  
+  
+}
+
+.searchListBar{
+  margin: -4em 0 0 13em; 
+ 
+  position: relative;
+
+}
+#testing{
+  position: absolute;
+  padding-top: 5em ; 
+  top: 15em;
+  left: -7em;
+  display: block; 
+}
+#testing2{
+  
+  padding-top: 15em ; 
+  padding-left: 4em;       
+  position: absolute;
+  
+}
+#testing3{
+  
+  padding-top: 14.5em ; 
+  padding-left: 65em;       
+  position: absolute;
+  display: inline;
+  
+}
+
+.botones{
+  border-color: black;
+  border-width: 0.5px;
+  border-style: solid;
+  width: fit-content;
+  
+  
+}
+
+.inline-div{
+  
+  display: inline-flex;
+  margin: auto;
+  margin-left: 15%;
+
+}
+.btton{
+  width: 14%;
+  height: 5em;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  display: flex;
+  float: right;
+  position: relative;
+  top: -5.5em;
+  //left: 7em;
+  right:-8em;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;  
+  font-size: 60%;
+  
+}
+.botonMargin{
+  margin-left: 5%;
+}
+
+.botonBest{
+  margin: -9em 5em 5em 10em; 
+  
+    
+}
+.fixP{
+  display: inline-block;
+  padding-top: 2em;
+  padding-left: 1em;
+  
+  
+  
+}
+.serviciosHotel{
+  display: inline;
+  float: right;
+  padding-right: 10%;
+
+  
+}
+.fixP2{
+  display: inline;
+  float: right;
+  
+  
+}
+
+.listHotels{
+  padding-top: 16em ;   
+  background: linear-gradient(to bottom, #8BD996, transparent, #8BD996);
+  
+  
+}
+
+.cardPrice{
+  display: inline;
+  float: right;
+  margin-top: -18em;
+  margin-right: -30em;
+  padding: 10%;
+}
+.hotelSelect{
+  display: inline;
+}
+.listHotels2{
+  padding-left: 15em;
+  padding-top: 2em;  
+  display: grid;
+  background-color: white;
+  //background-color: rgb(255, 230, 0);
+  //background: linear-gradient(to top, transparent, #c1caf8, #8BD996);
+}
+
+.bgcolor-searchBar{
+    padding-bottom: 2% ;
+    margin-left: 0.75%;
+    width: fit-content;         
+    font-size: 150%;
+   
+    
+}
+.botonHuge{
+  width: 8%;
+  height: 7%;
+  margin-left: 3%;
+  font-size: 150%;
+  
+}
+.colored{
+  color: white;
+  //background-color: #394273;
+}
+.coloredh1, h1, h3{
+  color: #394273;
+  font-weight: 700;
+  position: relative;
+  font-size: 310%;
+  top: 5em;
+}
+.textMargin{
+    display: inline-block;
+    padding: 1em;
+    color: #394273;
+    //font-weight: 500;
+}
+
+//---------------------------------------
+
+#landingImg{
+    //margin-left: 400px; 
+    //margin-top: 30px;
+    display: inline-flex;    
+    margin: -26em 0 11em 55em;
+    //margin-right: 5%;
+    
+    
+}
+
+.botonCenter{
+    display: flex;
+    
+}
+
+//-------------------------------------
+
+
+#custom-search-input{
+  align-items: stretch;
+    display: flex;
+  
+  width: 30%;
+  margin-left:100px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: solid 1px #E4E4E4;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+#custom-search-input input{
+  border: 0;
+  box-shadow: none;
+}
+
+#custom-search-input button{
+  margin: 2px 0 0 0;
+  background: none;
+  box-shadow: none;
+  border: 0;
+  color: #666666;
+  padding: 0 8px 0 10px;
+  border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+  border: 0;
+  box-shadow: none;
+  border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+  font-size: 23px;
+}
+
+.mapPosition{
+  top: -70.80em;
+  position: relative;
+  height: 55em; 
+  width: 35em;
+  right: -83.95em;
+}
+
+
