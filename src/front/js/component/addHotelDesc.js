@@ -6,7 +6,7 @@ export const AddHotelDesc = () => {
 		<div className="row descHotel1">
 			<div className="col-6">
 				<div className="row">
-					<div className="col-6">
+					<div className="col-6 contentDivRoom">
 						<p>
 							<strong>Nombre del Hotel</strong>
 						</p>
@@ -49,18 +49,21 @@ export const AddHotelDesc = () => {
 						</button>
 					</div>
 				</div>
-				<button className="btn btnServiceOn">Servicios</button>
-				<button className="btn btnServiceOn">Servicios</button>
-				<button className="btn btnServiceOff">Servicios</button>
-				<button className="btn btnServiceOff">Servicios</button>
-				<button className="btn btnServiceOn">Servicios</button>
-				<button className="btn btnServiceOff">Servicios</button>
-				<button className="btn btnServiceOn">Servicios</button>
-				<button className="btn btnServiceOn">Servicios</button>
-				<button className="btn btnServiceOff">Servicios</button>
-				<button className="btn btnServiceOff">Servicios</button>
-				<button className="btn btnServiceOff">Servicios</button>
-				<button className="btn btnServiceOn">Servicios</button>
+				<div className="row serviceRoom2">
+					<button className="btn btnServiceOn">Servicios</button>
+					<button className="btn btnServiceOn">Servicios</button>
+					<button className="btn btnServiceOff">Servicios</button>
+					<button className="btn btnServiceOff">Servicios</button>
+					<button className="btn btnServiceOn">Servicios</button>
+					<button className="btn btnServiceOff">Servicios</button>
+					<button className="btn btnServiceOn">Servicios</button>
+					<button className="btn btnServiceOn">Servicios</button>
+					<button className="btn btnServiceOff">Servicios</button>
+					<button className="btn btnServiceOff">Servicios</button>
+					<button className="btn btnServiceOff">Servicios</button>
+					<button className="btn btnServiceOn">Servicios</button>
+				</div>
+
 				<div className="DatepickHotel">
 					<h4>Disponibilidad</h4>
 					<p>Añade las fechas disponibles</p>
