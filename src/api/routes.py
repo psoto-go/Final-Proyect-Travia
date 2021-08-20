@@ -211,7 +211,7 @@ def get_hotel():
     response = []
     for x in hotel:
         response.append(x.serialize())
-    return jsonify(response), 200
+    return jsonify({"response":  response}), 200
 
 @api.route('/featuredhotels', methods=['GET'])
 def get_featuredhotel():
@@ -219,7 +219,7 @@ def get_featuredhotel():
     response = []
     for x in hotel:
         response.append(x.serialize())
-    return jsonify(response), 200
+    return jsonify({"response":  response}), 200
 
 @api.route('/hotel/<int:hotel_id>', methods=['GET'])
 def hotelid(hotel_id):

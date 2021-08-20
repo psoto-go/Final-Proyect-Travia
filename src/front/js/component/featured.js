@@ -1,6 +1,23 @@
-import React from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { api_url } from "../constants";
 
 export const Featured = () => {
+	const [detalles, setDetalles] = useState([]);
+
+	useEffect(() => {
+		fetch("https://3001-peach-bear-cn1jkr6r.ws-eu16.gitpod.io/api/featuredhotels")
+			.then(response => response.json())
+			.then(result => {
+				setDetalles(result.response);
+
+				console.log("hotellaaa");
+			})
+			.catch(error => console.log("Error", error));
+	}, []);
+	console.log(detalles);
+
 	return (
 		<div className="inline-div">
 			<div className="hotel-item">
@@ -21,7 +38,7 @@ export const Featured = () => {
 						</div>
 					</div>
 				</div>
-				<h5 className="card-title">Loren Ipsum</h5>
+				<h5 className="card-title">{}</h5>
 				<p className="card-text">
 					This is a wider card with supporting text below as a natural lead-in to additional content. This
 					content is a little bit longer.
