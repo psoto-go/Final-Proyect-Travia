@@ -194,11 +194,13 @@ def new_hotel():
     description = body_params.get("description", None)
     longitude = body_params.get("longitude", None)
     latitude = body_params.get("latitude", None)
+    favorite = body_params.get("favorite", False)
+    city_id = body_params.get("city_id", None)
 
 
     
-    user1 = User(name=name, description = description, longitude=longitude, latitude=latitude)
-    db.session.add(user1)
+    hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id)
+    db.session.add(hotel)
     db.session.commit()
 
     return jsonify({"msg": "El hotel fue creado exitosamente"}), 200

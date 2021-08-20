@@ -61,7 +61,8 @@ class Hotel(db.Model):
             "reviews": list(map(lambda x:x.serialize(), self.reviews)),
             # "questions": list(map(lambda x:x.serialize(), self.questions)),
             "services": list(map(lambda x:x.serialize(), self.services)),
-            "HotelArchives": list(map(lambda x:x.serialize(), self.HotelArchives))
+            "HotelArchives": list(map(lambda x:x.serialize(), self.HotelArchives)),
+            "city_id": self.city_id
 
             # do not serialize the password, its a security breach
         }
