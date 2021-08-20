@@ -18,6 +18,7 @@ import { NewUser } from "./pages/newUser";
 import { Admindash } from "./pages/adminDash";
 import { AdminProvincias } from "./pages/adminProvincias";
 import { AdminHoteles } from "./pages/adminHoteles";
+import { OnlyHotel } from "./pages/onlyHotel";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -65,6 +66,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/adminHoteles">
 							<AdminHoteles />
+						</Route>
+						<Route exact path="/onlyHotel">
+							<OnlyHotel />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

@@ -1,9 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search } from "./search";
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.js";
 
 export const SearchList = () => {
 	return (
