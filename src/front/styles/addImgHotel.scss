@@ -7,7 +7,7 @@ $animationSpeed: 25s;
 // Animation
 @keyframes scroll {
 	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-220px * 4))}
+	100% { transform: translateX(calc(-220px * 5))}
 }
 
 
@@ -16,8 +16,6 @@ $animationSpeed: 25s;
     display: flex;
 	background: white;
 	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-	height: 20em;
-	
 	overflow:hidden;
 	position: static;
 
@@ -51,20 +49,23 @@ $animationSpeed: 25s;
 	
 	.slide {
 		height: 20em;
+       
 		
 	}
     .imageHotel{
         width: 40em;
-        margin-left: 50px;;
+        margin-left: 20px;
+        object-fit: contain;
+        object-fit: scale-down;
     }
 
 }
 .hotelCarrousel{
-    margin: 1rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    height: 20em;
+    
 }
 .addImagenHotel{
+    
     background-color: white;
     border: 5px groove #8BD996;
 }

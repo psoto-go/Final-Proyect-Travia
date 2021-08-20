@@ -24,7 +24,7 @@ export const Admin = () => {
 						</div>
 						<div className="col">
 							<Link to={"/newuser"}>
-								<button type="button" className="btn btn-primary">
+								<button type="button" className="btn userBtn1 btn-primary">
 									Crear un nuevo usuario
 								</button>
 							</Link>
