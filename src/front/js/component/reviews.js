@@ -3,7 +3,7 @@ import React from "react";
 export const Reviews = () => {
 	return (
 		<div className="resenasStyle">
-			<h1>Nuestros usuarios opinan</h1>
+			<h2 className="p-5">Nuestros usuarios opinan</h2>
 			<div className="row">
 				<div className="card">
 					<div className="card-header">Pablo</div>
@@ -39,7 +39,7 @@ export const Reviews = () => {
 					</div>
 				</div>
 			</div>
-			<button type="button" className=" botonCenter mx-auto btn btn-warning">
+			<button type="button" className=" botonCenter mx-auto btn btn-warning mt-5">
 				Leer mas
 			</button>
 		</div>

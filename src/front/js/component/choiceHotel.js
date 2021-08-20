@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const ChoiceHotel = () => {
 	return (
 		<>
-			<div className="card" style={{ width: "500px" }}>
+			<div className="hotelSelect" style={{ width: "500px" }}>
 				<a style={{ width: "500px" }}>
 					Hotel Plaza <i className="fas fa-star" />
 					<i className="fas fa-star" />
@@ -36,14 +36,14 @@ export const ChoiceHotel = () => {
 						<br />
 						<p>Habitación Premium desde 79€</p>
 						<div className="card-body">
-							<Link to={"/hotelDetail"} className="btn btn-primary">
+							<Link to={"/hotelDetail"} className="btn btn-warning">
 								Vacancy
 							</Link>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="card" style={{ width: "500px" }}>
+			<div style={{ width: "500px" }}>
 				<a style={{ width: "500px" }}>
 					Hotel Plaza <i className="fas fa-star" />
 					<i className="fas fa-star" />
@@ -76,14 +76,14 @@ export const ChoiceHotel = () => {
 						<br />
 						<p>Habitación Premium desde 79€</p>
 						<div className="card-body">
-							<Link to={"/hotelDetail"} className="btn btn-primary">
+							<Link to={"/hotelDetail"} className="btn btn-warning">
 								Vacancy
 							</Link>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="card" style={{ width: "500px" }}>
+			<div style={{ width: "500px" }}>
 				<a style={{ width: "500px" }}>
 					Hotel Plaza <i className="fas fa-star" />
 					<i className="fas fa-star" />
@@ -116,7 +116,7 @@ export const ChoiceHotel = () => {
 						<br />
 						<p>Habitación Premium desde 79€</p>
 						<div className="card-body">
-							<Link to={"/hotelDetail"} className="btn btn-primary">
+							<Link to={"/hotelDetail"} className="btn btn-warning">
 								Vacancy
 							</Link>
 						</div>
