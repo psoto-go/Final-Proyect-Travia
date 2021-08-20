@@ -7,7 +7,7 @@ export const Featured = () => {
 	const [detalles, setDetalles] = useState();
 
 	useEffect(() => {
-		fetch("https://3001-peach-bear-cn1jkr6r.ws-eu16.gitpod.io/api/featuredhotels")
+		fetch(api_url + "/api/featuredhotels")
 			.then(response => response.json())
 			.then(result => {
 				setDetalles(result.response);
