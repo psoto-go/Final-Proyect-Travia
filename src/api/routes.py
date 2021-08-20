@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, SeedDataEmployee
+from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, SeedDataEmployee, City
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -194,11 +194,13 @@ def new_hotel():
     description = body_params.get("description", None)
     longitude = body_params.get("longitude", None)
     latitude = body_params.get("latitude", None)
+    favorite = body_params.get("favorite", False)
+    city_id = body_params.get("city_id", None)
 
 
     
-    user1 = User(name=name, description = description, longitude=longitude, latitude=latitude)
-    db.session.add(user1)
+    hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id)
+    db.session.add(hotel)
     db.session.commit()
 
     return jsonify({"msg": "El hotel fue creado exitosamente"}), 200
@@ -209,8 +211,21 @@ def get_hotel():
     response = []
     for x in hotel:
         response.append(x.serialize())
-    return jsonify(response), 200
+    return jsonify({"response":  response}), 200
 
+@api.route('/featuredhotels', methods=['GET'])
+def get_featuredhotel():
+    hotel = Hotel.query.filter_by(favorite=True)
+    response = []
+    for x in hotel:
+        response.append(x.serialize())
+    return jsonify({"response":  response}), 200
+
+@api.route('/hotel/<int:hotel_id>', methods=['GET'])
+def hotelid(hotel_id):
+    body = request.get_json()
+    cha = Hotel.query.get(hotel_id)
+    return jsonify(cha.serialize()), 200
 
 #City
 
@@ -222,14 +237,29 @@ def new_city():
     name = body_params.get("name", None)
     description = body_params.get("description", None)
     
-
-
-    
     user1 = User(name=name, description = description)
     db.session.add(user1)
     db.session.commit()
 
     return jsonify({"msg": "La ciudad fue creada exitosamente"}), 200
+
+@api.route('/cities', methods=['GET'])
+def get_cities():
+    cities = City.query.all()
+    response = []
+    for x in cities:
+        response.append(x.serialize())
+    return jsonify(response), 200
+
+#reviews
+
+@api.route('/featuredreviews', methods=['GET'])
+def get_reviews():
+    reviews = Reviews.query.filter_by(favorite=True)
+    response = []
+    for x in reviews:
+        response.append(x.serialize())
+    return jsonify(response), 200
 
 
 

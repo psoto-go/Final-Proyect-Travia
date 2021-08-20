@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 20575d4b10a0
+Revision ID: b67c611f276c
 Revises: 
-Create Date: 2021-08-18 16:54:50.669041
+Create Date: 2021-08-19 12:14:13.903173
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '20575d4b10a0'
+revision = 'b67c611f276c'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -47,6 +47,7 @@ def upgrade():
     sa.Column('description', sa.String(length=5000), nullable=True),
     sa.Column('longitude', sa.String(length=100), nullable=True),
     sa.Column('latitude', sa.String(length=100), nullable=True),
+    sa.Column('favorite', sa.Boolean(), nullable=False),
     sa.Column('city_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['city_id'], ['city.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -64,6 +65,7 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('description', sa.String(length=5000), nullable=False),
     sa.Column('characteristic', sa.String(length=200), nullable=False),
+    sa.Column('favorite', sa.Boolean(), nullable=False),
     sa.ForeignKeyConstraint(['hotel_id'], ['hotel.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -75,6 +77,7 @@ def upgrade():
     sa.Column('number_of_persons', sa.Integer(), nullable=False),
     sa.Column('start_date', sa.String(length=120), nullable=True),
     sa.Column('end_date', sa.String(length=120), nullable=True),
+    sa.Column('price', sa.Integer(), nullable=False),
     sa.Column('hotel_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['hotel_id'], ['hotel.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -94,6 +97,7 @@ def upgrade():
     sa.Column('room_id', sa.Integer(), nullable=False),
     sa.Column('start_date', sa.String(length=120), nullable=True),
     sa.Column('end_date', sa.String(length=120), nullable=True),
+    sa.Column('price', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['hotel_id'], ['hotel.id'], ),
     sa.ForeignKeyConstraint(['room_id'], ['room.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
