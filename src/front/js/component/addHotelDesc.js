@@ -62,6 +62,10 @@ export const AddHotelDesc = () => {
 					<button className="btn btnServiceOff">Servicios</button>
 					<button className="btn btnServiceOff">Servicios</button>
 					<button className="btn btnServiceOn">Servicios</button>
+					<button className="btn btnServiceOff">Servicios</button>
+					<button className="btn btnServiceOn">Servicios</button>
+					<button className="btn btnServiceOn">Servicios</button>
+					<button className="btn btnServiceOff">Servicios</button>
 				</div>
 
 				<div className="DatepickHotel">
@@ -84,7 +88,7 @@ export const AddHotelDesc = () => {
 					</textarea>
 				</div>
 
-				<div className="btn-group-toggle" data-toggle="buttons">
+				<div className="btn-group-toggle pt-5 pl-2" data-toggle="buttons">
 					<button className="btn btnServiceOff">Cancelar</button>
 					<button type="button" className="btn btn-success">
 						Guardar

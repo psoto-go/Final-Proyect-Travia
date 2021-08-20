@@ -7,4 +7,11 @@
 }
 .ReviewsCards{
     display: flex;
+    justify-content: space-between;
+    
+}
+
+.ReviewsCards .card{
+    width: 24%;
+    
 }

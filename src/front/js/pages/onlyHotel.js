@@ -10,14 +10,18 @@ import { TypeRoom } from "../component/typeRoom";
 
 export const OnlyHotel = () => {
 	return (
-		<>
-			<div className="onlyRoom">
-				<CarrouselHotel />
-				<AddHotelDesc />
+		<div className="onlyRoom">
+			<CarrouselHotel />
+			<AddHotelDesc />
 
-				<TypeRoom />
-				<ReviewRoom />
+			<TypeRoom />
+			<div className="col-12 mt-4">
+				<button type="button" className="btn btn-secondary btn-lg btn-block">
+					CREAR HABITACION NUEVA
+				</button>
 			</div>
-		</>
+
+			<ReviewRoom />
+		</div>
 	);
 };

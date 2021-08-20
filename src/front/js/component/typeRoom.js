@@ -16,16 +16,16 @@ export const TypeRoom = () => {
 		<div className="typeRoom1">
 			<NavBarRoom />
 			<div className="row containerRoom">
-				<div className="col-6">
-					<div className="row">
-						<div className="card photoRoom col-6">
+				<div className="col-6 m-0 p-0">
+					<div className="row m-0 p-0">
+						<div className="photoRoom col-6">
 							<img
 								src="https://media.istockphoto.com/photos/breakfast-served-on-a-hotel-bed-picture-id936331412?k=6&m=936331412&s=612x612&w=0&h=pYWrXHGTK_s3wgqjyMKrBUrIErGJKq4MS3SCk6tMx60="
 								className="card-img-top imageRoom"
 								alt="..."
 							/>
-							<div className="card-body">
-								<p className="card-text">Incluye foto</p>
+							<div>
+								<p className="text-center">Incluye foto</p>
 							</div>
 						</div>
 
@@ -73,13 +73,13 @@ export const TypeRoom = () => {
 								<div />
 							</div>
 							<div className="row">
-								<div className="col-12">
-									<button className="btn btnServiceRoomOn">Servicios</button>
-									<button className="btn btnServiceRoomOn">Servicios</button>
-									<button className="btn btnServiceRoomOff">Servicios</button>
-									<button className="btn btnServiceRoomOff">Servicios</button>
-									<button className="btn btnServiceRoomOn">Servicios</button>
-									<button className="btn btnServiceRoomOff">Servicios</button>
+								<div className="col-12 p-0">
+									<button className="btn m-1 btnServiceRoomOn">Servicios</button>
+									<button className="btn m-1 btnServiceRoomOn">Servicios</button>
+									<button className="btn m-1 btnServiceRoomOff">Servicios</button>
+									<button className="btn m-1 btnServiceRoomOff">Servicios</button>
+									<button className="btn m-1 btnServiceRoomOn">Servicios</button>
+									<button className="btn m-1 btnServiceRoomOff">Servicios</button>
 								</div>
 							</div>
 						</div>
@@ -160,9 +160,6 @@ export const TypeRoom = () => {
 					</div>
 				</div>
 			</div>
-			<button type="button" className="btn btn-secondary btn-lg btn-block">
-				CREAR HABITACION NUEVA
-			</button>
 		</div>
 	);
 };

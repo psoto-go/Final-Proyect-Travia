@@ -4,13 +4,16 @@ import "../../styles/reviewRoom.scss";
 import { QuestionRoom } from "./questionRomm";
 export const ReviewRoom = () => {
 	return (
-		<div>
+		<div className="mt-5">
 			<div className="row">
 				<div className="col-4">
 					<h4>Filtros reseñas</h4>
 				</div>
 				<div className="col-4">
-					Añadir reseña <button>+</button>
+					Añadir reseña{" "}
+					<button className="add rounded-circle text-center ">
+						<i className="fas fa-award" />
+					</button>
 				</div>
 			</div>
 			<div className="row">
@@ -23,7 +26,7 @@ export const ReviewRoom = () => {
 					<button className="btn btnReview">+ Habitacion</button>
 				</div>
 			</div>
-			<div className="row">
+			<div className="mt-5 row">
 				<div className="col-11">
 					<h4>Reseñas del Hotel</h4>
 				</div>
@@ -32,8 +35,8 @@ export const ReviewRoom = () => {
 					<u>Ver todas</u>{" "}
 				</div>
 			</div>
-			<div className="row">
-				<div className="col-11 ReviewsCards">
+			<div className="row reviewCarrousel">
+				<div className="col-12 ReviewsCards">
 					<div className="card ">
 						<img
 							src="http://2.bp.blogspot.com/-itYtAL5lBeE/TkFdlIhhacI/AAAAAAAABHI/HYGHzdl85UI/s280/111433_aerogenerador.jpg"
@@ -88,8 +91,9 @@ export const ReviewRoom = () => {
 					</div>
 				</div>
 			</div>
-
-			<QuestionRoom />
+			<div className="mt-5">
+				<QuestionRoom />
+			</div>
 		</div>
 	);
 };
