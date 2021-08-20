@@ -64,7 +64,7 @@ export const Search = () => {
 						name="number"
 						onChange={changeInput}
 					/>
-					<button className="btn btn-warning" type="submit">
+					<button className="btn btn-warning btton" type="submit">
 						Buscar
 					</button>
 				</form>

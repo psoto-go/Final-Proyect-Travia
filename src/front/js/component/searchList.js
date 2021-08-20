@@ -13,7 +13,7 @@ export const SearchList = () => {
 			</div>
 			<div className="botonBest">
 				<div className="dropdown fixP botonMargin">
-					<button type="button" data-toggle="dropdown" className="btn btn-light dropdown-toggle botones ">
+					<button type="button" data-toggle="dropdown" className="btn btn-info dropdown-toggle botones ">
 						Precio
 						<ul className="dropdown-menu">
 							<li>
@@ -28,7 +28,10 @@ export const SearchList = () => {
 						</ul>
 					</button>
 
-					<button type="button " data-toggle="dropdown" className="btn  btn-light dropdown-toggle botones ">
+					<button
+						type="button "
+						data-toggle="dropdown"
+						className="btn  btn-light dropdown-toggle botones p-2 ">
 						Filtros
 						<ul className="dropdown-menu">
 							<li>

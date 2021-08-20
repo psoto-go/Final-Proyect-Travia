@@ -45,17 +45,7 @@
   padding: 10%;
 }
 
-.mapFrame{
-  width: fit-content;
-  position: relative;
-  margin-top: 12em;
-  
-  margin-left: 60em;
-  //margin-bottom: 20em;
-  
-  
-  
-}
+
 
 .gallery{
   display: inline-flexbox;
@@ -91,5 +81,9 @@
   
   background-color:rgba(139, 217, 150, 0.5)
   
-  
+}
+
+.posiFeat{
+  position: relative;
+  top: -5em;
 }

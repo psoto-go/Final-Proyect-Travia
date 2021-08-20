@@ -7,14 +7,16 @@ export const List = () => {
 	return (
 		<>
 			{" "}
-			<div className="mapFrame">
-				<Map />
-			</div>
 			<div id="testing">
 				<SearchList />
 			</div>
 			<div className="listHotels">
-				<ChoiceHotel />
+				<div className="listHotels2">
+					<ChoiceHotel />
+				</div>
+			</div>
+			<div id="mapFrame">
+				<Map />
 			</div>
 		</>
 	);

@@ -14,18 +14,47 @@
     
 }
 .lugares{
-   padding-left: 105px;
+  margin: 5em;
+  
 }
-#myTab{
-    padding-right: 55px;
+.positionText{
+ display: inline-block;
+ position: relative;
+ top: -18em;
+ left: 35em;
+
 }
+
 .header {
-  background: linear-gradient(180deg, #8BD996 0%, rgba(121, 139, 242, 0.06) 100%) no-repeat center;
+  background: linear-gradient(180deg, #8BD996 0%, #b7bfe7 100%) no-repeat center;
   background-size: cover;
   min-height: 100vh;
   
    
   
+}
+
+.posiFeat{
+  position: relative;
+  top: -15em;
+  left: 9em;
+}
+
+
+.imgRedonda img{
+ // padding: 5em ;
+ // width:300px;
+ // height:300px;
+ 
+ position: relative;
+ left: 5em;
+ width: 20em;
+ height: 20em;
+ overflow: hidden;
+ border-radius: 80%;
+ border-top:10px solid rgb(255, 230, 0) ;
+ border-left:10px solid rgb(255, 230, 0) ;
+
 }
 
 .palNav{
@@ -38,7 +67,7 @@ ul{
     color: white;
 }
 .header .navbar {
-  background-color: transparent !important;
+  background-color: transparent ;
 
 } 
 
@@ -98,18 +127,27 @@ ul{
 #searchBar{
     filter: drop-shadow(5px 5px 10px #444);
     background-color: whitesmoke;
-    margin: 0em 0em 0em 0em;
-    padding-top: 1em ; 
-    padding-left: 1em;   
-    width: 100rem;
-    margin:auto;
-    top: -10em;
     position: relative;
-    border-radius: 120px; 
     display: flex;
+    margin:auto;
+    top: -9em;
+    padding-left: 2em; 
+    height: 8em;  
+    width: 110rem;
+    border-radius: 120px; 
+    
+      
+    
       
 }
 
+.form-signin{
+  display: inline-block;
+  padding-top: 1%;
+  font-size: 120%;
+  
+  
+}
 
 .searchListBar{
   margin: -4em 0 0 13em; 
@@ -119,11 +157,10 @@ ul{
 }
 #testing{
   position: absolute;
-  padding-top: 7em ; 
-  top: 13em;
-  display: flex;
-  
-  
+  padding-top: 5em ; 
+  top: 15em;
+  left: -7em;
+  display: block; 
 }
 #testing2{
   
@@ -153,8 +190,28 @@ ul{
 .inline-div{
   
   display: inline-flex;
-  
+  margin: auto;
+  margin-left: 15%;
 
+}
+.btton{
+  width: 14%;
+  height: 5em;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  display: flex;
+  float: right;
+  position: relative;
+  top: -5.5em;
+  //left: 7em;
+  right:-8em;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;  
+  font-size: 60%;
+  
 }
 .botonMargin{
   margin-left: 5%;
@@ -167,6 +224,8 @@ ul{
 }
 .fixP{
   display: inline-block;
+  padding-top: 2em;
+  padding-left: 1em;
   
   
   
@@ -186,15 +245,30 @@ ul{
 }
 
 .listHotels{
-  //padding-top: 16em ; 
-  height: fit-content;
-  width: fit-content;
-  margin-top: -30em;
+  padding-top: 16em ;   
+  background: linear-gradient(to bottom, #8BD996, transparent, #8BD996);
   
-  display: grid;
   
 }
 
+.cardPrice{
+  display: inline;
+  float: right;
+  margin-top: -18em;
+  margin-right: -30em;
+  padding: 10%;
+}
+.hotelSelect{
+  display: inline;
+}
+.listHotels2{
+  padding-left: 15em;
+  padding-top: 2em;  
+  display: grid;
+  background-color: white;
+  //background-color: rgb(255, 230, 0);
+  //background: linear-gradient(to top, transparent, #c1caf8, #8BD996);
+}
 
 .bgcolor-searchBar{
     padding-bottom: 2% ;
@@ -211,10 +285,22 @@ ul{
   font-size: 150%;
   
 }
-
+.colored{
+  color: white;
+  //background-color: #394273;
+}
+.coloredh1, h1, h3{
+  color: #394273;
+  font-weight: 700;
+  position: relative;
+  font-size: 310%;
+  top: 5em;
+}
 .textMargin{
-    display: inline;
+    display: inline-block;
     padding: 1em;
+    color: #394273;
+    //font-weight: 500;
 }
 
 //---------------------------------------
@@ -277,6 +363,12 @@ ul{
   font-size: 23px;
 }
 
-
+.mapPosition{
+  top: -70.80em;
+  position: relative;
+  height: 55em; 
+  width: 35em;
+  right: -83.95em;
+}
 
 

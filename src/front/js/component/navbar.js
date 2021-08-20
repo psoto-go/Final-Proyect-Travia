@@ -5,7 +5,7 @@ import logo from "../../img/golondrinablanco.png";
 export const Navbar = () => {
 	return (
 		<>
-			<nav className="navbar navbar-expand-lg navbar-light palNav">
+			<nav className="navbar navbar-expand-lg navbar-light palNav colored">
 				<p className="navbar-brand">
 					<Link to="/">
 						<img src={logo} width="50" height="50" className="d-inline-block align-top" alt="Logo" />
@@ -22,37 +22,37 @@ export const Navbar = () => {
 					<span className="navbar-toggler-icon" />
 				</button>
 
-				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul className="navbar-nav mr-auto">
-						<li className="nav-item active">
+				<div className="collapse navbar-collapse colored" id="navbarSupportedContent colored ">
+					<ul className="navbar-nav mr-auto colored">
+						<li className="nav-item active colored">
 							<Link to="/">
-								<a className="btn btn-dark my-2 my-sm-0" href="#">
+								<a className="btn btn-dark my-2 my-sm-0 colored" href="#">
 									Inicio
 								</a>
 							</Link>
 						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#">
+						<li className="nav-item colored">
+							<a className="nav-link colored" href="#">
 								Quienes somos
 							</a>
 						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#">
+						<li className="nav-item colored">
+							<a className="nav-link colored" href="#">
 								Que hacemos
 							</a>
 						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#">
+						<li className="nav-item colored">
+							<a className="nav-link colored" href="#">
 								Destinos
 							</a>
 						</li>
 					</ul>{" "}
-					<form className="form-inline my-2 my-lg-0">
+					<form className="form-inline my-2 my-lg-0 colored">
 						<Link to="/signup">
-							<div className="nav-link">Registrarse</div>
+							<div className="nav-link colored">Registrarse</div>
 						</Link>
 						<Link to="/login">
-							<a className="nav-link" href="#">
+							<a className="nav-link colored" href="#">
 								Iniciar
 							</a>
 						</Link>
