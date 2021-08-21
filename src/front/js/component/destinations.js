@@ -2,8 +2,8 @@ import React, { Component, useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { api_url } from "../constants";
+import { Featured } from "./featured";
 
-import { FeaturedHotelsCities } from "./featuredHotelsCities";
 export const Destinations = () => {
 	const [detalles, setDetalles] = useState();
 
@@ -58,16 +58,16 @@ export const Destinations = () => {
 											<p className="card-text ml-8">{detalles[index].description}</p>
 										</div>
 									</div>
-									{detalles
-										? detalles.map((item, indexa) => {
-												console.log(detalles[index].hotels);
-												// <FeaturedHotelsCities
-												// 	key={indexa}
-												// 	// name={detalles[index].hotels[indexa]}
-
-												// 	// url={detalles[index].hotels.name}
-												// 	// description={detalles[index].hotels.description}
-												// />;
+									{detalles[index].hotels
+										? detalles[index].hotels.map((item, indexa) => {
+												return (
+													<Featured
+														key={indexa}
+														name={detalles[index].hotels[indexa].name}
+														url={detalles[index].hotels[indexa].HotelArchives[0].url}
+														description={detalles[index].hotels[indexa].description}
+													/>
+												);
 										  })
 										: "adsfa"}
 								</div>
