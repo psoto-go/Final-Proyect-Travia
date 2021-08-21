@@ -259,7 +259,7 @@ def get_reviews():
     response = []
     for x in reviews:
         response.append(x.serialize())
-    return jsonify(response), 200
+    return jsonify({"response": response}), 200
 
 
 

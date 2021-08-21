@@ -1,47 +1,21 @@
-import React from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { api_url } from "../constants";
 
-export const Reviews = () => {
+export const Reviews = props => {
 	return (
-		<div className="resenasStyle">
-			<h2 className="p-5">Nuestros usuarios opinan</h2>
-			<div className="row">
-				<div className="card">
-					<div className="card-header">Pablo</div>
-					<div className="card-body">
-						<blockquote className="blockquote mb-0">
-							<p>A well-known quote, contained in a blockquote element.</p>
-							<footer className="blockquote-footer">
-								Someone famous in <cite title="Source Title">Source Title</cite>
-							</footer>
-						</blockquote>
-					</div>
-				</div>
-				<div className="card">
-					<div className="card-header">Alejandro</div>
-					<div className="card-body">
-						<blockquote className="blockquote mb-0">
-							<p>A well-known quote, contained in a blockquote element.</p>
-							<footer className="blockquote-footer">
-								Someone famous in <cite title="Source Title">Source Title</cite>
-							</footer>
-						</blockquote>
-					</div>
-				</div>
-				<div className="card">
-					<div className="card-header">David</div>
-					<div className="card-body">
-						<blockquote className="blockquote mb-0">
-							<p>A well-known quote, contained in a blockquote element.</p>
-							<footer className="blockquote-footer">
-								Someone famous in <cite title="Source Title">Source Title</cite>
-							</footer>
-						</blockquote>
-					</div>
-				</div>
+		<div className="card">
+			<div className="card-header">{props.user_id}</div>
+			<div className="card-body">
+				<blockquote className="blockquote mb-0">
+					<p>{props.description}</p>
+				</blockquote>
 			</div>
-			<button type="button" className=" botonCenter mx-auto btn btn-warning mt-5">
-				Leer mas
-			</button>
 		</div>
 	);
+};
+Reviews.propTypes = {
+	user_id: PropTypes.number,
+	description: PropTypes.string
 };

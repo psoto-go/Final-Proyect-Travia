@@ -65,7 +65,7 @@ export const Destinations = () => {
 														key={indexa}
 														name={detalles[index].hotels[indexa].name}
 														url={detalles[index].hotels[indexa].HotelArchives[0].url}
-														description={detalles[index].hotels[indexa].description}
+														city_id={detalles[index].name}
 													/>
 												);
 										  })
