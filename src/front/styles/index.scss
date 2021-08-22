@@ -3,5 +3,33 @@
 */
 
 .galleryView{
-    background-color: red;
+    
+    justify-content: center;
+    border-color: greenyellow;
+    margin-bottom: 5em;
+}
+
+.cardPriceContent{
+    
+    width: fit-content;
+}
+
+.card{
+    //background-color: lightblue;
+    width: fit-content;
+}
+
+.resenasDetail{
+    
+    background-color:rgba(139, 217, 150, 0.5)
+    
+  }
+
+.parraf{
+    width: 60%;
+}
+.ajustDate{
+
+    width: 40em;
+   
 }

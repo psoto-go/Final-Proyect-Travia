@@ -5,19 +5,21 @@ export const HotelServices = () => {
 		<div className="serviciosHotel">
 			<h3>Servicios del Hotel</h3>
 
-			<button type="button" className="btn btn-light">
-				$Piscina
+			<button type="button" className="btn btn-light bg-info text-white">
+				Piscina
 			</button>
 
-			<button type="button" className="btn btn-light">
-				$Restaurante
+			<button type="button" className="btn btn-light bg-info text-white">
+				Restaurante
 			</button>
 
-			<button type="button" className="btn btn-light">
-				$Gimnasio
+			<button type="button" className="btn btn-light bg-info text-white">
+				Gimnasio
 			</button>
 			<br />
-			<a href="/">ver todos</a>
+			<a className="text-info" href="#">
+				ver todos los servicios
+			</a>
 		</div>
 	);
 };

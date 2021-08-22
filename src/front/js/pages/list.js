@@ -15,7 +15,7 @@ export const List = () => {
 					<ChoiceHotel />
 				</div>
 			</div>
-			<div id="mapFrame">
+			<div>
 				<Map />
 			</div>
 		</>

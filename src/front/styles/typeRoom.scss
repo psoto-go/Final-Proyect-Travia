@@ -1,0 +1,39 @@
+.headerRoom{
+    font-size: 150%;
+    display: flex;
+    padding-top: 1%;
+    color: white;
+    background-color: #8BD996;
+    
+}
+.typeRoom1{
+    margin-top: 60px;
+    border: 2px solid #8bd996;
+    border-radius: 10px;
+   
+}
+
+.photoRoom{
+    
+    align-items: center;
+}
+.imageRoom{
+    margin: 2px;
+    margin-left: 0px;
+    border-radius: 10px;
+}
+
+.btnServiceRoomOn{
+   
+    border-radius: 20px;
+    background-color: #8BD996;
+    color: white;
+}
+.btnServiceRoomOff{
+    color: white;
+    border-radius: 20px;
+    background-color: grey;
+}
+.containerRoom{
+    padding-top: 1em;
+}
