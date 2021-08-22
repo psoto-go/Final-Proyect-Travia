@@ -33,23 +33,35 @@ export const Destinations = () => {
 		);
 	});
 
-	const listCitiesDetails = detalles.map((item, index) => {
+	const listCitiesDetails = detalles.map((city, index) => {
+		const listHotels = city.hotels.map((hotel, indexa) => {
+			return (
+				<Featured
+					key={indexa}
+					name={hotel.name}
+					url={hotel.HotelArchives[0].url}
+					city_id={city.id}
+				/>
+			);
+		})
+
 		return (
 			<div
 				key={index}
 				className={index != 0 ? "tab-pane fade" : "tab-pane fade show active"}
-				id={`pills-${item.id}`}
+				id={`pills-${city.id}`}
 				role="tabpanel"
-				aria-labelledby={`pills-${item.id}-tab`}>
+				aria-labelledby={`pills-${city.id}-tab`}>
 				<div className="imgRedonda">
-					<img src={item.url} alt="..." />
+					<img src={city.url} alt="..." />
 				</div>
 				<div>
 					<div className="card-body positionText">
-						<h5 className="card-title p-3 ml-5">{item.name}</h5>
-						<p className="card-text ml-8">{item.description}</p>
+						<h5 className="card-title p-3 ml-5">{city.name}</h5>
+						<p className="card-text ml-8">{city.description}</p>
 					</div>
 				</div>
+				{listHotels}
 			</div>
 		);
 	});
