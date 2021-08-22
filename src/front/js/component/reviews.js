@@ -4,9 +4,18 @@ import { Link } from "react-router-dom";
 import { api_url } from "../constants";
 
 export const Reviews = props => {
+	const [detalles, setDetalles] = useState([]);
+	useEffect(() => {
+		fetch(api_url + "/api/user/" + props.user_id)
+			.then(response => response.json())
+			.then(result => {
+				setDetalles(result.response);
+			})
+			.catch(error => console.log("Error", error));
+	}, []);
 	return (
 		<div className="card">
-			<div className="card-header">{props.user_id}</div>
+			<div className="card-header">{detalles.name}</div>
 			<div className="card-body">
 				<blockquote className="blockquote mb-0">
 					<p>{props.description}</p>

@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 import { api_url } from "../constants";
 
 export const Featured = props => {
-
 	const [city, setCity] = useState({});
 
 	useEffect(() => {
-		fetch(api_url + "/api/cities/"+ props.city_id)
+		fetch(api_url + "/api/city/" + props.city_id)
 			.then(response => response.json())
 			.then(result => {
 				setCity(result.response);

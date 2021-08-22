@@ -45,6 +45,12 @@ def handle_hello2():
     
     return jsonify(response), 200
 
+@api.route('/user/<int:user_id>', methods=['GET'])
+def userid(user_id):
+    body = request.get_json()
+    cha = User.query.get(user_id)
+    return jsonify({"response":cha.serialize()}), 200
+
 # @api.route('/allusers', methods=['GET'])
 # def handle_hello():
 #     user = User.query.all()
@@ -251,6 +257,12 @@ def get_cities():
         response.append(x.serialize())
     return jsonify({"response": response}), 200
 
+@api.route('/city/<int:city_id>', methods=['GET'])
+def cityid(city_id):
+    body = request.get_json()
+    cha = City.query.get(city_id)
+    return jsonify({"response":cha.serialize()}), 200
+
 #reviews
 
 @api.route('/featuredreviews', methods=['GET'])
@@ -260,6 +272,12 @@ def get_reviews():
     for x in reviews:
         response.append(x.serialize())
     return jsonify({"response": response}), 200
+
+@api.route('/review/<int:review_id>', methods=['GET'])
+def reviewid(review_id):
+    body = request.get_json()
+    cha = Reviews.query.get(review_id)
+    return jsonify({"response":cha.serialize()}), 200
 
 
 
