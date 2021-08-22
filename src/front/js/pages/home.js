@@ -9,17 +9,63 @@ import { Reviews } from "../component/reviews";
 import { Destinations } from "../component/destinations";
 import { Featured } from "../component/featured";
 import { Subscribe } from "../component/subscribe";
+import { api_url } from "../constants";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 	const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDaq_DXg5Oe1n6XQFUFMQu8EusN8NOXhZY`;
+	const [hotels, setHotels] = useState();
+	const [reviews, setReviews] = useState();
+
+	useEffect(() => {
+		fetch(api_url + "/api/featuredhotels")
+			.then(response => response.json())
+			.then(result => {
+				setHotels(result.response);
+			})
+			.catch(error => console.log("Error", error));
+
+		fetch(api_url + "/api/featuredreviews")
+			.then(response => response.json())
+			.then(result => {
+				setReviews(result.response);
+			})
+			.catch(error => console.log("Error", error));
+	}, []);
+
 	return (
 		<>
 			<Header />
 			<h3 className="pepito mx-auto">Destacados</h3>
-			<Featured />
+			{hotels
+				? hotels.map((item, index) => {
+						return (
+							<Featured
+								key={index}
+								name={hotels[index].name}
+								url={hotels[index].HotelArchives[0].url}
+								city_id={hotels[index].city_id}
+							/>
+						);
+				  })
+				: "Cargando Hoteles..."}
 			<Destinations />
-			<Reviews />
+			<div className="resenasStyle">
+				<h2 className="p-5">Nuestros usuarios opinan</h2>
+				<div className="row">
+					{reviews
+						? reviews.map((item, index) => {
+								return (
+									<Reviews
+										key={index}
+										user_id={reviews[index].user_id}
+										description={reviews[index].description}
+									/>
+								);
+						  })
+						: "Cargando reviews..."}
+				</div>
+			</div>
 			<Subscribe />
 		</>
 	);

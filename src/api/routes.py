@@ -249,7 +249,7 @@ def get_cities():
     response = []
     for x in cities:
         response.append(x.serialize())
-    return jsonify(response), 200
+    return jsonify({"response": response}), 200
 
 #reviews
 
@@ -259,7 +259,7 @@ def get_reviews():
     response = []
     for x in reviews:
         response.append(x.serialize())
-    return jsonify(response), 200
+    return jsonify({"response": response}), 200
 
 
 

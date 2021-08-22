@@ -36,7 +36,7 @@ export const Destinations = () => {
 									</li>
 								);
 						  })
-						: "¿cargando?"}
+						: "adsfa"}
 				</ul>
 			</div>
 			<div className="tab-content" id="pills-tabContent">
@@ -69,11 +69,11 @@ export const Destinations = () => {
 													/>
 												);
 										  })
-										: "¿aun cargando?"}
+										: "adsfa"}
 								</div>
 							);
 					  })
-					: "sigo cargando?"}
+					: "adsfa"}
 			</div>
 		</>
 	);
