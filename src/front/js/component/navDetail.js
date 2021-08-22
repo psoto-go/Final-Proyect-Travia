@@ -25,7 +25,7 @@ export const NavDetail = () => {
 					</a>
 				</li>
 			</ul>
-			<hr></hr>
+			<hr />
 			<div className="parraf">
 				<h3>Descripcion</h3>
 				<p>
