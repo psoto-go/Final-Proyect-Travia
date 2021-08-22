@@ -32,8 +32,9 @@ export const Featured = props => {
 		</>
 	);
 };
+
 Featured.propTypes = {
 	url: PropTypes.string,
 	name: PropTypes.string,
-	city_id: PropTypes.string
+	city_id: PropTypes.number
 };

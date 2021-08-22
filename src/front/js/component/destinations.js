@@ -56,11 +56,9 @@ export const Destinations = () => {
 
 	return (
 		<div>
-			<div className="lugares">
-				<ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-					{listCities}
-				</ul>
-			</div>
+			<ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+				{listCities}
+			</ul>
 			<div className="tab-content" id="pills-tabContent">
 				{listCitiesDetails}
 			</div>
