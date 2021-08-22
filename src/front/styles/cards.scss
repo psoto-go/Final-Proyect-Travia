@@ -6,18 +6,7 @@
   overflow-x: auto;
   overflow-y: hidden;
 }
-.card {
-  /*float: left;*/
-  max-width: 33.333%;
-  padding: .75rem;
-  padding-left: 75px;
-  margin-bottom: 2rem;
-  border: 0;
-  flex-basis: 33.333%;
-  margin-left: 2%;
-  
 
-}
 
 .card > img {
   margin-bottom: .75rem;
@@ -32,18 +21,7 @@
   width: 420px;
   height: 275px;
 }
-.cardPriceContent{
-  display: inline-flex;
-  float: right;
-  
-  
- 
-}
-.cardPrice{
-  display: inline;
-  float: right;
-  padding: 10%;
-}
+
 
 
 
@@ -77,11 +55,7 @@
   display: grid;
   padding: 1em
 }
-.resenasDetail{
-  
-  background-color:rgba(139, 217, 150, 0.5)
-  
-}
+
 
 .posiFeat{
   position: relative;

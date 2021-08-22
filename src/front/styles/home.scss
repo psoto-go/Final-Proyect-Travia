@@ -10,7 +10,7 @@
 }
 .resenasStyle{
      margin: 3rem;
-    padding: 4em;
+      padding: 4em;
     
 }
 .lugares{
@@ -236,7 +236,11 @@ ul{
   display: inline;
   float: right;
   padding-right: 10%;
+  
 
+}
+.serviciosHotel h3{
+  position: inherit;
   
 }
 .fixP2{
@@ -256,9 +260,9 @@ ul{
 .cardPrice{
   display: inline;
   float: right;
-  margin-top: -18em;
-  margin-right: -30em;
-  padding: 10%;
+  margin-top: -18.9em;
+  margin-right: -23.5em;
+  //padding: 10%;
 }
 .hotelSelect{
   display: inline;
@@ -291,12 +295,16 @@ ul{
   color: white;
   //background-color: #394273;
 }
-.coloredh1, h1, h3{
+.coloredh1, h1{
   color: #394273;
   font-weight: 700;
-  position: relative;
+  //position: relative;
   font-size: 310%;
   top: 5em;
+}
+h3, h2{
+  color: #394273;
+  font-weight: 700;
 }
 .textMargin{
     display: inline-block;
@@ -366,7 +374,7 @@ ul{
 }
 
 .mapPosition{
-  top: -70.80em;
+  top: -58.80em;
   position: relative;
   height: 55em; 
   width: 35em;
