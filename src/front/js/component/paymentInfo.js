@@ -6,6 +6,7 @@ import "react-phone-input-2/lib/style.css";
 
 export const PaymentInfo = () => {
 	const [value, setValue] = useState();
+
 	return (
 		<div>
 			<h1>Informacion del huesped</h1>
@@ -61,6 +62,34 @@ export const PaymentInfo = () => {
 					<div className="form-group col-md-2">
 						<label htmlFor="inputZip">Zip</label>
 						<input type="text" className="form-control" id="inputZip" />
+					</div>
+
+					<div>
+						<div className="input-group mb-3">
+							<select className="custom-select" id="inputGroupSelect02">
+								<option selected>Choose...</option>
+
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+							</select>
+							<div className="input-group-append" />
+							<select className="custom-select" id="inputGroupSelect02">
+								<option selected>Choose...</option>
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+							</select>
+							<div className="input-group-append" />
+							<select className="custom-select" id="inputGroupSelect02">
+								<option selected>Choose...</option>
+
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+							</select>
+							<div className="input-group-append" />
+						</div>
 					</div>
 					<PhoneInput placeholder="Enter phone number" value={value} onChange={setValue} />
 				</div>

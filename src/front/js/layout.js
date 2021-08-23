@@ -20,7 +20,7 @@ import { AdminProvincias } from "./pages/adminProvincias";
 import { AdminHoteles } from "./pages/adminHoteles";
 import { OnlyHotel } from "./pages/onlyHotel";
 import { PruebaStripe } from "./pages/pruebaStripe";
-import { PaymentGateway } from "./pages/ paymentGateway";
+import { PaymentGateway } from "./pages/paymentGateway";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
