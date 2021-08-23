@@ -46,7 +46,6 @@ class Hotel(db.Model):
     reviews = db.relationship('Reviews', backref='Hotel', lazy=True)
     city_id = db.Column(db.Integer, db.ForeignKey('city.id'),
         nullable=False)
-    bookings = db.relationship('Booking', backref='hotel', lazy=True)
     HotelArchives = db.relationship('HotelArchives', backref='Hotel', lazy=True)
 
     def serialize(self):
@@ -190,8 +189,6 @@ class RoomArchives(db.Model):
 
 class Booking(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    hotel_id = db.Column(db.Integer, db.ForeignKey('hotel.id'),
-        nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'),
         nullable=False)
     room_id = db.Column(db.Integer, db.ForeignKey('room.id'),
@@ -200,12 +197,9 @@ class Booking(db.Model):
     end_date= db.Column(db.String(120), unique=False, nullable=True)
     price = db.Column(db.Integer, unique=False, nullable=False)
     
-    
-
     def serialize(self):
         return {
             "id": self.id,
-            "hotel_id": self.hotel_id,
             "user_id": self.user_id,
             "room_id": self.room_id,
             "start_date": self.start_date,
@@ -213,9 +207,6 @@ class Booking(db.Model):
             "price": self.price        
             # do not serialize the password, its a security breach
         }
-
-    
-
 
 class SeedDataEmployee:
 
@@ -463,10 +454,9 @@ class SeedDataEmployee:
         db.session.commit()
 
     def create_booking(self):
-        self.create_booking = Booking(hotel_id = self.hotel.id, user_id = self.user.id, room_id = self.room.id, start_date = "11/10/2021", end_date = "20/10/2021", price = 200)
+        self.create_booking = Booking(user_id = self.user.id, room_id = self.room.id, start_date = "11/10/2021", end_date = "20/10/2021", price = 200)
         db.session.add(self.create_booking)
         db.session.commit()
-
 
     def create_data(self):
         self.create_user()

@@ -4,12 +4,12 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, SeedDataEmployee, City
 from api.utils import generate_sitemap, APIException
+from api.hotel_searcher import HotelSearcher
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 import cloudinary
 import cloudinary.uploader
-
 
 api = Blueprint('api', __name__)
 
@@ -213,10 +213,19 @@ def new_hotel():
 
 @api.route('/hotels', methods=['GET'])
 def get_hotel():
-    hotel = Hotel.query.all()
+    args = request.args
+    city_id = args.get("city_id", None)
+    people = args.get("people", None)
+    start_date = args.get("start_date", None)
+    end_date = args.get("end_date", None)
+
+    seacher = HotelSearcher(city_id, people, start_date, end_date)
+    hotel = seacher.search()
     response = []
+    
     for x in hotel:
         response.append(x.serialize())
+
     return jsonify({"response":  response}), 200
 
 @api.route('/featuredhotels', methods=['GET'])
