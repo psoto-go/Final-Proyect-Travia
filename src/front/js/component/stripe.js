@@ -26,6 +26,7 @@ const CheckoutForm = () => {
 				src="https://www.hotelartsbarcelona.com/app/uploads/2021/01/gifthotelartsresponsive.png"
 				className="img-fluid"
 			/>
+			<h3 className="text-center my-2">Price : 100$</h3>
 			<div className="form-group">
 				<CardElement className="form-control" />
 			</div>
