@@ -31,7 +31,7 @@ export const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/hotelDetail">
+						<Route exact path="/hotel/:theid">
 							<HotelDetail />
 						</Route>
 						<Route exact path="/demo">

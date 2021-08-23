@@ -231,7 +231,7 @@ def get_featuredhotel():
 def hotelid(hotel_id):
     body = request.get_json()
     cha = Hotel.query.get(hotel_id)
-    return jsonify(cha.serialize()), 200
+    return jsonify({"response": cha.serialize()}), 200
 
 #City
 
