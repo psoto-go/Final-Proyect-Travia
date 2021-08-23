@@ -36,6 +36,7 @@ export const Search = () => {
 	};
 	console.log(detalles);
 	// {
+
 	// 	alert(
 	// 		"sitio = " +
 	// 			loginValue.place +
