@@ -14,8 +14,8 @@ import { api_url } from "../constants";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 	const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDaq_DXg5Oe1n6XQFUFMQu8EusN8NOXhZY`;
-	const [hotels, setHotels] = useState();
-	const [reviews, setReviews] = useState();
+	const [hotels, setHotels] = useState([]);
+	const [reviews, setReviews] = useState([]);
 
 	useEffect(() => {
 		fetch(api_url + "/api/featuredhotels")
@@ -33,40 +33,25 @@ export const Home = () => {
 			.catch(error => console.log("Error", error));
 	}, []);
 
+	const listHotels = hotels.map((hotel, index) => {
+		return <Featured key={index} name={hotel.name} url={hotel.HotelArchives[0].url} city_id={hotel.city_id} />;
+	});
+
+	const listReviews = reviews.map((review, index) => {
+		return <Reviews key={index} user_id={review.user_id} description={review.description} />;
+	});
+
 	return (
-		<>
+		<div>
 			<Header />
 			<h3 className="pepito mx-auto">Destacados</h3>
-			{hotels
-				? hotels.map((item, index) => {
-						return (
-							<Featured
-								key={index}
-								name={hotels[index].name}
-								url={hotels[index].HotelArchives[0].url}
-								city_id={hotels[index].city_id}
-							/>
-						);
-				  })
-				: "Cargando Hoteles..."}
+			{listHotels}
 			<Destinations />
 			<div className="resenasStyle">
 				<h2 className="p-5">Nuestros usuarios opinan</h2>
-				<div className="row">
-					{reviews
-						? reviews.map((item, index) => {
-								return (
-									<Reviews
-										key={index}
-										user_id={reviews[index].user_id}
-										description={reviews[index].description}
-									/>
-								);
-						  })
-						: "Cargando reviews..."}
-				</div>
+				<div className="row">{listReviews}</div>
 			</div>
 			<Subscribe />
-		</>
+		</div>
 	);
 };
