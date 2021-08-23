@@ -1,4 +1,4 @@
-from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, SeedDataEmployee, City
+from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, City
 
 
 class HotelSearcher:

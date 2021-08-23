@@ -2,9 +2,10 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, SeedDataEmployee, City
+from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, City
 from api.utils import generate_sitemap, APIException
 from api.hotel_searcher import HotelSearcher
+from api.seed import SeedData
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
@@ -306,7 +307,7 @@ def current_user(identity):
 #seed_data
 @api.route('/seed_data', methods=['GET']) 
 def seed_data():
-    data = SeedDataEmployee()
+    data = SeedData()
     data.create_data()
     
 
