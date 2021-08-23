@@ -41,18 +41,16 @@ export const Destinations = () => {
 		return (
 			<div
 				key={index}
-				className={index != 0 ? "tab-pane fade" : "tab-pane fade show active"}
+				className={index != 0 ? "m-2 tab-pane fade " : "  tab-pane fade show active m-2"}
 				id={`pills-${city.id}`}
 				role="tabpanel"
 				aria-labelledby={`pills-${city.id}-tab`}>
-				<div className="imgRedonda">
+				<div className="imgRedonda col-4 m-2">
 					<img src={city.url} alt="..." />
 				</div>
-				<div>
-					<div className="card-body positionText">
-						<h5 className="card-title p-3 ml-5">{city.name}</h5>
-						<p className="card-text ml-8">{city.description}</p>
-					</div>
+				<div className="m-2 col-4 card-body positionText">
+					<h5 className="card-title p-3 ml-5">{city.name}</h5>
+					<p className="card-text ml-8">{city.description}</p>
 				</div>
 				{listHotels}
 			</div>
@@ -60,11 +58,11 @@ export const Destinations = () => {
 	});
 
 	return (
-		<div>
-			<ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+		<div className="mt-4 pl-4  ml-4">
+			<ul className="nav nav-pills " id="pills-tab" role="tablist">
 				{listCities}
 			</ul>
-			<div className="tab-content" id="pills-tabContent">
+			<div className="tab-content " id="pills-tabContent">
 				{listCitiesDetails}
 			</div>
 		</div>
