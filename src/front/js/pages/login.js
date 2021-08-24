@@ -31,10 +31,10 @@ export const Login = () => {
 	if (actions.isUserAuth()) {
 		history.push("/user");
 	}
-	// if (actions.isAdminAuth()) {
-	// 	console.log("me");
-	// 	history.push("/admin");
-	// }
+	if (actions.isAdminAuth()) {
+		console.log("me");
+		history.push("/userDash");
+	}
 	const respuestaGoogle = respuesta => {
 		if (respuesta.accessToken) {
 			actions.signin_google(respuesta);
