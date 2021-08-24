@@ -32,7 +32,9 @@ export const AdminHoteles = () => {
 							</div>
 						</div>
 						<div className="col-3 text-center">
-							<button className=" create">+ Crear hotel</button>
+							<Link to="onlyHotel">
+								<button className=" create">+ Crear hotel</button>
+							</Link>
 						</div>
 					</div>
 				</div>

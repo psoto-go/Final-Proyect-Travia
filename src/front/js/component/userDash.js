@@ -17,7 +17,7 @@ export const UserDash = () => {
 				<div className="col-4">alejandro@gmail.com</div>
 			</div>
 			<div className="mt-4 m-3">
-				<Link to="#">
+				<Link to="/admin">
 					<h2>Usuarios</h2>
 				</Link>
 			</div>
