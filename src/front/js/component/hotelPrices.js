@@ -47,8 +47,8 @@ export const HotelPrices = props => {
 };
 HotelPrices.propTypes = {
 	url: PropTypes.string,
-	persons: PropTypes.string,
-	beds: PropTypes.string,
+	persons: PropTypes.number,
+	beds: PropTypes.number,
 	price: PropTypes.number,
 	kind: PropTypes.string
 };
