@@ -19,6 +19,8 @@ import { Admindash } from "./pages/adminDash";
 import { AdminProvincias } from "./pages/adminProvincias";
 import { AdminHoteles } from "./pages/adminHoteles";
 import { OnlyHotel } from "./pages/onlyHotel";
+import { PruebaStripe } from "./pages/pruebaStripe";
+import { PaymentGateway } from "./pages/paymentGateway";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -69,6 +71,12 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/onlyHotel">
 							<OnlyHotel />
+						</Route>
+						<Route exact path="/prueba">
+							<PruebaStripe />
+						</Route>
+						<Route exact path="/payment">
+							<PaymentGateway />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
