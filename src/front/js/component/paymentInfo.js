@@ -10,10 +10,13 @@ export const PaymentInfo = () => {
 
 	return (
 		<div>
-			<h1>Informacion del huesped</h1>
-			<Link>
-				<h4>¿Ya eres usuario? Iniciar sesión</h4>
-			</Link>
+			<div className="mb-5">
+				<h1>Informacion del huesped</h1>
+				<Link>
+					<h4>¿Ya eres usuario? Iniciar sesión</h4>
+				</Link>
+			</div>
+
 			<form>
 				<div className="form-row">
 					<div className="form-group col-md-6">
