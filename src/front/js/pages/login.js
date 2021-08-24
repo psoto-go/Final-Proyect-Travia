@@ -33,7 +33,7 @@ export const Login = () => {
 	}
 	if (actions.isAdminAuth()) {
 		console.log("me");
-		history.push("/userDash");
+		history.push("/adminDash");
 	}
 	const respuestaGoogle = respuesta => {
 		if (respuesta.accessToken) {

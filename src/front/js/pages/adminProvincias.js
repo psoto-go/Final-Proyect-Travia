@@ -1,9 +1,25 @@
-import React from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { api_url } from "../constants";
 import "../../styles/admDash.scss";
+import "../../styles/provincias.scss";
 import { Provincias } from "../component/provincias";
 
 export const AdminProvincias = () => {
+	const [city, setCity] = useState([]);
+
+	useEffect(() => {
+		fetch(api_url + "/api/cities")
+			.then(response => response.json())
+			.then(result => {
+				setCity(result.response);
+			})
+			.catch(error => console.log("Error", error));
+	}, []);
+
+	const listCities = city.map((item, index) => {
+		return <Provincias url={item.url} name={item.name} key={index}></Provincias>;
+	});
 	return (
 		<>
 			<div>
@@ -38,8 +54,8 @@ export const AdminProvincias = () => {
 					</div>
 				</div>
 			</div>
-			<div>
-				<Provincias />
+			<div className="container3">
+				<div className="row">{listCities}</div>
 			</div>
 		</>
 	);
