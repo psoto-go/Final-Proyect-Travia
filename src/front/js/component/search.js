@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
+import { api_url } from "../constants";
 
 export const Search = () => {
 	const { store, actions } = useContext(Context);
 	const [loginValue, setLoginValue] = useState(firstValue);
+	const [detalles, setDetalles] = useState();
 	let history = useHistory();
 
 	const firstValue = {
@@ -19,24 +21,38 @@ export const Search = () => {
 
 	const submitForm = e => {
 		e.preventDefault();
-		{
-			alert(
-				"sitio = " +
-					loginValue.place +
-					"\n" +
-					"inicio = " +
-					loginValue.datein +
-					"\n" +
-					"fin = " +
-					loginValue.dateout +
-					"\n" +
-					"personas = " +
-					loginValue.number
-			);
-			console.log(loginValue);
-			history.push("/list");
-		}
+		fetch(
+			api_url +
+				"/api/hotels?" +
+				new URLSearchParams({
+					city_id: loginValue.place
+				})
+		)
+			.then(response => response.json())
+			.then(result => {
+				setDetalles(result.response);
+			})
+			.catch(error => console.log("Error", error));
 	};
+	console.log(detalles);
+	// {
+
+	// 	alert(
+	// 		"sitio = " +
+	// 			loginValue.place +
+	// 			"\n" +
+	// 			"inicio = " +
+	// 			loginValue.datein +
+	// 			"\n" +
+	// 			"fin = " +
+	// 			loginValue.dateout +
+	// 			"\n" +
+	// 			"personas = " +
+	// 			loginValue.number
+	// 	);
+	// 	console.log(loginValue);
+	// 	history.push("/list");
+	// }
 
 	return (
 		<div id="searchBar">

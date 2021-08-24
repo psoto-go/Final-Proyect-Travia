@@ -1,31 +1,85 @@
-import React, { Component } from "react";
-
+import React, { Component, useContext, useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Gallery } from "../component/gallery";
+import { api_url } from "../constants";
 
 import { NavDetail } from "../component/navDetail";
 import { Availability } from "../component/availability";
 import { HotelPrices } from "../component/hotelPrices";
 import { Reviews } from "../component/reviews";
+import { HotelServices } from "../component/hotelServices";
 
 export const HotelDetail = () => {
+	const [hotel, setHotel] = useState({});
+	const params = useParams();
+
+	useEffect(() => {
+		fetch(api_url + "/api/hotel/" + params.theid)
+			.then(response => response.json())
+			.then(result => {
+				setHotel(result.response);
+			})
+			.catch(error => console.log("Error", error));
+	}, []);
+
+	const listRooms = hotel.rooms
+		? hotel.rooms.map((item, index) => {
+				return (
+					<HotelPrices
+						key={index}
+						url={item.roomArchives[0].url}
+						persons={item.number_of_persons}
+						beds={item.number_of_beds}
+						price={item.price}
+						kind={item.kind}
+					/>
+				);
+		  })
+		: "asdf";
+
+	const listGallery = hotel.HotelArchives ? (
+		<Gallery
+			urls={hotel.HotelArchives.map(item => {
+				return item.url;
+			})}
+		/>
+	) : (
+		""
+	);
+
+	const listServices = hotel.services
+		? hotel.services.map((item, index) => {
+				return <HotelServices key={index} service={item.name} />;
+		  })
+		: "asdf";
+
+	const listReviews = hotel.reviews
+		? hotel.reviews.map((item, index) => {
+				return <Reviews key={index} user_id={item.id} description={item.description} />;
+		  })
+		: "asdf";
+
 	return (
 		<>
 			<div className="m-5">
-				<h2>Loren Ipsum dolor sit amet</h2>
+				<h2>{hotel.name}</h2>
 
 				<p className="pl-5"> Ipsum Loren Ipsum</p>
-
-				<Gallery />
-				<NavDetail />
-
+				{listGallery}
+				<NavDetail description={hotel.description} />
+				<div className="serviciosHotel">
+					<h3>Servicios del Hotel</h3>
+					{listServices}
+					<br />
+				</div>
 				<Availability />
-				<HotelPrices />
-				<HotelPrices />
-				<HotelPrices />
+				{listRooms}
 			</div>
-			<div className="resenasDetail">
-				<Reviews />
+			<div className="resenasStyle">
+				<h2 className="p-5">Nuestros usuarios opinan</h2>
+				<div className="row">{listReviews}</div>
 			</div>
+
 			<div>
 				<p className="ml-5">
 					<h3 className="mt-5">Politicas de Reserva</h3>

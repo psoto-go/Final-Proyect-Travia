@@ -1,10 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
 import { HotelServices } from "../component/hotelServices";
 import "../../styles/index.scss";
-export const Availability = () => {
+import PropTypes from "prop-types";
+import { api_url } from "../constants";
+
+export const Availability = props => {
 	return (
 		<div>
-			<HotelServices />
 			<h3>Disponibilidad</h3>
 			<div className="p-3 mb-4 mt-4 bg-light text-dark rounded-pill ajustDate">
 				<div className="textMargin">Entrada</div>

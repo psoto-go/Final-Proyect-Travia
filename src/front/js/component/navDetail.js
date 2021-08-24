@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "../../styles/index.scss";
-export const NavDetail = () => {
+export const NavDetail = props => {
 	return (
 		<>
 			<ul className="nav nav-pills nav-fill">
@@ -28,13 +29,11 @@ export const NavDetail = () => {
 			<hr />
 			<div className="parraf">
 				<h3>Descripcion</h3>
-				<p>
-					Ut tempus lobortis urna eu mattis. Donec semper ultricies ultricies. Suspendisse porttitor metus
-					turpis, sed dictum turpis aliquam non. Phasellus eu porta sem. Vivamus cursus libero rhoncus,
-					vehicula tortor ac, lacinia nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-					posuere cubilia curae; Donec placerat erat vel purus dignissim tempor.
-				</p>
+				<p>{props.description}</p>
 			</div>
 		</>
 	);
+};
+NavDetail.propTypes = {
+	description: PropTypes.string
 };

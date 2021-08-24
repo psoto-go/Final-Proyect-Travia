@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import "../../styles/index.scss";
 
-export const HotelPrices = () => {
+export const HotelPrices = props => {
 	return (
 		<div className="card">
 			<a>
-				Arcadia Hotel
 				<i className="fas fa-star" />
 				<i className="fas fa-star" />
 				<i className="fas fa-star" />
@@ -23,33 +23,32 @@ export const HotelPrices = () => {
 				<div>
 					<div className="row">
 						<div className="col-4">
-							<img
-								className="card-img"
-								src="https://www.hotelesparaadultos.com/img5/plaza-sb-barcelona-suite-superior-jacuzzi.jpg"
-								alt="Jacuzzi"
-							/>
+							<img className="card-img" src={props.url} alt="imagen" />
 						</div>
 						<div className="col-4">
 							<p>
-								Habitación Doble Especificaciones:{" "}
-								<li>
-									1 habitacion,{" "}
-									<li>
-										2 personas
-										<li>1 baño</li>
-									</li>
-								</li>
+								Habitación {props.kind} Especificaciones:{" "}
+								<li>{`Numero de personas: ${props.persons}`}</li>
+								<li>{`Numero de camas: ${props.beds}`}</li>
+								<li>{`Precio noche: ${props.price}€`}</li>
 							</p>
 						</div>
 						<div className="col-4">
 							<Link to={"/"} className="btn btn-primary">
-								780€
+								Reservar!
 							</Link>
-							<h6>Reserva por 35€ / Noche ( impuestos incluidos)</h6>
+							<h6>{`Reserva por ${props.price}€ / noche (impuestos incluidos)`}</h6>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	);
+};
+HotelPrices.propTypes = {
+	url: PropTypes.string,
+	persons: PropTypes.number,
+	beds: PropTypes.number,
+	price: PropTypes.number,
+	kind: PropTypes.string
 };
