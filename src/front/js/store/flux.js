@@ -55,6 +55,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("Error", error));
 			},
+			signin_google: paramsForm => {
+				if (paramsForm) {
+					setStore({ accesToken: paramsForm.accessToken, user: paramsForm });
+				}
+			},
 			isUserAuth: () => {
 				const store = getStore();
 				return store.accesToken !== null;
