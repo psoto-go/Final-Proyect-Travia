@@ -1,5 +1,5 @@
 .contenedor{
-    margin: 5rem;
+    //margin: 5rem;
     padding: 5em;
     
     
@@ -19,6 +19,7 @@
 }
 .positionText{
  display: inline-block;
+ 
  position: relative;
  top: -18em;
  left: 35em;
@@ -36,8 +37,11 @@
 
 .posiFeat{
   position: relative;
+  
+  width: fit-content;
   top: -15em;
-  left: 9em;
+  left: 13em;
+
 }
 
 
@@ -194,6 +198,7 @@ ul{
   display: inline-flex;
   margin: auto;
   margin-left: 15%;
+  
 
 }
 .btton{
@@ -299,7 +304,7 @@ ul{
   color: #394273;
   font-weight: 700;
   //position: relative;
-  font-size: 310%;
+  font-size: 340%;
   top: 5em;
 }
 h3, h2{
@@ -319,7 +324,7 @@ h3, h2{
     //margin-left: 400px; 
     //margin-top: 30px;
     display: inline-flex;    
-    margin: -26em 0 11em 55em;
+    margin: -15em 0 11em 55em;
     //margin-right: 5%;
     
     
@@ -381,4 +386,11 @@ h3, h2{
   right: -83.95em;
 }
 
+
+.elementStyle{
+  
+  width: 20em;
+  min-height: 15em; 
+  border-radius: 50px; 
+}
 

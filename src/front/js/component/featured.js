@@ -2,7 +2,7 @@ import React, { Component, useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { api_url } from "../constants";
-
+import "../../styles/home.scss";
 export const Featured = props => {
 	const [city, setCity] = useState({});
 
@@ -16,31 +16,24 @@ export const Featured = props => {
 	}, []);
 
 	return (
-		<>
-			<div className="inline-div">
-				<div className="hotel-item">
+		<div className="inline-div">
+			<div className="hotel-item">
+				<div>
 					<div>
-						<div className="col-sm-5">
-							<img
-								style={{ width: "300px", borderRadius: "50px" }}
-								className="card-img"
-								src={props.url}
-								alt="Jacuzzi"
-							/>
-						</div>
-						<div className="col-sm-7">
-							<div className="card-body posiFeat">
-								<a href="#" className="btn btn-primary">
-									More
-								</a>
-							</div>
+						<img className="card-img elementStyle" src={props.url} alt="Jacuzzi" />
+					</div>
+					<div>
+						<div className="card-body posiFeat">
+							<a href="#" className="btn btn-primary">
+								More
+							</a>
 						</div>
 					</div>
-					<h5 className="card-title">{props.name}</h5>
-					<p className="card-text">{city.name}</p>
 				</div>
+				<h5 className="card-title">{props.name}</h5>
+				<p className="card-text">{city.name}</p>
 			</div>
-		</>
+		</div>
 	);
 };
 

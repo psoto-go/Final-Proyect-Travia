@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import "../../styles/index.scss";
 import PropTypes from "prop-types";
 

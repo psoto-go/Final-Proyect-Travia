@@ -2,9 +2,9 @@ import React from "react";
 
 export const Subscribe = () => {
 	return (
-		<>
-			<h2 className="mx-auto">Afiliate a nuestro Newsletter</h2>
-			<form className="mx-auto form-inline my-2 my-lg-0">
+		<div>
+			<h2 className="text-center">Afiliate a nuestro Newsletter</h2>
+			<form className="justify-content-center form-inline">
 				<input
 					className="form-control mr-sm-2"
 					type="text"
@@ -15,6 +15,6 @@ export const Subscribe = () => {
 					Suscribete
 				</button>
 			</form>
-		</>
+		</div>
 	);
 };
