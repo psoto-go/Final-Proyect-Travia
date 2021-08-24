@@ -2,9 +2,10 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, SeedDataEmployee, City
+from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, City
 from api.utils import generate_sitemap, APIException
 from api.hotel_searcher import HotelSearcher
+from api.seed import SeedData
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
@@ -44,6 +45,12 @@ def handle_hello2():
         response.append(x.serialize())
     
     return jsonify(response), 200
+
+@api.route('/user/<int:user_id>', methods=['GET'])
+def userid(user_id):
+    body = request.get_json()
+    cha = User.query.get(user_id)
+    return jsonify({"response":cha.serialize()}), 200
 
 # @api.route('/allusers', methods=['GET'])
 # def handle_hello():
@@ -234,7 +241,7 @@ def get_featuredhotel():
 def hotelid(hotel_id):
     body = request.get_json()
     cha = Hotel.query.get(hotel_id)
-    return jsonify(cha.serialize()), 200
+    return jsonify({"response": cha.serialize()}), 200
 
 #City
 
@@ -260,6 +267,12 @@ def get_cities():
         response.append(x.serialize())
     return jsonify({"response": response}), 200
 
+@api.route('/city/<int:city_id>', methods=['GET'])
+def cityid(city_id):
+    body = request.get_json()
+    cha = City.query.get(city_id)
+    return jsonify({"response":cha.serialize()}), 200
+
 #reviews
 
 @api.route('/featuredreviews', methods=['GET'])
@@ -269,6 +282,12 @@ def get_reviews():
     for x in reviews:
         response.append(x.serialize())
     return jsonify({"response": response}), 200
+
+@api.route('/review/<int:review_id>', methods=['GET'])
+def reviewid(review_id):
+    body = request.get_json()
+    cha = Reviews.query.get(review_id)
+    return jsonify({"response":cha.serialize()}), 200
 
 
 
@@ -288,7 +307,7 @@ def current_user(identity):
 #seed_data
 @api.route('/seed_data', methods=['GET']) 
 def seed_data():
-    data = SeedDataEmployee()
+    data = SeedData()
     data.create_data()
     
 

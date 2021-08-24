@@ -33,7 +33,7 @@ export const ChoiceHotel = () => {
 						<br />
 						<p>Habitación Premium desde 79€</p>
 						<div className="card-body">
-							<Link to={"/hotelDetail"} className="btn btn-warning">
+							<Link to={"/hotel/1"} className="btn btn-warning">
 								Vacancy
 							</Link>
 						</div>

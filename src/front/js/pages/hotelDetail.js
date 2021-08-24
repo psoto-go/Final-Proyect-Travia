@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-
+import React, { Component, useContext, useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Gallery } from "../component/gallery";
+import { api_url } from "../constants";
 
 import { NavDetail } from "../component/navDetail";
 import { Availability } from "../component/availability";
@@ -8,20 +9,54 @@ import { HotelPrices } from "../component/hotelPrices";
 import { Reviews } from "../component/reviews";
 
 export const HotelDetail = () => {
+	const [hotel, setHotel] = useState({});
+	const params = useParams();
+
+	useEffect(() => {
+		fetch(api_url + "/api/hotel/" + params.theid)
+			.then(response => response.json())
+			.then(result => {
+				setHotel(result.response);
+			})
+			.catch(error => console.log("Error", error));
+	}, []);
+	console.log(hotel);
+
+	const listRooms = hotel.rooms
+		? hotel.rooms.map((item, index) => {
+				return (
+					<HotelPrices
+						key={index}
+						url={item.roomArchives[0].url}
+						persons={item.number_of_persons}
+						beds={item.number_of_beds}
+						price={item.price}
+						kind={item.kind}
+					/>
+				);
+		  })
+		: "asdf";
+
 	return (
 		<>
 			<div className="m-5">
-				<h2>Loren Ipsum dolor sit amet</h2>
+				<h2>{hotel.name}</h2>
 
 				<p className="pl-5"> Ipsum Loren Ipsum</p>
-
-				<Gallery />
-				<NavDetail />
+				{hotel.HotelArchives ? (
+					<Gallery
+						urls={hotel.HotelArchives.map(item => {
+							return item.url;
+						})}
+					/>
+				) : (
+					""
+				)}
+				<NavDetail description={hotel.description} />
 
 				<Availability />
-				<HotelPrices />
-				<HotelPrices />
-				<HotelPrices />
+				{listRooms}
+				{/* <HotelPrices></HotelPrices> */}
 			</div>
 			<div className="resenasDetail">
 				<Reviews />
