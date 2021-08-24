@@ -4,12 +4,12 @@ import { ItemList } from "./itemList";
 
 export const ListGroup = props => {
 	const { store, actions } = useContext(Context);
-	// if (actions.isAdminAuth()) {
-	// 	useEffect(() => {
-	// 		actions.loadUsers();
-	// 	}, []);
-	// }
-	let allusers = store.allusers.map((item, index) => {
+	if (actions.isAdminAuth()) {
+		useEffect(() => {
+			actions.loadUsers();
+		}, []);
+	}
+	let allusers = store.users.map((item, index) => {
 		return (
 			<ItemList
 				key={index}
