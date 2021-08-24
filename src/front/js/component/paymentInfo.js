@@ -70,29 +70,7 @@ export const PaymentInfo = () => {
 				</div>
 				<div>
 					<div className="input-group mb-1">
-						<select className="custom-select" id="inputGroupSelect02">
-							<option selected>Day</option>
-
-							<option value="1">One</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
-						</select>
-						<div className="input-group-append" />
-						<select className="custom-select" id="inputGroupSelect02">
-							<option selected>Month</option>
-							<option value="1">One</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
-						</select>
-						<div className="input-group-append " />
-						<select className="custom-select" id="inputGroupSelect02">
-							<option selected>Year</option>
-
-							<option value="1">One</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
-						</select>
-						<div className="input-group-append" />
+						<input type="date" />
 					</div>
 					<p className="mb-4 mt-0">Debes ser mayor de 18 años para contratar mediante travia</p>
 				</div>
