@@ -36,6 +36,9 @@ export const Login = () => {
 	// 	console.log("me");
 	// 	history.push("/admin");
 	// }
+	const respuestaGoogle = respuesta => {
+		console.log(respuesta);
+	};
 	return (
 		<div className="offset-4 col-4 my-auto text-center">
 			<form className="form-signin" onSubmit={submitForm}>
@@ -85,6 +88,8 @@ export const Login = () => {
 					<GoogleLogin
 						clientId="554543668987-m44m7icesa0r453l0md9969mkv5me163.apps.googleusercontent.com"
 						buttonText="Login"
+						onSuccess={respuestaGoogle}
+						onFailure={respuestaGoogle}
 						cookiePolicy={"single_host_origin"}
 					/>
 
