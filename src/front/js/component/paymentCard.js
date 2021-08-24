@@ -3,7 +3,7 @@ import "../../styles/paymentGateway.scss";
 
 export const PaymentCard = () => {
 	return (
-		<>
+		<div>
 			<div className="card paymentCard">
 				<img
 					src="https://www.hotelartsbarcelona.com/app/uploads/2021/01/gifthotelartsresponsive.png"
@@ -45,6 +45,6 @@ export const PaymentCard = () => {
 					</p>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };

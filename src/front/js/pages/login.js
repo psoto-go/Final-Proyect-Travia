@@ -87,7 +87,6 @@ export const Login = () => {
 
 					<GoogleLogin
 						clientId="554543668987-m44m7icesa0r453l0md9969mkv5me163.apps.googleusercontent.com"
-						buttonText="Login"
 						onSuccess={respuestaGoogle}
 						onFailure={respuestaGoogle}
 						cookiePolicy={"single_host_origin"}

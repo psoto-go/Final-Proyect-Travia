@@ -17,11 +17,11 @@ export const PaymentGateway = () => {
 					<Link> Volver al Hilton Costas del Sol</Link>
 				</p>
 			</div>
-			<div className="row m-0">
-				<div className="col-6">
+			<div className="row m-0 d-flex flex-wrap">
+				<div className="col-4">
 					<PaymentCard />
 				</div>
-				<div className="col-6">
+				<div className="col-7">
 					<PaymentInfo />
 				</div>
 			</div>
