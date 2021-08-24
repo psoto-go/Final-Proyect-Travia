@@ -9,22 +9,22 @@ import { PaymentInfo } from "../component/paymentInfo";
 export const PaymentGateway = () => {
 	return (
 		<div className="PaymentGateway">
-			<p>
-				<Link>
-					<i className="fas fa-angle-double-left" />
-				</Link>
-				<Link> Volver al Hilton Costas del Sol</Link>
-			</p>
 			<div className="row">
-				<div className="col-4">
+				<p>
+					<Link>
+						<i className="fas fa-angle-double-left" />
+					</Link>
+					<Link> Volver al Hilton Costas del Sol</Link>
+				</p>
+			</div>
+			<div className="row m-0">
+				<div className="col-6">
 					<PaymentCard />
 				</div>
 				<div className="col-6">
 					<PaymentInfo />
 				</div>
 			</div>
-
-			<Stripe />
 		</div>
 	);
 };
