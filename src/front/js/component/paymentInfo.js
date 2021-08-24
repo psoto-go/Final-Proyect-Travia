@@ -94,15 +94,8 @@ export const PaymentInfo = () => {
 					<p className="mb-4 mt-0">Debes ser mayor de 18 años para contratar mediante travia</p>
 				</div>
 				<PhoneInput placeholder="Enter phone number" value={value} onChange={setValue} />
-				<div className="form-group">
-					<div className="form-check">
-						<input className="form-check-input" type="checkbox" id="gridCheck" />
-						<label className="form-check-label" htmlFor="gridCheck">
-							Check me out
-						</label>
-					</div>
-				</div>
-				<div className="form-row mb-0">
+
+				<div className="form-row mt-4">
 					<div className="form-group col-md-6 mb-0">
 						<label htmlFor="inputEmail4">Crear contraseña</label>
 						<input type="email" className="form-control" id="inputEmail4" />
@@ -111,8 +104,8 @@ export const PaymentInfo = () => {
 						<label htmlFor="inputEmail4">Repetir contraseña</label>
 						<input type="email" className="form-control" id="inputEmail4" />
 					</div>
+					<p className="mb-4 mt-0">(8 a 30 caracteres, sin espacios)</p>
 				</div>
-				<p className="mb-4 mt-0">(8 a 30 caracteres, sin espacios)</p>
 			</form>
 			<div className="input-group">
 				<div className="input-group-prepend">
@@ -122,7 +115,7 @@ export const PaymentInfo = () => {
 					Recibir notificaciones sobre Travia, nuevas ubicaciones y ofertas especiales.
 				</div>
 			</div>
-			<div className="mt-4">
+			<div className="mt-5">
 				<h1>Seleccionar tarifa</h1>
 				<div className="input-group border">
 					<div className="input-group-prepend">
@@ -141,7 +134,7 @@ export const PaymentInfo = () => {
 					</div>
 				</div>
 			</div>
-			<div className="my-4">
+			<div className="my-5">
 				<h1>Informacion de pago</h1>
 				<div className="form-row">
 					<div className="form-group col">
@@ -149,8 +142,8 @@ export const PaymentInfo = () => {
 						<input type="email" className="form-control" id="inputEmail4" />
 					</div>
 				</div>
+				<Stripe />
 			</div>
-			<Stripe />
 		</div>
 	);
 };
