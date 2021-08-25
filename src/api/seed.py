@@ -40,11 +40,11 @@ class SeedData:
         db.session.commit()
     
     def create_room(self):
-        self.room = Room(kind = "doble", number_of_beds = 2, number_of_persons=2, start_date = "11/10/2021", end_date = "20/10/2021", hotel_id = self.hotel.id, price = 50)
-        self.room1 = Room(kind = "doble", number_of_beds = 2, number_of_persons = 2, start_date = "11/10/2021", end_date = "20/10/2021", hotel_id = self.hotel1.id, price = 50)
-        self.room2 = Room(kind = "individual", number_of_beds = 1, number_of_persons = 1, start_date = "17/10/2021", end_date = "24/10/2021", hotel_id = self.hotel1.id, price = 50)
-        self.room3 = Room(kind = "suite", number_of_beds = 1, number_of_persons = 2, start_date = "13/10/2021", end_date = "21/10/2021", hotel_id = self.hotel2.id, price = 40)
-        self.room4 = Room(kind = "matrimonio", number_of_beds = 1, number_of_persons = 2, start_date = "18/10/2021", end_date = "21/10/2021", hotel_id = self.hotel3.id, price = 30)
+        self.room = Room(kind = "doble", number_of_beds = 2, number_of_persons=2, hotel_id = self.hotel.id, price = 50)
+        self.room1 = Room(kind = "doble", number_of_beds = 2, number_of_persons = 2, hotel_id = self.hotel1.id, price = 50)
+        self.room2 = Room(kind = "individual", number_of_beds = 1, number_of_persons = 1, hotel_id = self.hotel1.id, price = 50)
+        self.room3 = Room(kind = "suite", number_of_beds = 1, number_of_persons = 2, hotel_id = self.hotel2.id, price = 40)
+        self.room4 = Room(kind = "matrimonio", number_of_beds = 1, number_of_persons = 2, hotel_id = self.hotel3.id, price = 30)
         db.session.add(self.room)
         db.session.add(self.room1)
         db.session.add(self.room2)
@@ -247,7 +247,7 @@ class SeedData:
         db.session.commit()
 
     def create_booking(self):
-        self.create_booking = Booking(user_id = self.user.id, room_id = self.room.id, start_date = "11/10/2021", end_date = "20/10/2021", price = 200)
+        self.create_booking = Booking(user_id = self.user.id, room_id = self.room.id, start_date = "2021-10-11", end_date = "2021-10-20", price = 200)
         db.session.add(self.create_booking)
         db.session.commit()
 
