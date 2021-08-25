@@ -1,4 +1,5 @@
 from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, City
+from sqlalchemy import text
 
 
 class HotelSearcher:
@@ -16,8 +17,12 @@ class HotelSearcher:
       return self.all()
 
   def by_city(self):
-    return db.session.query(Hotel).filter(Hotel.city_id.like(self.city_id))
-    # return Hotel.query.join(City).filter(City.id == self.city_id)
+
+    return Hotel.query.join(City).filter(City.id == self.city_id)
+
+  def by_booking(self):
+
+    return Hotel.query.join(City).filter(City.id == self.city_id)
 
   def all(self):
     return Hotel.query.all()
