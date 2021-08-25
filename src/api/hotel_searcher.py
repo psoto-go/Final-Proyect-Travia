@@ -20,9 +20,5 @@ class HotelSearcher:
 
     return Hotel.query.join(City).filter(City.id == self.city_id)
 
-  def by_booking(self):
-
-    return Hotel.query.join(City).filter(City.id == self.city_id)
-
   def all(self):
     return Hotel.query.all()
