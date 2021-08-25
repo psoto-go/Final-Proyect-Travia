@@ -21,6 +21,7 @@ import { AdminHoteles } from "./pages/adminHoteles";
 import { OnlyHotel } from "./pages/onlyHotel";
 import { PruebaStripe } from "./pages/pruebaStripe";
 import { PaymentGateway } from "./pages/paymentGateway";
+import { MyAccount } from "./pages/myAccount";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -77,6 +78,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/payment">
 							<PaymentGateway />
+						</Route>
+						<Route exact path="/myAccount">
+							<MyAccount />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
