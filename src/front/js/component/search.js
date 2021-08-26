@@ -43,24 +43,6 @@ export const Search = () => {
 			.catch(error => console.log("Error", error));
 	};
 	console.log(detalles);
-	// {
-
-	// 	alert(
-	// 		"sitio = " +
-	// 			loginValue.place +
-	// 			"\n" +
-	// 			"inicio = " +
-	// 			loginValue.datein +
-	// 			"\n" +
-	// 			"fin = " +
-	// 			loginValue.dateout +
-	// 			"\n" +
-	// 			"personas = " +
-	// 			loginValue.number
-	// 	);
-	// 	console.log(loginValue);
-	// 	history.push("/list");
-	// }
 
 	return (
 		<div id="searchBar">

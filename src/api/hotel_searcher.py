@@ -1,5 +1,5 @@
 from api.models import db, User, Hotel, HotelArchives, Room, Reviews, Service, Services, HotelArchives, Booking, City
-from sqlalchemy import text
+from sqlalchemy import func
 
 
 class HotelSearcher:
@@ -27,22 +27,22 @@ class HotelSearcher:
       return self.by_empty()
 
   def by_city(self):
-    return Hotel.query.join(City).filter(City.name == self.city)
+    return Hotel.query.join(City).filter(func.lower(City.name) == func.lower(self.city))
 
   def by_city_start_date(self):
-    return Hotel.query.join(City).join(Room).join(Booking).filter(City.name == self.city).filter(Booking.start_date != self.start_date)
+    return Hotel.query.join(City).join(Room).join(Booking).filter(func.lower(City.name) == func.lower(self.city)).filter(Booking.start_date != self.start_date)
 
   def by_city_period(self):
-    return Hotel.query.join(City).join(Room).join(Booking).filter(City.name == self.city).filter(Booking.start_date != self.start_date).filter(Booking.end_date != self.end_date)
+    return Hotel.query.join(City).join(Room).join(Booking).filter(func.lower(City.name) == func.lower(self.city)).filter(Booking.start_date != self.start_date).filter(Booking.end_date != self.end_date)
 
   def by_city_capacity(self):
-    return Hotel.query.join(City).join(Room).filter(City.name == self.city).filter(Room.number_of_persons == self.people)
+    return Hotel.query.join(City).join(Room).filter(func.lower(City.name) == func.lower(self.city)).filter(Room.number_of_persons == self.people)
 
   def by_city_capacity_start_date(self):
-    return Hotel.query.join(City).join(Room).join(Booking).filter(City.name == self.city).filter(Room.number_of_persons == self.people).filter(Booking.start_date != self.start_date)
+    return Hotel.query.join(City).join(Room).join(Booking).filter(func.lower(City.name) == func.lower(self.city)).filter(Room.number_of_persons == self.people).filter(Booking.start_date != self.start_date)
 
   def by_all(self):
-    return Hotel.query.join(City).join(Room).join(Booking).filter(City.name == self.city).filter(Room.number_of_persons == self.people).filter(Booking.start_date != self.start_date).filter(Booking.end_date != self.end_date)
+    return Hotel.query.join(City).join(Room).join(Booking).filter(func.lower(City.name) == func.lower(self.city)).filter(Room.number_of_persons == self.people).filter(Booking.start_date != self.start_date).filter(Booking.end_date != self.end_date)
 
   def by_empty(self):
     return Hotel.query.all()
