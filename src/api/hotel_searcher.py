@@ -30,7 +30,7 @@ class HotelSearcher:
     return Hotel.query.join(City).filter(City.id == self.city_id)
 
   def by_city_start_date(self):
-    return Hotel.query.join(City).join(Room).join(Booking).filter(City.id == self.city_id).filter(Booking.start_date == self.start_date)
+    return Hotel.query.join(City).join(Room).join(Booking).filter(City.id == self.city_id).filter(Booking.start_date != self.start_date)
 
   def by_city_period(self):
     return Hotel.query.join(City).join(Room).join(Booking).filter(City.id == self.city_id).filter(Booking.start_date != self.start_date).filter(Booking.end_date != self.end_date)
@@ -39,7 +39,7 @@ class HotelSearcher:
     return Hotel.query.join(City).join(Room).filter(City.id == self.city_id).filter(Room.number_of_persons == self.people)
 
   def by_city_capacity_start_date(self):
-    return Hotel.query.join(City).join(Room).join(Booking).filter(City.id == self.city_id).filter(Room.number_of_persons == self.people).filter(Booking.start_date == self.start_date)
+    return Hotel.query.join(City).join(Room).join(Booking).filter(City.id == self.city_id).filter(Room.number_of_persons == self.people).filter(Booking.start_date != self.start_date)
 
   def by_all(self):
-    return Hotel.query.all()
+    return Hotel.query.join(City).join(Room).join(Booking).filter(City.id == self.city_id).filter(Room.number_of_persons == self.people).filter(Booking.start_date != self.start_date).filter(Booking.end_date != self.end_date)
