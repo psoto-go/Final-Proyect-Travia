@@ -6,7 +6,6 @@ import { param } from "jquery";
 
 export const Search = () => {
 	const { store, actions } = useContext(Context);
-
 	const [loginValue, setLoginValue] = useState({
 		place: "",
 		datein: "",
@@ -42,9 +41,26 @@ export const Search = () => {
 				setDetalles(result.response);
 			})
 			.catch(error => console.log("Error", error));
-		// history.push("/list?" + params);
 	};
 	console.log(detalles);
+	// {
+
+	// 	alert(
+	// 		"sitio = " +
+	// 			loginValue.place +
+	// 			"\n" +
+	// 			"inicio = " +
+	// 			loginValue.datein +
+	// 			"\n" +
+	// 			"fin = " +
+	// 			loginValue.dateout +
+	// 			"\n" +
+	// 			"personas = " +
+	// 			loginValue.number
+	// 	);
+	// 	console.log(loginValue);
+	// 	history.push("/list");
+	// }
 
 	return (
 		<div id="searchBar">
