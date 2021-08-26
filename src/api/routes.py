@@ -215,9 +215,11 @@ def new_hotel():
 @api.route('/hotels', methods=['GET'])
 def get_hotel():
     args = request.args
+    print(args)
     city_id = args.get("city_id", None)
     people = args.get("people", None)
     start_date = args.get("start_date", None)
+    print(start_date)
     end_date = args.get("end_date", None)
 
     seacher = HotelSearcher(city_id, people, start_date, end_date)

@@ -2,32 +2,40 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import { api_url } from "../constants";
+import { param } from "jquery";
 
 export const Search = () => {
 	const { store, actions } = useContext(Context);
-	const [loginValue, setLoginValue] = useState(firstValue);
-	const [detalles, setDetalles] = useState();
-	let history = useHistory();
-
-	const firstValue = {
+	const [loginValue, setLoginValue] = useState({
 		place: "",
 		datein: "",
 		dateout: "",
 		number: ""
-	};
+	});
+	const [detalles, setDetalles] = useState();
+	let history = useHistory();
+
 	const changeInput = e => {
 		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
 	};
 
+	let params = new URLSearchParams();
+	if (loginValue.place) {
+		params.set("city_id", loginValue.place);
+	}
+	if (loginValue.number) {
+		params.set("people", loginValue.number);
+	}
+	if (loginValue.datein) {
+		params.set("start_date", loginValue.datein);
+	}
+	if (loginValue.dateout) {
+		params.set("end_date", loginValue.dateout);
+	}
+
 	const submitForm = e => {
 		e.preventDefault();
-		fetch(
-			api_url +
-				"/api/hotels?" +
-				new URLSearchParams({
-					city_id: loginValue.place
-				})
-		)
+		fetch(api_url + "/api/hotels?" + params)
 			.then(response => response.json())
 			.then(result => {
 				setDetalles(result.response);

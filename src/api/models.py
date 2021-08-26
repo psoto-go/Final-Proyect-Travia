@@ -93,8 +93,6 @@ class Room(db.Model):
     kind = db.Column(db.String(120), unique=False, nullable=False)
     number_of_beds = db.Column(db.Integer, unique=False, nullable=False)
     number_of_persons = db.Column(db.Integer, unique=False, nullable=False)
-    start_date= db.Column(db.String(120), unique=False, nullable=True)
-    end_date= db.Column(db.String(120), unique=False, nullable=True)
     price = db.Column(db.Integer, unique=False, nullable=False)
     hotel_id = db.Column(db.Integer, db.ForeignKey('hotel.id'),
         nullable=False)
@@ -106,10 +104,9 @@ class Room(db.Model):
             "kind": self.kind,
             "number_of_beds": self.number_of_beds,
             "number_of_persons": self.number_of_persons,
-            "start_date": self.start_date,
-            "end_date": self.end_date,
             "price": self.price,
-            "roomArchives": list(map(lambda x:x.serialize(), self.roomArchives))
+            "roomArchives": list(map(lambda x:x.serialize(), self.roomArchives)),
+            "bookings": list(map(lambda x:x.serialize(), self.bookings))
             # do not serialize the password, its a security breach
         }
 
