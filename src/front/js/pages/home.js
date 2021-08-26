@@ -10,6 +10,7 @@ import { Destinations } from "../component/destinations";
 import { Featured } from "../component/featured";
 import { Subscribe } from "../component/subscribe";
 import { api_url } from "../constants";
+import { Search } from "../component/search";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -44,6 +45,7 @@ export const Home = () => {
 	return (
 		<div>
 			<Header />
+			<Search />
 			<h3 className="pepito mx-auto">Destacados</h3>
 			{listHotels}
 			<Destinations />

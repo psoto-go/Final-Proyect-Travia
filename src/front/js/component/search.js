@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import { api_url } from "../constants";
 import { param } from "jquery";
+import { List } from "../pages/list";
 
 export const Search = () => {
 	const { store, actions } = useContext(Context);
@@ -41,6 +42,8 @@ export const Search = () => {
 				setDetalles(result.response);
 			})
 			.catch(error => console.log("Error", error));
+		// <List data={params}></List>;
+		// history.push("/list?" + params);
 	};
 	console.log(detalles);
 
