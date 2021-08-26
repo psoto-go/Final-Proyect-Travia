@@ -22,7 +22,7 @@ export const Search = () => {
 
 	let params = new URLSearchParams();
 	if (loginValue.place) {
-		params.set("city_id", loginValue.place);
+		params.set("city", loginValue.place);
 	}
 	if (loginValue.number) {
 		params.set("people", loginValue.number);
@@ -42,7 +42,7 @@ export const Search = () => {
 				setDetalles(result.response);
 			})
 			.catch(error => console.log("Error", error));
-		history.push("/list?" + params);
+		// history.push("/list?" + params);
 	};
 	console.log(detalles);
 

@@ -5,6 +5,9 @@ import { Search } from "./search";
 export const SearchList = () => {
 	return (
 		<div>
+			<div className="searchListBar">
+				<Search />
+			</div>
 			<div className="botonBest">
 				<div className="dropdown fixP botonMargin">
 					<button type="button" data-toggle="dropdown" className="btn btn-info dropdown-toggle botones ">
