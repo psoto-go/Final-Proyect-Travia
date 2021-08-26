@@ -42,6 +42,7 @@ export const CarrouselHotel = () => {
 					<i className="far fa-arrow-alt-circle-up" />
 					<p>Añadir imagen</p>
 				</h3>
+				<input className="col-9" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"></input>
 			</button>
 		</div>
 	);
