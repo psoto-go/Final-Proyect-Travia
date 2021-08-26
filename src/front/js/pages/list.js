@@ -18,7 +18,7 @@ export const List = props => {
 	// const listHotels = props.data.map((hotel, index) => {
 	// 	return <ChoiceHotel key={index} name={hotel.name}></ChoiceHotel>;
 	// });
-	console.log(props.data);
+	// console.log(props.data);
 	return (
 		<>
 			{" "}

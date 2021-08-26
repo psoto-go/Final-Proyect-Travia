@@ -42,7 +42,7 @@ export const Search = () => {
 				setDetalles(result.response);
 			})
 			.catch(error => console.log("Error", error));
-		// <List data={params}></List>;
+		// <List data={detalles}></List>;
 		// history.push("/list?" + params);
 	};
 	console.log(detalles);
