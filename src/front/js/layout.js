@@ -19,7 +19,7 @@ import { Admindash } from "./pages/adminDash";
 import { AdminProvincias } from "./pages/adminProvincias";
 import { AdminHoteles } from "./pages/adminHoteles";
 import { OnlyHotel } from "./pages/onlyHotel";
-import { PruebaStripe } from "./pages/pruebaStripe";
+import { FavUser } from "./pages/favUser";
 import { PaymentGateway } from "./pages/paymentGateway";
 import { MyAccount } from "./pages/myAccount";
 
@@ -73,14 +73,15 @@ export const Layout = () => {
 						<Route exact path="/onlyHotel">
 							<OnlyHotel />
 						</Route>
-						<Route exact path="/prueba">
-							<PruebaStripe />
-						</Route>
+
 						<Route exact path="/payment">
 							<PaymentGateway />
 						</Route>
 						<Route exact path="/myAccount">
 							<MyAccount />
+						</Route>
+						<Route exact path="/accountFav">
+							<FavUser />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
