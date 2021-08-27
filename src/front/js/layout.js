@@ -19,8 +19,10 @@ import { Admindash } from "./pages/adminDash";
 import { AdminProvincias } from "./pages/adminProvincias";
 import { AdminHoteles } from "./pages/adminHoteles";
 import { OnlyHotel } from "./pages/onlyHotel";
-import { PruebaStripe } from "./pages/pruebaStripe";
+import { FavUser } from "./pages/favUser";
 import { PaymentGateway } from "./pages/paymentGateway";
+import { MyAccount } from "./pages/myAccount";
+import { AddCountry } from "./pages/addCountry";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -72,11 +74,18 @@ export const Layout = () => {
 						<Route exact path="/onlyHotel">
 							<OnlyHotel />
 						</Route>
-						<Route exact path="/prueba">
-							<PruebaStripe />
-						</Route>
+
 						<Route exact path="/payment">
 							<PaymentGateway />
+						</Route>
+						<Route exact path="/myAccount">
+							<MyAccount />
+						</Route>
+						<Route exact path="/accountFav">
+							<FavUser />
+						</Route>
+						<Route exact path="/addCountry">
+							<AddCountry />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
