@@ -50,18 +50,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ accesToken: paramsForm.accessToken, user: paramsForm });
 				}
 			},
-			isUserAuth: () => {
-				const store = getStore();
-				return store.accesToken !== null;
-			},
-			isNormalUserAuth: () => {
-				const store = getStore();
-				return store.user.length !== 0;
-			},
-			isAdminAuth: () => {
-				const store = getStore();
-				return store.admin.length !== 0;
-			},
+			// isUserAuth: () => {
+			// 	const store = getStore();
+			// 	return store.accesToken !== null;
+			// },
+			// isNormalUserAuth: () => {
+			// 	const store = getStore();
+			// 	return store.user.length !== 0;
+			// },
+			// isAdminAuth: () => {
+			// 	const store = getStore();
+			// 	return store.admin.length !== 0;
+			// },
 			register: paramsForm => {
 				const raw = JSON.stringify(paramsForm);
 
