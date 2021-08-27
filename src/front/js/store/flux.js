@@ -46,9 +46,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			signin_google: paramsForm => {
-				console.log(paramsForm);
+				console.log(paramsForm.Xb);
 				if (paramsForm) {
-					localStorage.setItem("token", paramsForm["access_token"]);
+					localStorage.setItem("token", paramsForm.tokenId);
 					return true;
 				} else {
 					console.log("Error", error);
