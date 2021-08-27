@@ -71,7 +71,7 @@ export const Navbar = () => {
 					</div>
 				) : (
 					<div className="form-inline my-2 my-lg-0 colored">
-						<Link to="/user" className="nav-link colored">
+						<Link to="/myAccount" className="nav-link colored">
 							Mi perfil
 						</Link>
 						{/* <Link to="/login" className="nav-link colored" onClick={localStorage.removeItem("token")}>
