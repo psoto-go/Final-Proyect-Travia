@@ -1,10 +1,7 @@
 import React, { Component, useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
-
 import "../../styles/home.scss";
-
 import { Header } from "../component/header";
-
 import { Reviews } from "../component/reviews";
 import { Destinations } from "../component/destinations";
 import { Featured } from "../component/featured";

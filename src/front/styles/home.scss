@@ -196,11 +196,13 @@ ul{
 .inline-div{
   
   display: inline-flex;
+  padding-bottom: 10em;
   margin: auto;
   margin-left: 15%;
   
 
 }
+
 .btton{
   width: 14%;
   height: 5em;
@@ -238,9 +240,12 @@ ul{
   
 }
 .serviciosHotel{
-  display: inline;
+  top: -40%;
+  padding-left: 13%;
+  //width: 40%;
   float: right;
-  padding-right: 10%;
+  padding-right: 15%;
+  //background-color: red;
   
 
 }
