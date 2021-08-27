@@ -20,27 +20,27 @@ export const MyAccount = () => {
 							<strong className="col-md-4 ">Mi cuenta</strong>
 						</div>
 					</a>
-					<a href="#" className="list-group-item">
+					<a href="myAccount-booking" className="list-group-item">
 						<div className="row">
 							<strong className="col-2">Reservas</strong> <p className="col-10">Dolor sit amet</p>
 						</div>
 					</a>
-					<a href="/accountFav" className="list-group-item">
+					<a href="/myAccount-accountFav" className="list-group-item">
 						<div className="row">
 							<strong className="col-2">Favoritos</strong> <p className="col-10">Dolor sit amet</p>
 						</div>
 					</a>
-					<a href="#" className="list-group-item">
+					<a href="/myAccount-reviews" className="list-group-item">
 						<div className="row">
 							<strong className="col-2">Reseñas</strong> <p className="col-10">Dolor sit amet</p>
 						</div>
 					</a>
-					<a href="#" className="list-group-item">
+					<a href="/myAccount-help" className="list-group-item">
 						<div className="row">
 							<strong className="col-2">Ayuda</strong> <p className="col-10">Dolor sit amet</p>
 						</div>
 					</a>
-					<a href="#" className="list-group-item">
+					<a href="myAccount-settings" className="list-group-item">
 						<div className="row">
 							<strong className="col-2">Configuracion</strong> <p className="col-10">Dolor sit amet</p>
 						</div>

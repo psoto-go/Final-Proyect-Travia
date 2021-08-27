@@ -81,7 +81,7 @@ export const Layout = () => {
 						<Route exact path="/myAccount">
 							<MyAccount />
 						</Route>
-						<Route exact path="/accountFav">
+						<Route exact path="/myAccount-accountFav">
 							<FavUser />
 						</Route>
 						<Route exact path="/addCountry">
