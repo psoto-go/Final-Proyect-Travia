@@ -1,3 +1,4 @@
+import { string } from "prop-types";
 import { api_url } from "../constants";
 
 const getState = ({ getStore, getActions, setStore }) => {
@@ -6,9 +7,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			admin: [],
 			user: null,
 			accesToken: null,
-			users: []
+			users: [],
+			url: null
 		},
 		actions: {
+			url: paramsForm => {
+				setStore({ url: paramsForm });
+				const store = getStore();
+				console.log(store.url);
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
