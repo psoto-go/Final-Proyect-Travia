@@ -25,7 +25,7 @@ export const MyAccount = () => {
 							<strong className="col-2">Reservas</strong> <p className="col-10">Dolor sit amet</p>
 						</div>
 					</a>
-					<a href="#" className="list-group-item">
+					<a href="/accountFav" className="list-group-item">
 						<div className="row">
 							<strong className="col-2">Favoritos</strong> <p className="col-10">Dolor sit amet</p>
 						</div>

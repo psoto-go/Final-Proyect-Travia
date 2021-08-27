@@ -3,17 +3,20 @@ import { FavComp } from "../component/favComp";
 
 export const FavUser = () => {
 	return (
-		<div className="row">
-			<div className="col-3">
+		<div>
+			<h1>Lorem Impsum</h1>
+			<div className="row">
+				<FavComp />
+
+				<FavComp />
+
 				<FavComp />
 			</div>
-			<div className="col-3">
+			<div className="row">
 				<FavComp />
-			</div>
-			<div className="col-3">
+
 				<FavComp />
-			</div>
-			<div className="col-3">
+
 				<FavComp />
 			</div>
 		</div>
