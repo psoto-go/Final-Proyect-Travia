@@ -1,14 +1,15 @@
 import React, { Component, useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { ItemList } from "./itemList";
+import jwt from "jwt-decode"; // import dependency
 
 export const ListGroup = props => {
 	const { store, actions } = useContext(Context);
-	if (actions.isAdminAuth()) {
-		useEffect(() => {
+	useEffect(() => {
+		if (jwt(localStorage.getItem("token")).sub.kind == "admin") {
 			actions.loadUsers();
-		}, []);
-	}
+		}
+	}, []);
 	let allusers = store.users.map((item, index) => {
 		return (
 			<ItemList

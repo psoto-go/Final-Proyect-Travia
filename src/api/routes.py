@@ -95,7 +95,7 @@ def sign_in_user():
 
     if user and user.check_password(password):
         access_token = create_access_token(identity=user.serialize())
-        return jsonify({"access_token":  access_token, "user": user.serialize()}), 200
+        return jsonify({"access_token":  access_token}), 200
     
     # elif admin and admin.check_password(password):
     #     access_token = create_access_token(identity=admin.serialize())
@@ -216,13 +216,13 @@ def new_hotel():
 def get_hotel():
     args = request.args
     print(args)
-    city_id = args.get("city_id", None)
+    city = args.get("city", None)
     people = args.get("people", None)
     start_date = args.get("start_date", None)
     print(start_date)
     end_date = args.get("end_date", None)
 
-    seacher = HotelSearcher(city_id, people, start_date, end_date)
+    seacher = HotelSearcher(city, people, start_date, end_date)
     hotel = seacher.search()
     response = []
     

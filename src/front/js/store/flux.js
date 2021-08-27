@@ -7,8 +7,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user: null,
 			accesToken: null,
 			users: []
-			// admins: [],
-			// allusers: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -30,48 +28,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 
-			signin_user: paramsForm => {
+			signin_user: async paramsForm => {
 				const raw = JSON.stringify(paramsForm);
-
 				const requestPost = {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: raw
 				};
-
-				fetch(api_url + "/api/sign_in", requestPost)
-					.then(response => response.json())
-					.then(result => {
-						console.log(result);
-						if (result.user.kind == "user") {
-							setStore({ accesToken: result["access_token"], user: result });
-						} else if (result.user.kind == "admin") {
-							setStore({ accesToken: result["access_token"], admin: result });
-						}
-
-						console.log("bien");
-						const store = getStore();
-						console.log(store.user);
-					})
-					.catch(error => console.log("Error", error));
+				const response = await fetch(api_url + "/api/sign_in", requestPost);
+				const data = await response.json();
+				if (response.ok) {
+					localStorage.setItem("token", data["access_token"]);
+					return true;
+				} else {
+					console.log("Error", error);
+					return false;
+				}
 			},
 			signin_google: paramsForm => {
 				if (paramsForm) {
 					setStore({ accesToken: paramsForm.accessToken, user: paramsForm });
 				}
 			},
-			isUserAuth: () => {
-				const store = getStore();
-				return store.accesToken !== null;
-			},
-			isNormalUserAuth: () => {
-				const store = getStore();
-				return store.user.length !== 0;
-			},
-			isAdminAuth: () => {
-				const store = getStore();
-				return store.admin.length !== 0;
-			},
+			// isUserAuth: () => {
+			// 	const store = getStore();
+			// 	return store.accesToken !== null;
+			// },
+			// isNormalUserAuth: () => {
+			// 	const store = getStore();
+			// 	return store.user.length !== 0;
+			// },
+			// isAdminAuth: () => {
+			// 	const store = getStore();
+			// 	return store.admin.length !== 0;
+			// },
 			register: paramsForm => {
 				const raw = JSON.stringify(paramsForm);
 

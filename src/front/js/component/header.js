@@ -14,8 +14,6 @@ export const Header = () => {
 			<div id="landingImg">
 				<img src={header} />
 			</div>
-
-			<Search />
 		</div>
 	);
 };

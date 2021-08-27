@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import { api_url } from "../constants";
 import { param } from "jquery";
+import { List } from "../pages/list";
 
 export const Search = () => {
 	const { store, actions } = useContext(Context);
@@ -21,7 +22,7 @@ export const Search = () => {
 
 	let params = new URLSearchParams();
 	if (loginValue.place) {
-		params.set("city_id", loginValue.place);
+		params.set("city", loginValue.place);
 	}
 	if (loginValue.number) {
 		params.set("people", loginValue.number);
@@ -41,26 +42,10 @@ export const Search = () => {
 				setDetalles(result.response);
 			})
 			.catch(error => console.log("Error", error));
+		// <List data={detalles}></List>;
+		// history.push("/list?" + params);
 	};
 	console.log(detalles);
-	// {
-
-	// 	alert(
-	// 		"sitio = " +
-	// 			loginValue.place +
-	// 			"\n" +
-	// 			"inicio = " +
-	// 			loginValue.datein +
-	// 			"\n" +
-	// 			"fin = " +
-	// 			loginValue.dateout +
-	// 			"\n" +
-	// 			"personas = " +
-	// 			loginValue.number
-	// 	);
-	// 	console.log(loginValue);
-	// 	history.push("/list");
-	// }
 
 	return (
 		<div id="searchBar">
