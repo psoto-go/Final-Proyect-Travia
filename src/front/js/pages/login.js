@@ -21,11 +21,11 @@ export const Login = () => {
 		const token = localStorage.getItem("token");
 		if (token) {
 			if (jwt(token).sub.kind == "user") {
-				history.push("/user");
+				history.push("/myAccount");
 			} else if (jwt(token).sub.kind == "admin") {
 				history.push("/adminDash");
 			} else if (jwt(token).googleId) {
-				history.push("/user");
+				history.push("/myAccount");
 			}
 		}
 	};
