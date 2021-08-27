@@ -48,9 +48,10 @@ export const Login = () => {
 	};
 
 	const respuestaGoogle = respuesta => {
-		if (respuesta.accessToken) {
-			actions.signin_google(respuesta);
-		}
+		console.log(respuesta);
+		// if (respuesta.accessToken) {
+		// 	actions.signin_google(respuesta);
+		// }
 	};
 	return (
 		<div className="offset-4 col-4 my-auto text-center">

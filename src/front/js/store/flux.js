@@ -46,8 +46,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			signin_google: paramsForm => {
+				console.log(paramsForm);
 				if (paramsForm) {
-					setStore({ accesToken: paramsForm.accessToken, user: paramsForm });
+					localStorage.setItem("token", paramsForm["access_token"]);
+					return true;
+				} else {
+					console.log("Error", error);
+					return false;
 				}
 			},
 			// isUserAuth: () => {
