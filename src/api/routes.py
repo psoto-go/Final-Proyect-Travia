@@ -95,7 +95,7 @@ def sign_in_user():
 
     if user and user.check_password(password):
         access_token = create_access_token(identity=user.serialize())
-        return jsonify({"access_token":  access_token, "user": user.serialize()}), 200
+        return jsonify({"access_token":  access_token}), 200
     
     # elif admin and admin.check_password(password):
     #     access_token = create_access_token(identity=admin.serialize())

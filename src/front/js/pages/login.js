@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import { api_url } from "../constants";
@@ -7,12 +7,26 @@ import facebook from "../../img/facebooklogo.jpg";
 import google from "../../img/googlelogo.png";
 import apple from "../../img/apple.png";
 import GoogleLogin from "react-google-login";
+import jwt from "jwt-decode"; // import dependency
 
 export const Login = () => {
 	const { store, actions } = useContext(Context);
 	const [loginValue, setLoginValue] = useState(firstValue);
 	let history = useHistory();
 
+	useEffect(() => {
+		selectKind();
+	}, []);
+	const selectKind = () => {
+		const token = localStorage.getItem("token");
+		if (token) {
+			if (jwt(token).sub.kind == "user") {
+				history.push("/user");
+			} else if (jwt(token).sub.kind == "admin") {
+				history.push("/adminDash");
+			}
+		}
+	};
 	const firstValue = {
 		email: "",
 		password: ""
@@ -22,19 +36,17 @@ export const Login = () => {
 		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
 	};
 
-	const submitForm = e => {
+	const submitForm = async e => {
 		e.preventDefault();
-		actions.signin_user(loginValue);
-		actions.loadUsers();
+
+		let login = await actions.signin_user(loginValue);
+		console.log(login);
+		if (login) {
+			selectKind();
+		}
+		// actions.loadUsers();
 	};
 
-	if (actions.isUserAuth()) {
-		history.push("/user");
-	}
-	if (actions.isAdminAuth()) {
-		console.log("me");
-		history.push("/adminDash");
-	}
 	const respuestaGoogle = respuesta => {
 		if (respuesta.accessToken) {
 			actions.signin_google(respuesta);

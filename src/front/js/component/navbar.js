@@ -1,8 +1,24 @@
-import React from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
+import jwt from "jwt-decode"; // import dependency
+import { useLocation } from "react-router-dom";
 import { Link, Button } from "react-router-dom";
 import logo from "../../img/golondrinablanco.png";
 
 export const Navbar = () => {
+	const [logged, setLogged] = useState(false);
+	let location = useLocation();
+	useEffect(() => {
+		let token = localStorage.getItem("token");
+		if (token) {
+			if (jwt(token).sub.kind == "admin" || jwt(token).sub.kind == "user") {
+				setLogged(true);
+			} else {
+				setLogged(false);
+			}
+		} else {
+			setLogged(false);
+		}
+	}, [location.pathname]);
 	return (
 		<nav className="navbar navbar-expand-lg navbar-light palNav colored">
 			<p className="navbar-brand">
@@ -44,14 +60,25 @@ export const Navbar = () => {
 						</a>
 					</li>
 				</ul>{" "}
-				<form className="form-inline my-2 my-lg-0 colored">
-					<Link to="/signup">
-						<div className="nav-link colored">Registrarse</div>
-					</Link>
-					<Link to="/login" className="nav-link colored">
-						Iniciar
-					</Link>
-				</form>
+				{!logged ? (
+					<div className="form-inline my-2 my-lg-0 colored">
+						<Link to="/signup" className="nav-link colored">
+							Registrarse
+						</Link>
+						<Link to="/login" className="nav-link colored">
+							Iniciar
+						</Link>
+					</div>
+				) : (
+					<div className="form-inline my-2 my-lg-0 colored">
+						<Link to="/signup" className="nav-link colored">
+							Mi perfil
+						</Link>
+						<Link to="/login" className="nav-link colored">
+							Salir
+						</Link>
+					</div>
+				)}
 			</div>
 		</nav>
 	);
