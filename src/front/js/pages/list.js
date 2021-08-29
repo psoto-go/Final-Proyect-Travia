@@ -5,6 +5,7 @@ import { Map } from "../component/map";
 import { ChoiceHotel } from "../component/choiceHotel";
 import { SearchList } from "../component/searchList";
 import { api_url } from "../constants";
+import "/workspace/Final-Proyect-Travia/src/front/styles/home.scss";
 
 export const List = props => {
 	const { store, actions } = useContext(Context);
@@ -19,31 +20,33 @@ export const List = props => {
 	}, [store.url]);
 
 	return (
-		<>
-			{" "}
-			<div id="testing">
+		<div>
+			<div id="testing" className="fixSearch">
 				<SearchList />
 			</div>
-			<div className="listHotels">
-				<div className="listHotels2">
-					{detalles
-						? detalles.map((hotel, index) => {
-								// console.log(hotel.rooms);
-								return (
-									<ChoiceHotel
-										key={index}
-										name={hotel.name}
-										url={hotel.HotelArchives[0].url}
-										rooms={hotel.rooms}></ChoiceHotel>
-								);
-						  })
-						: ""}
+
+			<div>
+				<div className="row ">
+					<div className="col-7">
+						{detalles
+							? detalles.map((hotel, index) => {
+									// console.log(hotel.rooms);
+									return (
+										<ChoiceHotel
+											key={index}
+											name={hotel.name}
+											url={hotel.HotelArchives[0].url}
+											rooms={hotel.rooms}></ChoiceHotel>
+									);
+							  })
+							: ""}
+					</div>
+					<div className="col-5">
+						<Map />
+					</div>
 				</div>
 			</div>
-			<div>
-				<Map />
-			</div>
-		</>
+		</div>
 	);
 };
 List.propTypes = {

@@ -16,13 +16,35 @@ export const Gallery = props => {
 						data-toggle="modal"
 						data-target="#exampleModal"
 					/>
-					<div className="col">
-						<img src={props.urls[1]} className="col p-2 " data-toggle="modal" data-target="#exampleModal" />
-						<img src={props.urls[2]} className="col p-2" data-toggle="modal" data-target="#exampleModal" />
-					</div>
-					<div className="col">
-						<img src={props.urls[3]} className="col p-2" data-toggle="modal" data-target="#exampleModal" />
-						<img src={props.urls[3]} className="col p-2" data-toggle="modal" data-target="#exampleModal" />
+					<div className="row">
+						<div className="col-6">
+							<img
+								src={props.urls[1]}
+								className="col p-2  "
+								data-toggle="modal"
+								data-target="#exampleModal"
+							/>
+							<img
+								src={props.urls[2]}
+								className="col p-2 "
+								data-toggle="modal"
+								data-target="#exampleModal"
+							/>
+						</div>
+						<div className="col-6">
+							<img
+								src={props.urls[3]}
+								className="col p-2 "
+								data-toggle="modal"
+								data-target="#exampleModal"
+							/>
+							<img
+								src={props.urls[3]}
+								className="col p-2 "
+								data-toggle="modal"
+								data-target="#exampleModal"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>

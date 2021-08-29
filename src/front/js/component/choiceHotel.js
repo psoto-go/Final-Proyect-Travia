@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 export const ChoiceHotel = props => {
 	return (
-		<>
-			<div className="hotelSelect" style={{ width: "500px" }}>
-				<div style={{ width: "500px" }}>
+		<div>
+			<div className="hotelSelect" style={{ width: "400px" }}>
+				<div style={{ width: "400px" }} className="font-weight-bold p-2">
 					{props.name}
 					{/* <i className="fas fa-star" />
 					<i className="fas fa-star" />
@@ -17,8 +17,8 @@ export const ChoiceHotel = props => {
 					<hr />
 				</div>
 
-				<div>
-					<div className="col-sm-5">
+				<div className="row">
+					<div className="col-sm-6">
 						<img
 							style={{ width: "300px", borderRadius: "50px" }}
 							className="card-img"
@@ -26,31 +26,31 @@ export const ChoiceHotel = props => {
 							alt="Jacuzzi"
 						/>
 					</div>
+					<div className="col-6">
+						<div className="cardPrice">
+							<p className="font-weight-bold">Tipo de habitaciones por Noche</p>
 
-					<div className="cardPrice">
-						<p>Tipo de habitaciones por Noche</p>
-						<hr />
-						{props.rooms.map((room, index) => {
-							// console.log(room.kind);
-							return (
-								<div key={index}>
-									<p>
-										Habitación {room.kind} desde {room.price} €
-									</p>
-									<br />
-								</div>
-							);
-						})}
+							{props.rooms.map((room, index) => {
+								// console.log(room.kind);
+								return (
+									<div key={index}>
+										<p>
+											Habitación {room.kind} desde {room.price} €
+										</p>
+									</div>
+								);
+							})}
 
-						<div className="card-body">
-							<Link to={"/hotel/1"} className="btn btn-warning">
-								Vacancy
-							</Link>
+							<div className="card-body">
+								<Link to={"/hotel/1"} className="btn btn-warning">
+									Vacancy
+								</Link>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 ChoiceHotel.propTypes = {
