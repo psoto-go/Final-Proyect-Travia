@@ -99,7 +99,7 @@ export const Login = () => {
 					<img className="mr-5" src={facebook} alt="" width="72" height="72" />
 
 					<GoogleLogin
-						clientId="946040142718-3h25n3eak29rip9ftt5ko3sme27l8ob4.apps.googleusercontent.com"
+						clientId="554543668987-m44m7icesa0r453l0md9969mkv5me163.apps.googleusercontent.com"
 						onSuccess={respuestaGoogle}
 						onFailure={respuestaGoogle}
 						cookiePolicy={"single_host_origin"}

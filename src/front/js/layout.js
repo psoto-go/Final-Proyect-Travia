@@ -25,6 +25,8 @@ import { MyAccount } from "./pages/myAccount";
 import { AddCountry } from "./pages/addCountry";
 import { UserConfig } from "./pages/userConfig";
 
+import { ReviewsUser } from "./pages/reviewUser";
+
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
 	return (
@@ -87,6 +89,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/myAccount-accountFav">
 							<FavUser />
+						</Route>
+						<Route exact path="/myAccount-reviewUser">
+							<ReviewsUser />
 						</Route>
 						<Route exact path="/addCountry">
 							<AddCountry />
