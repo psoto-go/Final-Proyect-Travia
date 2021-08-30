@@ -53,7 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			signin_google: paramsForm => {
-				console.log(paramsForm.Xb);
+				console.log(paramsForm);
 				if (paramsForm) {
 					localStorage.setItem("token", paramsForm.tokenId);
 					return true;
