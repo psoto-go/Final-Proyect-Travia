@@ -44,7 +44,6 @@ export const Login = () => {
 		let login = await actions.signin_user(loginValue);
 		console.log(login);
 		if (login) {
-			// actions.signin_google(login)
 			selectKind();
 		}
 		// actions.loadUsers();
@@ -54,6 +53,7 @@ export const Login = () => {
 		console.log(respuesta, "@@@@@@@@@@@@@@");
 		if (!respuesta.error) {
 			if (await actions.signin_google(respuesta)) {
+				actions.register_google(respuesta);
 				console.log("#");
 				history.push("/myAccount");
 			}
