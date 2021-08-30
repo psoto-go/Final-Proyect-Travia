@@ -58,7 +58,7 @@ export const Destinations = () => {
 	});
 
 	return (
-		<div className="mt-4 pl-4  ml-4">
+		<div className="mt-5 pl-5  ml-5">
 			<ul className="nav nav-pills " id="pills-tab" role="tablist">
 				{listCities}
 			</ul>

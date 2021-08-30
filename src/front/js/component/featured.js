@@ -17,7 +17,7 @@ export const Featured = props => {
 
 	return (
 		<div className="inline-div">
-			<div className="hotel-item">
+			<div className="d-flex justify-content-around  hotel-item">
 				<div>
 					<div>
 						<img className="card-img elementStyle" src={props.url} alt="Jacuzzi" />

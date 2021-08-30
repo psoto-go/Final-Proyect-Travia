@@ -23,6 +23,7 @@ import { FavUser } from "./pages/favUser";
 import { PaymentGateway } from "./pages/paymentGateway";
 import { MyAccount } from "./pages/myAccount";
 import { AddCountry } from "./pages/addCountry";
+import { ProfileReservations } from "./pages/profileReservations";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -73,6 +74,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/onlyHotel">
 							<OnlyHotel />
+						</Route>
+						<Route exact path="/reservations">
+							<ProfileReservations />
 						</Route>
 
 						<Route exact path="/payment">

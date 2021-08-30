@@ -3,8 +3,8 @@ import React from "react";
 export const Subscribe = () => {
 	return (
 		<div>
-			<h2 className="text-center">Afiliate a nuestro Newsletter</h2>
 			<form className="justify-content-center form-inline">
+				<h2 className="font-weight-lighter text-center">Afiliate a nuestro Newsletter</h2>
 				<input
 					className="form-control mr-sm-2"
 					type="text"
