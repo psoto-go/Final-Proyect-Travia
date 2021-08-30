@@ -24,7 +24,7 @@ import { PaymentGateway } from "./pages/paymentGateway";
 import { MyAccount } from "./pages/myAccount";
 import { AddCountry } from "./pages/addCountry";
 import { UserConfig } from "./pages/userConfig";
-
+import { UserHelp } from "./pages/userHelp";
 import { ReviewsUser } from "./pages/reviewUser";
 
 export const Layout = () => {
@@ -95,6 +95,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/addCountry">
 							<AddCountry />
+						</Route>
+						<Route exact path="/myAccount-help">
+							<UserHelp />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

@@ -5,29 +5,37 @@ export const ReviewService = () => {
 		<div>
 			<h4>lorem impsum</h4>
 			<ul>
-				<li>
+				<li className="d-flex ">
 					<button className="btn btnServiceOn">Servicios</button>
-					<i className="fas fa-star"></i>
-					<i className="fas fa-star"></i>
-					<i className="fas fa-star"></i>
+					<div>
+						<i className="fas fa-star text-dark align-items-center"></i>
+						<i className="fas fa-star text-dark align-items-center"></i>
+						<i className="fas fa-star text-dark align-items-center"></i>
+					</div>
 				</li>
-				<li>
+				<li className="d-flex">
 					<button className="btn btnServiceOn">Servicios</button>
-					<i className="fas fa-star"></i>
-					<i className="fas fa-star"></i>
-					<i className="fas fa-star"></i>
+					<div>
+						<i className="fas fa-star text-dark align-items-center"></i>
+						<i className="fas fa-star text-dark align-items-center"></i>
+						<i className="fas fa-star text-dark align-items-center"></i>
+					</div>
 				</li>
-				<li>
+				<li className="d-flex">
 					<button className="btn btnServiceOn">Servicios</button>
-					<i className="fas fa-star"></i>
-					<i className="fas fa-star"></i>
-					<i className="fas fa-star"></i>
+					<div>
+						<i className="fas fa-star text-dark align-items-center"></i>
+						<i className="fas fa-star text-dark align-items-center"></i>
+						<i className="fas fa-star text-dark align-items-center"></i>
+					</div>
 				</li>
-				<li>
+				<li className="d-flex">
 					<button className="btn btnServiceOn">Servicios</button>
-					<i className="fas fa-star"></i>
-					<i className="fas fa-star"></i>
-					<i className="fas fa-star"></i>
+					<div>
+						<i className="fas fa-star text-dark align-items-center"></i>
+						<i className="fas fa-star text-dark align-items-center"></i>
+						<i className="fas fa-star text-dark align-items-center"></i>
+					</div>
 				</li>
 			</ul>
 		</div>
