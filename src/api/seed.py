@@ -36,12 +36,10 @@ class SeedData:
         self.hotel1 = Hotel(name = "Posada d' Es Molí", description = "La Posada d'Es Moli, situada en Playa de Palma, Mallorca, ofrece alojamiento elegante solo para adultos, que goza de una ubicación tranquila a solo 3 km de la playa.Las habitaciones de la Posada, situadas en los edificios de una antigua granja de 1897, son amplias y luminosas. Están bien equipadas y disponen de aire acondicionado y calefacción.La Posada goza de un entorno natural. Dispone de piscina al aire libre. Este alojamiento está rodeado de árboles frutales, palmeras y molinos antiguos, algunos de los cuales siguen en funcionamiento. Este alojamiento cuenta con una terraza de verano en la que se pueden degustar deliciosos platos de cocina casera. Los huéspedes podrán descubrir especialidades típicas mallorquinas, elaboradas con productos de la zona, además de frutas y verduras cultivadas en el propio establecimiento.", longitude = "39.52808764173537", latitude = "2.7728570321165837", city_id = self.city1.id, favorite= True)
         self.hotel2 = Hotel(name = "Hotel Rural Vilaflor", description = "El Hotel Rural Vilaflor ofrece un solárium y habitaciones en Vilaflor. El hotel está ubicado en una casa tradicional canaria de 150 años de antigüedad y cuenta con conexión Wi-Fi gratuita.Todas las habitaciones tienen vigas de madera en el techo y camas de hierro. Algunas tienen baño privado. También hay un salón compartido. El hotel dispone de un patio donde los huéspedes pueden relajarse. Tanto en el establecimiento como en los alrededores se pueden practicar diversas actividades, como senderismo y trekking.", longitude = "28.158863145816714", latitude = "-16.63624472506804", city_id = self.city3.id)
         self.hotel3 = Hotel(name = "Hotel New Folías", description = "El Hotel New Folias se encuentra a solo 100 metros de la playa de San Agustín, en el sur de Gran Canaria, y cuenta con una gran piscina climatizada. Las habitaciones son amplias y tienen vistas a la playa, al mar o a los jardines. Hay WiFi gratuita en todas las instalaciones. Todas las habitaciones disponen de zona de dormitorio, zona de salón, zona de cocina y baño privado. El Hotel New Folías tiene una terraza para tomar el sol y una piscina infantil. El bar Folias Garden, situado junto a la piscina, sirve una amplia selección de bebidas y aperitivos. Hay restaurantes, tiendas y una farmacia en el centro comercial San Agustín, a 5 minutos a pie del establecimiento. El centro de Playa del Inglés está a sólo 3 km y se puede llegar a él en el paseo marítimo. El aeropuerto está a 25 km y hay un servicio de autobús al aeropuerto y a Maspalomas que sale a sólo 150 metros.", longitude = "27.769379621783237", latitude = "-15.545678836134213", city_id = self.city2.id, favorite = True )
-        self.hotel4 = Hotel(name = "Hotel Silken", description = "El Hotel New Folias se encuentra a solo 100 metros de la playa de San Agustín, en el sur de Gran Canaria, y cuenta con una gran piscina climatizada. Las habitaciones son amplias y tienen vistas a la playa, al mar o a los jardines. Hay WiFi gratuita en todas las instalaciones. Todas las habitaciones disponen de zona de dormitorio, zona de salón, zona de cocina y baño privado. El Hotel New Folías tiene una terraza para tomar el sol y una piscina infantil. El bar Folias Garden, situado junto a la piscina, sirve una amplia selección de bebidas y aperitivos. Hay restaurantes, tiendas y una farmacia en el centro comercial San Agustín, a 5 minutos a pie del establecimiento. El centro de Playa del Inglés está a sólo 3 km y se puede llegar a él en el paseo marítimo. El aeropuerto está a 25 km y hay un servicio de autobús al aeropuerto y a Maspalomas que sale a sólo 150 metros.", longitude = "27.769379621783237", latitude = "-15.545678836134213", city_id = self.city4.id, favorite = True )
         db.session.add(self.hotel)
         db.session.add(self.hotel1)
         db.session.add(self.hotel2)
         db.session.add(self.hotel3)
-        db.session.add(self.hotel4)
         db.session.commit()
     
     def create_room(self):
@@ -50,13 +48,11 @@ class SeedData:
         self.room2 = Room(kind = "individual", number_of_beds = 1, number_of_persons = 1, hotel_id = self.hotel1.id, price = 50)
         self.room3 = Room(kind = "suite", number_of_beds = 1, number_of_persons = 2, hotel_id = self.hotel2.id, price = 40)
         self.room4 = Room(kind = "matrimonio", number_of_beds = 1, number_of_persons = 2, hotel_id = self.hotel3.id, price = 30)
-        self.room5 = Room(kind = "individual", number_of_beds = 1, number_of_persons = 1, hotel_id = self.hotel4.id, price = 30)
         db.session.add(self.room)
         db.session.add(self.room1)
         db.session.add(self.room2)
         db.session.add(self.room3)
         db.session.add(self.room4)
-        db.session.add(self.room5)
         db.session.commit()
 
     def create_review(self):
@@ -67,7 +63,6 @@ class SeedData:
         self.review4 = Reviews(hotel_id = self.hotel3.id, user_id = self.fermin.id, description = "La atención de todo el personal. En recepción muy buen trato y mucha simpatía. En la piscina unos cócteles increíbles y el socorrista muy majo y divertido. En cocina super majos y serviciales. La limpieza muy buena. Volveré seguro. GRACIAS A TODOS", characteristic = "precio, comodo", favorite = True)
         self.review5 = Reviews(hotel_id = self.hotel2.id, user_id = self.user.id, description = "Todo en general, sobre todo destacó el equipo humano, Cristina la chica de recepción nos aconsejó desde primera hora y nos trato estupendo, Juan el chico de la piscina súper buena gente y carlos no podía faltar increíbles cócteles y sobre todo como persona un 10. Habitaciones y zonas comunes limpias, vistas inmejorables. Volveremos seguro, un saludo de los Sevillanos.", characteristic = "limpio, piscina")
         self.review6 = Reviews(hotel_id = self.hotel3.id, user_id = self.paco.id, description = "El hotel es bastante nuevo, la habitación perfecta para nosotros estando con un bebé. Baño muy cómodo y bien reformado. Cama muy cómoda. Muy limpio. Bien de amenities.", characteristic = "limpio, comodo", favorite = True)
-        self.review7 = Reviews(hotel_id = self.hotel4.id, user_id = self.paco.id, description = "El hotel es bastante nuevo, la habitación perfecta para nosotros estando con un bebé. Baño muy cómodo y bien reformado. Cama muy cómoda. Muy limpio. Bien de amenities.", characteristic = "limpio, comodo", favorite = True)
         db.session.add(self.review)
         db.session.add(self.review1)
         db.session.add(self.review2)
@@ -75,7 +70,6 @@ class SeedData:
         db.session.add(self.review4)
         db.session.add(self.review5)
         db.session.add(self.review6)
-        db.session.add(self.review7)
 
         db.session.commit()
 
