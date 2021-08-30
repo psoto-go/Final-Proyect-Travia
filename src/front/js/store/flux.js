@@ -90,6 +90,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("Error", error));
 			},
+			register_google: paramsForm => {
+				const raw = JSON.stringify(paramsForm);
+
+				const requestPost = {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: raw
+				};
+
+				fetch(api_url + "/api/sign_up_google", requestPost)
+					.then(response => response.json())
+					.then(result => {
+						console.log("registrado user google");
+					})
+					.catch(error => console.log("Error", error));
+			},
 			register_admin: paramsForm => {
 				const raw = JSON.stringify(paramsForm);
 

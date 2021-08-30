@@ -44,6 +44,7 @@ export const Login = () => {
 		let login = await actions.signin_user(loginValue);
 		console.log(login);
 		if (login) {
+			// actions.signin_google(login)
 			selectKind();
 		}
 		// actions.loadUsers();
