@@ -106,7 +106,8 @@ class Room(db.Model):
             "number_of_persons": self.number_of_persons,
             "price": self.price,
             "roomArchives": list(map(lambda x:x.serialize(), self.roomArchives)),
-            "bookings": list(map(lambda x:x.serialize(), self.bookings))
+            "bookings": list(map(lambda x:x.serialize(), self.bookings)),
+            'hotel_id': self.hotel_id
             # do not serialize the password, its a security breach
         }
 

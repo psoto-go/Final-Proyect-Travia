@@ -1,7 +1,22 @@
-import React from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { api_url } from "../constants";
 import "../../styles/paymentGateway.scss";
 
 export const PaymentCard = () => {
+	const reserva = localStorage.getItem("reserva");
+	const [detalles, setDetalles] = useState();
+	const hab = JSON.parse(reserva);
+	useEffect(() => {
+		fetch(api_url + "/api/hotel/" + hab.hotel_id)
+			.then(response => response.json())
+			.then(result => {
+				setDetalles(result);
+				console.log(detalles);
+			})
+			.catch(error => console.log("Error", error));
+	}, [reserva]);
 	return (
 		<div>
 			<div className="card paymentCard">
