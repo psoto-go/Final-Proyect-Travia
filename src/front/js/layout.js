@@ -24,6 +24,8 @@ import { PaymentGateway } from "./pages/paymentGateway";
 import { MyAccount } from "./pages/myAccount";
 import { AddCountry } from "./pages/addCountry";
 import { ProfileReservations } from "./pages/profileReservations";
+import { ProfileMyAcc } from "./pages/profileMyAcc";
+import { ProfileFavorites } from "./pages/profileFavorites";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -39,6 +41,13 @@ export const Layout = () => {
 						<Route exact path="/hotel/:theid">
 							<HotelDetail />
 						</Route>
+						<Route exact path="/myacc">
+							<ProfileMyAcc />
+						</Route>
+						<Route exact path="/favorites">
+							<ProfileFavorites />
+						</Route>
+
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
