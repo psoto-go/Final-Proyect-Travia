@@ -20,7 +20,7 @@ export const AdminHoteles = () => {
 		return (
 			<button key={index} type="button" className="buttonHotels list-group-item list-group-item-action">
 				<div className="hotelImg">
-					<img src={item.HotelArchives[0].url} />
+					<img src={item.HotelArchives[0].url} style={{ width: "300px" }} />
 					<div className="content-1">
 						<div className="card">
 							<div className="card-body">
@@ -67,7 +67,7 @@ export const AdminHoteles = () => {
 						</div>
 						<div className="col-md-4 ml-auto">
 							<Link to="#">Dashboard</Link> / Hoteles
-							<div className="col" />
+							<div />
 						</div>
 					</div>
 				</div>
