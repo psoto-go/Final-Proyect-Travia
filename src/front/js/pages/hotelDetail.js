@@ -31,6 +31,7 @@ export const HotelDetail = () => {
 						beds={item.number_of_beds}
 						price={item.price}
 						kind={item.kind}
+						item={item}
 					/>
 				);
 		  })

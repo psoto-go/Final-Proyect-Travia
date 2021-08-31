@@ -52,8 +52,7 @@ export const Login = () => {
 	const respuestaGoogle = async respuesta => {
 		console.log(respuesta, "@@@@@@@@@@@@@@");
 		if (!respuesta.error) {
-			if (await actions.signin_google(respuesta)) {
-				actions.register_google(respuesta);
+			if ((await actions.signin_google(respuesta)) && (await actions.register_google(respuesta))) {
 				console.log("#");
 				history.push("/myAccount");
 			}

@@ -91,8 +91,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("Error", error));
 			},
-			register_google: paramsForm => {
-				const store = getStore();
+			register_google: async paramsForm => {
 				const raw = JSON.stringify({
 					name: paramsForm.Ws.zU,
 					last_name: paramsForm.Ws.zS,
@@ -104,28 +103,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					headers: { "Content-Type": "application/json" },
 					body: raw
 				};
-				fetch(api_url + "/api/users")
-					.then(res => {
-						return res.json();
-					})
-					.then(data => {
-						setStore({ usergoogle: data });
-					})
-					.catch(error => console.log("Error loading message from backend", error));
+				const response = await fetch(api_url + "/api/sign_up_google", requestPost);
+				const data = await response.json();
 
-				const igual = store.usergoogle.map((item, index) => {
-					if ((item.email = paramsForm.Ws.Ht)) {
-						return true;
-					}
-				});
-
-				if (!igual == true) {
-					fetch(api_url + "/api/sign_up_google", requestPost)
-						.then(response => response.json())
-						.then(result => {
-							console.log("registrado user google");
-						})
-						.catch(error => console.log("Error", error));
+				if (data.error) {
+					return false;
+				} else {
+					return true;
 				}
 			},
 			register_admin: paramsForm => {

@@ -34,7 +34,12 @@ export const HotelPrices = props => {
 							</p>
 						</div>
 						<div className="col-4">
-							<Link to={"/"} className="btn btn-primary">
+							<Link
+								to="/payment"
+								className="btn btn-primary"
+								onClick={() => {
+									localStorage.setItem("reserva", JSON.stringify(props.item));
+								}}>
 								Reservar!
 							</Link>
 							<h6>{`Reserva por ${props.price}€ / noche (impuestos incluidos)`}</h6>
@@ -50,5 +55,6 @@ HotelPrices.propTypes = {
 	persons: PropTypes.number,
 	beds: PropTypes.number,
 	price: PropTypes.number,
-	kind: PropTypes.string
+	kind: PropTypes.string,
+	item: PropTypes.object
 };
