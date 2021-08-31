@@ -42,8 +42,9 @@ export const Search = () => {
 				setDetalles(result.response);
 			})
 			.catch(error => console.log("Error", error));
+		actions.url(api_url + "/api/hotels?" + params);
 		// <List data={detalles}></List>;
-		// history.push("/list?" + params);
+		history.push("/list?" + params);
 	};
 	console.log(detalles);
 

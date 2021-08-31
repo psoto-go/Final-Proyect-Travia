@@ -2,7 +2,6 @@ import React, { Component, useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Gallery } from "../component/gallery";
 import { api_url } from "../constants";
-
 import { NavDetail } from "../component/navDetail";
 import { Availability } from "../component/availability";
 import { HotelPrices } from "../component/hotelPrices";
@@ -62,17 +61,29 @@ export const HotelDetail = () => {
 	return (
 		<>
 			<div className="m-5">
-				<h2>{hotel.name}</h2>
+				<h2>
+					{hotel.name} <i className="fas fa-star" />
+					<i className="fas fa-star" />
+					<i className="fas fa-star" />
+				</h2>
 
-				<p className="pl-5"> Ipsum Loren Ipsum</p>
+				<p className="pl-5"> Ipsum Loren Ipsum Ipsum Loren Ipsum Ipsum Loren Ipsum</p>
+
 				{listGallery}
-				<NavDetail description={hotel.description} />
-				<div className="serviciosHotel">
-					<h3>Servicios del Hotel</h3>
-					{listServices}
-					<br />
+
+				<div className="row">
+					<div className="col-12">
+						<NavDetail description={hotel.description} />
+						<div className="serviciosHotel col-6">
+							<h3>Servicios del Hotel</h3>
+							{listServices}
+						</div>
+						<div className="col ">
+							<Availability />
+						</div>
+					</div>
 				</div>
-				<Availability />
+
 				{listRooms}
 			</div>
 			<div className="resenasStyle">
@@ -80,9 +91,9 @@ export const HotelDetail = () => {
 				<div className="row">{listReviews}</div>
 			</div>
 
-			<div>
-				<p className="ml-5">
-					<h3 className="mt-5">Politicas de Reserva</h3>
+			<div className="ml-5">
+				<p>
+					<h3 className="pl-1">Politicas de Reserva</h3>
 					Ut tempus lobortis urna eu mattis. Donec semper ultricies ultricies. Suspendisse porttitor metus
 					turpis, sed dictum turpis aliquam non. Phasellus eu porta sem. Vivamus cursus libero rhoncus,
 					vehicula tortor ac, lacinia nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices

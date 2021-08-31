@@ -52,13 +52,13 @@ export const Destinations = () => {
 					<h5 className="card-title p-3 ml-5">{city.name}</h5>
 					<p className="card-text ml-8">{city.description}</p>
 				</div>
-				{listHotels}
+				<div align="left">{listHotels}</div>
 			</div>
 		);
 	});
 
 	return (
-		<div className="mt-4 pl-4  ml-4">
+		<div className="mt-5 pl-5  ml-5">
 			<ul className="nav nav-pills " id="pills-tab" role="tablist">
 				{listCities}
 			</ul>

@@ -24,6 +24,8 @@ export const Login = () => {
 				history.push("/user");
 			} else if (jwt(token).sub.kind == "admin") {
 				history.push("/adminDash");
+			} else if (jwt(token).googleId) {
+				history.push("/user");
 			}
 		}
 	};
@@ -48,7 +50,8 @@ export const Login = () => {
 	};
 
 	const respuestaGoogle = respuesta => {
-		if (respuesta.accessToken) {
+		console.log(respuesta);
+		if (respuesta) {
 			actions.signin_google(respuesta);
 		}
 	};
