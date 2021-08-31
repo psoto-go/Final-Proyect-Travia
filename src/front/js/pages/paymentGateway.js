@@ -10,6 +10,12 @@ export const PaymentGateway = () => {
 	return (
 		<div className="PaymentGateway">
 			<div className="row">
+				<button
+					onClick={() => {
+						console.log(JSON.parse(localStorage.getItem("reserva")));
+					}}>
+					adsfasdfdsf
+				</button>
 				<p>
 					<Link>
 						<i className="fas fa-angle-double-left" />
