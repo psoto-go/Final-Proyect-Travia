@@ -4,7 +4,7 @@ import { FavComp } from "../component/favComp";
 export const FavUser = () => {
 	return (
 		<div>
-			<h1>Lorem Impsum</h1>
+			<h3>Lorem Impsum</h3>
 			<div className="row">
 				<FavComp />
 
