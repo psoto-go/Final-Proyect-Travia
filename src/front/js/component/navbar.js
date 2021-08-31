@@ -74,9 +74,14 @@ export const Navbar = () => {
 						<Link to="/myAccount" className="nav-link colored">
 							Mi perfil
 						</Link>
-						{/* <Link to="/login" className="nav-link colored" onClick={localStorage.removeItem("token")}>
+						<Link
+							to="/login"
+							className="nav-link colored"
+							onClick={() => {
+								localStorage.removeItem("token");
+							}}>
 							Salir
-						</Link> */}
+						</Link>
 					</div>
 				)}
 			</div>
