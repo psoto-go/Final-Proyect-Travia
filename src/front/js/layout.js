@@ -23,6 +23,9 @@ import { FavUser } from "./pages/favUser";
 import { PaymentGateway } from "./pages/paymentGateway";
 import { MyAccount } from "./pages/myAccount";
 import { AddCountry } from "./pages/addCountry";
+import { UserConfig } from "./pages/userConfig";
+import { UserHelp } from "./pages/userHelp";
+import { ReviewsUser } from "./pages/reviewUser";
 import { ProfileReservations } from "./pages/profileReservations";
 import { ProfileMyAcc } from "./pages/profileMyAcc";
 import { ProfileFavorites } from "./pages/profileFavorites";
@@ -81,6 +84,9 @@ export const Layout = () => {
 						<Route exact path="/adminHoteles">
 							<AdminHoteles />
 						</Route>
+						<Route exact path="/myAccount-settings">
+							<UserConfig />
+						</Route>
 						<Route exact path="/onlyHotel">
 							<OnlyHotel />
 						</Route>
@@ -97,8 +103,14 @@ export const Layout = () => {
 						<Route exact path="/myAccount-accountFav">
 							<FavUser />
 						</Route>
+						<Route exact path="/myAccount-reviewUser">
+							<ReviewsUser />
+						</Route>
 						<Route exact path="/addCountry">
 							<AddCountry />
+						</Route>
+						<Route exact path="/myAccount-help">
+							<UserHelp />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
