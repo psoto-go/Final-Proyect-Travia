@@ -8,7 +8,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			user: null,
 			accesToken: null,
 			users: [],
-			url: null
+			url: null,
+			usergoogle: []
 		},
 		actions: {
 			url: paramsForm => {
@@ -53,7 +54,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			signin_google: paramsForm => {
-				console.log(paramsForm.Xb);
+				console.log(paramsForm);
 				if (paramsForm) {
 					localStorage.setItem("token", paramsForm.tokenId);
 					return true;
@@ -89,6 +90,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("registrado user");
 					})
 					.catch(error => console.log("Error", error));
+			},
+			register_google: async paramsForm => {
+				const raw = JSON.stringify({
+					name: paramsForm.Ws.zU,
+					last_name: paramsForm.Ws.zS,
+					email: paramsForm.Ws.Ht
+				});
+
+				const requestPost = {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: raw
+				};
+				const response = await fetch(api_url + "/api/sign_up_google", requestPost);
+				const data = await response.json();
+
+				if (data.error) {
+					return false;
+				} else {
+					return true;
+				}
 			},
 			register_admin: paramsForm => {
 				const raw = JSON.stringify(paramsForm);

@@ -3,11 +3,8 @@ import { FavComp } from "../component/favComp";
 
 export const FavUser = () => {
 	return (
-		<div className="">
-			<div className="row">
-				<h1 className="ml-4">Favoritos/ Guardados</h1>
-			</div>
-
+		<div>
+			<h3>Lorem Impsum</h3>
 			<div className="row">
 				<FavComp />
 

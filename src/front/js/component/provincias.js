@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 
 export const Provincias = props => {
 	return (
-		<div className="row">
-			<div className="prov col-3">
+		<div className="row ">
+			<div className="prov col-3 ">
 				<img src={props.url} alt="" />
 				<div>
 					<Link to="#">
-						<h1>{props.name}</h1>
+						<h3 className="text-center">{props.name}</h3>
 					</Link>
 				</div>
 			</div>

@@ -1,19 +1,31 @@
-import React from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { api_url } from "../constants";
 import "../../styles/paymentGateway.scss";
 
 export const PaymentCard = () => {
+	const [detalles, setDetalles] = useState({});
+	const reserva = localStorage.getItem("reserva");
+	const hab = JSON.parse(reserva);
+	useEffect(() => {
+		fetch(api_url + "/api/hotel/" + hab.hotel_id)
+			.then(response => response.json())
+			.then(result => {
+				setDetalles(result.response);
+			})
+			.catch(error => console.log("Error", error));
+	}, []);
+	console.log(typeof detalles);
 	return (
 		<div>
 			<div className="card paymentCard">
-				<img
-					src="https://www.hotelartsbarcelona.com/app/uploads/2021/01/gifthotelartsresponsive.png"
-					className="card-img-top"
-					alt="..."
-				/>
+				{/* <img src={detalles.HotelArchives[0].url} className="card-img-top" alt="..." /> */}
 				<div className="card-body">
-					<h5 className="card-title">Hotel Hilton Costa del Sol</h5>
-					<p className="card-text">Habitacion Doble</p>
-					<p className="card-text">Avenida Siempre Viva 25, 29879, Malaga</p>
+					<h5 className="card-title">{detalles.name} </h5>
+					<p className="card-text">Habitacion {hab.kind}</p>
+					<p className="card-text">Numero de camas {hab.number_of_beds}</p>
+					<p className="card-text">Numero de personas {hab.number_of_persons}</p>
 					<p className="card-text">Lun 28 de sep 2021 - Mie 30 de Mar 2022</p>
 				</div>
 				<ul className="list-group list-group-flush ">

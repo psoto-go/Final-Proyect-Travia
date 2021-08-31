@@ -12,7 +12,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     last_name = db.Column(db.String(120), unique=False, nullable=True)
     name = db.Column(db.String(120), unique=False, nullable=True)
-    password = db.Column(db.String(80), unique=False, nullable=False)
+    password = db.Column(db.String(80), unique=False, nullable=True)
     kind = db.Column(db.String(10), unique=False, nullable=False)
     created_date = db.Column(db.DateTime, server_default=db.func.current_timestamp())
     reviews = db.relationship("Hotel", secondary="reviews")
@@ -106,7 +106,8 @@ class Room(db.Model):
             "number_of_persons": self.number_of_persons,
             "price": self.price,
             "roomArchives": list(map(lambda x:x.serialize(), self.roomArchives)),
-            "bookings": list(map(lambda x:x.serialize(), self.bookings))
+            "bookings": list(map(lambda x:x.serialize(), self.bookings)),
+            'hotel_id': self.hotel_id
             # do not serialize the password, its a security breach
         }
 
