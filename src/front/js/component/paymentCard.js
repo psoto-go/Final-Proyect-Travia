@@ -7,6 +7,8 @@ import "../../styles/paymentGateway.scss";
 export const PaymentCard = () => {
 	const [detalles, setDetalles] = useState({});
 	const reserva = localStorage.getItem("reserva");
+	const end_date = localStorage.getItem("end_date");
+	const start_date = localStorage.getItem("start_date");
 	const hab = JSON.parse(reserva);
 	useEffect(() => {
 		fetch(api_url + "/api/hotel/" + hab.hotel_id)
@@ -26,11 +28,11 @@ export const PaymentCard = () => {
 					<p className="card-text">Habitacion {hab.kind}</p>
 					<p className="card-text">Numero de camas {hab.number_of_beds}</p>
 					<p className="card-text">Numero de personas {hab.number_of_persons}</p>
-					<p className="card-text">Lun 28 de sep 2021 - Mie 30 de Mar 2022</p>
+					<p className="card-text">{`${start_date.reverse} - ${end_date.reverse}`}</p>
 				</div>
 				<ul className="list-group list-group-flush ">
 					<li className="list-group-item paymentImage border-top">
-						<p className="col-6">$7 x 170 noches $1200</p>
+						<p className="col-6">{hab.price}€ x 170 noches $1200</p>
 					</li>
 					<li className="list-group-item paymentImage border-top">impuestos 0$</li>
 					<li className="list-group-item paymentImage border-top">Total $1200</li>
