@@ -61,7 +61,7 @@ export const AdminHoteles = () => {
 		<>
 			<div>
 				<div className="container  text-center">
-					<div className="row conjunto">
+					<div className="row">
 						<div className="col-md-4">
 							<h1>Hoteles</h1>
 						</div>
