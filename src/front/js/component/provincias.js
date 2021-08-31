@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const Provincias = props => {
 	return (
-		<div>
+		<div className="row">
 			<div className="prov col-3">
 				<img src={props.url} alt="" />
 				<div>
