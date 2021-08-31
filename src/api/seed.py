@@ -22,10 +22,13 @@ class SeedData:
         self.city1 = City(name = "Palma de Mallorca" , description = "Palma, capital de la isla española de Mallorca, es una ciudad turística situada en el oeste del mar Mediterráneo. La inmensa catedral de Santa María, un monumento gótico que se empezó a construir en el siglo XIII, domina el horizonte de la bahía de Palma. Junto a esta se halla la Almudaina, una fortaleza de estilo árabe convertida en residencia real. Al oeste de la ciudad, el castillo de Bellver, situado en la cima de un cerro, es una fortaleza medieval con una distintiva forma circular.", url = "https://res.cloudinary.com/pabletesglez/image/upload/v1629285566/mall_wboi7m.jpg")
         self.city2 = City(name = "Canarias" , description = "Las Islas Canarias, un archipiélago español frente a la costa noroeste de África, son islas volcánicas escarpadas conocidas por sus playas de arena blanca y negra. Tenerife, la isla más grande, es dominada por el volcán activo Teide, a veces nevado, que tiene su observatorio astronómico y es parte del Parque Nacional del Teide. Tenerife es sede de un gran carnaval previo a la Cuaresma en la capital, Santa Cruz de Tenerife.", url = "https://res.cloudinary.com/pabletesglez/image/upload/v1629285625/cann_q182d1.jpg")
         self.city3 = City(name = "Tenerife" , description = "Tenerife es la más grande de las islas Canarias de España, frente a África Occidental. La domina el monte Teide, un volcán inactivo que es la cima más alta de España. Tenerife es mejor conocida por el Carnaval de Santa Cruz, un enorme festival previo a la Cuaresma con desfiles, música, danza y trajes coloridos. La isla tiene muchas playas (con arenas que varían del amarillo al negro) y áreas de centros turísticos, incluidos Los Cristianos y Playa de las Américas.", url = "https://res.cloudinary.com/pabletesglez/image/upload/v1629285667/te_akrksm.jpg")
+        self.city4 = City(name = "Burgos" , description = "Burgos es la más grande de las islas Canarias de España, frente a África Occidental. La domina el monte Teide, un volcán inactivo que es la cima más alta de España. Tenerife es mejor conocida por el Carnaval de Santa Cruz, un enorme festival previo a la Cuaresma con desfiles, música, danza y trajes coloridos. La isla tiene muchas playas (con arenas que varían del amarillo al negro) y áreas de centros turísticos, incluidos Los Cristianos y Playa de las Américas.", url = "https://res.cloudinary.com/pabletesglez/image/upload/v1629285667/te_akrksm.jpg")
         db.session.add(self.city)
         db.session.add(self.city2)
         db.session.add(self.city1)
         db.session.add(self.city3)
+        db.session.add(self.city4) 
+
         db.session.commit()
 
     def create_hotel(self):
@@ -67,6 +70,7 @@ class SeedData:
         db.session.add(self.review4)
         db.session.add(self.review5)
         db.session.add(self.review6)
+
         db.session.commit()
 
     def create_service(self):

@@ -4,11 +4,11 @@ import "../../styles/addCountry.scss";
 export const AddCountry = () => {
 	return (
 		<div className="containerCountry">
-			<div className="row ">
+			<div className="row d-flex justify-content-center">
 				<div className="col-4">
 					<img
-						className="imgCountry1 img-fluid"
-						src="https://media.gettyimages.com/photos/hotel-w-barceloneta-barcelona-catalonia-spain-europe-picture-id1011856398?s=612x612"></img>
+						className="imgCountry1 img-fluid mx-auto d-block "
+						src="https://static.hosteltur.com/app/public/uploads/img/articles/2020/07/24/L_075644_img-1347.jpg"></img>
 				</div>
 
 				<div className="col-8">

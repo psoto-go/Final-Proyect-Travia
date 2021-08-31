@@ -37,6 +37,25 @@ def sign_up_user():
 
     return jsonify({"msg": "El usuario fue creado exitosamente"}), 200
 
+@api.route('/sign_up_google', methods=['POST']) 
+def sign_up_user_google():
+
+    body_params = request.get_json()
+    print(body_params)
+    name = body_params.get("name", None)
+    last_name = body_params.get("last_name", None)
+    email = body_params.get("email", None)
+    kind = body_params.get("kind", "user")
+    created_date = body_params.get("created_date", None)
+
+
+    
+    user1 = User(name=name, last_name = last_name, email=email, kind=kind, created_date=created_date)
+    db.session.add(user1)
+    db.session.commit()
+
+    return jsonify({"msg": "El usuario fue creado exitosamente"}), 200
+
 @api.route('/users', methods=['GET'])
 def handle_hello2():
     user = User.query.all()

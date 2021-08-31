@@ -3,26 +3,26 @@ import { Link } from "react-router-dom";
 import "../../styles/favComp.scss";
 export const FavComp = () => {
 	return (
-		<div className="text-center my-3">
+		<div className=" container text-center my-3">
 			<div className="row">
 				<div className="col-5">
 					<Link>
 						<img
-							className="favBox "
+							className="favBox rounded-left"
 							src="https://img.blogs.es/anexom/wp-content/uploads/2016/08/hoteles-w-920x515.jpg"></img>
 					</Link>
 				</div>
 				<div className="col-6">
 					<Link>
 						<img
-							className="img-fluid my-1"
+							className="img-fluid my-1 rounded-bottom"
 							src="https://img.blogs.es/anexom/wp-content/uploads/2016/08/hoteles-w-920x515.jpg"
 						/>
 					</Link>
 
 					<Link>
 						<img
-							className="img-fluid"
+							className="img-fluid rounded-top"
 							src="https://img.blogs.es/anexom/wp-content/uploads/2016/08/hoteles-w-920x515.jpg"
 						/>
 					</Link>
