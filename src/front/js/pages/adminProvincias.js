@@ -26,11 +26,10 @@ export const AdminProvincias = () => {
 				<div className="container text-center">
 					<div className="row">
 						<div className="col-md-4">
-							<h1>Ciudades</h1>
+							<h2 className="ml-3">Ciudades</h2>
 						</div>
-						<div className="col-md-4 ml-auto">
+						<div className="my-5 text-right col">
 							<Link to="#">Dashboard</Link> / Ciudades
-							<div className="col" />
 						</div>
 					</div>
 				</div>
@@ -54,7 +53,7 @@ export const AdminProvincias = () => {
 					</div>
 				</div>
 			</div>
-			<div className="container3">
+			<div className="container3 ml-5">
 				<div className="row">{listCities}</div>
 			</div>
 		</>
