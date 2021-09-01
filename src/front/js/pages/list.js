@@ -10,11 +10,14 @@ import "/workspace/Final-Proyect-Travia/src/front/styles/home.scss";
 export const List = props => {
 	const { store, actions } = useContext(Context);
 	const [detalles, setDetalles] = useState();
+	const [map, setMap] = useState();
+
 	useEffect(() => {
 		fetch(store.url)
 			.then(response => response.json())
 			.then(result => {
 				setDetalles(result.response);
+				setMap(<Map hotels={result.response} />);
 			})
 			.catch(error => console.log("Error", error));
 	}, [store.url]);
@@ -41,9 +44,7 @@ export const List = props => {
 							  })
 							: ""}
 					</div>
-					<div className="col-5">
-						<Map />
-					</div>
+					<div className="col-5">{map ? map : ""}</div>
 				</div>
 			</div>
 		</div>
