@@ -252,7 +252,15 @@ class SeedData:
 
     def create_booking(self):
         self.create_booking = Booking(user_id = self.user.id, room_id = self.room.id, start_date = "2021-10-11", end_date = "2021-10-20", price = 200)
+        self.create_booking1 = Booking(user_id = self.user.id, room_id = self.room1.id, start_date = "0000-00-00", end_date = "0000-00-00", price = 0)
+        self.create_booking2 = Booking(user_id = self.user.id, room_id = self.room2.id, start_date = "0000-00-00", end_date = "0000-00-00", price = 0)
+        self.create_booking3 = Booking(user_id = self.user.id, room_id = self.room3.id, start_date = "0000-00-00", end_date = "0000-00-00", price = 0)
+        self.create_booking4 = Booking(user_id = self.user.id, room_id = self.room4.id, start_date = "0000-00-00", end_date = "0000-00-00", price = 0)
         db.session.add(self.create_booking)
+        db.session.add(self.create_booking1)
+        db.session.add(self.create_booking2)
+        db.session.add(self.create_booking3)
+        db.session.add(self.create_booking4)
         db.session.commit()
 
     def create_data(self):

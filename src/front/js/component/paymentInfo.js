@@ -1,92 +1,134 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
+import { useHistory } from "react-router-dom";
 import "../../styles/paymentGateway.scss";
 import { Link } from "react-router-dom";
-import PhoneInput from "react-phone-input-2";
+
 import "react-phone-input-2/lib/style.css";
 import { Stripe } from "../component/stripe";
 
 export const PaymentInfo = () => {
-	const [value, setValue] = useState();
+	const { store, actions } = useContext(Context);
+	const [loginValue, setLoginValue] = useState(firstValue);
+	const [confirmValue, setConfirmValue] = useState();
+	let history = useHistory();
+
+	const firstValue = {
+		name: "",
+		last_name: "",
+		email: "",
+		password: ""
+	};
+
+	const changeInput = e => {
+		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
+	};
+	const changeInputConfirm = e => {
+		setConfirmValue(e.target.value);
+	};
+
+	const submitForm = e => {
+		e.preventDefault();
+		if (loginValue.password === confirmValue) {
+			actions.register(loginValue);
+			history.push("/welcome");
+		} else {
+			console.log("error");
+		}
+	};
 
 	return (
 		<div>
-			<div className="mb-5">
+			<div className="mb-2">
 				<h1>Informacion del huesped</h1>
 				<Link>
 					<h4>¿Ya eres usuario? Iniciar sesión</h4>
 				</Link>
 			</div>
+			<form className="form-signin" onSubmit={submitForm}>
+				<div className="form-group row">
+					<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+						Nombre
+					</label>
 
-			<form>
-				<div className="form-row">
-					<div className="form-group col-md-6">
-						<label htmlFor="inputEmail4">Correo electronico</label>
-						<input type="email" className="form-control" id="inputEmail4" />
-					</div>
-					<div className="form-group col-md-6">
-						<label htmlFor="inputEmail4">Confirmar correo</label>
-						<input type="email" className="form-control" id="inputEmail4" />
-					</div>
-				</div>
-				<div className="form-row">
-					<div className="form-group col-md-6">
-						<label htmlFor="inputEmail4">Nombre</label>
-						<input type="name" className="form-control" id="inputEmail4" />
-					</div>
-					<div className="form-group col-md-6">
-						<label htmlFor="inputEmail4">Apellido</label>
-						<input type="lastname" className="form-control" id="inputEmail4" />
+					<div className="col-sm-10">
+						<input
+							type="text"
+							className="form-control"
+							id="exampleFormControlInput1"
+							placeholder="Nombre"
+							name="name"
+							onChange={changeInput}
+						/>
 					</div>
 				</div>
-				<div className="form-group">
-					<label htmlFor="inputAddress">Address</label>
-					<input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" />
-				</div>
-				<div className="form-group">
-					<label htmlFor="inputAddress2">Address 2</label>
-					<input
-						type="text"
-						className="form-control"
-						id="inputAddress2"
-						placeholder="Apartment, studio, or floor"
-					/>
-				</div>
-				<div className="form-row">
-					<div className="form-group col-md-6">
-						<label htmlFor="inputCity">City</label>
-						<input type="text" className="form-control" id="inputCity" />
-					</div>
-					<div className="form-group col-md-4">
-						<label htmlFor="inputState">State</label>
-						<select id="inputState" className="form-control">
-							<option selected>Choose...</option>
-							<option>...</option>
-						</select>
-					</div>
-					<div className="form-group col-md-2">
-						<label htmlFor="inputZip">Zip</label>
-						<input type="text" className="form-control" id="inputZip" />
-					</div>
-				</div>
-				<div>
-					<div className="input-group mb-1">
-						<input type="date" />
-					</div>
-					<p className="mb-4 mt-0">Debes ser mayor de 18 años para contratar mediante travia</p>
-				</div>
-				<PhoneInput placeholder="Enter phone number" value={value} onChange={setValue} />
+				<div className="form-group row">
+					<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+						Apellido
+					</label>
 
-				<div className="form-row mt-4">
-					<div className="form-group col-md-6 mb-0">
-						<label htmlFor="inputEmail4">Crear contraseña</label>
-						<input type="email" className="form-control" id="inputEmail4" />
+					<div className="col-sm-10">
+						<input
+							type="text"
+							className="form-control"
+							id="exampleFormControlInput"
+							placeholder="Apellido"
+							name="last_name"
+							onChange={changeInput}
+						/>
 					</div>
-					<div className="form-group col-md-6">
-						<label htmlFor="inputEmail4">Repetir contraseña</label>
-						<input type="email" className="form-control" id="inputEmail4" />
-					</div>
-					<p className="mb-4 mt-0">(8 a 30 caracteres, sin espacios)</p>
 				</div>
+				<div className="form-group row">
+					<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+						Email
+					</label>
+
+					<div className="col-sm-10">
+						<input
+							type="email"
+							className="form-control"
+							id="exampleFormControlInput12"
+							placeholder="Email"
+							name="email"
+							onChange={changeInput}
+						/>
+					</div>
+				</div>
+				<div className="form-group row">
+					<label htmlFor="inputPassword" className="col-sm-2 col-form-label">
+						Contraseña
+					</label>
+					<div className="col-sm-10">
+						<input
+							type="password"
+							className="form-control"
+							id="inputPassword1"
+							placeholder="Password"
+							name="password"
+							onChange={changeInput}
+						/>
+					</div>
+				</div>
+				<div className="form-group row">
+					<label htmlFor="inputPassword2" className="col-sm-2 col-form-label">
+						Repetir contraseña
+					</label>
+					<div className="col-sm-10">
+						<input
+							type="password"
+							className="form-control"
+							id="inputPassword2"
+							placeholder="Password"
+							name="password2"
+							onChange={changeInputConfirm}
+						/>
+					</div>
+				</div>
+
+				<p className="text-center mt-5 mb-3 text-muted">
+					Al iniciar sesión o al crear una cuenta, aceptas nuestros Términos y condiciones y la Política de
+					privacidad
+				</p>
 			</form>
 			<div className="input-group">
 				<div className="input-group-prepend">

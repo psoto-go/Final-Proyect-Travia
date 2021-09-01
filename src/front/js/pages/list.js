@@ -39,7 +39,8 @@ export const List = props => {
 											key={index}
 											name={hotel.name}
 											url={hotel.HotelArchives[0].url}
-											rooms={hotel.rooms}></ChoiceHotel>
+											rooms={hotel.rooms}
+											id={hotel.id}></ChoiceHotel>
 									);
 							  })
 							: ""}

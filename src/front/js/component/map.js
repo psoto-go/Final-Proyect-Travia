@@ -22,22 +22,13 @@ const Pin = ({ text }) => (
 	/>
 );
 export const Map = props => {
-	const [center, setCenter] = useState({
+	const center = {
 		center: {
 			lat: parseFloat(props.hotels[0].longitude),
 			lng: parseFloat(props.hotels[0].latitude)
 		},
 		zoom: 12
-	});
-	useEffect(() => {
-		setCenter({
-			center: {
-				lat: parseFloat(props.hotels[0].longitude),
-				lng: parseFloat(props.hotels[0].latitude)
-			},
-			zoom: 12
-		});
-	}, [props.hotels[0]]);
+	};
 
 	return (
 		// Important! Always set the container height explicitly
@@ -48,10 +39,12 @@ export const Map = props => {
 				center={center.center}
 				defaultZoom={center.zoom}
 				yesIWantToUseGoogleMapApiInternals>
-				{props.hotels.map((chinche, index) => {
-					console.log(chinche, "@@");
-					return <Pin text="blabla" key={index} lat={chinche.longitude} lng={chinche.latitude} />;
-				})}
+				{props.hotels
+					? props.hotels.map((chinche, index) => {
+							console.log(chinche, "@@");
+							return <Pin text="blabla" key={index} lat={chinche.longitude} lng={chinche.latitude} />;
+					  })
+					: ""}
 			</GoogleMapReact>
 		</div>
 	);

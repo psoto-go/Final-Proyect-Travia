@@ -42,7 +42,7 @@ export const ChoiceHotel = props => {
 							})}
 
 							<div className="card-body">
-								<Link to={"/hotel/1"} className="btn btn-warning">
+								<Link to={"/hotel/" + props.id} className="btn btn-warning">
 									Vacancy
 								</Link>
 							</div>
@@ -56,5 +56,6 @@ export const ChoiceHotel = props => {
 ChoiceHotel.propTypes = {
 	name: PropTypes.string,
 	url: PropTypes.string,
-	rooms: PropTypes.array
+	rooms: PropTypes.array,
+	id: PropTypes.num
 };
