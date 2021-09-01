@@ -27,7 +27,7 @@ export const Map = props => {
 			lat: parseFloat(props.hotels[0].longitude),
 			lng: parseFloat(props.hotels[0].latitude)
 		},
-		zoom: 12
+		zoom: 10
 	};
 
 	return (
