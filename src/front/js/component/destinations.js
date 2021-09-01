@@ -35,7 +35,15 @@ export const Destinations = () => {
 
 	const listCitiesDetails = detalles.map((city, index) => {
 		const listHotels = city.hotels.map((hotel, indexa) => {
-			return <Featured key={indexa} name={hotel.name} url={hotel.HotelArchives[0].url} city_id={city.id} />;
+			return (
+				<Featured
+					key={indexa}
+					name={hotel.name}
+					url={hotel.HotelArchives[0].url}
+					city_id={city.id}
+					id={hotel.id}
+				/>
+			);
 		});
 
 		return (

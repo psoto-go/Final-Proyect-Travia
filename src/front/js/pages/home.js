@@ -32,7 +32,15 @@ export const Home = () => {
 	}, []);
 
 	const listHotels = hotels.map((hotel, index) => {
-		return <Featured key={index} name={hotel.name} url={hotel.HotelArchives[0].url} city_id={hotel.city_id} />;
+		return (
+			<Featured
+				key={index}
+				name={hotel.name}
+				url={hotel.HotelArchives[0].url}
+				city_id={hotel.city_id}
+				id={hotel.id}
+			/>
+		);
 	});
 
 	const listReviews = reviews.map((review, index) => {

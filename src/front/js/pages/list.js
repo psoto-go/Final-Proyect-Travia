@@ -17,7 +17,11 @@ export const List = props => {
 			.then(response => response.json())
 			.then(result => {
 				setDetalles(result.response);
-				setMap(<Map hotels={result.response} />);
+				if (result.response.length > 0) {
+					setMap(<Map hotels={result.response} />);
+				} else {
+					setMap(null);
+				}
 			})
 			.catch(error => console.log("Error", error));
 	}, [store.url]);

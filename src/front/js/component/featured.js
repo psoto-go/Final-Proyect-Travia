@@ -24,7 +24,7 @@ export const Featured = props => {
 					</div>
 					<div>
 						<div className="card-body posiFeat">
-							<a href="#" className="btn btn-primary">
+							<a href={`/hotel/${props.id}`} className="btn btn-primary">
 								More
 							</a>
 						</div>
@@ -40,5 +40,6 @@ export const Featured = props => {
 Featured.propTypes = {
 	url: PropTypes.string,
 	name: PropTypes.string,
-	city_id: PropTypes.number
+	city_id: PropTypes.number,
+	id: PropTypes.number
 };
