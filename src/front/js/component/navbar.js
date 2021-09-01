@@ -10,7 +10,7 @@ export const Navbar = () => {
 	useEffect(() => {
 		let token = localStorage.getItem("token");
 		if (token) {
-			if (jwt(token).sub.kind == "admin" || jwt(token).sub.kind == "user") {
+			if (jwt(token)) {
 				setLogged(true);
 			} else {
 				setLogged(false);

@@ -57,7 +57,7 @@ export const PaymentCard = () => {
 					<p>Agregar codigo promocional</p>
 				</div>
 			</div>
-			<div className="card descPayment mt-5">
+			{/* <div className="card descPayment mt-5">
 				<div className="card-body">
 					<h5 className="card-title">Ut tincidunt ipsum</h5>
 					<p className="card-text">
@@ -74,7 +74,7 @@ export const PaymentCard = () => {
 						cursus tempus quis scelerisque.{" "}
 					</p>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };

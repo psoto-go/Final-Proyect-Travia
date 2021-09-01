@@ -53,14 +53,17 @@ export const Destinations = () => {
 				id={`pills-${city.id}`}
 				role="tabpanel"
 				aria-labelledby={`pills-${city.id}-tab`}>
-				<div className="imgRedonda col-4 m-2">
-					<img src={city.url} alt="..." />
+				<div className="d-flex">
+					<div className="imgRedonda ml-3 col-3 m-2 mt-4">
+						<img src={city.url} alt="..." />
+					</div>
+					<div className="m-2 col-4 card-body positionText">
+						<h5 className="card-title p-3 ml-5">{city.name}</h5>
+						<p className="card-text ml-8">{city.description}</p>
+					</div>
 				</div>
-				<div className="m-2 col-4 card-body positionText">
-					<h5 className="card-title p-3 ml-5">{city.name}</h5>
-					<p className="card-text ml-8">{city.description}</p>
-				</div>
-				<div align="left">{listHotels}</div>
+
+				<div className="mt-5 row justify-content-md-center">{listHotels}</div>
 			</div>
 		);
 	});
