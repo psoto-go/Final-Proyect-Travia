@@ -3,6 +3,7 @@ import jwt from "jwt-decode"; // import dependency
 import { useLocation } from "react-router-dom";
 import { Link, Button } from "react-router-dom";
 import logo from "../../img/golondrinablanco.png";
+import { api_url } from "../constants";
 
 export const Navbar = () => {
 	const [logged, setLogged] = useState(false);

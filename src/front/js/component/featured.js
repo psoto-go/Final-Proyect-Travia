@@ -24,7 +24,7 @@ export const Featured = props => {
 					</div>
 					<div>
 						<div className="cardFeatured posiFeat">
-							<a href="#" className="btn btn-primary">
+							<a href={`/hotel/${props.id}`} className="btn btn-primary mt-3">
 								More
 							</a>
 						</div>
