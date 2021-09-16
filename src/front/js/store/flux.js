@@ -49,7 +49,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					localStorage.setItem("token", data["access_token"]);
 					return true;
 				} else {
-					console.log("Error", error);
 					return false;
 				}
 			},

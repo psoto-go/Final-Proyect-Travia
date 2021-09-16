@@ -62,13 +62,9 @@ export const HotelDetail = () => {
 	return (
 		<>
 			<div className="m-5">
-				<h2>
-					{hotel.name} <i className="fas fa-star" />
-					<i className="fas fa-star" />
-					<i className="fas fa-star" />
-				</h2>
+				<h2>{hotel.name}</h2>
 
-				<p className="pl-5"> Ipsum Loren Ipsum Ipsum Loren Ipsum Ipsum Loren Ipsum</p>
+				{/* <p className="pl-5"> Ipsum Loren Ipsum Ipsum Loren Ipsum Ipsum Loren Ipsum</p> */}
 
 				{listGallery}
 

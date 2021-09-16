@@ -23,15 +23,17 @@ export const Featured = props => {
 						<img className="card-img elementStyle" src={props.url} alt="Jacuzzi" />
 					</div>
 					<div>
-						<div className="card-body posiFeat">
-							<a href="#" className="btn btn-primary">
+						<div className="cardFeatured posiFeat">
+							<a href={`/hotel/${props.id}`} className="btn btn-primary mt-3">
 								More
 							</a>
 						</div>
 					</div>
 				</div>
-				<h5 className="card-title">{props.name}</h5>
-				<p className="card-text">{city.name}</p>
+				<div className="ml-2">
+					<h5 className="card-title">{props.name}</h5>
+					<p className="card-text">{city.name}</p>
+				</div>
 			</div>
 		</div>
 	);
@@ -40,5 +42,6 @@ export const Featured = props => {
 Featured.propTypes = {
 	url: PropTypes.string,
 	name: PropTypes.string,
-	city_id: PropTypes.number
+	city_id: PropTypes.number,
+	id: PropTypes.number
 };
