@@ -230,8 +230,6 @@ def new_hotel():
     latitude = body_params.get("latitude", None)
     favorite = body_params.get("favorite", False)
     city_id = body_params.get("city_id", None)
-
-
     
     hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id)
     db.session.add(hotel)
@@ -330,6 +328,18 @@ def user_profile():
 def current_user(identity):
   print(identity["id"])
   return User.query.get(identity["id"])
+
+
+#services
+
+@api.route('/services', methods=['GET'])
+def get_services():
+    services = Service.query.all()
+    response = []
+    for x in services:
+        response.append(x.serialize())
+    return jsonify({"response": response}), 200
+
 
 
 

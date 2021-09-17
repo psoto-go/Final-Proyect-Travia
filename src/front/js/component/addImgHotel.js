@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 
 export const CarrouselHotel = () => {
+	const [files, setFiles] = useState(null);
+	const [img, setImg] = useState(null);
+
+	const uploadImage = evt => {
+		evt.preventDefault();
+		// we are about to send this to the backend.
+		console.log("This are the files", files);
+		let body = new FormData();
+		body.append("profile_image", files[0]);
+		const options = {
+			body,
+			method: "POST"
+		};
+		// you need to have the user_id in the localStorage
+		const currentUserId = localStorage.getItem("user_id");
+		fetch(`${process.env.BACKEND_URL}/user/${currentUserId}/image`, options)
+			.then(resp => resp.json())
+			.then(data => console.log("Success!!!!", data))
+			.catch(erros => console.error("ERRORRRRRR!!!", error));
+	};
 	return (
 		<div className="row hotelCarrousel">
 			<div className="col-10">
@@ -42,7 +62,15 @@ export const CarrouselHotel = () => {
 					<i className="far fa-arrow-alt-circle-up" />
 					<p>Añadir imagen</p>
 				</h3>
-				<input className="col-9" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"></input>
+				<input
+					className="col-9"
+					type="file"
+					id="avatar"
+					name="avatar"
+					accept="image/png, image/jpeg"
+					onChange={e => {
+						setFiles(e.target.value);
+					}}></input>
 			</button>
 		</div>
 	);
