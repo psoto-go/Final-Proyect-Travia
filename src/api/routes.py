@@ -345,6 +345,19 @@ def get_services():
         response.append(x.serialize())
     return jsonify({"response": response}), 200
 
+@api.route('/new_service', methods=['POST']) 
+def new_service():
+
+    body_params = request.get_json()
+    print(body_params)
+    name = body_params.get("name", None)
+    
+    user1 = Service(name=name)
+    db.session.add(user1)
+    db.session.commit()
+
+    return jsonify({"msg": "el service fue creado exitosamente"}), 200
+
 
 
 

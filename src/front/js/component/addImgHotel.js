@@ -5,6 +5,14 @@ export const CarrouselHotel = () => {
 	const [img, setImg] = useState(null);
 
 	const uploadImage = evt => {
+		// useEffect(() => {
+		// 	fetch(api_url + "/api/hotels")
+		// 		.then(response => response.json())
+		// 		.then(result => {
+		// 			setCities(result.response);
+		// 		})
+		// 		.catch(error => console.log("Error", error));
+		// }, []);
 		evt.preventDefault();
 		// we are about to send this to the backend.
 		console.log("This are the files", files);

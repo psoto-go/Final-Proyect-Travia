@@ -15,6 +15,9 @@ export const AddHotelDesc = () => {
 		city_id: "",
 		services: []
 	});
+	const [service, setService] = useState({
+		name: ""
+	});
 	const [cities, setCities] = useState();
 	const [services, setServices] = useState();
 	const { store, actions } = useContext(Context);
@@ -45,10 +48,21 @@ export const AddHotelDesc = () => {
 		});
 	};
 
+	const changeInputService = e => {
+		setService({
+			...service,
+			[e.target.name]: e.target.value
+		});
+	};
+
 	const submitForm = e => {
 		e.preventDefault();
 		actions.newHotel(loginValue);
 		history.push("/adminHoteles");
+	};
+	const submitFormService = e => {
+		e.preventDefault();
+		actions.newService(service);
 	};
 
 	console.log(cities);
@@ -161,6 +175,31 @@ export const AddHotelDesc = () => {
 						</div>
 					</div>
 
+					<div className="row">
+						<div className="col-8">
+							<strong>Añadir servicio</strong>
+
+							<div className="input-group mb-3">
+								<input
+									type="text"
+									className="form-control"
+									placeholder="Nombre del servicio"
+									aria-label="Recipient's username"
+									aria-describedby="basic-addon2"
+									name="name"
+									onChange={changeInputService}
+								/>
+								<div className="input-group-append">
+									<button
+										className="btn btn-outline-secondary"
+										type="button"
+										onClick={submitFormService}>
+										Añadir
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div className="row">
 						<div className="col-8">
 							<strong>Servicios del Hotel</strong>
