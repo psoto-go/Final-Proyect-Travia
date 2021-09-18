@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/admDash.scss";
+import "../../styles/carrouselDash.scss";
+import "../../styles/userDash.scss";
+
 import { ListGroup } from "../component/listGroup";
 import { CarrouselDash } from "../component/carrouselDash";
 import { HotelDash } from "../component/hotelDash";
@@ -10,17 +13,19 @@ export const Admindash = () => {
 	return (
 		<>
 			<div>
-				<div className="container text-center">
-					<div className="row conjunto">
-						<div className="col-md-4">
-							<h1>Dashboard</h1>
-						</div>
-						<div className="col-md-4 ml-auto">
-							<Link to="#">Panel admin</Link> / Dashboard
-							<div className="col" />
-						</div>
+				<div className="row container text-center">
+					<div className="col">
+						<h2 className="ml-3">Dashboard</h2>
+					</div>
+
+					<div className="row">
+						<Link to="#" className="col-2 mx-auto">
+							Adm Panel{" "}
+						</Link>
+						<p className="col align-self-center">/ Dashboard</p>
 					</div>
 				</div>
+
 				<div className=" container text-center">
 					<div className="row">
 						<div className="col-md-12">
@@ -29,7 +34,7 @@ export const Admindash = () => {
 									<input type="text" className="form-control input-lg" placeholder="Buscar" />
 									<span className="input-group-btn">
 										<button className="btn btn-info " type="button">
-											<i className="fas fa-search" />
+											<i className="fas fa-search font-weight-bold" />
 										</button>
 									</span>
 								</div>
@@ -37,7 +42,7 @@ export const Admindash = () => {
 						</div>
 					</div>
 				</div>
-				<div className="row contentAdm">
+				<div className="row">
 					<div className="col-6 hotelDiv">
 						<Link to="/adminHoteles">
 							<HotelDash />
@@ -46,7 +51,7 @@ export const Admindash = () => {
 					<div className="col-6 userAdm">
 						<UserDash />
 
-						<div className="row m-0 pb-4 pt-5">
+						<div className="row pl-5 m-2 contentUser">
 							<CarrouselDash />
 						</div>
 					</div>

@@ -5,7 +5,14 @@
     box-sizing: border-box;
 }
 
-
+.cardgrouped{
+    margin: auto;
+    justify-content: space-around;
+    width: fit-content;
+    
+    
+    
+}
 
 
 
@@ -13,24 +20,26 @@
     display: flex;
     flex: 1;
     max-height: 320px;
-    overflow-x: scroll;
-   
+    overflow-x: scroll;   
     justify-content: center;
     align-items: center;
 }
 
-
+.img-hotel{
+    max-width: 100%;
+    min-width: 100px;
+    width: 40em;
+    height: 20em;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-left: 70px; 
+}
 
 .item-image img {
     max-width: 100%;
-    border-radius: 40px;
-}
-.provdash{
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    
-}
-.titulo{
+    min-width: 100px;
+    height: 100px;
     border-radius: 20px;
-    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
 }
+
