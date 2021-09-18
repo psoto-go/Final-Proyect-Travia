@@ -15,6 +15,7 @@ export const AdminHoteles = () => {
 			})
 			.catch(error => console.log("Error", error));
 	}, []);
+	console.log(hotel);
 
 	const listhotels = hotel.map((item, index) => {
 		return (

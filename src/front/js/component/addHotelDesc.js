@@ -3,9 +3,18 @@ import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import "../../styles/addHotelDesc.scss";
 import { api_url } from "../constants";
+import { ButtonService } from "./buttonService";
 
 export const AddHotelDesc = () => {
-	const [loginValue, setLoginValue] = useState(firstValue);
+	const [loginValue, setLoginValue] = useState({
+		name: "",
+		description: "",
+		longitude: "",
+		latitude: "",
+		favorite: "False",
+		city_id: "",
+		services: []
+	});
 	const [cities, setCities] = useState();
 	const [services, setServices] = useState();
 	const { store, actions } = useContext(Context);
@@ -29,17 +38,11 @@ export const AddHotelDesc = () => {
 			.catch(error => console.log("Error", error));
 	}, []);
 
-	const firstValue = {
-		name: "",
-		description: "",
-		longitude: "",
-		latitude: "",
-		favorite: "false",
-		city_id: ""
-	};
-
 	const changeInput = e => {
-		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
+		setLoginValue({
+			...loginValue,
+			[e.target.name]: e.target.name != "favorite" ? e.target.value : JSON.parse(e.target.value)
+		});
 	};
 
 	const submitForm = e => {
@@ -137,7 +140,7 @@ export const AddHotelDesc = () => {
 									type="radio"
 									name="favorite"
 									id="exampleRadios1"
-									value="True"
+									value={true}
 								/>
 								<label className="form-check-label" htmlFor="exampleRadios1">
 									Si
@@ -149,7 +152,7 @@ export const AddHotelDesc = () => {
 									type="radio"
 									name="favorite"
 									id="exampleRadios1"
-									value="False"
+									value={false}
 								/>
 								<label className="form-check-label" htmlFor="exampleRadios1">
 									No
@@ -173,9 +176,16 @@ export const AddHotelDesc = () => {
 						{services
 							? services.map((item, index) => {
 									return (
-										<div key={index} className="btn btnServiceOff">
-											{item.name}
-										</div>
+										<ButtonService
+											key={index}
+											name={item.name}
+											callback={() => {
+												setLoginValue({
+													...loginValue,
+													services: [...loginValue.services, item.id]
+												});
+											}}
+										/>
 									);
 							  })
 							: ""}

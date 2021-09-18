@@ -230,8 +230,13 @@ def new_hotel():
     latitude = body_params.get("latitude", None)
     favorite = body_params.get("favorite", False)
     city_id = body_params.get("city_id", None)
-    
-    hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id)
+    services = body_params.get("services", None)
+    servicesToAdd = []
+    for service in services:
+        servicesToAdd.append(Service.query.filter_by(id = service).first())
+
+
+    hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id, services = servicesToAdd)
     db.session.add(hotel)
     db.session.commit()
 
@@ -250,7 +255,7 @@ def get_hotel():
     seacher = HotelSearcher(city, people, start_date, end_date)
     hotel = seacher.search()
     response = []
-    
+
     for x in hotel:
         response.append(x.serialize())
 
