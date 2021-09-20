@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { api_url } from "../constants";
 import "../../styles/paymentGateway.scss";
-import { moment } from "moment";
+//import { moment } from "moment";
 
 export const PaymentCard = () => {
 	const [detalles, setDetalles] = useState({});

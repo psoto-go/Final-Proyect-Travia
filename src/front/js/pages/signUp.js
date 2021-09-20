@@ -36,114 +36,116 @@ export const Signup = () => {
 		}
 	};
 	return (
-		<div className="offset-4 col-4 my-auto text-center">
-			<form className="form-signin" onSubmit={submitForm}>
-				<img className="mb-4" src={logo} alt="" width="72" height="72" />
-				<div className="checkbox mb-3">
-					<h1 className="text-center mb-3 font-weight-normal">Crear una cuenta</h1>
-					¿Ya tienes una cuenta?
-				</div>
-
-				<hr />
-				<div className="form-group row">
-					<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
-						Nombre
-					</label>
-
-					<div className="col-sm-10">
-						<input
-							type="text"
-							className="form-control"
-							id="exampleFormControlInput1"
-							placeholder="Nombre"
-							name="name"
-							onChange={changeInput}
-						/>
+		<>
+			<div className="offset-4 col-4 my-auto text-center">
+				<form className="form-signin pt-5" onSubmit={submitForm}>
+					<img className="mb-4" src={logo} alt="" width="72" height="72" />
+					<div className="checkbox mb-3">
+						<h1 className="text-center mb-3 font-weight-normal">Crear una cuenta</h1>
+						¿Ya tienes una cuenta?
 					</div>
-				</div>
-				<div className="form-group row">
-					<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
-						Apellido
-					</label>
 
-					<div className="col-sm-10">
-						<input
-							type="text"
-							className="form-control"
-							id="exampleFormControlInput"
-							placeholder="Apellido"
-							name="last_name"
-							onChange={changeInput}
-						/>
+					<hr />
+					<div className="form-group row">
+						<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+							Nombre
+						</label>
+
+						<div className="col-sm-10">
+							<input
+								type="text"
+								className="form-control"
+								id="exampleFormControlInput1"
+								placeholder="Nombre"
+								name="name"
+								onChange={changeInput}
+							/>
+						</div>
 					</div>
-				</div>
-				<div className="form-group row">
-					<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
-						Email
-					</label>
+					<div className="form-group row">
+						<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+							Apellido
+						</label>
 
-					<div className="col-sm-10">
-						<input
-							type="email"
-							className="form-control"
-							id="exampleFormControlInput12"
-							placeholder="Email"
-							name="email"
-							onChange={changeInput}
-						/>
+						<div className="col-sm-10">
+							<input
+								type="text"
+								className="form-control"
+								id="exampleFormControlInput"
+								placeholder="Apellido"
+								name="last_name"
+								onChange={changeInput}
+							/>
+						</div>
 					</div>
-				</div>
-				<div className="form-group row">
-					<label htmlFor="inputPassword" className="col-sm-2 col-form-label">
-						Contraseña
-					</label>
-					<div className="col-sm-10">
-						<input
-							type="password"
-							className="form-control"
-							id="inputPassword1"
-							placeholder="Password"
-							name="password"
-							onChange={changeInput}
-						/>
+					<div className="form-group row">
+						<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+							Email
+						</label>
+
+						<div className="col-sm-10">
+							<input
+								type="email"
+								className="form-control"
+								id="exampleFormControlInput12"
+								placeholder="Email"
+								name="email"
+								onChange={changeInput}
+							/>
+						</div>
 					</div>
-				</div>
-				<div className="form-group row">
-					<label htmlFor="inputPassword2" className="col-sm-2 col-form-label">
-						Repetir contraseña
-					</label>
-					<div className="col-sm-10">
-						<input
-							type="password"
-							className="form-control"
-							id="inputPassword2"
-							placeholder="Password"
-							name="password2"
-							onChange={changeInputConfirm}
-						/>
+					<div className="form-group row">
+						<label htmlFor="inputPassword" className="col-sm-2 col-form-label">
+							Contraseña
+						</label>
+						<div className="col-sm-10">
+							<input
+								type="password"
+								className="form-control"
+								id="inputPassword1"
+								placeholder="Password"
+								name="password"
+								onChange={changeInput}
+							/>
+						</div>
 					</div>
-				</div>
+					<div className="form-group row">
+						<label htmlFor="inputPassword2" className="col-sm-2 col-form-label">
+							Repetir contraseña
+						</label>
+						<div className="col-sm-10">
+							<input
+								type="password"
+								className="form-control"
+								id="inputPassword2"
+								placeholder="Password"
+								name="password2"
+								onChange={changeInputConfirm}
+							/>
+						</div>
+					</div>
 
-				<button className="btn btn-lg btn-primary btn-block" type="submit">
-					Crear cuenta
-				</button>
+					<button className="btn btn-lg btn-warning btn-block" type="submit">
+						Crear cuenta
+					</button>
 
-				<hr className="hr-text" data-content="o usar una de estas opciones" />
-				<div className="d-flex justify-content-center">
-					<img className="mr-5" src={facebook} alt="" width="72" height="72" />
+					<hr className="hr-text" data-content="o usar una de estas opciones" />
+					<div className="d-flex justify-content-center">
+						<img className="mr-5" src={facebook} alt="" width="72" height="72" />
 
-					<img className="mr-5" src={google} alt="" width="72" height="72" />
+						<img className="mr-5" src={google} alt="" width="72" height="72" />
 
-					<img className="mr-5" src={apple} alt="" width="52" height="64" />
-				</div>
+						<img className="mr-5" src={apple} alt="" width="52" height="64" />
+					</div>
 
-				<p className="text-center mt-5 mb-3 text-muted">
-					Al iniciar sesión o al crear una cuenta, aceptas nuestros Términos y condiciones y la Política de
-					privacidad
-				</p>
-				<h2 />
-				<hr />
-			</form>
-		</div>
+					<p className="text-center mt-5 mb-3 text-muted">
+						Al iniciar sesión o al crear una cuenta, aceptas nuestros Términos y condiciones y la Política
+						de privacidad
+					</p>
+					<h2 />
+					<hr />
+				</form>
+			</div>
+		</>
 	);
 };
