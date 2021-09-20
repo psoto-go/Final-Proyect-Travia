@@ -3,9 +3,10 @@ import jwt from "jwt-decode"; // import dependency
 import { useLocation } from "react-router-dom";
 import { Link, Button } from "react-router-dom";
 import logo from "../../img/golondrinablanco.png";
-import { api_url } from "../constants";
+import "../../styles/styleNav/styleNav.scss";
 
 export const Navbar = () => {
+	const [options, setOptions] = useState(false);
 	const [logged, setLogged] = useState(false);
 	let location = useLocation();
 	useEffect(() => {
@@ -21,71 +22,78 @@ export const Navbar = () => {
 		}
 	}, [location.pathname]);
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light palNav colored">
-			<p className="navbar-brand">
-				<Link to="/">
-					<img src={logo} width="50" height="50" className="d-inline-block align-top" alt="Logo" />
-				</Link>
-			</p>
-			<button
-				className="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent"
-				aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span className="navbar-toggler-icon" />
-			</button>
-
-			<div className="collapse navbar-collapse colored" id="navbarSupportedContent colored ">
-				<ul className="navbar-nav mr-auto colored">
-					<li className="nav-item active colored">
-						<Link to="/" className="btn btn-dark my-2 my-sm-0 colored">
+		<nav className="navbar navbar-expand-lg palNav">
+			<img src={logo} alt="Logo" className="ml-5" />
+			{options ? (
+				<ul className="navbar-nav navbar-home bg-danger mr-auto">
+					<li className="nav-item active">
+						<Link to="/" className="btn btn-dark my-2 my-sm-0 ">
 							Inicio
 						</Link>
 					</li>
-					<li className="nav-item colored">
-						<a className="nav-link colored" href="#">
-							Quienes somos
-						</a>
+					<li className="nav-item">
+						<a href="#">Quienes somos</a>
 					</li>
-					<li className="nav-item colored">
-						<a className="nav-link colored" href="#">
-							Que hacemos
-						</a>
+					<li className="nav-item">
+						<a href="#">Que hacemos</a>
 					</li>
-					<li className="nav-item colored">
-						<a className="nav-link colored" href="#">
-							Destinos
-						</a>
+					<li className="nav-item">
+						<a href="#">Destinos</a>
 					</li>
-				</ul>{" "}
-				{!logged ? (
-					<div className="form-inline my-2 my-lg-0 colored">
-						<Link to="/signup" className="nav-link colored">
-							Registrarse
-						</Link>
-						<Link to="/login" className="nav-link colored">
-							Iniciar
-						</Link>
-					</div>
-				) : (
-					<div className="form-inline my-2 my-lg-0 colored">
-						<Link to="/myAccount" className="nav-link colored">
-							Mi perfil
-						</Link>
-						<Link
-							to="/login"
-							className="nav-link colored"
-							onClick={() => {
-								localStorage.removeItem("token");
-							}}>
-							Salir
-						</Link>
-					</div>
-				)}
+				</ul>
+			) : (
+				" "
+			)}
+			<div className="navbar-nav mr-auto navbarDropdown form-inline">
+				<div className="nav-item active">
+					<Link to="/" className="btn btn-dark my-2 my-sm-0 ">
+						Inicio
+					</Link>
+				</div>
+				<div className="nav-item ">
+					<a href="#" className="colored">
+						Quienes somos
+					</a>
+				</div>
+				<div className="nav-item ">
+					<a href="#" className="colored">
+						Que hacemos
+					</a>
+				</div>
+				<div className="nav-item ">
+					<a href="#" className="colored">
+						Destinos
+					</a>
+				</div>
 			</div>
+			{!logged ? (
+				<div className="form-inline my-2 my-lg-0 ">
+					<Link to="/signup" className="nav-link colored">
+						Registrarse
+					</Link>
+					<Link to="/login" className="nav-link colored">
+						Iniciar
+					</Link>
+				</div>
+			) : (
+				<div className="form-inline my-2 my-lg-0 ">
+					<Link to="/myAccount" className="nav-link colored">
+						Mi perfil
+					</Link>
+					<Link
+						to="/login"
+						className="nav-link colored"
+						onClick={() => {
+							localStorage.removeItem("token");
+						}}>
+						Salir
+					</Link>
+				</div>
+			)}
+			<i
+				className={!options ? "fas fa-bars text-white" : "fas fa-times text-white"}
+				onClick={() => setOptions(!options)}
+				id="navbar-dropmenu"></i>
 		</nav>
 	);
 };

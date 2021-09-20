@@ -50,7 +50,7 @@ export const Home = () => {
 	return (
 		<div>
 			{" "}
-			<Header /> <Search /> <h3 className="ml-5 pl-5">Destacados</h3> <hr></hr>{" "}
+			{/* <Header /> <Search /> <h3 className="ml-5 pl-5">Destacados</h3> <hr></hr>{" "} */}
 			<div className="mt-5 row justify-content-md-center">{listHotels}</div> <Destinations />{" "}
 			<div className="resenasStyle">
 				{" "}
