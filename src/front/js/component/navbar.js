@@ -48,7 +48,7 @@ export const Navbar = () => {
 	};
 	return (
 		<nav className="navbar navbar-expand-lg palNav">
-			<img src={logo} alt="Logo" className="ml-5" />
+			<img src={logo} alt="Logo" />
 			{options ? (
 				<ul className="navbar-nav navbar-home navbarDanger mr-auto ">
 					<li className="nav-item active ">

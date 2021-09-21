@@ -8,8 +8,8 @@ export const Header = () => {
 	return (
 		<div className="header">
 			<div className="contenedor">
-				<h1 className="coloredh1">Lorem ipsum dolor sit amet</h1>
-				<h3>Lorem ipsum dolor </h3>
+				<h1 className="coloredh1">Travia.</h1>
+				<h3>Es distinto, es Travia.</h3>
 			</div>
 			<div id="landingImg">
 				<img src={header} />

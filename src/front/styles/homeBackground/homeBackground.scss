@@ -7,25 +7,57 @@
     background-color: transparent ;
   
   } 
+  .coloredh1, h1{
+    color: #394273;
+    font-weight: 700;
+    font-size: 340%;
+    top: 5em;
+  }
+
+  .contenedor{
+    -webkit-text-stroke: 1px white;
+      color: transparent; 
+    padding: 5em;
+}
 
   //-----------------------------------------------------
   //Imagen 
 
 #landingImg{
+ 
     display: inline-flex;    
     margin: -19em 0 11em 55em;  
 }
 @media (max-width: 1730px){
   #landingImg{
-    margin: -10em 0 11em 30em;
+    margin: -19em 0 11em 25em;
+    
   }
 }
 @media (max-width: 1240px){
     #landingImg{
+      
+      position: absolute;
       z-index: 1;
+      height: 40%;
+      margin: -14em 0 11em 20em;
     }
+    .contenedor{
+      padding-left: 4em;;
+      padding-top: 2em;
+      -webkit-text-stroke: 1px white;
+      color: transparent; 
   }
-
+  }
+  @media (max-width: 860px){
+    #landingImg{
+      position: absolute;
+      z-index: 1;
+      height: 35%;
+      margin: -12em 0 11em 18em;
+    }
+ 
+  }
 //---------------------------------------------------
 .botonCenter{
     display: flex;
@@ -33,20 +65,7 @@
 }
 
 
-.coloredh1, h1{
-    color: #394273;
-    font-weight: 700;
-    //position: relative;
-    font-size: 340%;
-    top: 5em;
-  }
 
-  .contenedor{
-    //margin: 5rem;
-    padding: 5em;
-    
-    
-}
 
 
 
