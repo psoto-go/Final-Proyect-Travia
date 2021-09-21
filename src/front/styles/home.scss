@@ -33,7 +33,7 @@
 }
 
 .resenasStyle{
-     margin: 3rem;
+ 
       padding: 4em;
     
 }
@@ -328,19 +328,24 @@ h3, h2{
 //---------------------------------------
 
 #landingImg{
-    //margin-left: 400px; 
-    //margin-top: 30px;
+    
     display: inline-flex;    
     margin: -19em 0 11em 55em;
-    //margin-right: 5%;
+    
     
     
 }
-
+@media (max-width: 1730px){
+  #landingImg{
+    margin: -10em 0 11em 40em;
+  }
+}
 .botonCenter{
     display: flex;
     
 }
+
+
 
 //-------------------------------------
 

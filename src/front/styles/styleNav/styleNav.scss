@@ -13,7 +13,7 @@
 }
 
 .palNav img{
-    margin-left: 2%;
+    
     width: 60px;
 }
 .palNav ul{
@@ -22,9 +22,6 @@
     
 }
 .palNav ul li{
-    height: 8vh;
-    
-    
     font-size: 1.1rem;
    
     
@@ -34,8 +31,19 @@
     color: white;
     font-size: 18px;
     padding: 7px 0;
-    text-transform: uppercase;
+    
 }
+
+.navbarDropdown{
+    justify-content: space-evenly;
+    margin-bottom: 0;
+}
+
+.navbarDropdownv2{
+    margin-left: 2em;
+    margin-bottom: 0;
+}
+
 .palNav ul li a:before{
     position: absolute;
     content: ' ';
@@ -83,13 +91,13 @@
         font-size: 17px;
     }
 }
-@media (min-width: 860px){
-    .firstNavbar {
-        display: none;
-    }
-}
+
 @media (max-width: 860px){
     .navbarDropdown{
+        display: none;
+
+    }
+    .navbarDropdownv2{
         display: none;
 
     }
@@ -106,10 +114,10 @@
         cursor: pointer;
     }
     .palNav ul {
-        position: fixed;
+        position: absolute;
         flex-direction: column;
         width: 100%;
-        height: 80vh;
+        
         background: #8BD996;
         top: 80px;
         left: 0;
@@ -120,3 +128,9 @@
         font-size: 17px;
     }
 }
+@media (min-width: 860px){
+   
+        .navbarDanger{
+            display: none;
+    
+        }}

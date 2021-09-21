@@ -102,16 +102,12 @@ export const Login = () => {
 				<p className="text-right p-2">¿No tienes cuenta? Regístrate</p>
 				<hr className="hr-text" data-content="o usar una de estas opciones" />
 				<div className="d-flex justify-content-center">
-					<img className="mr-5" src={facebook} alt="" width="72" height="72" />
-
 					<GoogleLogin
 						clientId="946040142718-3h25n3eak29rip9ftt5ko3sme27l8ob4.apps.googleusercontent.com"
 						onSuccess={respuestaGoogle}
 						onFailure={respuestaGoogle}
 						cookiePolicy={"single_host_origin"}
 					/>
-
-					<img className="mr-5" src={apple} alt="" width="52" height="64" />
 				</div>
 
 				<p className="text-center mt-5 mb-3 text-muted">
