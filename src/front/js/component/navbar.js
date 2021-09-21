@@ -51,10 +51,10 @@ export const Navbar = () => {
 			<img src={logo} alt="Logo" className="ml-5" />
 			{options ? (
 				<ul className="navbar-nav navbar-home navbarDanger mr-auto ">
-					<li className="nav-item active">
-						<Link to="/" className="btn btn-dark my-2 my-sm-0 ">
+					<li className="nav-item active ">
+						<a href="/" className="colored">
 							Inicio
-						</Link>
+						</a>
 					</li>
 					<li className="nav-item">
 						<a href="#">Quienes somos</a>
