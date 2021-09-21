@@ -14,7 +14,7 @@ export const Reviews = props => {
 			.catch(error => console.log("Error", error));
 	}, []);
 	return (
-		<div className="card">
+		<div className="card reviewsCardHome ">
 			<div className="card-header">{detalles.name}</div>
 			<div className="card-body">
 				<blockquote className="blockquote mb-0">

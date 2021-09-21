@@ -25,7 +25,7 @@ export const Navbar = () => {
 		<nav className="navbar navbar-expand-lg palNav">
 			<img src={logo} alt="Logo" className="ml-5" />
 			{options ? (
-				<ul className="navbar-nav navbar-home bg-danger mr-auto">
+				<ul className="navbar-nav navbar-home  mr-auto ">
 					<li className="nav-item active">
 						<Link to="/" className="btn btn-dark my-2 my-sm-0 ">
 							Inicio
@@ -40,11 +40,36 @@ export const Navbar = () => {
 					<li className="nav-item">
 						<a href="#">Destinos</a>
 					</li>
+					<hr />
+					{!logged ? (
+						<div className="my-2 my-lg-0 ">
+							<li>
+								<a href="/Signup">Registrarse</a>
+							</li>
+							<li>
+								<a href="/login">Iniciar</a>
+							</li>
+						</div>
+					) : (
+						<div className="form-inline my-2 my-lg-0 ">
+							<Link to="/myAccount" className="nav-link colored">
+								Mi perfil
+							</Link>
+							<Link
+								to="/login"
+								className="nav-link colored"
+								onClick={() => {
+									localStorage.removeItem("token");
+								}}>
+								Salir
+							</Link>
+						</div>
+					)}
 				</ul>
 			) : (
 				" "
 			)}
-			<div className="navbar-nav mr-auto navbarDropdown form-inline">
+			<div className=" mr-auto ml-4 navbarDropdown form-inline">
 				<div className="nav-item active">
 					<Link to="/" className="btn btn-dark my-2 my-sm-0 ">
 						Inicio
@@ -67,7 +92,7 @@ export const Navbar = () => {
 				</div>
 			</div>
 			{!logged ? (
-				<div className="form-inline my-2 my-lg-0 ">
+				<div className="navbarDropdown form-inline my-2 pr-5 ">
 					<Link to="/signup" className="nav-link colored">
 						Registrarse
 					</Link>

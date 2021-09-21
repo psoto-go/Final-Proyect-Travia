@@ -1,13 +1,37 @@
+@media (min-width: 1118px){
+  //Reviews --------------
+  .reviewsHome{
+    display: flex;
+    justify-content: space-between;
+  }
+  //-----------------------
+}
+@media (max-width: 1118px){
+   //Reviews --------------
+  .reviewsHome{
+    display: block;
+  }
+  .reviewsCardHome{
+    margin-top: 20px;
+  }
+  //-----------------------
+}
+
+
+
+
+
+//--------------------------------------------------------------
+
+
+
 .contenedor{
     //margin: 5rem;
     padding: 5em;
     
     
 }
-.container{
-    display: inline-block;
-    
-}
+
 .resenasStyle{
      margin: 3rem;
       padding: 4em;
@@ -59,15 +83,8 @@
 
 }
 
-.palNav{
- background: #8BD996;
- padding-left: 5%
- 
-}
 
-ul{
-    color: white;
-}
+
 .header .navbar {
   background-color: transparent ;
 
