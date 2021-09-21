@@ -25,12 +25,7 @@
 
 
 
-.contenedor{
-    //margin: 5rem;
-    padding: 5em;
-    
-    
-}
+
 
 .resenasStyle{
  
@@ -48,14 +43,7 @@
 
 }
 
-.header {
-  background: linear-gradient(180deg, #8BD996 0%, #b7bfe7 100%) no-repeat center;
-  background-size: cover;
-  min-height: 100vh;
-  
-   
-  
-}
+
 
 .posiFeat{
   position: relative;
@@ -85,10 +73,7 @@
 
 
 
-.header .navbar {
-  background-color: transparent ;
 
-} 
 .userBtn1{
   width: 100px;
  height: 40px;
@@ -307,13 +292,7 @@
   color: white;
   //background-color: #394273;
 }
-.coloredh1, h1{
-  color: #394273;
-  font-weight: 700;
-  //position: relative;
-  font-size: 340%;
-  top: 5em;
-}
+
 h3, h2{
   color: #394273;
   font-weight: 700;
@@ -327,23 +306,6 @@ h3, h2{
 
 //---------------------------------------
 
-#landingImg{
-    
-    display: inline-flex;    
-    margin: -19em 0 11em 55em;
-    
-    
-    
-}
-@media (max-width: 1730px){
-  #landingImg{
-    margin: -10em 0 11em 40em;
-  }
-}
-.botonCenter{
-    display: flex;
-    
-}
 
 
 
