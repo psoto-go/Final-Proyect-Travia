@@ -1,0 +1,136 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.palNav{
+    background: #8BD996;
+    list-style-type: none;
+    justify-content: space-around;
+    padding-left: 5%
+    
+}
+
+.palNav img{
+    
+    width: 60px;
+}
+.palNav ul{
+    flex: 2;
+    list-style: none;
+    
+}
+.palNav ul li{
+    font-size: 1.1rem;
+   
+    
+}
+.palNav ul li a{
+    position: relative;
+    color: white;
+    font-size: 18px;
+    padding: 7px 0;
+    
+}
+
+.navbarDropdown{
+    justify-content: space-evenly;
+    margin-bottom: 0;
+}
+
+.navbarDropdownv2{
+    margin-left: 2em;
+    margin-bottom: 0;
+}
+
+.palNav ul li a:before{
+    position: absolute;
+    content: ' ';
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .2s linear;
+}
+.palNav ul li a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+// div #btn,
+// div #cancel {
+//     color: white;
+//     font-size: 30px;
+//     float: right;
+//     line-height: 80px;
+//     margin-right: 40px;
+//     cursor: pointer;
+    
+// }
+#navbar-dropmenu{
+    display: none;
+}
+
+@media (max-width: 1118px){
+    .palNav img{
+        
+        width: 50px;
+    }
+}
+@media (max-width: 944px){
+    .palNav img{
+        left: 6%;
+        top: 20px;
+       
+        width: 50px;
+    }
+    .palNav ul li a{
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 860px){
+    .navbarDropdown{
+        display: none;
+
+    }
+    .navbarDropdownv2{
+        display: none;
+
+    }
+    .palNav {
+        justify-content: space-between;
+    }
+
+     #navbar-dropmenu{
+        display: block;
+        color: white;
+        font-size: 30px;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+    }
+    .palNav ul {
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        
+        background: #8BD996;
+        top: 80px;
+        left: 0;
+        text-align: center;
+    }
+   
+    .palNav ul li a{
+        font-size: 17px;
+    }
+}
+@media (min-width: 860px){
+   
+        .navbarDanger{
+            display: none;
+    
+        }}

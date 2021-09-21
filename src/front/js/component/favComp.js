@@ -5,7 +5,7 @@ export const FavComp = () => {
 	return (
 		<div className=" container text-center my-3">
 			<div className="row">
-				<div className="col-5">
+				<div className="col-5 p-0 mt-1 ">
 					<Link>
 						<img
 							className="favBox rounded-left"

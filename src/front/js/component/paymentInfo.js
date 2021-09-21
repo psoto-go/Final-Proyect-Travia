@@ -150,7 +150,7 @@ export const PaymentInfo = () => {
 				</div>
 			</div>
 			<div className="mt-5">
-				<h1>Seleccionar tarifa</h1>
+				<h1 className="my-4">Seleccionar tarifa</h1>
 				<div className="input-group border">
 					<div className="input-group-prepend">
 						<div className="input-group-text">

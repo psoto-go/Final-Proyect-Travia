@@ -5,12 +5,10 @@ import { Search } from "./search";
 export const SearchList = () => {
 	return (
 		<div>
-			<div className="searchListBar">
-				<Search />
-			</div>
+			<div className="searchListBar">{/* <Search /> */}</div>
 			<div className="botonBest">
 				<div className="dropdown fixP botonMargin">
-					{/* <button type="button" data-toggle="dropdown" className="btn btn-info dropdown-toggle botones ">
+					<button type="button" data-toggle="dropdown" className="btn btn-info dropdown-toggle botones ">
 						Precio
 						<ul className="dropdown-menu">
 							<li>
@@ -23,9 +21,9 @@ export const SearchList = () => {
 								<a href="#">+ 80€ Noche</a>
 							</li>
 						</ul>
-					</button> */}
+					</button>
 
-					{/* <button
+					<button
 						type="button "
 						data-toggle="dropdown"
 						className="btn  btn-light dropdown-toggle botones p-2 ">
@@ -41,15 +39,15 @@ export const SearchList = () => {
 								<a href="#">Valoraciones</a>
 							</li>
 						</ul>
-					</button> */}
+					</button>
 				</div>
 
-				{/* <div className="fixP fixP2">
+				<div className="fixP fixP2">
 					<a>Ordenar por</a>
 					<a type="button" className="btn btn-light botones ">
 						Recomendados
 					</a>
-				</div> */}
+				</div>
 			</div>
 		</div>
 	);

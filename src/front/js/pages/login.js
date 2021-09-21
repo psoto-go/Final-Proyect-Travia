@@ -143,6 +143,7 @@ export const Login = () => {
 										Iniciar sesión
 									</button>
 
+<<<<<<< HEAD
 									<p className="text-center">¿No tienes cuenta? Regístrate</p>
 								</div>
 								<hr className="hr-text" data-content="o usar una de estas opciones" />
@@ -169,6 +170,47 @@ export const Login = () => {
 							</form>
 						</div>
 					</div>
+=======
+					<div className="col-sm-10">
+						<input
+							type="email"
+							className="form-control"
+							id="exampleFormControlInput1"
+							placeholder="Email"
+							name="email"
+							onChange={changeInput}
+						/>
+					</div>
+				</div>
+				<div className="form-group row">
+					<label htmlFor="inputPassword" className="col-sm-2 col-form-label">
+						Contraseña
+					</label>
+					<div className="col-sm-10">
+						<input
+							type="password"
+							className="form-control"
+							id="inputPassword"
+							placeholder="Password"
+							name="password"
+							onChange={changeInput}
+						/>
+					</div>
+				</div>
+				<div className="checkbox mb-3">¿Olvidaste tu contraseña?</div>
+				<button className="btn btn-lg btn-primary btn-block" type="submit">
+					Iniciar sesión
+				</button>
+				<p className="text-right p-2">¿No tienes cuenta? Regístrate</p>
+				<hr className="hr-text" data-content="o usar una de estas opciones" />
+				<div className="d-flex justify-content-center">
+					<GoogleLogin
+						clientId="946040142718-3h25n3eak29rip9ftt5ko3sme27l8ob4.apps.googleusercontent.com"
+						onSuccess={respuestaGoogle}
+						onFailure={respuestaGoogle}
+						cookiePolicy={"single_host_origin"}
+					/>
+>>>>>>> 77750fc1ab26c0cb285d2e77483b53e24973ca29
 				</div>
 			</div>
 		</>

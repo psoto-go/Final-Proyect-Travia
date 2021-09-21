@@ -2,9 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import logo from "../../img/golondrina.png";
-import facebook from "../../img/facebooklogo.jpg";
-import google from "../../img/googlelogo.png";
-import apple from "../../img/apple.png";
+
 import aaa from "../../img/aaaaa.png";
 
 export const NewUser = () => {
