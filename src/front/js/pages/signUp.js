@@ -129,21 +129,10 @@ export const Signup = () => {
 						Crear cuenta
 					</button>
 
-<<<<<<< HEAD
 					<hr className="hr-text" data-content="o usar una de estas opciones" />
 					<div className="d-flex justify-content-center">
-						<img className="mr-5" src={facebook} alt="" width="72" height="72" />
-
 						<img className="mr-5" src={google} alt="" width="72" height="72" />
-
-						<img className="mr-5" src={apple} alt="" width="52" height="64" />
 					</div>
-=======
-				<hr className="hr-text" data-content="o usar una de estas opciones" />
-				<div className="d-flex justify-content-center">
-					<img className="mr-5" src={google} alt="" width="72" height="72" />
-				</div>
->>>>>>> 77750fc1ab26c0cb285d2e77483b53e24973ca29
 
 					<p className="text-center mt-5 mb-3 text-muted">
 						Al iniciar sesión o al crear una cuenta, aceptas nuestros Términos y condiciones y la Política

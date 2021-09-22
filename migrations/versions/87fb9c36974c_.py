@@ -1,6 +1,6 @@
 """empty message
 
-<<<<<<< HEAD:migrations/versions/960f07229ab7_.py
+<<<<<<< :migrations/versions/960f07229ab7_.py
 Revision ID: 960f07229ab7
 Revises: 
 Create Date: 2021-09-20 15:23:30.143136
@@ -16,7 +16,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-<<<<<<< HEAD:migrations/versions/960f07229ab7_.py
+<<<<<<< :migrations/versions/960f07229ab7_.py
 revision = '960f07229ab7'
 =======
 revision = '87fb9c36974c'
