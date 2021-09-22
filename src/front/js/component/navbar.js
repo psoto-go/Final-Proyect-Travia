@@ -271,7 +271,7 @@ export const Navbar = () => {
 						Mi perfil
 					</Link>
 					<Link
-						to="/login"
+						to="/"
 						className="nav-link colored"
 						onClick={() => {
 							localStorage.removeItem("token");
