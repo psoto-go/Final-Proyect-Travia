@@ -1,15 +1,34 @@
-.contenedor{
-    //margin: 5rem;
-    padding: 5em;
-    
-    
+@media (min-width: 1118px){
+  //Reviews --------------
+  .reviewsHome{
+    display: flex;
+    justify-content: space-between;
+  }
+  //-----------------------
 }
-.container{
-    display: inline-block;
-    
+@media (max-width: 1118px){
+   //Reviews --------------
+  .reviewsHome{
+    display: block;
+  }
+  .reviewsCardHome{
+    margin-top: 20px;
+  }
+  //-----------------------
 }
+
+
+
+
+
+//--------------------------------------------------------------
+
+
+
+
+
 .resenasStyle{
-     margin: 3rem;
+ 
       padding: 4em;
     
 }
@@ -21,19 +40,10 @@
  display: inline-block;
  
  position: relative;
- top: -18em;
- left: 35em;
 
 }
 
-.header {
-  background: linear-gradient(180deg, #8BD996 0%, #b7bfe7 100%) no-repeat center;
-  background-size: cover;
-  min-height: 100vh;
-  
-   
-  
-}
+
 
 .posiFeat{
   position: relative;
@@ -61,19 +71,9 @@
 
 }
 
-.palNav{
- background: #8BD996;
- padding-left: 5%
- 
-}
 
-ul{
-    color: white;
-}
-.header .navbar {
-  background-color: transparent ;
 
-} 
+
 .userBtn1{
   width: 100px;
  height: 40px;
@@ -292,13 +292,7 @@ ul{
   color: white;
   //background-color: #394273;
 }
-.coloredh1, h1{
-  color: #394273;
-  font-weight: 700;
-  //position: relative;
-  font-size: 340%;
-  top: 5em;
-}
+
 h3, h2{
   color: #394273;
   font-weight: 700;
@@ -312,20 +306,8 @@ h3, h2{
 
 //---------------------------------------
 
-#landingImg{
-    //margin-left: 400px; 
-    //margin-top: 30px;
-    display: inline-flex;    
-    margin: -19em 0 11em 55em;
-    //margin-right: 5%;
-    
-    
-}
 
-.botonCenter{
-    display: flex;
-    
-}
+
 
 //-------------------------------------
 
@@ -404,3 +386,9 @@ h3, h2{
   min-height: 15em; 
   border-radius: 50px; 
 }
+
+.cardFeatured{
+  flex: 1 1 auto;
+  min-height: 1px;
+}
+

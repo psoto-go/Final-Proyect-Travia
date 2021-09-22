@@ -43,6 +43,8 @@ export const Search = () => {
 			})
 			.catch(error => console.log("Error", error));
 		actions.url(api_url + "/api/hotels?" + params);
+		localStorage.setItem("start_date", loginValue.datein);
+		localStorage.setItem("end_date", loginValue.dateout);
 		// <List data={detalles}></List>;
 		history.push("/list?" + params);
 	};

@@ -10,12 +10,18 @@ export const PaymentGateway = () => {
 	return (
 		<div className="PaymentGateway">
 			<div className="row">
-				<p>
+				{/* <button
+					onClick={() => {
+						console.log(JSON.parse(localStorage.getItem("reserva")));
+					}}>
+					adsfasdfdsf
+				</button> */}
+				{/* <p>
 					<Link>
 						<i className="fas fa-angle-double-left" />
 					</Link>
 					<Link> Volver al Hilton Costas del Sol</Link>
-				</p>
+				</p> */}
 			</div>
 			<div className="row m-0 d-flex flex-wrap">
 				<div className="col-4">

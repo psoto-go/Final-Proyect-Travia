@@ -18,20 +18,20 @@ export const Featured = props => {
 	return (
 		<div className="inline-div">
 			<div className="d-flex justify-content-around  hotel-item">
-				<div>
+				<Link to={`/hotel/${props.id}`}>
 					<div>
-						<img className="card-img elementStyle" src={props.url} alt="Jacuzzi" />
-					</div>
-					<div>
-						<div className="card-body posiFeat">
-							<a href="#" className="btn btn-primary">
-								More
-							</a>
+						<div>
+							<img className="card-img elementStyle" src={props.url} alt="Jacuzzi" />
+						</div>
+						<div>
+							<div className="cardFeatured posiFeat"></div>
 						</div>
 					</div>
+				</Link>
+				<div className="ml-2">
+					<h5 className="card-title">{props.name}</h5>
+					<p className="card-text">{city.name}</p>
 				</div>
-				<h5 className="card-title">{props.name}</h5>
-				<p className="card-text">{city.name}</p>
 			</div>
 		</div>
 	);
@@ -40,5 +40,6 @@ export const Featured = props => {
 Featured.propTypes = {
 	url: PropTypes.string,
 	name: PropTypes.string,
-	city_id: PropTypes.number
+	city_id: PropTypes.number,
+	id: PropTypes.number
 };

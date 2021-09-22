@@ -45,16 +45,24 @@ def sign_up_user_google():
     name = body_params.get("name", None)
     last_name = body_params.get("last_name", None)
     email = body_params.get("email", None)
-    kind = body_params.get("kind", "user")
     created_date = body_params.get("created_date", None)
 
+    allowUser = User.query.filter_by(email = email).first()
+    print(allowUser)
+    if allowUser is None:
+        user1 = User(name=name, last_name = last_name, email=email, kind='user', created_date=created_date)
+        db.session.add(user1)
+        db.session.commit()
+        return jsonify({"msg": "El usuario fue creado exitosamente"}), 200
+    else:
+        return jsonify({"msg": "El usuario fue ingresado exitosamente"}), 200
+ 
+    return jsonify({"error": "El usuario no fue creado"}), 200
 
     
-    user1 = User(name=name, last_name = last_name, email=email, kind=kind, created_date=created_date)
-    db.session.add(user1)
-    db.session.commit()
+    
+    
 
-    return jsonify({"msg": "El usuario fue creado exitosamente"}), 200
 
 @api.route('/users', methods=['GET'])
 def handle_hello2():

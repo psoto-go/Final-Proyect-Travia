@@ -3,7 +3,7 @@
 
 // export const Map = withGoogleMap(props => <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }} />);
 
-import React from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
 import GoogleMapReact from "google-map-react";
 import Chinchetas from "./chinchetas.json";
 import PropTypes from "prop-types";
@@ -21,13 +21,13 @@ const Pin = ({ text }) => (
 		alt={text}
 	/>
 );
-export const Map = () => {
+export const Map = props => {
 	const center = {
 		center: {
-			lat: -34.5453018,
-			lng: -58.4519689
+			lat: parseFloat(props.hotels[0].longitude),
+			lng: parseFloat(props.hotels[0].latitude)
 		},
-		zoom: 12
+		zoom: 10
 	};
 
 	return (
@@ -36,20 +36,15 @@ export const Map = () => {
 		<div className="mapPosition">
 			<GoogleMapReact
 				bootstrapURLKeys={{ key: "AIzaSyDaq_DXg5Oe1n6XQFUFMQu8EusN8NOXhZY" }} // api key hidden
-				defaultCenter={center.center}
+				center={center.center}
 				defaultZoom={center.zoom}
 				yesIWantToUseGoogleMapApiInternals>
-				{Chinchetas.features.map(chinche => {
-					console.log(chinche.geometry.coordinates[0]);
-					return (
-						<Pin
-							text="blabla"
-							key={chinche.properties.PARK_ID}
-							lat={chinche.geometry.coordinates[0]}
-							lng={chinche.geometry.coordinates[1]}
-						/>
-					);
-				})}
+				{props.hotels
+					? props.hotels.map((chinche, index) => {
+							console.log(chinche, "@@");
+							return <Pin text="blabla" key={index} lat={chinche.longitude} lng={chinche.latitude} />;
+					  })
+					: ""}
 			</GoogleMapReact>
 		</div>
 	);
@@ -57,4 +52,8 @@ export const Map = () => {
 
 Pin.propTypes = {
 	text: PropTypes.string
+};
+
+Map.propTypes = {
+	hotels: PropTypes.object
 };

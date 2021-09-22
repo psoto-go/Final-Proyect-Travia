@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/home.scss";
+import "../../styles/homeBackground/homeBackground.scss";
 import logo from "../../img/golondrinablanco.png";
 import header from "../../img/header.png";
 import { Search } from "./search";
