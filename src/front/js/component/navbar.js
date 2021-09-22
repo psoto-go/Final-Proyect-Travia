@@ -1,4 +1,6 @@
 import React, { Component, useContext, useState, useEffect } from "react";
+import { Context } from "../store/appContext";
+import { useHistory } from "react-router-dom";
 import jwt from "jwt-decode"; // import dependency
 import { useLocation } from "react-router-dom";
 import { Link, Button } from "react-router-dom";
@@ -8,6 +10,32 @@ import GoogleLogin from "react-google-login";
 import logo2 from "../../img/golondrina.png";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
+	const [loginValue, setLoginValue] = useState(firstValue);
+	let history = useHistory();
+
+	useEffect(() => {
+		selectKind();
+	}, []);
+	const selectKind = () => {
+		console.log("##");
+		const token = localStorage.getItem("token");
+		if (token) {
+			console.log(jwt(token).sub.kind);
+			if (jwt(token).sub.kind == "user") {
+				history.push("/myAccount");
+			} else if (jwt(token).sub.kind == "admin") {
+				history.push("/adminDash");
+			}
+		}
+	};
+	const firstValue = {
+		email: "",
+		password: ""
+	};
+	const changeInput = e => {
+		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
+	};
 	const [options, setOptions] = useState(false);
 	const [logged, setLogged] = useState(false);
 	let location = useLocation();
@@ -43,9 +71,9 @@ export const Navbar = () => {
 			}
 		}
 	};
-	const changeInput = e => {
-		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
-	};
+	// const changeInput = e => {
+	// 	setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
+	// };
 	return (
 		<nav className="navbar navbar-expand-lg palNav">
 			<img src={logo} alt="Logo" />
@@ -243,7 +271,7 @@ export const Navbar = () => {
 						Mi perfil
 					</Link>
 					<Link
-						to="/login"
+						to="/"
 						className="nav-link colored"
 						onClick={() => {
 							localStorage.removeItem("token");
