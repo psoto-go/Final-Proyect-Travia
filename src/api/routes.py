@@ -285,7 +285,7 @@ def new_city():
     name = body_params.get("name", None)
     description = body_params.get("description", None)
     
-    user1 = User(name=name, description = description)
+    user1 = City(name=name, description = description)
     db.session.add(user1)
     db.session.commit()
 

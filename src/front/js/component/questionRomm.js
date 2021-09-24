@@ -9,10 +9,10 @@ export const QuestionRoom = () => {
 				<div className="col-11">
 					<h4>Reseñas del Hotel</h4>
 				</div>
-				<div className="col">
+				{/* <div className="col">
 					{" "}
 					<u>Ver todas</u>{" "}
-				</div>
+				</div> */}
 			</div>
 			<div className="row">
 				<div className="card bg-light mb-3">

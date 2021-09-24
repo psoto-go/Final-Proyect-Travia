@@ -13,7 +13,8 @@ export const AddHotelDesc = () => {
 		latitude: "",
 		favorite: "False",
 		city_id: "",
-		services: []
+		services: [],
+		rooms: []
 	});
 	const [service, setService] = useState({
 		name: ""
@@ -230,11 +231,11 @@ export const AddHotelDesc = () => {
 							: ""}
 					</div>
 
-					<div className="DatepickHotel">
+					{/* <div className="DatepickHotel">
 						<h4>Disponibilidad</h4>
 						<p>Añade las fechas disponibles</p>
 						<input type="date" min="2019-06-02" max="2019-06-08" />
-					</div>
+					</div> */}
 				</div>
 				<div className="col-5 descHotel">
 					<p>

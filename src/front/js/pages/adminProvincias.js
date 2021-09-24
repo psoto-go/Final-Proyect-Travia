@@ -48,7 +48,9 @@ export const AdminProvincias = () => {
 							</div>
 						</div>
 						<div className="col-2">
-							<button className=" create">+ Crear ciudad</button>
+							<Link to="/onlyCitie">
+								<button className=" create">+ Crear Provincia</button>
+							</Link>
 						</div>
 					</div>
 				</div>

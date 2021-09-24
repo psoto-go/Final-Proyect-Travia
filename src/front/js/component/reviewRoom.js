@@ -5,7 +5,7 @@ import { QuestionRoom } from "./questionRomm";
 export const ReviewRoom = () => {
 	return (
 		<div className="mt-5">
-			<div className="row">
+			{/* <div className="row">
 				<div className="col-4">
 					<h4>Filtros reseñas</h4>
 				</div>
@@ -34,8 +34,8 @@ export const ReviewRoom = () => {
 					{" "}
 					<u>Ver todas</u>{" "}
 				</div>
-			</div>
-			<div className="row reviewCarrousel">
+			</div> */}
+			{/* <div className="row reviewCarrousel">
 				<div className="col-12 ReviewsCards">
 					<div className="card ">
 						<img
@@ -90,7 +90,7 @@ export const ReviewRoom = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> */}
 			<div className="mt-5">
 				<QuestionRoom />
 			</div>
