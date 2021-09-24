@@ -1,6 +1,5 @@
 import React, { Component, useContext, useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import "../../styles/home/featuredHotel.scss";
 import { api_url } from "../constants";
 import { Featured } from "./featured";
 

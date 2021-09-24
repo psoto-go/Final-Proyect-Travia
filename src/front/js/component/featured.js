@@ -2,7 +2,7 @@ import React, { Component, useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { api_url } from "../constants";
-import "../../styles/featured/featured.scss";
+import "../../styles/home/featured.scss";
 export const Featured = props => {
 	const [city, setCity] = useState({});
 

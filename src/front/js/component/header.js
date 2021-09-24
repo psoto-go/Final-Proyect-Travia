@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../styles/homeBackground/homeBackground.scss";
+import "../../styles/home/homeBackground.scss";
 
 import header from "../../img/header.png";
 

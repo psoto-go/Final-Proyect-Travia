@@ -5,7 +5,7 @@ import jwt from "jwt-decode"; // import dependency
 import { useLocation } from "react-router-dom";
 import { Link, Button } from "react-router-dom";
 import logo from "../../img/golondrinablanco.png";
-import "../../styles/styleNav/styleNav.scss";
+import "../../styles/home/styleNav.scss";
 import GoogleLogin from "react-google-login";
 import logo2 from "../../img/golondrina.png";
 
