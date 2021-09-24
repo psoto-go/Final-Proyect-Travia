@@ -80,18 +80,24 @@ export const Navbar = () => {
 			{options ? (
 				<ul className="navbar-nav navbar-home navbarDanger mr-auto ">
 					<li className="nav-item active ">
-						<a href="/" className="colored">
+						<a href="/" className="colored padding-left">
 							Inicio
 						</a>
 					</li>
-					<li className="nav-item">
-						<a href="#">Quienes somos</a>
+					<li className="nav-item ">
+						<a href="#" className="padding-left">
+							Quienes somos
+						</a>
 					</li>
 					<li className="nav-item">
-						<a href="#">Que hacemos</a>
+						<a href="#" className="padding-left">
+							Que hacemos
+						</a>
 					</li>
 					<li className="nav-item">
-						<a href="#">Destinos</a>
+						<a href="#" className="padding-left">
+							Destinos
+						</a>
 					</li>
 					<hr />
 					{!logged ? (

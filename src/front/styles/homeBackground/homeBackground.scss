@@ -1,134 +1,171 @@
+.padding-left{
+  padding-left: 20px;
+}
+
 .header {
     background: linear-gradient(180deg, #8BD996 0%, #b7bfe7 100%) no-repeat center;
     background-size: cover;
-    min-height: 100vh;
+    justify-content: center;
+
   }
 .header .navbar {
     background-color: transparent ;
-  
-  } 
+
+  }
   .coloredh1{
-    color: white;
+    text-align: center;
+    color: #394273;
     font-weight: 700;
-    font-size: 340%;
+    
     top: 5em;
   }
   .coloredh3{
+    text-align: center;
     color: #394273;
-    -webkit-text-stroke: 1px white;
-    padding-left: 10px;
-    
+    // -webkit-text-stroke: 1px white;
+    // padding-left: 10px;
+
   }
   .contenedor{
+    // justify-content: center;
+    align-items: center;
     -webkit-text-stroke: 1px #394273;
-      color: transparent; 
-    padding: 5em;
+      color: transparent;
+    // padding: 5em;
 }
-
+.dimensionImg{
+  width: 500px;
+}
+.center{
+  justify-content: center;
+    align-items: center;
+}
   //-----------------------------------------------------
-  //Imagen 
+  //Imagen
 #landingImg2{
- 
-    display: none;    
-   
+
+    display: none;
+
 }
 #landingImg{
- 
-    display: inline-flex;    
-    margin: -19em 0 11em 55em;  
+
+    // display: inline-flex;
+    // margin: -19em 0 11em 55em;
 }
 @media (min-width: 1440px){
-  #landingImg{
-    margin: -25em 0 11em 65em;
-    
-  }
+  // #landingImg{
+  //   margin: -25em 0 11em 65em;
+
+  // }
   .contenedor{
-    font-size: 200%;
-    padding-left: 10em;;
-    padding-top: 2em;
+    // font-size: 200%;
+    // padding-left: 10em;;
+    // padding-top: 2em;
     -webkit-text-stroke: 1px #394273;
-    color: transparent; 
+    color: transparent;
 }
 }
 @media (max-width: 1440px){
-  #landingImg{
-    margin: -19em 0 11em 25em;
-    
-  }
+  // #landingImg{
+  //   margin: -19em 0 11em 25em;
+
+  // }
   .contenedor{
-    padding-left: 4em;;
-    padding-top: 2em;
+    // padding-left: 4em;;
+    // padding-top: 2em;
     -webkit-text-stroke: 1px #394273;
-    color: transparent; 
+    color: transparent;
 }
-.coloredh1{
-  
-  height: 10%;
-}
+// .coloredh1{
+
+//   height: 10%;
+// }
 }
 @media (max-width: 1024px){
-    #landingImg{
-      
-      position: absolute;
-      z-index: 1;
-      height: 50%;
-      
-      margin: -14em 0 11em 22em;
-    }
+  .dimensionImg{
+    width: 400px;
+      }
     .contenedor{
-     
-      padding-left: 3em;;
-      padding-top: 2em;
+      // font-size: x-large;
+      // padding-left: 3em;;
+      // padding-top: 2em;
       -webkit-text-stroke: 1px #394273;
-      color: transparent; 
+      color: transparent;
   }
-  .coloredh1{
-    
-    height: 10%;
+   .coloredh1{
+
+   }
+   .coloredh3{
+
+    font-size:xx-large;
   }
   }
 
   @media (max-width: 768px){
-    .contenedor{
-    
-      padding-left: 2em;;
-      padding-top: 1em;
-      -webkit-text-stroke: 1px #394273;
-      color: transparent; 
-  }
-    #landingImg{
-      display: none;
+    .dimensionImg{
+      width: 400px;
+        }
+    .header{
+          flex-direction: column;
+          align-items: center;
+        }
+  //   .contenedor{
+
+  //     position: relative;
+  //     z-index: 2;
+  //     // padding-left: 2em;;
+  //     // padding-top: 1em;
+  //     -webkit-text-stroke: 1px #394273;
+  //     color: transparent;
+  // }
+    // #landingImg{
+    //   margin: -14em 0 11em 15em;
+    // }
+    .coloredh1{
+    //  font-size: xxx-large;
+
+     }
+     .coloredh3{
+      margin-left: 0;
+      font-size:larger;
     }
     #landingImg2{
-      display: block;
+      display: none;
       height: 35%;
       margin: -15em 0 11em 20em;
     }
   }
 
   @media (max-width: 425px){
+    //DIMENSION DE IMAGEN---------------------------------
+  .dimensionImg{
+  width: 180px;
+
+    }
+
     .contenedor{
-      
+
       font-size: 12px ;
-      padding-left: 2em;;
-      padding-top: 1em;
+      padding-left: 0;
+      padding-top: 0;
       -webkit-text-stroke: 1px #394273;
-      color: transparent; 
+      color: transparent;
   }
     #landingImg2{
-      display: block;
+      // display: block;
+      z-index: 1;
       height: 20%;
-      margin: -5em 0 11em 6em;
+      margin: -8em 0 11em 15em;
     }
   }
   @media (max-width: 375px){
-    .contenedor{
-      padding-left: 2em;;
-      padding-top: 1em;
-     
-  }
+  //   .contenedor{
+  //     padding-left: 2em;;
+  //     padding-top: 1em;
+
+  // }
     #landingImg{
-      display: none;
+      // display: none;
     }
     #landingImg2{
       width: 10px;
@@ -144,10 +181,10 @@
 //---------------------------------------------------
 .botonCenter{
     display: flex;
-    
+
 }
 
-
+//----------------------------------------------------
 
 
 
