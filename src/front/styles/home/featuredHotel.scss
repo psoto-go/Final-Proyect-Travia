@@ -10,6 +10,7 @@
    }
 .display-responsive{
     display: flex;
+    justify-content: center;
 }
 .xx-large{
     font-size: xx-large;
@@ -52,10 +53,13 @@
   
 
   @media (max-width: 768px){     
-    .display-responsive{
-        
-}
+ 
     .pillsResponsive{
         justify-content: center;
+}
+}
+@media (max-width: 425px){     
+    .display-responsive{
+        justify-content: flex-start;
 }
 }
