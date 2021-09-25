@@ -51,35 +51,69 @@ export const Search = () => {
 	console.log(detalles);
 
 	return (
-		<div id="searchBar">
-			<div className="bgcolor-searchBar">
-				<i className="fas fa-map-marker-alt textMargin" />
-				<form className="form-signin" onSubmit={submitForm}>
-					<input
-						type="text"
-						id="text"
-						placeholder="¿A Donde Quieres Viajar?"
-						name="place"
-						onChange={changeInput}
-					/>
-					<div className="textMargin">Check-In</div>
-					<input type="date" id="datein" name="datein" onChange={changeInput} />
-					<div className="textMargin">Check-Out</div>
-					<input type="date" id="dateout" name="dateout" onChange={changeInput} />
-					<i className="fas fa-user-friends textMargin" />
-					<input
-						type="number"
-						min="1"
-						max="5"
-						placeholder="0"
-						id="number"
-						name="number"
-						onChange={changeInput}
-					/>
-					<button className="btn btn-warning btton" type="submit">
-						Buscar
-					</button>
-				</form>
+		<div>
+			<div id="searchBar" className="d-none d-lg-none d-xl-block">
+				<div className="bgcolor-searchBar">
+					<i className="fas fa-map-marker-alt textMargin" />
+					<form className="form-signin" onSubmit={submitForm}>
+						<input
+							type="text"
+							id="text"
+							placeholder="¿A Donde Quieres Viajar?"
+							name="place"
+							onChange={changeInput}
+						/>
+						<div className="textMargin">Check-In</div>
+						<input type="date" id="datein" name="datein" onChange={changeInput} />
+						<div className="textMargin">Check-Out</div>
+						<input type="date" id="dateout" name="dateout" onChange={changeInput} />
+						<i className="fas fa-user-friends textMargin" />
+						<input
+							type="number"
+							min="1"
+							max="5"
+							placeholder="0"
+							id="number"
+							name="number"
+							onChange={changeInput}
+						/>
+						<button className="btn btn-warning btton" type="submit">
+							Buscar
+						</button>
+					</form>
+				</div>
+			</div>
+			<div id="searchBar2">
+				<nav className="navbar navbar-light border-light d-block d-xl-none d-lg-block .d-md-none pt-3">
+					<form className="form-inline flex-column" onSubmit={submitForm}>
+						<input
+							type="text"
+							id="text"
+							placeholder="¿A Donde Viajas?"
+							className="text-center"
+							name="place"
+							onChange={changeInput}
+						/>
+						<div className="textMargin">Check-In</div>
+						<input type="date" id="datein" name="datein" onChange={changeInput} />
+						<div className="textMargin">Check-Out</div>
+						<input type="date" id="dateout" name="dateout" onChange={changeInput} />
+						<i className="fas fa-user-friends textMargin" />
+						<input
+							type="number"
+							min="1"
+							max="5"
+							placeholder="0"
+							className="text-center"
+							id="number"
+							name="number"
+							onChange={changeInput}
+						/>
+						<button className="btn btn-warning mt-5" type="submit">
+							Buscar
+						</button>
+					</form>
+				</nav>
 			</div>
 		</div>
 	);

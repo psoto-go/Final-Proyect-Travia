@@ -392,3 +392,25 @@ h3, h2{
   min-height: 1px;
 }
 
+@media (max-width: 812px){
+  #searchBar2{
+        
+    position: relative;
+    display: initial;
+    //margin-left: 1.5em;
+    top: -35em;
+    //padding-left: 15em; 
+    //height: 12em;  
+    //width: 27rem;
+    border-radius: 20px;       
+  }
+}
+@media (max-width: 1300px){
+  #searchBar2{
+        
+    position: relative;
+    display: initial;    
+    top: -35em;
+              
+  }
+}

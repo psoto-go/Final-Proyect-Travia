@@ -13,18 +13,19 @@
 
 #landingImg{
     display: inline-flex;    
-    margin: -19em 0 11em 55em;  
+    margin: -7em 0em 0em 49em;  
 }
-@media (max-width: 1730px){
-  #landingImg{
-    margin: -10em 0 11em 30em;
-  }
-}
+
 @media (max-width: 1240px){
     #landingImg{
       z-index: 1;
     }
   }
+@media (max-width: 1300px){
+    #landingImg{
+      margin: 0em 0em 0em 7em;
+    }
+}
 
 //---------------------------------------------------
 .botonCenter{
@@ -38,15 +39,9 @@
     font-weight: 700;
     //position: relative;
     font-size: 340%;
-    top: 5em;
+    top: 6em;
   }
 
-  .contenedor{
-    //margin: 5rem;
-    padding: 5em;
-    
-    
-}
 
 
 
