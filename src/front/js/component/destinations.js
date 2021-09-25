@@ -62,14 +62,14 @@ export const Destinations = () => {
 					</div>
 				</div>
 
-				<div className="mt-5 row justify-content-md-center">{listHotels}</div>
+				<div className="d-flex overflow-horizontal mt-5">{listHotels}</div>
 			</div>
 		);
 	});
 
 	return (
 		<div className="mt-5">
-			<ul className="nav nav-pills pillsResponsive" id="pills-tab" role="tablist">
+			<ul className="nav nav-pills pillsResponsive justify-content-center" id="pills-tab" role="tablist">
 				{listCities}
 			</ul>
 			<div className="tab-content " id="pills-tabContent">
