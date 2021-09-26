@@ -116,7 +116,7 @@ class Room(db.Model):
 class Service(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=True)
-    hotels = db.relationship("Hotel", secondary="services")
+    # hotels = db.relationship("Hotel", secondary="services")
 
     def serialize(self):
         return {

@@ -230,10 +230,13 @@ def new_hotel():
     latitude = body_params.get("latitude", None)
     favorite = body_params.get("favorite", False)
     city_id = body_params.get("city_id", None)
+    services = body_params.get("services", None)
+    servicesToAdd = []
+    for service in services:
+        servicesToAdd.append(Service.query.filter_by(id = service).first())
 
 
-    
-    hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id)
+    hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id, services = servicesToAdd)
     db.session.add(hotel)
     db.session.commit()
 
@@ -252,7 +255,7 @@ def get_hotel():
     seacher = HotelSearcher(city, people, start_date, end_date)
     hotel = seacher.search()
     response = []
-    
+
     for x in hotel:
         response.append(x.serialize())
 
@@ -282,7 +285,7 @@ def new_city():
     name = body_params.get("name", None)
     description = body_params.get("description", None)
     
-    user1 = User(name=name, description = description)
+    user1 = City(name=name, description = description)
     db.session.add(user1)
     db.session.commit()
 
@@ -330,6 +333,31 @@ def user_profile():
 def current_user(identity):
   print(identity["id"])
   return User.query.get(identity["id"])
+
+
+#services
+
+@api.route('/services', methods=['GET'])
+def get_services():
+    services = Service.query.all()
+    response = []
+    for x in services:
+        response.append(x.serialize())
+    return jsonify({"response": response}), 200
+
+@api.route('/new_service', methods=['POST']) 
+def new_service():
+
+    body_params = request.get_json()
+    print(body_params)
+    name = body_params.get("name", None)
+    
+    user1 = Service(name=name)
+    db.session.add(user1)
+    db.session.commit()
+
+    return jsonify({"msg": "el service fue creado exitosamente"}), 200
+
 
 
 

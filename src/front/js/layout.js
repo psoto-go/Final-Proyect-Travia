@@ -27,6 +27,7 @@ import { UserConfig } from "./pages/userConfig";
 import { UserHelp } from "./pages/userHelp";
 import { ReviewsUser } from "./pages/reviewUser";
 import { ProfileReservations } from "./pages/profileReservations";
+import { OnlyCitie } from "./pages/onlyCitie";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -62,6 +63,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/newuser">
 							<NewUser />
+						</Route>
+						<Route exact path="/onlyCitie">
+							<OnlyCitie />
 						</Route>
 						<Route exact path="/list">
 							<List />

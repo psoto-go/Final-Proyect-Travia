@@ -15,12 +15,13 @@ export const AdminHoteles = () => {
 			})
 			.catch(error => console.log("Error", error));
 	}, []);
+	console.log(hotel);
 
 	const listhotels = hotel.map((item, index) => {
 		return (
 			<button key={index} type="button" className="buttonHotels list-group-item list-group-item-action">
 				<div className="hotelImg">
-					<img src={item.HotelArchives[0].url} style={{ width: "300px" }} />
+					{item.HotelArchives[0] ? <img src={item.HotelArchives[0].url} style={{ width: "300px" }} /> : ""}
 					<div className="content-1">
 						<div className="card">
 							<div className="card-body">

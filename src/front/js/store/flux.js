@@ -90,6 +90,54 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("Error", error));
 			},
+			newHotel: paramsForm => {
+				const raw = JSON.stringify(paramsForm);
+
+				const requestPost = {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: raw
+				};
+
+				fetch(api_url + "/api/new_hotel", requestPost)
+					.then(response => response.json())
+					.then(result => {
+						console.log("nuevo hotel");
+					})
+					.catch(error => console.log("Error", error));
+			},
+			newCitie: paramsForm => {
+				const raw = JSON.stringify(paramsForm);
+
+				const requestPost = {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: raw
+				};
+
+				fetch(api_url + "/api/new_city", requestPost)
+					.then(response => response.json())
+					.then(result => {
+						console.log("nuevo hotel");
+					})
+					.catch(error => console.log("Error", error));
+			},
+			newService: paramsForm => {
+				const raw = JSON.stringify(paramsForm);
+
+				const requestPost = {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: raw
+				};
+
+				fetch(api_url + "/api/new_service", requestPost)
+					.then(response => response.json())
+					.then(result => {
+						console.log("nuevo servicio");
+					})
+					.catch(error => console.log("Error", error));
+			},
 			register_google: async paramsForm => {
 				const raw = JSON.stringify({
 					name: paramsForm.Ws.zU,
