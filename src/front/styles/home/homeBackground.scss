@@ -1,0 +1,138 @@
+.padding-left{
+  padding-left: 20px;
+}
+
+.header {
+    background: linear-gradient(180deg, #8BD996 0%, #b7bfe7 100%) no-repeat center;
+    background-size: cover;
+    justify-content: center;
+
+  }
+
+.header .navbar {
+    background-color: transparent ;
+
+  }
+
+  .coloredh1{
+    text-align: center;
+    color: #394273;
+    font-weight: 700;
+    
+    top: 5em;
+  }
+
+  .coloredh3{
+    text-align: center;
+    color: #394273;
+  }
+
+  .contenedor{
+    align-items: center;
+    -webkit-text-stroke: 1px #394273;
+      color: transparent;
+    
+}
+
+.dimensionImg{
+  width: 500px;
+}
+
+.center{
+  justify-content: center;
+    align-items: center;
+}
+
+  //-----------------------------------------------------
+  //Imagen
+
+@media (min-width: 1440px){  
+  .contenedor{ 
+    -webkit-text-stroke: 1px #394273;
+    color: transparent;
+}
+}
+
+@media (max-width: 1440px){
+  .contenedor{
+   -webkit-text-stroke: 1px #394273;
+   color: transparent;
+}
+}
+
+@media (max-width: 1024px){
+  .dimensionImg{
+    width: 400px;
+  }
+  .contenedor{
+      -webkit-text-stroke: 1px #394273;
+      color: transparent;
+  }
+  
+  .coloredh3{
+
+    font-size:xx-large;
+  }
+  }
+
+  @media (max-width: 768px){
+    .dimensionImg{
+      width: 400px;
+        }
+    .header{
+          flex-direction: column;
+          align-items: center;
+        }
+     .coloredh3{
+      margin-left: 0;
+      font-size:larger;
+    }
+    #landingImg2{
+      display: none;
+      height: 35%;
+      margin: -15em 0 11em 20em;
+    }
+  }
+
+  @media (max-width: 425px){
+    //DIMENSION DE IMAGEN---------------------------------
+  .dimensionImg{
+  width: 180px;
+    }
+    .contenedor{
+      font-size: 12px ;
+      padding-left: 0;
+      padding-top: 0;
+      -webkit-text-stroke: 1px #394273;
+      color: transparent;
+  }
+    #landingImg2{
+      z-index: 1;
+      height: 20%;
+      margin: -8em 0 11em 15em;
+    }
+  }
+
+  @media (max-width: 375px){
+    #landingImg2{
+      width: 10px;
+      margin: -5em 0 11em 4em;
+    }
+  }
+  
+  @media (max-width: 320px){
+    #landingImg2{
+    margin: -5em 0;
+  }}
+
+//---------------------------------------------------
+.botonCenter{
+    display: flex;
+
+}
+
+//----------------------------------------------------
+
+
+
+

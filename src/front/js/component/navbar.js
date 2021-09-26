@@ -5,7 +5,7 @@ import jwt from "jwt-decode"; // import dependency
 import { useLocation } from "react-router-dom";
 import { Link, Button } from "react-router-dom";
 import logo from "../../img/golondrinablanco.png";
-import "../../styles/styleNav/styleNav.scss";
+import "../../styles/home/styleNav.scss";
 import GoogleLogin from "react-google-login";
 import logo2 from "../../img/golondrina.png";
 
@@ -76,22 +76,28 @@ export const Navbar = () => {
 	// };
 	return (
 		<nav className="navbar navbar-expand-lg palNav">
-			<img src={logo} alt="Logo" className="ml-5" />
+			<img src={logo} alt="Logo" />
 			{options ? (
 				<ul className="navbar-nav navbar-home navbarDanger mr-auto ">
 					<li className="nav-item active ">
-						<a href="/" className="colored">
+						<a href="/" className="colored padding-left">
 							Inicio
 						</a>
 					</li>
-					<li className="nav-item">
-						<a href="#">Quienes somos</a>
+					<li className="nav-item ">
+						<a href="#" className="padding-left">
+							Quienes somos
+						</a>
 					</li>
 					<li className="nav-item">
-						<a href="#">Que hacemos</a>
+						<a href="#" className="padding-left">
+							Que hacemos
+						</a>
 					</li>
 					<li className="nav-item">
-						<a href="#">Destinos</a>
+						<a href="#" className="padding-left">
+							Destinos
+						</a>
 					</li>
 					<hr />
 					{!logged ? (

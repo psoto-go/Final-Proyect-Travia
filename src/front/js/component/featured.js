@@ -2,7 +2,7 @@ import React, { Component, useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { api_url } from "../constants";
-import "../../styles/home.scss";
+import "../../styles/home/featured.scss";
 export const Featured = props => {
 	const [city, setCity] = useState({});
 
@@ -17,15 +17,13 @@ export const Featured = props => {
 
 	return (
 		<div className="inline-div">
-			<div className="d-flex justify-content-around  hotel-item">
+			<div className="d-flex justify-content-around hotel-item">
 				<Link to={`/hotel/${props.id}`}>
+					<div className="landingImg3">
+						<img className="card-img border-radius50" src={props.url} alt="Jacuzzi" />
+					</div>
 					<div>
-						<div>
-							<img className="card-img elementStyle" src={props.url} alt="Jacuzzi" />
-						</div>
-						<div>
-							<div className="cardFeatured posiFeat"></div>
-						</div>
+						<div className="cardFeatured posiFeat"></div>
 					</div>
 				</Link>
 				<div className="ml-2">

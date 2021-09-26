@@ -1,0 +1,65 @@
+.imgRedonda img{
+    position: relative;
+    width: 30em;
+    height: 30em;
+    overflow: hidden;
+    border-radius: 80%;
+    border-top:10px solid rgb(255, 230, 0) ;
+    border-left:10px solid rgb(255, 230, 0) ;
+    
+   }
+.display-responsive{
+    display: flex;
+    justify-content: center;
+}
+.xx-large{
+    font-size: xx-large;
+}
+.x-large{
+    font-size: x-large;
+}
+.large{
+    font-size: large;
+}   
+   @media (max-width: 1440px){  
+      
+    .imgRedonda img{
+        position: relative;
+        width: 20em;
+        height: 20em;
+        overflow: hidden;
+        border-radius: 80%;
+        border-top:10px solid rgb(255, 230, 0) ;
+        border-left:10px solid rgb(255, 230, 0) ;
+       
+    }
+  }
+
+   
+    .sizeLarge{
+        font-size:medium;
+    }   
+    
+    .imgRedonda img{
+        position: relative;
+        width: 15em;
+        height: 15em;
+        overflow: hidden;
+        border-radius: 80%;
+        border-top:10px solid rgb(255, 230, 0) ;
+        border-left:10px solid rgb(255, 230, 0) ;
+       
+    }
+  
+
+  @media (max-width: 768px){     
+ 
+    .pillsResponsive{
+        justify-content: center;
+}
+}
+@media (max-width: 425px){     
+    .display-responsive{
+        justify-content: flex-start;
+}
+}
