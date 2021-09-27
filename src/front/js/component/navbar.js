@@ -391,7 +391,7 @@ export const Navbar = () => {
 									</button>
 								</div>
 								<div className="modal-body">
-									<form className="form-signin" onSubmit={submitForm}>
+									<form className="form-signin">
 										<div className="form-row ">
 											<div className="col justify-content-start">
 												<label
