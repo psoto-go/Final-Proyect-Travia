@@ -59,6 +59,8 @@ export const HotelDetail = () => {
 		  })
 		: "asdf";
 
+	console.log(hotel);
+
 	return (
 		<>
 			<div className="m-5">

@@ -7,10 +7,10 @@ export const TypeRoom = () => {
 		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
 	};
 	const firstValue = {
-		place: "",
-		datein: "",
-		dateout: "",
-		number: ""
+		number_of_beds: "",
+		number_of_persons: "",
+		price: "",
+		name: ""
 	};
 	return (
 		<div className="typeRoom1">
@@ -43,6 +43,8 @@ export const TypeRoom = () => {
 											placeholder="Habitacion doble"
 											aria-label="Username"
 											aria-describedby="basic-addon1"
+											name="name"
+											onChange={changeInput}
 										/>{" "}
 										<button type="button" className="btn btn-outline-success">
 											<input
@@ -51,7 +53,7 @@ export const TypeRoom = () => {
 												max="5"
 												placeholder="0"
 												id="number"
-												name="number"
+												name="number_of_beds"
 												onChange={changeInput}
 											/>
 											<i className="fas fa-male" />
@@ -63,7 +65,7 @@ export const TypeRoom = () => {
 												max="5"
 												placeholder="0"
 												id="number"
-												name="number"
+												name="number_of_persons"
 												onChange={changeInput}
 											/>
 											<i className="fas fa-bed" />
@@ -122,6 +124,8 @@ export const TypeRoom = () => {
 								placeholder="Individual"
 								aria-label="Username"
 								aria-describedby="basic-addon1"
+								name="price"
+								onChange={changeInput}
 							/>{" "}
 						</div>
 					</div>
