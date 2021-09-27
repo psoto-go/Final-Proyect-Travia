@@ -19,32 +19,27 @@ export const HotelPrices = props => {
 				<hr />
 			</a> */}
 
-			<div>
-				<div>
-					<div className="row">
-						<div className="col-4">
-							<img className="card-img" src={props.url} alt="imagen" />
-						</div>
-						<div className="col-4">
-							<p>
-								Habitación {props.kind} Especificaciones:{" "}
-								<li>{`Numero de personas: ${props.persons}`}</li>
-								<li>{`Numero de camas: ${props.beds}`}</li>
-								<li>{`Precio noche: ${props.price}€`}</li>
-							</p>
-						</div>
-						<div className="col-4">
-							<Link
-								to="/payment"
-								className="btn btn-primary"
-								onClick={() => {
-									localStorage.setItem("reserva", JSON.stringify(props.item));
-								}}>
-								Reservar!
-							</Link>
-							<h6>{`Reserva por ${props.price}€ / noche (impuestos incluidos)`}</h6>
-						</div>
-					</div>
+			<div className="row">
+				<div className="col-3">
+					<img src={props.url} alt="imagen" width="100%" />
+				</div>
+				<div className="col-4">
+					<p>
+						Habitación {props.kind} Especificaciones: <li>{`Numero de personas: ${props.persons}`}</li>
+						<li>{`Numero de camas: ${props.beds}`}</li>
+						<li>{`Precio noche: ${props.price}€`}</li>
+					</p>
+				</div>
+				<div className="col-4">
+					<Link
+						to="/payment"
+						className="btn btn-primary"
+						onClick={() => {
+							localStorage.setItem("reserva", JSON.stringify(props.item));
+						}}>
+						Reservar!
+					</Link>
+					<h6>{`Reserva por ${props.price}€ / noche (impuestos incluidos)`}</h6>
 				</div>
 			</div>
 		</div>
