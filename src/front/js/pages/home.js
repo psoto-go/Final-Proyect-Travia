@@ -51,7 +51,7 @@ export const Home = () => {
 		<div>
 			<Header /> <Search />
 			<div className="mt-5">
-				<h3 className="ml-5 pl-5 col-11">Destacados</h3>
+				<h3 className="offset-1 col-11">Destacados</h3>
 				<div className="d-flex  overflow-horizontal">{listHotels}</div>{" "}
 			</div>{" "}
 			<Destinations />

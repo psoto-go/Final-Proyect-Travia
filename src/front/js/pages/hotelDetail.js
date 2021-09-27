@@ -63,21 +63,21 @@ export const HotelDetail = () => {
 		<>
 			<div className="m-5">
 				<h2>{hotel.name}</h2>
-
-				{/* <p className="pl-5"> Ipsum Loren Ipsum Ipsum Loren Ipsum Ipsum Loren Ipsum</p> */}
-
 				{listGallery}
 
 				<div className="row">
 					<div className="col-12">
-						<NavDetail description={hotel.description} />
-						<div className="serviciosHotel col-6">
-							<h3>Servicios del Hotel</h3>
-							{listServices}
+						<div>
+							<NavDetail description={hotel.description} />
+							<div className=" col-6">
+								<h3>Servicios del Hotel</h3>
+								{listServices}
+							</div>
 						</div>
-						<div className="col ">
+
+						{/* <div className="col ">
 							<Availability />
-						</div>
+						</div> */}
 					</div>
 				</div>
 
