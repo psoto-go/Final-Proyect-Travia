@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "../../styles/admDash.scss";
 import "../../styles/carrouselDash.scss";
 import "../../styles/userDash.scss";
+import "../../styles/adminDash/adminDash.scss";
 
-import { ListGroup } from "../component/listGroup";
 import { CarrouselDash } from "../component/carrouselDash";
 import { HotelDash } from "../component/hotelDash";
 import { UserDash } from "../component/userDash";
@@ -14,22 +14,22 @@ export const Admindash = () => {
 		<>
 			<div>
 				<div className="row">
-					<div className="col-8">
-						<h2 className="ml-4">Dashboard</h2>
+					<div className="offset-1 text-center">
+						<h2 className="ml-4 ">Dashboard</h2>
 					</div>
 
-					<div className="col-4 row">
+					{/* <div className="col-4 row">
 						<Link to="#" className="col-2 align-self-center">
 							Adm Panel
 						</Link>
 						<p className="col align-self-center">/ Dashboard</p>
-					</div>
+					</div> */}
 				</div>
 
-				<div>
+				{/* <div>
 					<div className="row">
 						<div className="col-md-12">
-							<div className="search" id="custom-search-input">
+							 <div className="search" id="custom-search-input">
 								<div className="input-group col-12">
 									<input type="text" className="form-control input-lg" placeholder="Buscar" />
 									<span className="input-group-btn">
@@ -38,22 +38,21 @@ export const Admindash = () => {
 										</button>
 									</span>
 								</div>
-							</div>
+							</div> 
 						</div>
 					</div>
-				</div>
+				</div> */}
 				<div className="row">
-					<div className="col-6 hotelDiv">
+					<div className="col-4 contentUser">
 						<Link to="/adminHoteles">
 							<HotelDash />
 						</Link>
 					</div>
-					<div className="col-6 userAdm">
+					<div className="col-4 contentUser">
 						<UserDash />
-
-						<div className="row pl-5 m-2 contentUser">
-							<CarrouselDash />
-						</div>
+					</div>
+					<div className="col-4 contentUser">
+						<CarrouselDash />
 					</div>
 				</div>
 			</div>
