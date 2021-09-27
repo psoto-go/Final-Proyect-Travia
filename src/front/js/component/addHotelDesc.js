@@ -230,12 +230,6 @@ export const AddHotelDesc = () => {
 							  })
 							: ""}
 					</div>
-
-					{/* <div className="DatepickHotel">
-						<h4>Disponibilidad</h4>
-						<p>Añade las fechas disponibles</p>
-						<input type="date" min="2019-06-02" max="2019-06-08" />
-					</div> */}
 				</div>
 				<div className="col-5 descHotel">
 					<p>

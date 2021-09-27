@@ -8,16 +8,11 @@ export const Gallery = props => {
 		<>
 			<div className="galleryView ">
 				<h2>Gallery</h2>
-				<div className="row ">
-					<img
-						src={props.urls[0]}
-						className="col-6 "
-						height="623px"
-						data-toggle="modal"
-						data-target="#exampleModal"
-					/>
-					<div className="row">
-						<div className="col-6">
+				<div className="row">
+					<img src={props.urls[0]} className="col-6" data-toggle="modal" data-target="#exampleModal" />
+
+					<div className="col-6 p-0 p-sm-0 p-md-0 p-lg-3 p-xl-3 row">
+						<div className="col-6 ">
 							<img
 								src={props.urls[1]}
 								className="col p-2  "

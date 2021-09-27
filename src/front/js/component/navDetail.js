@@ -27,7 +27,7 @@ export const NavDetail = props => {
 				</li>
 			</ul>
 			<hr />
-			<div className="parraf">
+			<div className="col-6">
 				<h3>Descripcion</h3>
 				<p>{props.description}</p>
 			</div>

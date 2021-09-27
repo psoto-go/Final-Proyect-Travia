@@ -53,7 +53,7 @@ export const Destinations = () => {
 				role="tabpanel"
 				aria-labelledby={`pills-${city.id}-tab`}>
 				<div className=" display-responsive row">
-					<div className="imgRedonda ml-3  m-2 mt-4 justify-content-center col-6 col-sm-6 col-md-4 col-lg-4 col-xl-2">
+					<div className="imgRedonda ml-3  m-2 mt-4 justify-content-center col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3">
 						<img src={city.url} alt="..." />
 					</div>
 					<div className="m-2 col-12 col-sm-7 col-md-7 col-lg-8 col-xl-6 card-body positionText">

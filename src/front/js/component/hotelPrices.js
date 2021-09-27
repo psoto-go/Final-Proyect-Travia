@@ -7,17 +7,17 @@ import "../../styles/index.scss";
 export const HotelPrices = props => {
 	return (
 		<div className="card">
-			<a>
-				{/* <i className="fas fa-star" />
+			{/* <a>
+				 <i className="fas fa-star" />
 				<i className="fas fa-star" />
-				<i className="fas fa-star" /> */}
-				{"  "}
-				{/* <a>
+				<i className="fas fa-star" /> 
+				
+				 <a>
 					Servicios <i className="fas fa-dumbbell" /> <i className="fas fa-wifi" />{" "}
 					<i className="fas fa-wheelchair" /> <i className="fas fa-paw" />
-				</a> */}
+				</a> 
 				<hr />
-			</a>
+			</a> */}
 
 			<div>
 				<div>
