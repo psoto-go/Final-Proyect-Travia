@@ -8,7 +8,6 @@ import "../../styles/adminDash/adminDash.scss";
 import { CarrouselDash } from "../component/carrouselDash";
 import { HotelDash } from "../component/hotelDash";
 import { UserDash } from "../component/userDash";
-import { AdmindashPrueba } from "../component/adminDashPrueba/adminDashPrueba";
 
 export const Admindash = () => {
 	return (
