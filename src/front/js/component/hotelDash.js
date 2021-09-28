@@ -15,4 +15,5 @@ export const HotelDash = () => {
 			</div>
 		</div>
 	);
+	w;
 };
