@@ -11,7 +11,7 @@ export const CarrouselDash = () => {
 			</div>
 
 			<div className="col-12 text-center">
-				<h3 className="">Ciudades</h3>
+				<h3 className="textDash">Ciudades</h3>
 			</div>
 		</div>
 	);

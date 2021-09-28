@@ -11,7 +11,7 @@ export const UserDash = () => {
 			</div>
 
 			<div className="col-12 text-center">
-				<h3 className="">Usuarios</h3>
+				<h3 className="textDash">Usuarios</h3>
 			</div>
 		</div>
 	);

@@ -1,10 +1,19 @@
 .img-hotel{
-    max-width: 300px;
-    min-width: 100px;
-    border-radius: 20px;
+    width: 70%;
+    height:107% ;
+     border-radius: 20px;
+ }
+ .dashResponsive{
+    display: flex;
 }
-.img-hotel2{
-    width: 600px;
-   
-    border-radius: 20px;
-}
+
+ @media (max-width: 768px){  
+      .dashResponsive{
+          display: block;
+      }
+      .textDash{
+        font-size: initial;
+    }
+  }
+
+  
