@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/addImgHotel.scss";
 import "../../styles/onlyRoom.scss";

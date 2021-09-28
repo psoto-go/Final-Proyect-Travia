@@ -1,6 +1,5 @@
 import React, { Component, useContext, useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import "../../styles/home/featuredHotel.scss";
 import { api_url } from "../constants";
 import { Featured } from "./featured";
 
@@ -53,24 +52,24 @@ export const Destinations = () => {
 				id={`pills-${city.id}`}
 				role="tabpanel"
 				aria-labelledby={`pills-${city.id}-tab`}>
-				<div className="d-flex">
-					<div className="imgRedonda ml-3 col-3 m-2 mt-4">
+				<div className=" display-responsive row">
+					<div className="imgRedonda ml-3  m-2 mt-4 justify-content-center col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3">
 						<img src={city.url} alt="..." />
 					</div>
-					<div className="m-2 col-4 card-body positionText">
-						<h5 className="card-title p-3 ml-5">{city.name}</h5>
-						<p className="card-text ml-8">{city.description}</p>
+					<div className="m-2 col-12 col-sm-7 col-md-7 col-lg-8 col-xl-6 card-body positionText">
+						<h5 className="card-title p-3 ml-5 xx-large">{city.name}</h5>
+						<p className=" sizeLarge ml-8 x-large">{city.description}</p>
 					</div>
 				</div>
 
-				<div className="mt-5 row justify-content-md-center">{listHotels}</div>
+				<div className="d-flex overflow-horizontal mt-5">{listHotels}</div>
 			</div>
 		);
 	});
 
 	return (
-		<div className="mt-5 pl-5  ml-5">
-			<ul className="nav nav-pills " id="pills-tab" role="tablist">
+		<div className="mt-5">
+			<ul className="nav nav-pills pillsResponsive justify-content-center" id="pills-tab" role="tablist">
 				{listCities}
 			</ul>
 			<div className="tab-content " id="pills-tabContent">

@@ -7,10 +7,10 @@ export const TypeRoom = () => {
 		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
 	};
 	const firstValue = {
-		place: "",
-		datein: "",
-		dateout: "",
-		number: ""
+		number_of_beds: "",
+		number_of_persons: "",
+		price: "",
+		name: ""
 	};
 	return (
 		<div className="typeRoom1">
@@ -43,68 +43,74 @@ export const TypeRoom = () => {
 											placeholder="Habitacion doble"
 											aria-label="Username"
 											aria-describedby="basic-addon1"
+											name="name"
+											onChange={changeInput}
 										/>{" "}
 										<button type="button" className="btn btn-outline-success">
 											<input
 												type="number"
-												min="1"
+												min="0"
 												max="5"
 												placeholder="0"
 												id="number"
-												name="number"
+												name="number_of_beds"
 												onChange={changeInput}
 											/>
 											<i className="fas fa-male" />
 										</button>
+										<button type="button" className="btn btn-outline-success">
+											<input
+												type="number"
+												min="0"
+												max="5"
+												placeholder="0"
+												id="number"
+												name="number_of_persons"
+												onChange={changeInput}
+											/>
+											<i className="fas fa-bed" />
+										</button>
 									</div>
-								</div>
-							</div>
-
-							<div className="row">
-								<div className="col-6">
-									<strong>Servicios de habitacion</strong>
-								</div>
-								<div className="col-6">
-									Añadir servicios{" "}
-									<button className="add rounded-circle text-center ">
-										<i className="fas fa-award" />
-									</button>
-								</div>
-								<div />
-							</div>
-							<div className="row">
-								<div className="col-12 p-0">
-									<button className="btn m-1 btnServiceRoomOn">Servicios</button>
-									<button className="btn m-1 btnServiceRoomOn">Servicios</button>
-									<button className="btn m-1 btnServiceRoomOff">Servicios</button>
-									<button className="btn m-1 btnServiceRoomOff">Servicios</button>
-									<button className="btn m-1 btnServiceRoomOn">Servicios</button>
-									<button className="btn m-1 btnServiceRoomOff">Servicios</button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div className="col-3">
-					<div className="form-group form-check">
-						<input type="checkbox" className="form-check-input" id="exampleCheck1" />
-						<label className="form-check-label" htmlFor="exampleCheck1">
-							<strong>Desayuno incluido $13</strong>
-						</label>
+					<div className="col-12">
+						<p>
+							<strong>Fecha Inicial</strong>
+						</p>
+
+						<div className="input-group mb-3">
+							<div className="input-group-prepend" />
+							<input
+								type="date"
+								className="form-control"
+								placeholder="Individual"
+								aria-label="Username"
+								aria-describedby="basic-addon1"
+							/>{" "}
+						</div>
 					</div>
-					<div className="form-group form-check">
-						<input type="checkbox" className="form-check-input" id="exampleCheck1" />
-						<label className="form-check-label" htmlFor="exampleCheck1">
-							<strong>Cancelacion gratis</strong>
-						</label>
-					</div>
-					<div className="form-group form-check">
-						<input type="checkbox" className="form-check-input" id="exampleCheck1" />
-						<label className="form-check-label" htmlFor="exampleCheck1">
-							<strong>No hay pago por adelantado</strong>
-						</label>
+					<div className="col-12">
+						<p>
+							<strong>Fecha Final</strong>
+						</p>
+
+						<div className="input-group mb-3">
+							<div className="input-group-prepend" />
+							<input
+								type="date"
+								className="form-control"
+								placeholder="Individual"
+								aria-label="Username"
+								aria-describedby="basic-addon1"
+							/>{" "}
+						</div>
 					</div>
 				</div>
+
 				<div className="col-2">
 					<div>
 						<p>
@@ -118,24 +124,13 @@ export const TypeRoom = () => {
 								placeholder="Individual"
 								aria-label="Username"
 								aria-describedby="basic-addon1"
-							/>{" "}
-						</div>
-						<p>
-							<strong>Precio / Noche</strong>
-						</p>
-						<div className="input-group mb-3">
-							<div className="input-group-prepend" />
-							<input
-								type="text"
-								className="form-control"
-								placeholder="Grupal"
-								aria-label="Username"
-								aria-describedby="basic-addon1"
+								name="price"
+								onChange={changeInput}
 							/>{" "}
 						</div>
 					</div>
 				</div>
-				<div className="col-1">
+				{/* <div className="col-1">
 					<div className="dropdown">
 						<button
 							className="btn btn-secondary dropdown-toggle"
@@ -158,7 +153,7 @@ export const TypeRoom = () => {
 							</p>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

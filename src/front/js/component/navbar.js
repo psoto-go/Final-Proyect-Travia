@@ -5,13 +5,15 @@ import jwt from "jwt-decode"; // import dependency
 import { useLocation } from "react-router-dom";
 import { Link, Button } from "react-router-dom";
 import logo from "../../img/golondrinablanco.png";
-import "../../styles/styleNav/styleNav.scss";
+import "../../styles/home/styleNav.scss";
 import GoogleLogin from "react-google-login";
 import logo2 from "../../img/golondrina.png";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	const [loginValue, setLoginValue] = useState(firstValue);
+	const [registerValue, setRegisterValue] = useState(firstRegisterValue);
+	const [confirmValue, setConfirmValue] = useState();
 	let history = useHistory();
 
 	useEffect(() => {
@@ -32,6 +34,27 @@ export const Navbar = () => {
 	const firstValue = {
 		email: "",
 		password: ""
+	};
+	const firstRegisterValue = {
+		name: "",
+		last_name: "",
+		email: "",
+		password: ""
+	};
+	const changeInputRegister = e => {
+		setRegisterValue({ ...registerValue, [e.target.name]: e.target.value });
+	};
+	const changeInputConfirm = e => {
+		setConfirmValue(e.target.value);
+	};
+	const submitFormRegister = e => {
+		e.preventDefault();
+		if (registerValue.password === confirmValue) {
+			actions.register(registerValue);
+			history.push("/welcome");
+		} else {
+			console.log("error");
+		}
 	};
 	const changeInput = e => {
 		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
@@ -76,22 +99,28 @@ export const Navbar = () => {
 	// };
 	return (
 		<nav className="navbar navbar-expand-lg palNav">
-			<img src={logo} alt="Logo" className="ml-5" />
+			<img src={logo} alt="Logo" />
 			{options ? (
 				<ul className="navbar-nav navbar-home navbarDanger mr-auto ">
 					<li className="nav-item active ">
-						<a href="/" className="colored">
+						<a href="/" className="colored padding-left">
 							Inicio
 						</a>
 					</li>
-					<li className="nav-item">
-						<a href="#">Quienes somos</a>
+					<li className="nav-item ">
+						<a href="#" className="padding-left">
+							Quienes somos
+						</a>
 					</li>
 					<li className="nav-item">
-						<a href="#">Que hacemos</a>
+						<a href="#" className="padding-left">
+							Que hacemos
+						</a>
 					</li>
 					<li className="nav-item">
-						<a href="#">Destinos</a>
+						<a href="#" className="padding-left">
+							Destinos
+						</a>
 					</li>
 					<hr />
 					{!logged ? (
@@ -146,15 +175,185 @@ export const Navbar = () => {
 			</ul>
 			{!logged ? (
 				<div className="navbarDropdown form-inline my-2 pr-5 ">
-					<Link to="/signup" className="nav-link colored">
+					<button
+						type="button"
+						className="btn btn-info mb-0 btn-md "
+						data-toggle="modal"
+						data-target="#exampleModal2">
 						Registrarse
-					</Link>
+					</button>
+					<div
+						className="modal fade"
+						id="exampleModal2"
+						tabIndex="-1"
+						aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div className="modal-dialog modal-lg modal-dialog-centered">
+							<div className="modal-content">
+								<div className="modal-header">
+									<h5 className="modal-title" id="exampleModalLabel">
+										<div className="container px-lg-5 ">
+											<div className=" row ">
+												<div className="col-2 py-3 px-lg-5 ">
+													<img
+														className="float-left"
+														src={logo2}
+														alt=""
+														width="72"
+														height="72"
+													/>
+												</div>
+												<div className="col py-3 px-lg-5">
+													<h3 className="text-right display-4">Inicia sesión</h3>
+												</div>
+											</div>
+										</div>
+									</h5>
+									<button
+										type="button btn-lg"
+										className="close btn-lg"
+										data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div className="modal-body">
+									<form className="form-signin">
+										<div className="form-row ">
+											<div className="col justify-content-start">
+												<label
+													htmlFor="inputEmail"
+													className="form-label text-dark font-weight-bold">
+													Nombre
+												</label>
+											</div>
+											<div className="col">
+												<input
+													type="text"
+													className="form-control"
+													id="exampleFormControlInput1"
+													placeholder="Nombre"
+													name="name"
+													onChange={changeInputRegister}
+												/>
+											</div>
+										</div>
+										<div className="w-100"></div>
+										<div className="form-row">
+											<div className="col">
+												<label
+													htmlFor="inputPassword"
+													className="form-label text-dark font-weight-bold">
+													Apellido
+												</label>
+											</div>
+											<div className="col">
+												<input
+													type="text"
+													className="form-control"
+													id="exampleFormControlInput"
+													placeholder="Apellido"
+													name="last_name"
+													onChange={changeInputRegister}
+												/>
+											</div>
+										</div>
+										<div className="form-row ">
+											<div className="col justify-content-start">
+												<label
+													htmlFor="inputEmail"
+													className="form-label text-dark font-weight-bold">
+													Email
+												</label>
+											</div>
+											<div className="col">
+												<input
+													type="email"
+													className="form-control"
+													id="exampleFormControlInput12"
+													placeholder="Email"
+													name="email"
+													onChange={changeInputRegister}
+												/>
+											</div>
+										</div>
+										<div className="form-row ">
+											<div className="col justify-content-start">
+												<label
+													htmlFor="inputEmail"
+													className="form-label text-dark font-weight-bold">
+													Contraseña
+												</label>
+											</div>
+											<div className="col">
+												<input
+													type="password"
+													className="form-control"
+													id="inputPassword1"
+													placeholder="Password"
+													name="password"
+													onChange={changeInputRegister}
+												/>
+											</div>
+										</div>
+										<div className="form-row ">
+											<div className="col justify-content-start">
+												<label
+													htmlFor="inputEmail"
+													className="form-label text-dark font-weight-bold">
+													Repetir contraseña
+												</label>
+											</div>
+											<div className="col">
+												<input
+													type="password"
+													className="form-control"
+													id="inputPassword2"
+													placeholder="Password"
+													name="password2"
+													onChange={changeInputConfirm}
+												/>
+											</div>
+										</div>
+										<div className="justify-content-center ml-4">
+											<button
+												type="button"
+												className="btn btn-lg btn-warning btn-block"
+												onClick={submitFormRegister}
+												data-dismiss="modal">
+												Registrarse
+											</button>
+										</div>
+										<hr className="hr-text" data-content="o usar una de estas opciones" />
+
+										<div className="d-flex justify-content-center">
+											<div className="justify-content-center mr-5">
+												<GoogleLogin
+													clientId="946040142718-3h25n3eak29rip9ftt5ko3sme27l8ob4.apps.googleusercontent.com"
+													onSuccess={respuestaGoogle}
+													onFailure={respuestaGoogle}
+													cookiePolicy={"single_host_origin"}
+												/>
+											</div>
+										</div>
+
+										<p className="text-center mt-5 mb-3 text-muted">
+											Al iniciar sesión o al crear una cuenta, aceptas nuestros Términos y
+											condiciones y la Política de privacidad
+										</p>
+										<h2 />
+										<hr />
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
 					<button
 						type="button"
 						className="btn btn-info mb-0 btn-md "
 						data-toggle="modal"
 						data-target="#exampleModal">
-						Entrar
+						Iniciar Sesion
 					</button>
 					<div
 						className="modal fade"
@@ -192,7 +391,7 @@ export const Navbar = () => {
 									</button>
 								</div>
 								<div className="modal-body">
-									<form className="form-signin" onSubmit={submitForm}>
+									<form className="form-signin">
 										<div className="form-row ">
 											<div className="col justify-content-start">
 												<label
@@ -234,7 +433,11 @@ export const Navbar = () => {
 										</div>
 										<div className="justify-content-center ml-4">
 											<div className="checkbox mb-3">¿Olvidaste tu contraseña?</div>
-											<button className="btn btn-lg btn-warning btn-block " type="submit">
+											<button
+												type="button"
+												className="btn btn-lg btn-warning btn-block"
+												onClick={submitForm}
+												data-dismiss="modal">
 												Iniciar sesión
 											</button>
 

@@ -1,3 +1,11 @@
+.overflow-horizontal{
+  overflow: auto;
+}
+
+.border-radius{
+  border-radius: 50px; 
+}
+
 @media (min-width: 1118px){
   //Reviews --------------
   .reviewsHome{
@@ -17,19 +25,23 @@
   //-----------------------
 }
 
+.modal-header .close {
+  padding: 1rem 1rem;
+  margin: -4rem 1rem -7rem auto;
+}
 
 
 
 
-//--------------------------------------------------------------
 
 
+//---------------------------------------------------------------
 
 
 
 .resenasStyle{
  
-      padding: 4em;
+      padding: 2em;
     
 }
 .lugares{
@@ -55,21 +67,7 @@
 }
 
 
-.imgRedonda img{
- // padding: 5em ;
- // width:300px;
- // height:300px;
- 
- position: relative;
- left: 5em;
- width: 20em;
- height: 20em;
- overflow: hidden;
- border-radius: 80%;
- border-top:10px solid rgb(255, 230, 0) ;
- border-left:10px solid rgb(255, 230, 0) ;
 
-}
 
 
 
@@ -180,15 +178,7 @@
   
 }
 
-.inline-div{
-  
-  display: inline-flex;
-  padding-bottom: 10em;
-  
-  margin-left: 10%;
-  
 
-}
 
 .btton{
   width: 14%;
@@ -380,12 +370,6 @@ h3, h2{
 }
 
 
-.elementStyle{
-  
-  width: 20em;
-  min-height: 15em; 
-  border-radius: 50px; 
-}
 
 .cardFeatured{
   flex: 1 1 auto;

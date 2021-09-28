@@ -1,0 +1,29 @@
+//--------------------------------------------------------------
+//Destacados----------------------------------------------------
+.inline-div{
+    display: inline-flex;
+  }
+  
+  .hotel-item {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: 250px;
+    max-width: 425px;
+    padding: 2%;
+    margin: 0 30px;    
+    //align-items: center;
+    
+  }
+  .border-radius50{
+    border-radius: 50px;
+    height: 250px;
+    width: 425px;
+  }
+  
+//-----------------------------------------------------------------
+@media (min-width: 1024px){
+  .overflow-horizontal{
+    overflow: auto;
+    justify-content: center;
+  }
+}

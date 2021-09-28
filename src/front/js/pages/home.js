@@ -49,8 +49,12 @@ export const Home = () => {
 
 	return (
 		<div>
-			<Header /> <Search /> <h3 className="ml-5 pl-5">Destacados</h3> <hr></hr>
-			<div className="mt-5 row justify-content-md-center">{listHotels}</div> <Destinations />
+			<Header /> <Search />
+			<div className="mt-5">
+				<h3 className="offset-1 col-11">Destacados</h3>
+				<div className="d-flex  overflow-horizontal">{listHotels}</div>{" "}
+			</div>{" "}
+			<Destinations />
 			<div className="resenasStyle">
 				<h2 className="p-5">Nuestros usuarios opinan</h2> <div className="reviewsHome">{listReviews}</div>
 			</div>

@@ -13,20 +13,20 @@ export const Admindash = () => {
 	return (
 		<>
 			<div>
-				<div className="row container text-center">
-					<div className="col">
-						<h2 className="ml-3">Dashboard</h2>
+				<div className="row">
+					<div className="col-8">
+						<h2 className="ml-4">Dashboard</h2>
 					</div>
 
-					<div className="row">
-						<Link to="#" className="col-2 mx-auto">
-							Adm Panel{" "}
+					<div className="col-4 row">
+						<Link to="#" className="col-2 align-self-center">
+							Adm Panel
 						</Link>
 						<p className="col align-self-center">/ Dashboard</p>
 					</div>
 				</div>
 
-				<div className=" container text-center">
+				<div>
 					<div className="row">
 						<div className="col-md-12">
 							<div className="search" id="custom-search-input">
