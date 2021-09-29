@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/typeRoom.scss";
 import { NavBarRoom } from "./navBarRoom";
 export const TypeRoom = () => {
+	const { store, actions } = useContext(Context);
 	const [loginValue, setLoginValue] = useState(firstValue);
 	const changeInput = e => {
 		setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
@@ -10,7 +12,7 @@ export const TypeRoom = () => {
 		number_of_beds: "",
 		number_of_persons: "",
 		price: "",
-		name: ""
+		kind: ""
 	};
 	return (
 		<div className="typeRoom1">
@@ -43,7 +45,7 @@ export const TypeRoom = () => {
 											placeholder="Habitacion doble"
 											aria-label="Username"
 											aria-describedby="basic-addon1"
-											name="name"
+											name="kind"
 											onChange={changeInput}
 										/>{" "}
 										<button type="button" className="btn btn-outline-success">
@@ -154,6 +156,16 @@ export const TypeRoom = () => {
 						</div>
 					</div>
 				</div> */}
+				<div className="col-12 mt-4">
+					<button
+						type="button"
+						className="btn btn-secondary btn-lg btn-block"
+						onClick={() => {
+							actions.newRoom(loginValue);
+						}}>
+						CREAR HABITACION NUEVA
+					</button>
+				</div>
 			</div>
 		</div>
 	);

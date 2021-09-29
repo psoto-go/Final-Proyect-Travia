@@ -9,7 +9,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			accesToken: null,
 			users: [],
 			url: null,
-			usergoogle: []
+			usergoogle: [],
+			services: [],
+			lastidhotel: null
 		},
 		actions: {
 			url: paramsForm => {
@@ -102,8 +104,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(api_url + "/api/new_hotel", requestPost)
 					.then(response => response.json())
 					.then(result => {
-						console.log("nuevo hotel");
+						setStore({ lastidhotel: result.id });
 					})
+					.catch(error => console.log("Error", error));
+			},
+			newRoom: paramsForm => {
+				paramsForm["hotel_id"] = getStore().lastidhotel;
+				const raw = JSON.stringify(paramsForm);
+
+				const requestPost = {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: raw
+				};
+
+				fetch(api_url + "/api/new_room", requestPost)
+					.then(response => response.json())
+					.then(result => {})
 					.catch(error => console.log("Error", error));
 			},
 			newCitie: paramsForm => {
@@ -132,9 +149,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 
 				fetch(api_url + "/api/new_service", requestPost)
-					.then(response => response.json())
+					.then(response => getActions().getService())
 					.then(result => {
 						console.log("nuevo servicio");
+					})
+					.catch(error => console.log("Error", error));
+			},
+			getService: () => {
+				fetch(api_url + "/api/services")
+					.then(response => response.json())
+					.then(result => {
+						setStore({ services: result.response });
 					})
 					.catch(error => console.log("Error", error));
 			},
