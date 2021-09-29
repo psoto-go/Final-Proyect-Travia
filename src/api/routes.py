@@ -237,10 +237,27 @@ def new_hotel():
 
 
     hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id, services = servicesToAdd)
+    print("*********", hotel.id)
     db.session.add(hotel)
     db.session.commit()
+    print("*********", hotel.id)
+    return jsonify({"msg": "El hotel fue creado exitosamente", "id": hotel.id}), 200
 
+@api.route('/new_room', methods=['POST']) 
+def new_room():
+
+    body_params = request.get_json()
+    kind = body_params.get("kind", None)
+    number_of_beds = body_params.get("number_of_beds", None)
+    number_of_persons = body_params.get("number_of_persons", None)
+    price = body_params.get("price", None)
+    hotel_id = body_params.get("hotel_id", False)
+    room = Room(kind=kind, number_of_beds=number_of_beds, number_of_persons=number_of_persons, price=price, hotel_id=hotel_id)
+    print("@@@@@@@", room)
+    db.session.add(room)
+    db.session.commit()
     return jsonify({"msg": "El hotel fue creado exitosamente"}), 200
+
 
 @api.route('/hotels', methods=['GET'])
 def get_hotel():

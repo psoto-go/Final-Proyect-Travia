@@ -20,7 +20,6 @@ export const AddHotelDesc = () => {
 		name: ""
 	});
 	const [cities, setCities] = useState();
-	const [services, setServices] = useState();
 	const { store, actions } = useContext(Context);
 	let history = useHistory();
 
@@ -34,12 +33,7 @@ export const AddHotelDesc = () => {
 	}, []);
 
 	useEffect(() => {
-		fetch(api_url + "/api/services")
-			.then(response => response.json())
-			.then(result => {
-				setServices(result.response);
-			})
-			.catch(error => console.log("Error", error));
+		actions.getService();
 	}, []);
 
 	const changeInput = e => {
@@ -59,7 +53,7 @@ export const AddHotelDesc = () => {
 	const submitForm = e => {
 		e.preventDefault();
 		actions.newHotel(loginValue);
-		history.push("/adminHoteles");
+		// history.push("/adminHoteles");
 	};
 	const submitFormService = e => {
 		e.preventDefault();
@@ -213,8 +207,8 @@ export const AddHotelDesc = () => {
 						</div> */}
 					</div>
 					<div className="row serviceRoom2">
-						{services
-							? services.map((item, index) => {
+						{store.services.length > 0
+							? store.services.map((item, index) => {
 									return (
 										<ButtonService
 											key={index}

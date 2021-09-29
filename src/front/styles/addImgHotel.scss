@@ -44,7 +44,7 @@ $animationSpeed: 25s;
 	.slide-track {
 		animation: scroll $animationSpeed linear infinite;
 		display: flex;
-		width: calc(250px * 4);
+		width: calc(250px * 6);
 	}
 	
 	.slide {
