@@ -6,6 +6,7 @@
     background: linear-gradient(180deg, #8BD996 0%, #b7bfe7 100%) no-repeat center;
     background-size: cover;
     justify-content: center;
+    //padding: 3%;
 
   }
 
@@ -15,27 +16,27 @@
   }
 
   .coloredh1{
-    text-align: center;
-    color: #394273;
-    font-weight: 700;
     
-    top: 5em;
+    color: #394273;
+    font-weight: 700;    
+    
   }
 
   .coloredh3{
-    text-align: center;
+    
     color: #394273;
   }
 
   .contenedor{
     align-items: center;
     -webkit-text-stroke: 1px #394273;
-      color: transparent;
+    color: transparent;
     
 }
 
 .dimensionImg{
   width: 500px;
+  justify-content: center;
 }
 
 .center{
@@ -85,7 +86,7 @@
         }
      .coloredh3{
       margin-left: 0;
-      font-size:larger;
+      font-size: x-small;
     }
     #landingImg2{
       display: none;
@@ -97,7 +98,7 @@
   @media (max-width: 425px){
     //DIMENSION DE IMAGEN---------------------------------
   .dimensionImg{
-  width: 180px;
+    width: 180px;
     }
     .contenedor{
       font-size: 12px ;

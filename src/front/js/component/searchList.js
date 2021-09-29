@@ -5,9 +5,9 @@ import { Search } from "./search";
 export const SearchList = () => {
 	return (
 		<div>
-			<div className="searchListBar">{<Search />}</div>
-			<div className="botonBest">
-				<div className="dropdown fixP botonMargin">
+			<div className="row p-5">
+				<Search />
+				<div className="dropdown col-6 d-flex justify-content-center">
 					<button type="button" data-toggle="dropdown" className="btn btn-info dropdown-toggle botones ">
 						Precio
 						<ul className="dropdown-menu">
@@ -41,8 +41,7 @@ export const SearchList = () => {
 						</ul>
 					</button>
 				</div>
-
-				<div className="fixP fixP2">
+				<div className="col-6 d-flex justify-content-center">
 					<a>Ordenar por</a>
 					<a type="button" className="btn btn-light botones ">
 						Recomendados

@@ -5,7 +5,7 @@ import { api_url } from "../constants";
 import { param } from "jquery";
 import { List } from "../pages/list";
 
-export const Search = () => {
+export const SearchResponsive = () => {
 	const { store, actions } = useContext(Context);
 	const [loginValue, setLoginValue] = useState({
 		place: "",
@@ -51,14 +51,14 @@ export const Search = () => {
 	console.log(detalles);
 
 	return (
-		<div id="searchBar" className="d-none d-lg-none d-xl-block">
-			<div className="bgcolor-searchBar">
-				<i className="fas fa-map-marker-alt textMargin" />
-				<form className="form-signin" onSubmit={submitForm}>
+		<div className="d-flex justify-content-center">
+			<nav className="navbar navbar-light border border-light col-sm-6 rounded  d-block d-xl-none d-lg-block d-md-none mt-5 pb-3 pt-3 ">
+				<form className="form-inline flex-column " onSubmit={submitForm}>
 					<input
 						type="text"
 						id="text"
-						placeholder="¿A Donde Quieres Viajar?"
+						placeholder="¿A Donde Viajas?"
+						className="text-center"
 						name="place"
 						onChange={changeInput}
 					/>
@@ -72,15 +72,16 @@ export const Search = () => {
 						min="1"
 						max="5"
 						placeholder="0"
+						className="text-center"
 						id="number"
 						name="number"
 						onChange={changeInput}
 					/>
-					<button className="btn btn-warning btton" type="submit">
+					<button className="btn btn-warning btn-lg" type="submit">
 						Buscar
 					</button>
 				</form>
-			</div>
+			</nav>
 		</div>
 	);
 };

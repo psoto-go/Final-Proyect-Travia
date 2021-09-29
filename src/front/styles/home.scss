@@ -79,8 +79,7 @@
 .btn { 
  
  border-radius: 25px;
- margin-left: 5px;
- margin-bottom: 10px;
+ margin-top: 10px;
  
 }
 .push-right {
@@ -131,7 +130,7 @@
 #searchBar{
     //filter: drop-shadow(5px 5px 10px #444);
     background-color: whitesmoke;
-    position: relative;
+    //position: relative;
     display: flex;
     margin:auto;
     top: -15em;
@@ -157,13 +156,13 @@
 
 }
 #testing{
-  padding-top: 15em;  
+  //padding-top: 15em;  
   background: linear-gradient(180deg, #8BD996 0%, #b7bfe7 100%) no-repeat center
   
   
 }
 .fixSearch{
-  padding-top: 10em;
+  padding-top: -10em;
   
 }
 
@@ -343,15 +342,31 @@ h3, h2{
 }
 
 .mapPosition{
-  
-  margin-top: -20%;
-  margin-left: 5em;
+  position: relative;  
+  left: 13.2%;
   height: 55em; 
   width: 42em;
-  
- 
+   
 }
-
+@media (max-width: 1024px){
+  .mapPosition{
+    position: fixed;
+    
+    left: 58.2%;
+    height: 42em;
+    width: 31em;
+      }
+  //-----------------------
+}
+@media (max-width: 375px){
+  .mapPosition{
+    position: fixed;
+    
+    left: -183.8%;
+    height: 7em;
+    width: 23em;}
+  //-----------------------
+}
 
 .moving {
   
@@ -376,3 +391,25 @@ h3, h2{
   min-height: 1px;
 }
 
+@media (max-width: 812px){
+  #searchBar2{
+        
+    position: relative;
+    display: initial;
+    //margin-left: 1.5em;
+    top: -35em;
+    //padding-left: 15em; 
+    //height: 12em;  
+    //width: 27rem;
+    border-radius: 20px;       
+  }
+}
+@media (max-width: 1300px){
+  #searchBar2{
+        
+    position: relative;
+    display: initial;    
+    top: -35em;
+              
+  }
+}
