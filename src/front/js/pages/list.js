@@ -6,6 +6,7 @@ import { ChoiceHotel } from "../component/choiceHotel";
 import { SearchList } from "../component/searchList";
 import { api_url } from "../constants";
 import "/workspace/Final-Proyect-Travia/src/front/styles/home.scss";
+import { searchResponsive } from "../component/searchResponsive";
 
 export const List = props => {
 	const { store, actions } = useContext(Context);
@@ -28,30 +29,32 @@ export const List = props => {
 
 	return (
 		<div>
-			<div id="testing" className="fixSearch">
+			<div id="testing" className="fixSearch d-lg-block">
 				<SearchList />
 			</div>
 
-			<div>
-				<div className="row ">
-					<div className="col-7">
-						{detalles
-							? detalles.map((hotel, index) => {
-									// console.log(hotel.rooms);
-									return (
-										<ChoiceHotel
-											key={index}
-											name={hotel.name}
-											url={hotel.HotelArchives[0].url}
-											rooms={hotel.rooms}
-											id={hotel.id}></ChoiceHotel>
-									);
-							  })
-							: ""}
-					</div>
-					<div className="col-5">{map ? map : ""}</div>
+			<div className="row ml-0 mr-0">
+				<div className="col-7">
+					{detalles
+						? detalles.map((hotel, index) => {
+								// console.log(hotel.rooms);
+								return (
+									<ChoiceHotel
+										key={index}
+										name={hotel.name}
+										url={hotel.HotelArchives[0].url}
+										rooms={hotel.rooms}
+										id={hotel.id}></ChoiceHotel>
+								);
+						  })
+						: ""}
 				</div>
+				<div className="col-5">{map ? map : ""}</div>
 			</div>
+			{/*
+			<div className="d-none d-lg-none d-xl-block">
+				<searchResponsive />
+			</div>*/}
 		</div>
 	);
 };

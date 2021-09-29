@@ -13,35 +13,35 @@ export const ChoiceHotel = props => {
 					{/* <div>
 						Services <i className="fas fa-dumbbell" /> <i className="fas fa-wifi" />{" "}
 						<i className="fas fa-wheelchair" /> <i className="fas fa-paw" />
-					</div> */}
+					</div>  d-none d-lg-block d-xl-block */}
 					<hr />
 				</div>
 
 				<div className="row">
 					<div className="col-sm-6">
 						<img
-							style={{ width: "300px", borderRadius: "50px" }}
-							className="card-img"
+							style={{ width: "90%", borderRadius: "15%" }}
+							className="card-img "
 							src={props.url}
 							alt="Jacuzzi"
 						/>
 					</div>
-					<div className="col-6">
-						<div className="cardPrice">
-							<p className="font-weight-bold">Tipo de habitaciones por Noche</p>
+					<div className="col-sm-6">
+						<div>
+							<p className="font-weight-bold p-0">Tipo de habitaciones por Noche</p>
 
 							{props.rooms.map((room, index) => {
 								// console.log(room.kind);
 								return (
 									<div key={index}>
-										<p>
-											Habitación {room.kind} desde {room.price} €
+										<p className="mb-0">
+											Habitación {room.kind} desde {room.price}€
 										</p>
 									</div>
 								);
 							})}
 
-							<div className="card-body">
+							<div className="card-body p-0">
 								<Link to={"/hotel/" + props.id} className="btn btn-warning">
 									Vacancy
 								</Link>

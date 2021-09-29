@@ -8,6 +8,7 @@ import { Featured } from "../component/featured";
 import { Subscribe } from "../component/subscribe";
 import { api_url } from "../constants";
 import { Search } from "../component/search";
+import { SearchResponsive } from "../component/searchResponsive";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -49,13 +50,17 @@ export const Home = () => {
 
 	return (
 		<div>
-			<Header /> <Search />
-			<div className="mt-5">
+			<div className="header m-0 p-0 pt-5 pb-3">
+				<Header />
+				<Search />
+				<SearchResponsive />
+			</div>
+			<div className="m-5">
 				<h3 className="offset-1 col-11">Destacados</h3>
 				<div className="d-flex  overflow-horizontal">{listHotels}</div>{" "}
 			</div>{" "}
 			<Destinations />
-			<div className="resenasStyle">
+			<div className="resenasStyle header">
 				<h2 className="p-5">Nuestros usuarios opinan</h2> <div className="reviewsHome">{listReviews}</div>
 			</div>
 			<Subscribe />
