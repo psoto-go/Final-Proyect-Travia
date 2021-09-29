@@ -1,20 +1,19 @@
 import React from "react";
 import "../../styles/hotelDash.scss";
+import { Link } from "react-router-dom";
+import photoHotel from "../../img/photoHotel2.png";
 
 export const HotelDash = () => {
 	return (
-		<div>
-			<div>
-				<img
-					className="img-hotel"
-					src="https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/b1/04/a4/hotel-samos.jpg"
-					alt=""
-				/>
+		<div className="row">
+			<div className="col-12 text-center">
+				<img className="img-hotel" src={photoHotel} />
 			</div>
 
-			<div>
-				<h3>Hoteles</h3>
+			<div className="col-12 text-center">
+				<h3 className="textDash">Hoteles</h3>
 			</div>
 		</div>
 	);
+	w;
 };

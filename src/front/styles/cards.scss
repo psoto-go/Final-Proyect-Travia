@@ -1,18 +1,9 @@
 
-
-
-
-
-
-
 .country{
   border-radius: 40px;
   width: 420px;
   height: 275px;
 }
-
-
-
 
 .gallery{
   display: inline-flexbox;
@@ -23,13 +14,14 @@
   
 }
 
-.gallery img, h2, a, p{
-  width: fit-content;
-  padding: 1em;
-  display: inline-flexbox;
+// .gallery img, h2, a, p{
+//   width: fit-content;
+//   padding: 1em;
+//   display: inline-flexbox;
   
-  //background-color: yellow;
-}
+//   //background-color: yellow;
+// }
+
 .advice{
   display: flex;
   float: right;

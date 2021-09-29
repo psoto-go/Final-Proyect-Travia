@@ -5,30 +5,29 @@
     box-sizing: border-box;
 }
 
-.pepito{
+// .pepito{
     
    
-    padding-left: 5em;    
-    padding-top: 1%;
-    font-size: 280%;
-}
+//     padding-left: 5em;    
+//     padding-top: 1%;
+//     font-size: 280%;
+// }
 
 
 
-.grid {
-    display: flex;
-    flex: 1;
-    max-height: 320px;
-    overflow-x: scroll;
-    justify-content: center;
-    align-items: center;
-}
-.userAdm{
-    margin-top: 10px;
-    margin-left: -5px;
+
+.contentUser{ 
+    
+    position: static;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
     
 }
-.contentUser{
+
+
+.contentUser2{
+    margin-top: 2%;
+    margin-left: 2%;
     position: static;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
     border-radius: 20px;
