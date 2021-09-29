@@ -26,13 +26,13 @@ export const Admindash = () => {
 					</div>
 					<div className="row col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
 						<div className="col-12 contentUser2">
-							<Link>
+							<Link to="/admin">
 								<UserDash />
 							</Link>
 						</div>
 
 						<div className="col-12 contentUser2">
-							<Link>
+							<Link to="/adminProvincias">
 								<CarrouselDash />
 							</Link>
 						</div>
