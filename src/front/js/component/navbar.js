@@ -124,7 +124,7 @@ export const Navbar = () => {
 					</li>
 					<hr />
 					{!logged ? (
-						<div className="my-2 my-lg-0 ">
+						<div className="my-2 my-lg-0">
 							<li>
 								<a href="/Signup">Registrarse</a>
 							</li>

@@ -35,7 +35,7 @@ export const HotelDetail = () => {
 					/>
 				);
 		  })
-		: "asdf";
+		: "";
 
 	const listGallery = hotel.HotelArchives ? (
 		<Gallery
@@ -47,17 +47,17 @@ export const HotelDetail = () => {
 		""
 	);
 
-	const listServices = hotel.services
-		? hotel.services.map((item, index) => {
-				return <HotelServices key={index} service={item.name} />;
-		  })
-		: "asdf";
+	// const listServices = hotel.services
+	// 	? hotel.services.map((item, index) => {
+	// 			return <HotelServices key={index} service={item.name} />;
+	// 	  })
+	// 	: "";
 
 	const listReviews = hotel.reviews
 		? hotel.reviews.map((item, index) => {
 				return <Reviews key={index} user_id={item.id} description={item.description} />;
 		  })
-		: "asdf";
+		: "";
 
 	console.log(hotel);
 
@@ -71,10 +71,10 @@ export const HotelDetail = () => {
 					<div className="col-12">
 						<div>
 							<NavDetail description={hotel.description} />
-							<div className=" col-6">
+							{/* <div className=" col-6">
 								<h3>Servicios del Hotel</h3>
 								{listServices}
-							</div>
+							</div> */}
 						</div>
 
 						{/* <div className="col ">
