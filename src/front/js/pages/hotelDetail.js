@@ -64,12 +64,12 @@ export const HotelDetail = () => {
 	return (
 		<>
 			<div className="m-5">
-				<h2>{hotel.name}</h2>
+				<h2 className="m-3">{hotel.name}</h2>
 				{listGallery}
 
 				<div className="row">
 					<div className="col-12">
-						<div>
+						<div className="mt-5">
 							<NavDetail description={hotel.description} />
 							{/* <div className=" col-6">
 								<h3>Servicios del Hotel</h3>
@@ -82,15 +82,14 @@ export const HotelDetail = () => {
 						</div> */}
 					</div>
 				</div>
-
-				{listRooms}
+				<div className="mt-5">{listRooms}</div>
 			</div>
-			<div className="resenasStyle">
-				<h2 className="p-5">Nuestros usuarios opinan</h2>
-				<div className="row">{listReviews}</div>
+			<div className="resenasStyle header m-5">
+				<h2 className="offset-1">Nuestros usuarios opinan</h2>
+				<div className="reviewsHome  ">{listReviews}</div>
 			</div>
 
-			<div className="ml-5">
+			<div className="m-5">
 				<p>
 					<h3 className="pl-1">Politicas de Reserva</h3>
 					Ut tempus lobortis urna eu mattis. Donec semper ultricies ultricies. Suspendisse porttitor metus

@@ -6,8 +6,7 @@ import PropTypes from "prop-types";
 export const Gallery = props => {
 	return (
 		<>
-			<div className="galleryView ">
-				<h2>Gallery</h2>
+			<div className="galleryView">
 				<div className="row">
 					<img src={props.urls[0]} className="col-6" data-toggle="modal" data-target="#exampleModal" />
 

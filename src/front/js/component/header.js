@@ -6,7 +6,7 @@ import header from "../../img/header.png";
 
 export const Header = () => {
 	return (
-		<div className="row m-0">
+		<div className="row m-0 alignCenter">
 			<div className="col-6 m-0 text-center">
 				{/* <div className="center"> */}
 				<h1 className="coloredh1">TRAVIA</h1>

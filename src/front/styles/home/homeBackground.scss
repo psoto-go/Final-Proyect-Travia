@@ -16,7 +16,7 @@
   }
 
   .coloredh1{
-    
+    font-size: 500%;
     color: #394273;
     font-weight: 700;    
     
@@ -77,6 +77,12 @@
   }
 
   @media (max-width: 768px){
+    .coloredh1{
+      font-size: 260%;
+      color: #394273;
+      font-weight: 700;    
+      
+    }
     .dimensionImg{
       width: 400px;
         }
@@ -86,7 +92,7 @@
         }
      .coloredh3{
       margin-left: 0;
-      font-size: x-small;
+      font-size:medium;
     }
     #landingImg2{
       display: none;

@@ -177,13 +177,13 @@ export const Navbar = () => {
 				<div className="navbarDropdown form-inline my-2 pr-5 ">
 					<button
 						type="button"
-						className="btn btn-info mb-0 btn-md "
+						className="btn btn-info mb-0 btn-md mr-1"
 						data-toggle="modal"
 						data-target="#exampleModal2">
 						Registrarse
 					</button>
 					<div
-						className="modal fade"
+						className="modal fade "
 						id="exampleModal2"
 						tabIndex="-1"
 						aria-labelledby="exampleModalLabel"
