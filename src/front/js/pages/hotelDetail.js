@@ -7,6 +7,7 @@ import { Availability } from "../component/availability";
 import { HotelPrices } from "../component/hotelPrices";
 import { Reviews } from "../component/reviews";
 import { HotelServices } from "../component/hotelServices";
+import { PruebaCarousel } from "../component/PruebaCarousel/PruebaCarousel";
 
 export const HotelDetail = () => {
 	const [hotel, setHotel] = useState({});
@@ -62,29 +63,21 @@ export const HotelDetail = () => {
 	console.log(hotel);
 
 	return (
-		<>
-			<div className="m-5">
-				<h2 className="m-3">{hotel.name}</h2>
-				{listGallery}
-
+		<div className="row">
+			<div className="m-5 col-lg-6">
+				<h2 className="m-3 ">{hotel.name}</h2>
+				{/* {listGallery} */}
+				<PruebaCarousel />
 				<div className="row">
 					<div className="col-12">
 						<div className="mt-5">
 							<NavDetail description={hotel.description} />
-							{/* <div className=" col-6">
-								<h3>Servicios del Hotel</h3>
-								{listServices}
-							</div> */}
 						</div>
-
-						{/* <div className="col ">
-							<Availability />
-						</div> */}
 					</div>
 				</div>
 				<div className="mt-5">{listRooms}</div>
 			</div>
-			<div className="resenasStyle header m-5">
+			<div className="resenasStyle header m-5 col-lg-6">
 				<h2 className="offset-1">Nuestros usuarios opinan</h2>
 				<div className="reviewsHome  ">{listReviews}</div>
 			</div>
@@ -98,6 +91,6 @@ export const HotelDetail = () => {
 					posuere cubilia curae; Donec placerat erat vel purus dignissim tempor.
 				</p>
 			</div>
-		</>
+		</div>
 	);
 };
