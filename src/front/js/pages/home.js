@@ -56,7 +56,7 @@ export const Home = () => {
 				<SearchResponsive />
 			</div>
 			<div className="m-5">
-				<h3 className="offset-1 col-11">Destacados</h3>
+				<h3 className="offset-1 col-11 mb-3">Destacados</h3>
 				<div className="d-flex  overflow-horizontal">{listHotels}</div>
 			</div>
 			<div className="whiteBack">

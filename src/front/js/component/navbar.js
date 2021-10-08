@@ -102,7 +102,7 @@ export const Navbar = () => {
 			<img src={logo} alt="Logo" />
 			{options ? (
 				<ul className="navbar-nav navbar-home navbarDanger mr-auto ">
-					<li className="nav-item active ">
+					<li className="nav-item ">
 						<a href="/" className="colored padding-left">
 							Inicio
 						</a>
@@ -152,7 +152,7 @@ export const Navbar = () => {
 				" "
 			)}
 			<ul className=" mr-auto navbarDropdownv2 form-inline">
-				<li className="nav-item active ">
+				<li className="nav-item">
 					<a href="/" className="colored">
 						Inicio
 					</a>

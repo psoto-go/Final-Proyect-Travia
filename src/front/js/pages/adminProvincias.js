@@ -49,9 +49,7 @@ export const AdminProvincias = () => {
 					</div>
 				</div>
 			</div>
-			<div className="container3 ml-5">
-				<div className="row">{listCities}</div>
-			</div>
+			<div className="d-flex row">{listCities}</div>
 		</>
 	);
 };
