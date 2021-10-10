@@ -161,10 +161,7 @@
   
   
 }
-.fixSearch{
-  padding-top: -10em;
-  
-}
+
 
 
 
@@ -342,15 +339,15 @@ h3, h2{
 }
 
 .mapPosition{
-  position: relative;  
-  left: 13.2%;
-  height: 55em; 
-  width: 42em;
+  position: inherit;  
+  width: 40em;
+  height: 60em;   
+  margin-top: 1%;
    
 }
 @media (max-width: 1024px){
   .mapPosition{
-    position: fixed;
+    position: initial;
     
     left: 58.2%;
     height: 42em;
@@ -360,11 +357,9 @@ h3, h2{
 }
 @media (max-width: 375px){
   .mapPosition{
-    position: fixed;
+    position: static;    
     
-    left: -183.8%;
-    height: 7em;
-    width: 23em;}
+    width: 21.7em;}
   //-----------------------
 }
 

@@ -28,13 +28,13 @@ export const List = props => {
 	}, [store.url]);
 
 	return (
-		<div>
-			<div id="testing" className="fixSearch d-lg-block">
+		<div className="row ml-0 mr-0">
+			<div id="testing" className=" d-lg-block col-12 ml-0 mr-0">
 				<SearchList />
 			</div>
 
-			<div className="row ml-0 mr-0">
-				<div className="col-7">
+			<div className="row m-0 p-0">
+				<div className="col-7 ml-5 mt-5 mb-5">
 					{detalles
 						? detalles.map((hotel, index) => {
 								// console.log(hotel.rooms);
@@ -49,7 +49,7 @@ export const List = props => {
 						  })
 						: ""}
 				</div>
-				<div className="col-5">{map ? map : ""}</div>
+				<div className="col-4">{map ? map : ""}</div>
 			</div>
 			{/*
 			<div className="d-none d-lg-none d-xl-block">
