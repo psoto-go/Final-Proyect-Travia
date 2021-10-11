@@ -56,13 +56,17 @@ export const Home = () => {
 				<SearchResponsive />
 			</div>
 			<div className="m-5">
-				<h3 className="offset-1 col-11">Destacados</h3>
-				<div className="d-flex  overflow-horizontal">{listHotels}</div>{" "}
-			</div>{" "}
-			<Destinations />
-			<div className="resenasStyle header">
-				<h2 className="p-5">Nuestros usuarios opinan</h2> <div className="reviewsHome">{listReviews}</div>
+				<h3 className="offset-1 col-11 mb-3">Destacados</h3>
+				<div className="d-flex  overflow-horizontal">{listHotels}</div>
 			</div>
+			<div className="whiteBack">
+				<Destinations />
+			</div>
+			<div className="headerInverse">
+				<h2 className="offset-1 pt-3">Nuestros usuarios opinan</h2>{" "}
+				<div className="reviewsHome pb-2 m-4">{listReviews}</div>
+			</div>
+
 			<Subscribe />
 		</div>
 	);

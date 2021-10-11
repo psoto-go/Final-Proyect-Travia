@@ -7,6 +7,7 @@ import { Availability } from "../component/availability";
 import { HotelPrices } from "../component/hotelPrices";
 import { Reviews } from "../component/reviews";
 import { HotelServices } from "../component/hotelServices";
+import { PruebaCarousel } from "../component/PruebaCarousel/PruebaCarousel";
 
 export const HotelDetail = () => {
 	const [hotel, setHotel] = useState({});
@@ -35,7 +36,7 @@ export const HotelDetail = () => {
 					/>
 				);
 		  })
-		: "asdf";
+		: "";
 
 	const listGallery = hotel.HotelArchives ? (
 		<Gallery
@@ -47,50 +48,41 @@ export const HotelDetail = () => {
 		""
 	);
 
-	const listServices = hotel.services
-		? hotel.services.map((item, index) => {
-				return <HotelServices key={index} service={item.name} />;
-		  })
-		: "asdf";
+	// const listServices = hotel.services
+	// 	? hotel.services.map((item, index) => {
+	// 			return <HotelServices key={index} service={item.name} />;
+	// 	  })
+	// 	: "";
 
 	const listReviews = hotel.reviews
 		? hotel.reviews.map((item, index) => {
 				return <Reviews key={index} user_id={item.id} description={item.description} />;
 		  })
-		: "asdf";
+		: "";
 
 	console.log(hotel);
 
 	return (
-		<>
-			<div className="m-5">
-				<h2>{hotel.name}</h2>
-				{listGallery}
-
+		<div className="row">
+			<div className="m-5 col-lg-6">
+				<h2 className="m-3 ">{hotel.name}</h2>
+				{/* {listGallery} */}
+				<PruebaCarousel />
 				<div className="row">
 					<div className="col-12">
-						<div>
+						<div className="mt-5">
 							<NavDetail description={hotel.description} />
-							<div className=" col-6">
-								<h3>Servicios del Hotel</h3>
-								{listServices}
-							</div>
 						</div>
-
-						{/* <div className="col ">
-							<Availability />
-						</div> */}
 					</div>
 				</div>
-
-				{listRooms}
+				<div className="mt-5">{listRooms}</div>
 			</div>
-			<div className="resenasStyle">
-				<h2 className="p-5">Nuestros usuarios opinan</h2>
-				<div className="row">{listReviews}</div>
+			<div className="resenasStyle header m-5 col-lg-6">
+				<h2 className="offset-1">Nuestros usuarios opinan</h2>
+				<div className="reviewsHome  ">{listReviews}</div>
 			</div>
 
-			<div className="ml-5">
+			<div className="m-5">
 				<p>
 					<h3 className="pl-1">Politicas de Reserva</h3>
 					Ut tempus lobortis urna eu mattis. Donec semper ultricies ultricies. Suspendisse porttitor metus
@@ -99,6 +91,6 @@ export const HotelDetail = () => {
 					posuere cubilia curae; Donec placerat erat vel purus dignissim tempor.
 				</p>
 			</div>
-		</>
+		</div>
 	);
 };

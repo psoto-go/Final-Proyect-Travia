@@ -23,21 +23,15 @@ export const AdminProvincias = () => {
 	return (
 		<>
 			<div>
-				<div className="container text-center">
-					<div className="row">
-						<div className="col-md-4">
-							<h2 className="ml-3">Ciudades</h2>
-						</div>
-						<div className="my-5 text-right col">
-							<Link to="#">Dashboard</Link> / Ciudades
-						</div>
-					</div>
+				<div className="m-5">
+					<h2 className="offset-1">Ciudades</h2>
 				</div>
-				<div className="container">
+
+				<div>
 					<div className="row">
 						<div className="col-10">
 							<div className="search" id="custom-search-input">
-								<div className="input-group col-md-12">
+								<div className="input-group">
 									<input type="text" className="form-control input-lg" placeholder="Buscar" />
 									<span className="input-group-btn">
 										<button className="btn btn-info " type="button">
@@ -49,15 +43,13 @@ export const AdminProvincias = () => {
 						</div>
 						<div className="col-2">
 							<Link to="/onlyCitie">
-								<button className=" create">+ Crear Provincia</button>
+								<button className=" create">Crear Provincia</button>
 							</Link>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="container3 ml-5">
-				<div className="row">{listCities}</div>
-			</div>
+			<div className="d-flex row">{listCities}</div>
 		</>
 	);
 };

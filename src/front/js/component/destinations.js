@@ -48,7 +48,7 @@ export const Destinations = () => {
 		return (
 			<div
 				key={index}
-				className={index != 0 ? "m-2 tab-pane fade " : "  tab-pane fade show active m-2"}
+				className={index != 0 ? "m-2 tab-pane fade whiteBack " : "  tab-pane fade show active m-2"}
 				id={`pills-${city.id}`}
 				role="tabpanel"
 				aria-labelledby={`pills-${city.id}-tab`}>

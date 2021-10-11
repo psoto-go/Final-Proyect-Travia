@@ -6,39 +6,42 @@ import PropTypes from "prop-types";
 export const Gallery = props => {
 	return (
 		<>
-			<div className="galleryView ">
-				<h2>Gallery</h2>
+			<div className="galleryView">
 				<div className="row">
 					<img src={props.urls[0]} className="col-6" data-toggle="modal" data-target="#exampleModal" />
 
-					<div className="col-6 p-0 p-sm-0 p-md-0 p-lg-3 p-xl-3 row">
+					<div className="col-6 p-0 p-sm-0 p-md-0 row">
 						<div className="col-6 ">
 							<img
 								src={props.urls[1]}
-								className="col p-2  "
+								className="col px-2 pb-2"
 								data-toggle="modal"
 								data-target="#exampleModal"
 							/>
 							<img
 								src={props.urls[2]}
-								className="col p-2 "
+								className="col px-2 pt-5 "
 								data-toggle="modal"
 								data-target="#exampleModal"
 							/>
 						</div>
 						<div className="col-6">
-							<img
-								src={props.urls[3]}
-								className="col p-2 "
-								data-toggle="modal"
-								data-target="#exampleModal"
-							/>
-							<img
-								src={props.urls[3]}
-								className="col p-2 "
-								data-toggle="modal"
-								data-target="#exampleModal"
-							/>
+							<div>
+								<img
+									src={props.urls[3]}
+									className="col px-2 pb-2"
+									data-toggle="modal"
+									data-target="#exampleModal"
+								/>
+							</div>
+							<div>
+								<img
+									src="https://casadelpoeta.es/wp-content/uploads/2019/09/Hoteles-con-encanto-en-Espa%C3%B1a.jpg"
+									className="col px-2 pt-5"
+									data-toggle="modal"
+									data-target="#exampleModal"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>

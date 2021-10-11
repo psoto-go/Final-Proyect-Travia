@@ -61,20 +61,13 @@ export const AdminHoteles = () => {
 	return (
 		<>
 			<div>
-				<div className="container  text-center">
-					<div className="row">
-						<div className="col-md-4">
-							<h1>Hoteles</h1>
-						</div>
-						<div className="col-md-4 ml-auto">
-							<Link to="#">Dashboard</Link> / Hoteles
-							<div />
-						</div>
-					</div>
+				<div className="m-5">
+					<h1 className="offset-1">Hoteles</h1>
 				</div>
-				<div className="container">
+
+				<div>
 					<div className="row">
-						<div className="col-9">
+						<div className="col-10">
 							<div className="search" id="custom-search-input">
 								<div className="input-group col-md-12">
 									<input type="text" className="form-control input-lg" placeholder="Buscar" />
@@ -86,9 +79,9 @@ export const AdminHoteles = () => {
 								</div>
 							</div>
 						</div>
-						<div className="col-3 text-center">
+						<div className="col-2">
 							<Link to="onlyHotel">
-								<button className=" create">+ Crear hotel</button>
+								<button className=" btn btn-info">Crear hotel</button>
 							</Link>
 						</div>
 					</div>

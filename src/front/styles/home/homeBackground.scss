@@ -1,7 +1,30 @@
+.active, .dot:hover{
+  background-color: none !important
+}
 .padding-left{
   padding-left: 20px;
 }
 
+.whiteBack{
+  .active, .dot:hover{
+    background-color: transparent;
+  }
+  background: white;
+    background-size: cover;
+    justify-content: center;
+    background-color: transparent;
+    
+}
+.headerInverse{
+  .active, .dot:hover{
+    background-color: transparent;
+  }
+  background: linear-gradient(180deg, #b7bfe7 0%,  #8BD996 100%) no-repeat center;
+    background-size: cover;
+    justify-content: center;
+    background-color: transparent;
+    
+}
 .header {
     background: linear-gradient(180deg, #8BD996 0%, #b7bfe7 100%) no-repeat center;
     background-size: cover;
@@ -16,7 +39,7 @@
   }
 
   .coloredh1{
-    
+    font-size: 500%;
     color: #394273;
     font-weight: 700;    
     
@@ -77,6 +100,12 @@
   }
 
   @media (max-width: 768px){
+    .coloredh1{
+      font-size: 260%;
+      color: #394273;
+      font-weight: 700;    
+      
+    }
     .dimensionImg{
       width: 400px;
         }
@@ -86,7 +115,7 @@
         }
      .coloredh3{
       margin-left: 0;
-      font-size: x-small;
+      font-size:medium;
     }
     #landingImg2{
       display: none;

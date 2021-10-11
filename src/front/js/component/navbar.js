@@ -102,7 +102,7 @@ export const Navbar = () => {
 			<img src={logo} alt="Logo" />
 			{options ? (
 				<ul className="navbar-nav navbar-home navbarDanger mr-auto ">
-					<li className="nav-item active ">
+					<li className="nav-item ">
 						<a href="/" className="colored padding-left">
 							Inicio
 						</a>
@@ -124,7 +124,7 @@ export const Navbar = () => {
 					</li>
 					<hr />
 					{!logged ? (
-						<div className="my-2 my-lg-0 ">
+						<div className="my-2 my-lg-0">
 							<li>
 								<a href="/Signup">Registrarse</a>
 							</li>
@@ -152,7 +152,7 @@ export const Navbar = () => {
 				" "
 			)}
 			<ul className=" mr-auto navbarDropdownv2 form-inline">
-				<li className="nav-item active ">
+				<li className="nav-item">
 					<a href="/" className="colored">
 						Inicio
 					</a>
@@ -177,13 +177,13 @@ export const Navbar = () => {
 				<div className="navbarDropdown form-inline my-2 pr-5 ">
 					<button
 						type="button"
-						className="btn btn-info mb-0 btn-md "
+						className="btn btn-info mb-0 btn-md mr-1"
 						data-toggle="modal"
 						data-target="#exampleModal2">
 						Registrarse
 					</button>
 					<div
-						className="modal fade"
+						className="modal fade "
 						id="exampleModal2"
 						tabIndex="-1"
 						aria-labelledby="exampleModalLabel"

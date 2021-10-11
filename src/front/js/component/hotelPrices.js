@@ -19,21 +19,24 @@ export const HotelPrices = props => {
 				<hr />
 			</a> */}
 
-			<div className="row">
-				<div className="col-3">
-					<img src={props.url} alt="imagen" width="100%" />
+			<div className="row align-items-center align-items-end">
+				<div className="col-4 " style={{ maxWidth: "350px", minWidth: "350px" }}>
+					<img
+						src={props.url}
+						alt="imagen"
+						style={{ maxWidth: "100%", minHeight: "200px", maxHeight: "200px" }}></img>
 				</div>
-				<div className="col-4">
+				<div className="col">
 					<p>
 						Habitación {props.kind} Especificaciones: <li>{`Numero de personas: ${props.persons}`}</li>
 						<li>{`Numero de camas: ${props.beds}`}</li>
 						<li>{`Precio noche: ${props.price}€`}</li>
 					</p>
 				</div>
-				<div className="col-4">
+				<div className="col">
 					<Link
 						to="/payment"
-						className="btn btn-primary"
+						className="btn bg-warning"
 						onClick={() => {
 							localStorage.setItem("reserva", JSON.stringify(props.item));
 						}}>
