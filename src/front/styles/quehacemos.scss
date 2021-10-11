@@ -1,0 +1,213 @@
+/* -------------------------------------- PAGINA QUE HACEMOS --------------------------------------*/
+
+/* HEADER */
+.quehacemos {
+    padding: 0;
+}
+.headerHacemos {
+    height: 100vh;
+}
+.headerHacemosImg {
+    background-image: url(../img/hacemosfondo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    object-fit: contain;
+    height:85vh;
+    width: 100vw;
+    background-position-x: right;
+    background-position-y: top;
+}
+.quehacemos .containerParrafoBotonHeader p {
+    width: 80%;
+}
+
+/* SECCION CAMINO */
+.camino {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+.fondoCamino1 {
+    background-image: url(../img/caminoFondo1.svg);
+    background-position-x: right;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+.fondoCamino2 {
+    background-image: url(../img/caminoFondo2.svg);
+    background-position-x: left;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+.fondoCamino3 {
+    background-image: url(../img/caminoFondo3.svg);
+    background-position-x: right;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+.hacemosCamino {
+    align-items: center;
+}
+.camino-2 {
+    margin: 16rem 0rem 16rem 0rem;
+}
+.camino-2-mobile {
+    display: none;
+}
+.hacemosCamino h4 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    font-weight: 500;
+}
+.hacemosCamino img {
+    height: 32rem;
+    width: 95%;
+}
+.scrollCamino {
+    justify-items: center;
+    display: none;
+}
+.scrollCirculo {
+    justify-items: center;
+    align-items: center;
+}
+.scrollLinea {
+    width: 1.5rem;
+    height: 16rem;
+    background: rgba(39, 139, 150, 0.3);
+    border-radius: 2rem;
+    align-self: center;
+    margin: 2rem 0 2rem 0;
+}
+.scrollCirculoInicio {
+    width: 10rem;
+    height: 10rem;
+    border: 2rem solid #BEDCDF;
+    border-radius: 100%;
+}
+.scrollCirculoMedio {
+    width: 10rem;
+    height: 10rem;
+    border: 2rem solid #BEDCDF;
+    border-radius: 100%;
+}
+.scrollCirculoFinal {
+    width: 10rem;
+    height: 10rem;
+    border: 2rem solid #BEDCDF;
+    border-radius: 100%;
+}
+
+
+
+/* SECCION CALL-TO-ACTION */
+.quehacemos .call-to-action {
+    margin-top: 16vh;
+}
+.quehacemos .callTxt h3 {
+    margin-bottom: 3.4rem;
+    color: #394273;
+}
+.quehacemos .callTxt p {
+    color: black;
+    margin-bottom: 3.6rem;
+}
+
+
+/* MOBILE QUE HACEMOS */
+@media (max-width: 800px) {
+    .quehacemos .divContainerHeader, .quehacemos.camino, .quehacemos.call-to-action {
+        padding-right: 2.4rem;
+        padding-left: 2.4rem;
+    }
+    .quehacemos .call-to-action {
+        margin-top: 12vh;
+    }
+    .headerHacemos {
+        height: 60vh;
+        margin-bottom: 4rem;
+    }
+    .headerHacemosImg {
+        background-image: url(../img/hacemosfondo.svg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        object-fit:fill;
+        height:100%;
+        width: 100vw;
+        background-position-x: center;
+        background-position-y: top;
+    }
+    .divContainerHeader{
+        width: 100vw;
+        height: 40rem;
+        margin-top: 4.7rem;
+    }
+    .divContainerHeaderTexto{
+        margin-left: 2rem;
+    }
+    .containerParrafoBotonHeader p {
+        display: none;
+    }
+    .titulosHeader {
+        width: 60vw;
+        height: 17.7rem;
+        margin-bottom: 4rem;
+    }
+    .headerHacemos .titulosHeader {
+        transform:translateY();
+    }
+    .headerHacemos .titulosHeader h3 {
+        width: 30vw;
+    }
+    .titulosHacemos {
+        width: 85%;
+        margin-bottom: 11.2rem;
+    }
+    .titulosHacemos p {
+        margin-top: 3rem;
+        width: 70%;
+    }
+    .containerParrafoBotonHeader {
+        margin-top: 0rem;
+    }
+    .containerParrafoBotonHeader .btn-intro {
+        margin-top: -2rem;
+        margin-bottom: 12rem;
+        padding-left: 2.6rem;
+        padding-right: 2.6rem;
+        /* width: 14.8rem; */
+    }
+    .camino {
+        margin-top: 16vh;
+    }
+    .fondoCamino2 {
+        background-position-x: center;
+        background-position-y: center;
+        background-repeat: no-repeat;
+    }
+    .hacemosCamino h4 {
+        margin-bottom: 2rem;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+    .scrollCirculo {
+        display: none;
+    }
+    .scrollCamino {
+        display: contents;
+    }
+    .hacemosCamino {
+        text-align: center;
+    }
+    .hacemosCamino div img {
+        height: 20rem;
+        margin: 3.2rem 0 3.2rem 0;
+    }
+    .camino-2-mobile {
+        display: contents;
+    }
+    .camino-2 {
+        display: none;
+    }
+}

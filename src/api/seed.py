@@ -408,6 +408,7 @@ class SeedData:
         self.create_booking5 = Booking(user_id = self.user.id, room_id = self.room5.id, start_date = "0000-00-00", end_date = "0000-00-00", price = 0)
         self.create_booking6 = Booking(user_id = self.user.id, room_id = self.room6.id, start_date = "0000-00-00", end_date = "0000-00-00", price = 0)
         self.create_booking7 = Booking(user_id = self.user.id, room_id = self.room7.id, start_date = "0000-00-00", end_date = "0000-00-00", price = 0)
+        self.create_booking8 = Booking(user_id = self.user.id, room_id = self.room8.id, start_date = "0000-00-00", end_date = "0000-00-00", price = 0)
         db.session.add(self.create_booking)
         db.session.add(self.create_booking1)
         db.session.add(self.create_booking2)
@@ -415,6 +416,7 @@ class SeedData:
         db.session.add(self.create_booking4)
         db.session.add(self.create_booking5)
         db.session.add(self.create_booking6)
+        db.session.add(self.create_booking8)
         db.session.add(self.create_booking7)
         db.session.commit()
 

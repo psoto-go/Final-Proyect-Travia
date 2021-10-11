@@ -28,6 +28,7 @@ import { UserHelp } from "./pages/userHelp";
 import { ReviewsUser } from "./pages/reviewUser";
 import { ProfileReservations } from "./pages/profileReservations";
 import { OnlyCitie } from "./pages/onlyCitie";
+import { why } from "./pages/why";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -39,6 +40,9 @@ export const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home />
+						</Route>
+						<Route exact path="/quehacemos">
+							<why />
 						</Route>
 						<Route exact path="/hotel/:theid">
 							<HotelDetail />
