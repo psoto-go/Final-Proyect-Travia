@@ -20,7 +20,7 @@ export const HotelPrices = props => {
 			</a> */}
 
 			<div className="row align-items-center align-items-end">
-				<div className="col-4 " style={{ maxWidth: "350px", minWidth: "350px" }}>
+				<div className="col-4 " style={{ maxWidth: "350px", minWidth: "252px" }}>
 					<img
 						src={props.url}
 						alt="imagen"

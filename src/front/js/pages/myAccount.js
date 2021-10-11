@@ -34,7 +34,7 @@ export const MyAccount = () => {
 				</a>
 				<div className="row justify-content-end mt-3">
 					<button className="btn btn-dark">Cancelar</button>{" "}
-					<button className="btn btn-success">Guardar</button>
+					<button className="btn btn-warning">Guardar</button>
 				</div>
 			</div>
 		</div>

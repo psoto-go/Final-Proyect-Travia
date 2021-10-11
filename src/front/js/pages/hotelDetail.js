@@ -73,21 +73,22 @@ export const HotelDetail = () => {
 				</div>
 
 				{/* <PruebaCarousel /> */}
-				<div className="row m-3">
+				<div className="row m-5">
 					<div className="col-12">
 						<div className="mt-5">
 							<NavDetail description={hotel.description} />
 						</div>
 					</div>
 				</div>
-				<div className="mt-5 m-2">{listRooms}</div>
+				<div className="mt-5 m-5">{listRooms}</div>
 			</div>
-			<div className="resenasStyle m-5 col-11">
+			<div className="resenasStyle col-12 mt-5">
+
 				<h2 className="offset-1">Nuestros usuarios opinan</h2>
 				<div className="reviewsHome  ">{listReviews}</div>
 			</div>
 
-			<div className="m-5">
+			{/* <div className="m-5">
 				<p>
 					<h3 className="pl-1">Politicas de Reserva</h3>
 					Ut tempus lobortis urna eu mattis. Donec semper ultricies ultricies. Suspendisse porttitor metus
@@ -95,7 +96,7 @@ export const HotelDetail = () => {
 					vehicula tortor ac, lacinia nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
 					posuere cubilia curae; Donec placerat erat vel purus dignissim tempor.
 				</p>
-			</div>
+			</div> */}
 		</div>
 	);
 };
