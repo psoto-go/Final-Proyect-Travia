@@ -1,8 +1,31 @@
 import { Carousel } from "react-carousel-minimal";
-
-import React from "react";
-
+import React, { Component, useContext, useState, useEffect } from "react";
+import { Gallery } from "../../component/gallery";
+import { Link, useParams } from "react-router-dom";
+import { api_url } from "../../constants";
 export const PruebaCarousel = () => {
+	const [hotel, setHotel] = useState({});
+	const params = useParams();
+
+	useEffect(() => {
+		fetch(api_url + "/api/hotel/" + params.theid)
+			.then(response => response.json())
+			.then(result => {
+				setHotel(result.response);
+			})
+			.catch(error => console.log("Error", error));
+	}, []);
+
+	const listGallery = hotel.HotelArchives ? (
+		<Gallery
+			urls={hotel.HotelArchives.map(item => {
+				return item.url;
+			})}
+		/>
+	) : (
+		""
+	);
+
 	const data = [
 		{
 			image:
@@ -62,12 +85,9 @@ export const PruebaCarousel = () => {
 	return (
 		<div className="App">
 			<div style={{ textAlign: "center" }}>
-				<h2>React Carousel Minimal</h2>
-				<p>Easy to use, responsive and customizable carousel component for React Projects.</p>
-				<div
-					style={{
-						padding: "0 20px"
-					}}>
+				<h2>{hotel.name}</h2>
+
+				<div>
 					<Carousel
 						data={data}
 						time={2000}
