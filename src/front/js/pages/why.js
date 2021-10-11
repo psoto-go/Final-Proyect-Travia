@@ -13,22 +13,22 @@ import "../../styles/quehacemos.scss";
 export const Why = () => {
 	return (
 		<>
-			<body className="quehacemos container-fluid">
+			<body className="quehacemos container-fluid mb-5">
 				<header className="headerHacemos" id="headerInicio">
 					<article className="headerHacemosImg">
 						<div className="container divTextoHeader">
 							<div className="row divContainerHeader">
 								<div className="col-sm-8 col-lg-6 justify-content-center">
 									<div className="titulosHacemos">
-										<h1>Viaja con tu oficina y la de tu equipo</h1>
-										<p className="bajada">Trabaja y viaja al mismo tiempo</p>
+										<h1 className="titulo">Viaja con tu oficina y la de tu equipo</h1>
+										<p className="bajada subtitulo">Trabaja y viaja al mismo tiempo</p>
 									</div>
 									<div className="containerParrafoBotonHeader">
 										<p className="p--2">
 											Trabaja con tu equipo presencialmente en hubs diseñados para impulsar la
 											productividad
 										</p>
-										<button className="btn btn-intro">Conoce más</button>
+										<button className="btn btn-warning">Conoce más</button>
 									</div>
 								</div>
 							</div>
@@ -38,7 +38,7 @@ export const Why = () => {
 
 				<section className="container camino">
 					<div className="row fondoCamino1 hacemosCamino justify-content-center">
-						<div className="col-lg-4">
+						<div className="col-8 col-sm-8 col-md-8 col-lg-5 col-xl-5">
 							<img src={hacemosCaminoImg3} alt="Imagen de reunión por videollamada" />
 						</div>
 						<div className="col-lg-2 scrollCirculo">
@@ -67,7 +67,7 @@ export const Why = () => {
 						<div className="col-lg-2 scrollCirculo">
 							<div className="scrollCirculoMedio"></div>
 						</div>
-						<div className="col-lg-4">
+						<div className="col-8 col-sm-8 col-md-8 col-lg-5 col-xl-5">
 							<img src={hacemosCaminoImg2} alt="Imagen de logros, conquistar objetivos" />
 						</div>
 					</div>
@@ -92,7 +92,7 @@ export const Why = () => {
 						</div>
 					</div>
 					<div className="row fondoCamino3 hacemosCamino justify-content-center">
-						<div className="col-lg-4">
+						<div className="col-8 col-sm-8 col-md-8 col-lg-5 col-xl-5">
 							<img src={hacemosCaminoImg1} alt="Imagen de dos personas dándose la mano, negocios" />
 						</div>
 						<div className="col-lg-2 scrollCirculo">

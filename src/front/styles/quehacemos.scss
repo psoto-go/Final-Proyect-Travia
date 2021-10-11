@@ -1,5 +1,12 @@
 /* -------------------------------------- PAGINA QUE HACEMOS --------------------------------------*/
-
+.titulo{ 
+    color: #323b6e;
+    font-size: 3.5rem;
+}
+.subtitulo{
+    color: #323b6e;
+    font-size: 1.5rem;
+}
 /* HEADER */
 .quehacemos {
     padding: 0;
@@ -160,6 +167,7 @@
         width: 30vw;
     }
     .titulosHacemos {
+        
         width: 85%;
         margin-bottom: 11.2rem;
     }
