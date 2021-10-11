@@ -113,7 +113,7 @@ export const Navbar = () => {
 						</a>
 					</li>
 					<li className="nav-item">
-						<a href="#" className="padding-left">
+						<a href="/quehacemos" className="padding-left">
 							Que hacemos
 						</a>
 					</li>
@@ -168,7 +168,7 @@ export const Navbar = () => {
 					</a>
 				</li>
 				<li className="nav-item p-2">
-					<a href="#" className="colored">
+					<a href="/quehacemos" className="colored">
 						Que hacemos
 					</a>
 				</li>
