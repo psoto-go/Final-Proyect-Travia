@@ -1,7 +1,32 @@
 import React, { Component, useContext, useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { Gallery } from "../../component/gallery";
+import { Link, useParams } from "react-router-dom";
+import { api_url } from "../../constants";
 
 export const PruebaCarousel2 = () => {
+	const [hotel, setHotel] = useState({});
+	const params = useParams();
+
+	useEffect(() => {
+		fetch(api_url + "/api/hotel/" + params.theid)
+			.then(response => response.json())
+			.then(result => {
+				setHotel(result.response);
+			})
+			.catch(error => console.log("Error", error));
+	}, []);
+
+	const listGallery = hotel.HotelArchives ? (
+		<Gallery
+			urls={hotel.HotelArchives.map(item => {
+				return item.url;
+			})}
+		/>
+	) : (
+		""
+	);
+
 	return (
 		<div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
 			<ol className="carousel-indicators">
@@ -17,8 +42,7 @@ export const PruebaCarousel2 = () => {
 						alt="..."
 					/>
 					<div className="carousel-caption d-none d-md-block">
-						<h5>First slide label</h5>
-						<p>Some representative placeholder content for the first slide.</p>
+						<h5>{hotel.name}</h5>
 					</div>
 				</div>
 				<div className="carousel-item">

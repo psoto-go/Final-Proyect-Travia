@@ -18,16 +18,19 @@ export const Why = () => {
 					<article className="headerHacemosImg">
 						<div className="container divTextoHeader">
 							<div className="row divContainerHeader">
-								<div className="col-sm-8 col-lg-6 justify-content-center">
-									<div className="titulosHacemos">
+								<div className="mt-5 col-sm-8 col-lg-8 justify-content-center">
+									<div className="titulosHacemos mt-5">
 										<h1 className="titulo">Viaja con tu oficina y la de tu equipo</h1>
-										<p className="bajada subtitulo">Trabaja y viaja al mismo tiempo</p>
+										<strong>
+											<p className="bajada subtitulo">Trabaja y viaja al mismo tiempo</p>
+										</strong>
 									</div>
 									<div className="containerParrafoBotonHeader">
 										<p className="p--2">
 											Trabaja con tu equipo presencialmente en hubs diseñados para impulsar la
 											productividad
 										</p>
+
 										<button className="btn btn-warning">Conoce más</button>
 									</div>
 								</div>
