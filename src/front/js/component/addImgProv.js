@@ -1,8 +1,18 @@
 import React, { useState, useContext } from "react";
 
 export const CarrouselProv = () => {
-	const [files, setFiles] = useState(null);
-	const [img, setImg] = useState(null);
+	const [files, setFiles] = useState([]);
+	const [imgData, setImgData] = useState([]);
+	const onChangePicture = e => {
+		if (e.target.files[0]) {
+			setFiles([...files, e.target.files[0]]);
+			const reader = new FileReader();
+			reader.addEventListener("load", () => {
+				setImgData([...imgData, reader.result]);
+			});
+			reader.readAsDataURL(e.target.files[0]);
+		}
+	};
 
 	const uploadImage = evt => {
 		evt.preventDefault();
@@ -16,7 +26,7 @@ export const CarrouselProv = () => {
 		};
 		// you need to have the user_id in the localStorage
 		const currentUserId = localStorage.getItem("user_id");
-		fetch(`${process.env.BACKEND_URL}/api/city/${currentUserId}/image`, options)
+		fetch(`${process.env.BACKEND_URL}/user/${currentUserId}/image`, options)
 			.then(resp => resp.json())
 			.then(data => console.log("Success!!!!", data))
 			.catch(erros => console.error("ERRORRRRRR!!!", error));
@@ -25,14 +35,14 @@ export const CarrouselProv = () => {
 		<div className="row hotelCarrousel">
 			<div className="col-10">
 				<div className="slider">
-					<div className="slide">
-						<div className="slide">
-							<img
-								className="imageHotel"
-								src="https://images.daznservices.com/di/library/Goal_Argentina/86/5e/estadio-monumental-river-plate_15f3ygjfxe9ct1gtq50322fkgx.jpg?t=172937880&quality=100"
-								alt=""
-							/>
-						</div>
+					<div className="">
+						{files.map((item, index) => {
+							return (
+								<div className="slide" key={index}>
+									<img className="imageHotel" src={imgData[index]} alt="" />
+								</div>
+							);
+						})}
 					</div>
 				</div>
 			</div>
@@ -48,7 +58,7 @@ export const CarrouselProv = () => {
 					name="avatar"
 					accept="image/png, image/jpeg"
 					onChange={e => {
-						setFiles(e.target.files);
+						onChangePicture(e);
 					}}></input>
 			</button>
 		</div>
