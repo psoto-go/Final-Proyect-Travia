@@ -83,6 +83,7 @@ export const HotelDetail = () => {
 				<div className="mt-5 m-5">{listRooms}</div>
 			</div>
 			<div className="resenasStyle col-12 mt-5">
+
 				<h2 className="offset-1">Nuestros usuarios opinan</h2>
 				<div className="reviewsHome  ">{listReviews}</div>
 			</div>
