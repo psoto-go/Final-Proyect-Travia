@@ -28,8 +28,8 @@ export const AdminProvincias = () => {
 				</div>
 
 				<div>
-					<div className="row">
-						<div className="col-10">
+					<div className=" d-flex flex-row-reverse">
+						{/* <div className="col-10">
 							<div className="search" id="custom-search-input">
 								<div className="input-group">
 									<input type="text" className="form-control input-lg" placeholder="Buscar" />
@@ -40,8 +40,8 @@ export const AdminProvincias = () => {
 									</span>
 								</div>
 							</div>
-						</div>
-						<div className="col-2">
+						</div> */}
+						<div className=" mb-3">
 							<Link to="/onlyCitie">
 								<button className=" create">Crear Provincia</button>
 							</Link>
