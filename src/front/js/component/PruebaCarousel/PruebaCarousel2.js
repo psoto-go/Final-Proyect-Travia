@@ -40,7 +40,7 @@ export const PruebaCarousel2 = () => {
 						src="https://fishhotels-api.derbyhotels.com/storage/grehd/5d8231e37dac0081270a6bdf/xxl/fachada.jpg"
 						className="d-block w-100"
 						alt="..."
-						style={{ height: "475px" }}
+						style={{ height: "675px" }}
 					/>
 					<div className="carousel-caption d-none d-md-block">
 						<h5>{hotel.name}</h5>
@@ -51,7 +51,7 @@ export const PruebaCarousel2 = () => {
 						src="https://img.blogs.es/anexom/wp-content/uploads/2016/08/hoteles-w-920x515.jpg"
 						className="d-block w-100"
 						alt="..."
-						style={{ height: "475px" }}
+						style={{ height: "675px" }}
 					/>
 					<div className="carousel-caption d-none d-md-block">
 						<h5>Second slide label</h5>
@@ -63,7 +63,7 @@ export const PruebaCarousel2 = () => {
 						src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg"
 						className="d-block w-100"
 						alt="..."
-						style={{ height: "475px" }}
+						style={{ height: "675px" }}
 					/>
 					<div className="carousel-caption d-none d-md-block">
 						<h5>Third slide label</h5>
