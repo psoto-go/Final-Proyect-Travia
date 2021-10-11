@@ -52,7 +52,7 @@ export const SearchResponsive = () => {
 
 	return (
 		<div className="d-flex justify-content-center">
-			<nav className="navbar navbar-light border border-light col-sm-6 rounded  d-block d-xl-none d-lg-block d-md-none mt-5 pb-3 pt-3 ">
+			<nav className="navbar navbar-light border border-light col-sm-6 rounded  d-block d-xl-none d-lg-block d-md-block mt-5 pb-3 pt-3 ">
 				<form className="form-inline flex-column " onSubmit={submitForm}>
 					<input
 						type="text"
