@@ -28,7 +28,7 @@ import { UserHelp } from "./pages/userHelp";
 import { ReviewsUser } from "./pages/reviewUser";
 import { ProfileReservations } from "./pages/profileReservations";
 import { OnlyCitie } from "./pages/onlyCitie";
-import { why } from "./pages/why";
+import { Why } from "./pages/why";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -42,7 +42,7 @@ export const Layout = () => {
 							<Home />
 						</Route>
 						<Route exact path="/quehacemos">
-							<why />
+							<Why />
 						</Route>
 						<Route exact path="/hotel/:theid">
 							<HotelDetail />
