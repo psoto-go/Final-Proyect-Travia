@@ -68,19 +68,22 @@ export const HotelDetail = () => {
 			<div className="col-12">
 				{/* <h2 className="m-3 ">{hotel.name}</h2> */}
 				{/* {listGallery} */}
-				<PruebaCarousel2 />
+				<div>
+					<PruebaCarousel2 />
+				</div>
+
 				{/* <PruebaCarousel /> */}
-				<div className="row">
+				<div className="row m-3">
 					<div className="col-12">
 						<div className="mt-5">
 							<NavDetail description={hotel.description} />
 						</div>
 					</div>
 				</div>
-				<div className="mt-5">{listRooms}</div>
+				<div className="mt-5 m-2">{listRooms}</div>
 			</div>
-			<div className="resenasStyle header m-5 col-12">
-				<h2 className="offset-1">Nuestros usuarios opinan</h2>
+			<div className="resenasStyle header col-12 mt-5">
+				<h2>Nuestros usuarios opinan</h2>
 				<div className="reviewsHome  ">{listReviews}</div>
 			</div>
 
