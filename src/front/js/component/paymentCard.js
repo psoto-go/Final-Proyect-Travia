@@ -42,11 +42,11 @@ export const PaymentCard = () => {
 					<p className="card-text">Habitacion {hab.kind}</p>
 					<p className="card-text">Numero de camas {hab.number_of_beds}</p>
 					<p className="card-text">Numero de personas {hab.number_of_persons}</p>
-					<p className="card-text">{`Fechas: ${start_date} - ${end_date}`}</p>
+					<p className="card-text ">{`Fechas: ${start_date} - ${end_date}`}</p>
 				</div>
 				<ul className="list-group list-group-flush ">
 					<li className="list-group-item paymentImage border-top">
-						<p className="col-6">
+						<p className="col">
 							{hab.price}€ x {difD} noches
 						</p>
 					</li>

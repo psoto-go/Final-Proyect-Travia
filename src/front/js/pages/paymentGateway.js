@@ -8,8 +8,8 @@ import { PaymentInfo } from "../component/paymentInfo";
 
 export const PaymentGateway = () => {
 	return (
-		<div className="PaymentGateway">
-			<div className="row">
+		<div className="PaymentGateway ">
+			<div className="row mt-3 pt-3">
 				{/* <button
 					onClick={() => {
 						console.log(JSON.parse(localStorage.getItem("reserva")));
@@ -24,10 +24,10 @@ export const PaymentGateway = () => {
 				</p> */}
 			</div>
 			<div className="row m-0 d-flex flex-wrap">
-				<div className="col-4">
+				<div className="col">
 					<PaymentCard />
 				</div>
-				<div className="col-7">
+				<div className="col">
 					<PaymentInfo />
 				</div>
 			</div>

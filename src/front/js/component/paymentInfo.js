@@ -54,11 +54,11 @@ export const PaymentInfo = () => {
 
 					<form className="form-signin" onSubmit={submitForm}>
 						<div className="form-group row">
-							<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+							<label htmlFor="inputEmail" className="col-sm-2  col-form-label mr-1">
 								Nombre
 							</label>
 
-							<div className="col-sm-10">
+							<div className="col-sm-10 ">
 								<input
 									type="text"
 									className="form-control"
@@ -70,7 +70,7 @@ export const PaymentInfo = () => {
 							</div>
 						</div>
 						<div className="form-group row">
-							<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+							<label htmlFor="inputEmail" className="col-sm-2 col-form-label mr-1">
 								Apellido
 							</label>
 
@@ -86,7 +86,7 @@ export const PaymentInfo = () => {
 							</div>
 						</div>
 						<div className="form-group row">
-							<label htmlFor="inputEmail" className="col-sm-2 col-form-label">
+							<label htmlFor="inputEmail" className="col-sm-2 col-form-label mr-1">
 								Email
 							</label>
 
@@ -102,7 +102,7 @@ export const PaymentInfo = () => {
 							</div>
 						</div>
 						<div className="form-group row">
-							<label htmlFor="inputPassword" className="col-sm-2 col-form-label">
+							<label htmlFor="inputPassword" className="col-sm-2 col-form-label mr-1">
 								Contraseña
 							</label>
 							<div className="col-sm-10">
@@ -117,7 +117,7 @@ export const PaymentInfo = () => {
 							</div>
 						</div>
 						<div className="form-group row">
-							<label htmlFor="inputPassword2" className="col-sm-2 col-form-label">
+							<label htmlFor="inputPassword2" className="col-sm-2 col-form-label mr-1">
 								Repetir contraseña
 							</label>
 							<div className="col-sm-10">
