@@ -55,7 +55,7 @@ export const Search = () => {
 			<div className="bgcolor-searchBar">
 				<form className="form-signin row d-flex" onSubmit={submitForm}>
 					<div className="row col-3 p-0 d-flex align-items-center">
-						<i className="fas fa-map-marker-alt textMargin col-1" />
+						<i className="fas fa-map-marker-alt textMargin mr-2 col-1" />
 						<input
 							className="col-10"
 							type="text"
@@ -70,7 +70,7 @@ export const Search = () => {
 						<input className="col-3" type="date" id="datein" name="datein" onChange={changeInput} />
 						<div className="textMargin col-2">Check-Out</div>
 						<input className="col-3" type="date" id="dateout" name="dateout" onChange={changeInput} />
-						<i className="fas fa-user-friends textMargin " />
+						<i className="fas fa-user-friends textMargin mr-2 ml-2" />
 						<input
 							className="col"
 							type="number"
