@@ -33,7 +33,7 @@ export const MyAccount = () => {
 					<strong className="col-2">Configuracion</strong>
 				</a>
 				<div className="row justify-content-end mt-3">
-					<button className="btn btn-dark">Cancelar</button>{" "}
+					<button className="btn btn-secondary">Cancelar</button>{" "}
 					<button className="btn btn-warning">Guardar</button>
 				</div>
 			</div>
