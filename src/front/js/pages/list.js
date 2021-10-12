@@ -34,7 +34,7 @@ export const List = props => {
 			</div>
 
 			<div className="row col-12 m-0 mb-5 p-0">
-				<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-5">
+				<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 listResponsive">
 					{detalles
 						? detalles.map((hotel, index) => {
 								// console.log(hotel.rooms);

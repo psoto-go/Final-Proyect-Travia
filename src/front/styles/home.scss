@@ -342,22 +342,13 @@ h3, h2{
 .mapPosition{
   position: absolute;  
   // width: 40em;
-  height: 50%; 
+  height: 100%; 
   width: 100%;  
   
    
 }
 @media (max-width: 768px){
-  .mapPosition{
-    display: none;
-  //   position: initial;
-    
-  //   left: 58.2%;
-  //   height: 42em;
-  //   width: 31em;
-  //     }
-  //-----------------------
-}}
+  }
 @media (max-width: 1024px){
   // .mapPosition{
   //   position: initial;
@@ -374,6 +365,22 @@ h3, h2{
     
   //   width: 21.7em;}
   //-----------------------
+}
+@media (max-width: 990px){
+  .listResponsive{
+    margin-top: 19%;
+  }
+   .mapPosition{
+    width: 34%;
+    height:81%;
+    left: 64%;
+    top: 20%;
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    overflow: hidden;
+       }
+  
 }
 
 .moving {
