@@ -32,7 +32,7 @@ export const UserConfig = () => {
 				</a>
 
 				<div className="row justify-content-end mt-3">
-					<button className="btn btn-dark">Cancelar</button>{" "}
+					<button className="btn btn-light">Cancelar</button>{" "}
 					<button className="btn btn-success">Guardar</button>
 				</div>
 			</div>

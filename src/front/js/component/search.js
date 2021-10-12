@@ -51,32 +51,42 @@ export const Search = () => {
 	console.log(detalles);
 
 	return (
-		<div id="searchBar" className="d-none d-lg-none d-xl-block">
+		<div id="searchBar" className="d-none d-lg-none d-xl-block m-3">
 			<div className="bgcolor-searchBar">
-				<i className="fas fa-map-marker-alt textMargin" />
-				<form className="form-signin" onSubmit={submitForm}>
-					<input
-						type="text"
-						id="text"
-						placeholder="¿A Donde Quieres Viajar?"
-						name="place"
-						onChange={changeInput}
-					/>
-					<div className="textMargin">Check-In</div>
-					<input type="date" id="datein" name="datein" onChange={changeInput} />
-					<div className="textMargin">Check-Out</div>
-					<input type="date" id="dateout" name="dateout" onChange={changeInput} />
-					<i className="fas fa-user-friends textMargin" />
-					<input
-						type="number"
-						min="1"
-						max="5"
-						placeholder="0"
-						id="number"
-						name="number"
-						onChange={changeInput}
-					/>
-					<button className="btn btn-warning btton" type="submit">
+				<form className="form-signin row d-flex" onSubmit={submitForm}>
+					<div className="row col-3 p-0 d-flex align-items-center">
+						<i className="fas fa-map-marker-alt textMargin col-1" />
+						<input
+							className="col-10"
+							type="text"
+							id="text"
+							placeholder="¿A Donde Quieres Viajar?"
+							name="place"
+							onChange={changeInput}
+						/>
+					</div>
+					<div className="col-7 row d-flex align-items-center">
+						<div className="textMargin col-2">Check-In</div>
+						<input className="col-3" type="date" id="datein" name="datein" onChange={changeInput} />
+						<div className="textMargin col-2">Check-Out</div>
+						<input className="col-3" type="date" id="dateout" name="dateout" onChange={changeInput} />
+						<i className="fas fa-user-friends textMargin " />
+						<input
+							className="col"
+							type="number"
+							min="1"
+							max="5"
+							placeholder="0"
+							id="number"
+							name="number"
+							onChange={changeInput}
+						/>
+					</div>
+					{/* <div className="col-2 d-flex align-items-center">
+						
+					</div> */}
+
+					<button className="btn btn-warning btton ml-3 mt-0" type="submit">
 						Buscar
 					</button>
 				</form>
