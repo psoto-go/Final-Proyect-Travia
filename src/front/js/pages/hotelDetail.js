@@ -64,8 +64,8 @@ export const HotelDetail = () => {
 
 	return (
 		<div className="row">
-			<div className="m-5 col-lg-6">
-				<h2 className="m-3 ">{hotel.name}</h2>
+			<div className="col-12">
+				{/* <h2 className="m-3 ">{hotel.name}</h2> */}
 				{/* {listGallery} */}
 				<div>
 					<PruebaCarousel2 />
