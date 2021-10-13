@@ -29,6 +29,7 @@ import { ReviewsUser } from "./pages/reviewUser";
 import { ProfileReservations } from "./pages/profileReservations";
 import { OnlyCitie } from "./pages/onlyCitie";
 import { Why } from "./pages/why";
+import { Success } from "./pages/SuccessPayment";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -95,6 +96,9 @@ export const Layout = () => {
 
 						<Route exact path="/payment">
 							<PaymentGateway />
+						</Route>
+						<Route exact path="/successPayment">
+							<Success />
 						</Route>
 						<Route exact path="/myAccount">
 							<MyAccount />
