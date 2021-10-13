@@ -19,6 +19,7 @@
   .active, .dot:hover{
     background-color: transparent;
   }
+  background: linear-gradient(180deg, #b7bfe7 0%,  #8BD996 100%) no-repeat center;
     background-size: cover;
     justify-content: center;
     background-color: transparent;
@@ -30,6 +31,11 @@
     justify-content: center;
     //padding: 3%;
 
+  }
+  .headerReverse{
+    background: linear-gradient(0deg, #8BD996 0%, #b7bfe7 100%) no-repeat center;
+    background-size: cover;
+    justify-content: center;
   }
 
 .header .navbar {
