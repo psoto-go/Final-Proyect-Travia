@@ -7,7 +7,7 @@ import { Availability } from "../component/availability";
 import { HotelPrices } from "../component/hotelPrices";
 import { Reviews } from "../component/reviews";
 import { HotelServices } from "../component/hotelServices";
-import { PruebaCarousel } from "../component/PruebaCarousel/PruebaCarousel";
+import { PruebaCarousel2 } from "../component/PruebaCarousel/PruebaCarousel2";
 
 export const HotelDetail = () => {
 	const [hotel, setHotel] = useState({});
