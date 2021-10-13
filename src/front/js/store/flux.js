@@ -1,3 +1,4 @@
+import { param } from "jquery";
 import { string } from "prop-types";
 import { api_url } from "../constants";
 
@@ -11,7 +12,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			url: null,
 			usergoogle: [],
 			services: [],
-			lastidhotel: null
+			lastidhotel: null,
+			files: []
 		},
 		actions: {
 			url: paramsForm => {
@@ -19,6 +21,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				console.log(store.url);
 			},
+			addfiles: files => {
+				setStore({ files: [...getStore().files, files] });
+			},
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -93,12 +99,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("Error", error));
 			},
 			newHotel: paramsForm => {
-				const raw = JSON.stringify(paramsForm);
+				let body = new FormData();
+				for (let i in Object.keys(paramsForm)) {
+					body.append(Object.keys(paramsForm)[i], paramsForm[Object.keys(paramsForm)[i]]);
+				}
+
+				body.append("files", getStore().files);
 
 				const requestPost = {
 					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: raw
+					body: body
 				};
 
 				fetch(api_url + "/api/new_hotel", requestPost)

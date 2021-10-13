@@ -36,8 +36,8 @@ export const List = props => {
 				<SearchResponsive />
 			</div>
 
-			<div className="row m-0 p-0">
-				<div className="col-7 ml-5 mt-5 mb-5">
+			<div className="row col-12 m-0 mb-5 p-0">
+				<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 listResponsive">
 					{detalles
 						? detalles.map((hotel, index) => {
 								// console.log(hotel.rooms);
@@ -52,7 +52,7 @@ export const List = props => {
 						  })
 						: ""}
 				</div>
-				<div className="col-4">{map ? map : ""}</div>
+				<div className="col-6 ">{map ? map : ""}</div>
 			</div>
 			{/*
 			<div className="d-none d-lg-none d-xl-block">

@@ -1,10 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
+import { Context } from "../store/appContext";
 
 export const CarrouselHotel = () => {
+	const { store, actions } = useContext(Context);
 	const [files, setFiles] = useState([]);
 	const [imgData, setImgData] = useState([]);
 	const onChangePicture = e => {
 		if (e.target.files[0]) {
+			actions.addfiles(e.target.files[0]);
 			setFiles([...files, e.target.files[0]]);
 			const reader = new FileReader();
 			reader.addEventListener("load", () => {
@@ -19,18 +22,19 @@ export const CarrouselHotel = () => {
 		// we are about to send this to the backend.
 		console.log("This are the files", files);
 		let body = new FormData();
-		body.append("profile_image", files[0]);
+		body.append("profile_image", files);
 		const options = {
-			body,
+			body: body,
 			method: "POST"
 		};
 		// you need to have the user_id in the localStorage
 		const currentUserId = localStorage.getItem("user_id");
-		fetch(`${process.env.BACKEND_URL}/user/${currentUserId}/image`, options)
+		fetch(`${process.env.BACKEND_URL}/api/hotel/8/image`, options)
 			.then(resp => resp.json())
 			.then(data => console.log("Success!!!!", data))
-			.catch(erros => console.error("ERRORRRRRR!!!", error));
+			.catch(error => console.error("ERRORRRRRR!!!", error));
 	};
+	console.log(files);
 	return (
 		<div className="row hotelCarrousel">
 			<div className="col-10">
@@ -49,7 +53,7 @@ export const CarrouselHotel = () => {
 			<button className="col-2 addImagenHotel">
 				<h3>
 					<i className="far fa-arrow-alt-circle-up" />
-					<p>Añadir imagen</p>
+					<p onClick={uploadImage}>Añadir imagen</p>
 				</h3>
 				<input
 					className="col-9"

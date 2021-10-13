@@ -15,7 +15,7 @@ export const ReviewsUser = () => {
 					<h5 className="mt-5">Actividades / adicional #1</h5>
 					<textarea className="border" style={{ height: "10em", width: "100%" }}></textarea>
 					<div className="row justify-content-end mt-3 mt-5">
-						<button className="btn btn-dark">Cancelar</button>{" "}
+						<button className="btn btn-light">Cancelar</button>{" "}
 						<button className="btn btn-success">Guardar</button>
 					</div>
 				</div>

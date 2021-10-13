@@ -153,24 +153,30 @@ def sign_in_user():
 
 @api.route('/hotel/<int:hotel_id>/image', methods=['POST','PUT'])
 def image_hotel(hotel_id):
-
+    print(request.files)
     # validate that the front-end request was built correctly
-    if 'hotel_image' in request.files:
+    if 'profile_image' in request.files:
         # upload file to uploadcare
-        result = cloudinary.uploader.upload(request.files['hotel_image'])
+        result = cloudinary.uploader.upload(request.files['profile_image'])
 
         # fetch for the user
+        print(2)
         hotel = Hotel.query.filter_by(id = hotel_id).one_or_none()
+        print(3)
         if not hotel :
             return jsonify("Your hotel is not found"), 404
         # update the user with the given cloudinary image UR
 
+        print(4)
         hotel_archive = HotelArchives(hotel_id = hotel.id, url= result['secure_url'])
+        print(5)
         db.session.add(hotel_archive)
         db.session.commit()
+        print(6)
 
         return jsonify(hotel_archive.serialize()), 200
     else:
+        print(7)
         raise APIException('Missing profile_image on the FormData')
 
 @api.route('/room/<int:room_id>/image', methods=['POST','PUT'])
@@ -221,25 +227,46 @@ def image_city(city_id):
 
 @api.route('/new_hotel', methods=['POST']) 
 def new_hotel():
-
-    body_params = request.get_json()
-    print(body_params)
-    name = body_params.get("name", None)
-    description = body_params.get("description", None)
-    longitude = body_params.get("longitude", None)
-    latitude = body_params.get("latitude", None)
-    favorite = body_params.get("favorite", False)
-    city_id = body_params.get("city_id", None)
-    services = body_params.get("services", None)
+    print(request.form)
+    name = request.form["name"]
+    description = request.form["description"]
+    longitude = request.form["longitude"]
+    latitude = request.form["latitude"]
+    favorite = request.form["favorite"].lower() in ['true']
+    city_id = int(request.form["city_id"])
+    services = request.form['services']
+    formatservices = services.split(',')
     servicesToAdd = []
-    for service in services:
-        servicesToAdd.append(Service.query.filter_by(id = service).first())
+    for service in formatservices:
+        servicesToAdd.append(Service.query.filter_by(id = int(service)).first())
 
-
+    
     hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id, services = servicesToAdd)
-    print("*********", hotel.id)
     db.session.add(hotel)
     db.session.commit()
+    print(request.files['files'])
+    if 'files' in request.files :
+        # upload file to uploadcare
+        result = cloudinary.uploader.upload(request.files['files'])
+
+        # fetch for the user
+        print(2)
+        print(3)
+        if not hotel :
+            return jsonify("Your hotel is not found"), 404
+        # update the user with the given cloudinary image UR
+
+        print(4)
+        hotel_archive = HotelArchives(hotel_id = hotel.id, url= result['secure_url'])
+        print(5)
+        db.session.add(hotel_archive)
+        db.session.commit()
+        print(6)
+
+        return jsonify(hotel_archive.serialize()), 200
+    else:
+        print(7)
+        raise APIException('Missing profile_image on the FormData')
     print("*********", hotel.id)
     return jsonify({"msg": "El hotel fue creado exitosamente", "id": hotel.id}), 200
 
