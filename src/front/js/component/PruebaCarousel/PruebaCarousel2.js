@@ -3,6 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import { Gallery } from "../../component/gallery";
 import { Link, useParams } from "react-router-dom";
 import { api_url } from "../../constants";
+import "../../../styles/hotelDetail/hotelDetail.scss";
 import PropTypes from "prop-types";
 
 export const PruebaCarousel2 = props => {
@@ -37,26 +38,27 @@ export const PruebaCarousel2 = props => {
 				<li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
 			</ol>
 			<div className="carousel-inner">
-				<div className="carousel-item active">
-					<img src={props.urls[0]} className="d-block w-100" alt="..." style={{ height: "675px" }} />
+				<div className="carousel-item active widthResponsive">
+					<img src={props.urls[0]} className="d-block img-fluid" alt="..." style={{ width: "100%" }} />
 					<div className="carousel-caption d-none d-md-block">
 						<h5>{hotel.name}</h5>
 					</div>
 				</div>
-				<div className="carousel-item">
-					<img src={props.urls[1]} className="d-block w-100" alt="..." style={{ height: "675px" }} />
+
+				<div className="carousel-item widthResponsive">
+					<img src={props.urls[1]} className="d-block img-fluid " alt="..." style={{ width: "100%" }} />
 					<div className="carousel-caption d-none d-md-block">
 						<h5>{hotel.name}</h5>
 					</div>
 				</div>
-				<div className="carousel-item">
-					<img src={props.urls[2]} className="d-block w-100" alt="..." style={{ height: "675px" }} />
+				<div className="carousel-item widthResponsive">
+					<img src={props.urls[2]} className="d-block img-fluid " alt="..." style={{ width: "100%" }} />
 					<div className="carousel-caption d-none d-md-block">
 						<h5>{hotel.name}</h5>
 					</div>
 				</div>
-				<div className="carousel-item">
-					<img src={props.urls[3]} className="d-block w-100" alt="..." style={{ height: "675px" }} />
+				<div className="carousel-item widthResponsive">
+					<img src={props.urls[3]} className="d-block img-fluid " alt="..." style={{ width: "100%" }} />
 					<div className="carousel-caption d-none d-md-block">
 						<h5>{hotel.name}</h5>
 					</div>
