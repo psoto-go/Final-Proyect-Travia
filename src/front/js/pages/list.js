@@ -6,7 +6,7 @@ import { ChoiceHotel } from "../component/choiceHotel";
 import { SearchList } from "../component/searchList";
 import { api_url } from "../constants";
 import "/workspace/Final-Proyect-Travia/src/front/styles/home.scss";
-import { searchResponsive } from "../component/searchResponsive";
+import { SearchResponsive } from "../component/searchResponsive";
 
 export const List = props => {
 	const { store, actions } = useContext(Context);
@@ -28,9 +28,12 @@ export const List = props => {
 	}, [store.url]);
 
 	return (
-		<div className="row ml-0 mr-0">
-			<div id="testing" className=" d-lg-block col-12 ml-0 mr-0">
+		<div className="row ml-0 mr-0 table-responsive">
+			<div id="testing" className="d-none d-xl-block d-lg-block col-12 ml-0 mr-0 table mb-0">
 				<SearchList />
+			</div>
+			<div className="d-lg-none col-12 headerReverse pb-5">
+				<SearchResponsive />
 			</div>
 
 			<div className="row col-12 m-0 mb-5 p-0">

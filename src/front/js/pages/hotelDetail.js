@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Gallery } from "../component/gallery";
 import { api_url } from "../constants";
@@ -8,7 +8,6 @@ import { HotelPrices } from "../component/hotelPrices";
 import { Reviews } from "../component/reviews";
 import { HotelServices } from "../component/hotelServices";
 import { PruebaCarousel } from "../component/PruebaCarousel/PruebaCarousel";
-import { PruebaCarousel2 } from "../component/PruebaCarousel/PruebaCarousel2";
 
 export const HotelDetail = () => {
 	const [hotel, setHotel] = useState({});
@@ -65,8 +64,8 @@ export const HotelDetail = () => {
 
 	return (
 		<div className="row">
-			<div className="col-12">
-				{/* <h2 className="m-3 ">{hotel.name}</h2> */}
+			<div className="m-5 col-lg-6">
+				<h2 className="m-3 ">{hotel.name}</h2>
 				{/* {listGallery} */}
 				<div>
 					<PruebaCarousel2 />

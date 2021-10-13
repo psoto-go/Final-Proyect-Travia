@@ -4,7 +4,7 @@ import { Search } from "./search";
 
 export const SearchList = () => {
 	return (
-		<div className="m-0 p-3">
+		<div className="m-0 p-3 ">
 			<Search />
 			{/*<div className="dropdown col-6 d-flex justify-content-center">
 					<button type="button" data-toggle="dropdown" className="btn btn-info dropdown-toggle botones ">
