@@ -1,0 +1,21 @@
+.widthResponsive{
+    height: 675px;
+}
+
+@media  (max-width: 1024px) {
+    .widthResponsive{
+        height: 500px;
+    } 
+}
+
+@media  (max-width: 768px) {
+    .widthResponsive{
+        height: 300px;
+    } 
+}
+
+@media  (max-width: 425px) {
+    .widthResponsive{
+        height: 200px;
+    } 
+}

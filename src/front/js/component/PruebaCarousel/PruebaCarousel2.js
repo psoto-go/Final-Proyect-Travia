@@ -3,6 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import { Gallery } from "../../component/gallery";
 import { Link, useParams } from "react-router-dom";
 import { api_url } from "../../constants";
+import "../../../styles/hotelDetail/hotelDetail.scss";
 
 export const PruebaCarousel2 = () => {
 	const [hotel, setHotel] = useState({});
@@ -35,35 +36,35 @@ export const PruebaCarousel2 = () => {
 				<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
 			</ol>
 			<div className="carousel-inner">
-				<div className="carousel-item active">
+				<div className="carousel-item active widthResponsive">
 					<img
 						src="https://fishhotels-api.derbyhotels.com/storage/grehd/5d8231e37dac0081270a6bdf/xxl/fachada.jpg"
-						className="d-block w-100"
+						className="d-block img-fluid"
 						alt="..."
-						style={{ height: "675px" }}
+						style={{ width: "100%" }}
 					/>
 					<div className="carousel-caption d-none d-md-block">
 						<h5>{hotel.name}</h5>
 					</div>
 				</div>
-				<div className="carousel-item">
+				<div className="carousel-item widthResponsive">
 					<img
 						src="https://img.blogs.es/anexom/wp-content/uploads/2016/08/hoteles-w-920x515.jpg"
-						className="d-block w-100"
+						className="d-block img-fluid "
 						alt="..."
-						style={{ height: "675px" }}
+						style={{ width: "100%" }}
 					/>
 					<div className="carousel-caption d-none d-md-block">
 						<h5>Second slide label</h5>
 						<p>Some representative placeholder content for the second slide.</p>
 					</div>
 				</div>
-				<div className="carousel-item">
+				<div className="carousel-item widthResponsive">
 					<img
 						src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg"
-						className="d-block w-100"
+						className="d-block img-fluid"
 						alt="..."
-						style={{ height: "675px" }}
+						style={{ width: "100%" }}
 					/>
 					<div className="carousel-caption d-none d-md-block">
 						<h5>Third slide label</h5>

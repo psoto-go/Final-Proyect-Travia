@@ -33,7 +33,9 @@ const CheckoutForm = () => {
 				<Link>Política de privacidad</Link>. También acepto pagar el monto total que se muestra, que incluye los
 				impuestos de ocupación.
 			</p>
-			<button className="btn btn-success btn-block buttonBuy btn-outline-warning">Reservar</button>
+			<Link to="/successPayment">
+				<button className="btn btn-success btn-block buttonBuy btn-outline-warning">Reservar</button>
+			</Link>
 		</form>
 	);
 };
