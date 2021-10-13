@@ -32,12 +32,12 @@ export const List = props => {
 			<div id="testing" className="d-none d-xl-block d-lg-block col-12 ml-0 mr-0 table mb-0">
 				<SearchList />
 			</div>
-			<div className="d-lg-none col-12 headerReverse pb-5">
+			<div className="d-xl-none d-lg-block d-md-block d-sm-block col-12 headerReverse pb-5">
 				<SearchResponsive />
 			</div>
 
 			<div className="row m-0 p-0">
-				<div className="col-7 ml-5 mt-5 mb-5">
+				<div className="col mt-5 mb-5 ml-3">
 					{detalles
 						? detalles.map((hotel, index) => {
 								// console.log(hotel.rooms);
@@ -52,7 +52,7 @@ export const List = props => {
 						  })
 						: ""}
 				</div>
-				<div className="col-4 ">{map ? map : ""}</div>
+				<div className="col">{map ? map : ""}</div>
 			</div>
 			{/*
 			<div className="d-none d-lg-none d-xl-block">

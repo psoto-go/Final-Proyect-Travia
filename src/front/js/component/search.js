@@ -60,7 +60,7 @@ export const Search = () => {
 							className="col-10"
 							type="text"
 							id="text"
-							placeholder="¿Adónde vas?"
+							placeholder="¿A dónde vas?"
 							name="place"
 							onChange={changeInput}
 						/>
