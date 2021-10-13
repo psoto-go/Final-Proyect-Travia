@@ -323,15 +323,34 @@ def hotelid(hotel_id):
 
 @api.route('/new_city', methods=['POST']) 
 def new_city():
+    print(request.form)
 
-    body_params = request.get_json()
-    print(body_params)
-    name = body_params.get("name", None)
-    description = body_params.get("description", None)
+    name = request.form["name"]
+    description = request.form["description"]
     
-    user1 = City(name=name, description = description)
-    db.session.add(user1)
-    db.session.commit()
+    if 'files' in request.files :
+        # upload file to uploadcare
+        result = cloudinary.uploader.upload(request.files['files'])
+
+        # fetch for the user
+        print(2)
+        print(3)
+        if not user1 :
+            return jsonify("Your hotel is not found"), 404
+        # update the user with the given cloudinary image UR
+
+        print(4)
+        user1 = City(name=name, description = description, url= result['secure_url'])
+        print(5)
+        db.session.add(user1)
+        db.session.commit()
+        print(6)
+
+        return jsonify(user1.serialize()), 200
+    else:
+        print(7)
+        raise APIException('Missing profile_image on the FormData')
+        
 
     return jsonify({"msg": "La ciudad fue creada exitosamente"}), 200
 

@@ -62,7 +62,7 @@ export const Home = () => {
 			<div className="whiteBack">
 				<Destinations />
 			</div>
-			<div className="headerInverse mt-5">
+			<div className=" mt-5">
 				<h2 className="offset-1 pt-3">Nuestros usuarios opinan</h2>{" "}
 				<div className="reviewsHome pb-2 m-4">{listReviews}</div>
 			</div>
