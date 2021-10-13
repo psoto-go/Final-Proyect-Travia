@@ -134,12 +134,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("Error", error));
 			},
 			newCitie: paramsForm => {
-				const raw = JSON.stringify(paramsForm);
+				let body = new FormData();
+				for (let i in Object.keys(paramsForm)) {
+					body.append(Object.keys(paramsForm)[i], paramsForm[Object.keys(paramsForm)[i]]);
+				}
+				body.append("files", getStore().files);
 
 				const requestPost = {
 					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: raw
+					body: body
 				};
 
 				fetch(api_url + "/api/new_city", requestPost)

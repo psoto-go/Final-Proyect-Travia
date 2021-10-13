@@ -1,10 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
+import { Context } from "../store/appContext";
 
 export const CarrouselProv = () => {
+	const { store, actions } = useContext(Context);
 	const [files, setFiles] = useState([]);
 	const [imgData, setImgData] = useState([]);
 	const onChangePicture = e => {
 		if (e.target.files[0]) {
+			actions.addfiles(e.target.files[0]);
 			setFiles([...files, e.target.files[0]]);
 			const reader = new FileReader();
 			reader.addEventListener("load", () => {
