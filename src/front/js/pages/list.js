@@ -5,7 +5,7 @@ import { Map } from "../component/map";
 import { ChoiceHotel } from "../component/choiceHotel";
 import { SearchList } from "../component/searchList";
 import { api_url } from "../constants";
-import "/workspace/Final-Proyect-Travia/src/front/styles/home.scss";
+import "../../styles/home.scss";
 import { SearchResponsive } from "../component/searchResponsive";
 
 export const List = props => {
