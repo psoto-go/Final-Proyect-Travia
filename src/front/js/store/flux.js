@@ -178,9 +178,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			register_google: async paramsForm => {
 				const raw = JSON.stringify({
-					name: paramsForm.Ws.zU,
-					last_name: paramsForm.Ws.zS,
-					email: paramsForm.Ws.Ht
+					name: paramsForm.it.HU,
+					last_name: paramsForm.it.Se,
+					email: paramsForm.it.Tt
 				});
 
 				const requestPost = {
