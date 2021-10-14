@@ -239,13 +239,13 @@ def new_hotel():
     servicesToAdd = []
     for service in formatservices:
         servicesToAdd.append(Service.query.filter_by(id = int(service)).first())
-
     
     hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id, services = servicesToAdd)
     db.session.add(hotel)
     db.session.commit()
-    print(request.files['files'])
-    if 'files' in request.files :
+    print(request.files)
+    if True :
+        print("@@@@@")
         # upload file to uploadcare
         result = cloudinary.uploader.upload(request.files['files'])
 
