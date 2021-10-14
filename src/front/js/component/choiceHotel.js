@@ -43,7 +43,7 @@ export const ChoiceHotel = props => {
 
 							<div className="card-body p-0">
 								<Link to={"/hotel/" + props.id} className="btn btn-warning">
-									Vacancy
+									Reserva
 								</Link>
 							</div>
 						</div>
