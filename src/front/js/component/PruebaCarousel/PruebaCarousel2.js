@@ -38,27 +38,27 @@ export const PruebaCarousel2 = props => {
 				<li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
 			</ol>
 			<div className="carousel-inner">
-				<div className="carousel-item active widthResponsive">
-					<img src={props.urls[0]} className="d-block img-fluid" alt="..." style={{ width: "100%" }} />
+				<div className="carousel-item active ">
+					<img src={props.urls[0]} className="" alt="..." style={{ width: "100vw", height: "35vw" }} />
 					<div className="carousel-caption d-none d-md-block">
 						<h5>{hotel.name}</h5>
 					</div>
 				</div>
 
-				<div className="carousel-item widthResponsive">
-					<img src={props.urls[1]} className="d-block img-fluid " alt="..." style={{ width: "100%" }} />
+				<div className="carousel-item ">
+					<img src={props.urls[1]} className=" " alt="..." style={{ width: "100vw", height: "35vw" }} />
 					<div className="carousel-caption d-none d-md-block">
 						<h5>{hotel.name}</h5>
 					</div>
 				</div>
-				<div className="carousel-item widthResponsive">
-					<img src={props.urls[2]} className="d-block img-fluid " alt="..." style={{ width: "100%" }} />
+				<div className="carousel-item ">
+					<img src={props.urls[2]} className=" " alt="..." style={{ width: "100vw", height: "35vw" }} />
 					<div className="carousel-caption d-none d-md-block">
 						<h5>{hotel.name}</h5>
 					</div>
 				</div>
-				<div className="carousel-item widthResponsive">
-					<img src={props.urls[3]} className="d-block img-fluid " alt="..." style={{ width: "100%" }} />
+				<div className="carousel-item ">
+					<img src={props.urls[3]} className=" " alt="..." style={{ width: "100vw", height: "35vw" }} />
 					<div className="carousel-caption d-none d-md-block">
 						<h5>{hotel.name}</h5>
 					</div>
