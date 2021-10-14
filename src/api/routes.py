@@ -240,29 +240,24 @@ def new_hotel():
     for service in formatservices:
         servicesToAdd.append(Service.query.filter_by(id = int(service)).first())
     
+
+    
     hotel = Hotel(name=name, description = description, longitude=longitude, latitude=latitude, favorite = favorite, city_id=city_id, services = servicesToAdd)
     db.session.add(hotel)
     db.session.commit()
-    print(request.files)
-    if True :
-        print("@@@@@")
+    if not hotel :
+        return jsonify("Your hotel is not found"), 404
+    if 'files' in request.files :
         # upload file to uploadcare
-        result = cloudinary.uploader.upload(request.files['files'])
+        for x in request.files.getlist("files"):
+            result = cloudinary.uploader.upload(x)
+            # fetch for the user
+            
+            # update the user with the given cloudinary image UR
 
-        # fetch for the user
-        print(2)
-        print(3)
-        if not hotel :
-            return jsonify("Your hotel is not found"), 404
-        # update the user with the given cloudinary image UR
-
-        print(4)
-        hotel_archive = HotelArchives(hotel_id = hotel.id, url= result['secure_url'])
-        print(5)
-        db.session.add(hotel_archive)
-        db.session.commit()
-        print(6)
-
+            hotel_archive = HotelArchives(hotel_id = hotel.id, url= result['secure_url'])
+            db.session.add(hotel_archive)
+            db.session.commit()
         return jsonify(hotel_archive.serialize()), 200
     else:
         print(7)
@@ -327,33 +322,28 @@ def new_city():
 
     name = request.form["name"]
     description = request.form["description"]
-    
+
+    # if not city :
+    #     return jsonify("Your hotel is not found"), 404
     if 'files' in request.files :
         # upload file to uploadcare
-        result = cloudinary.uploader.upload(request.files['files'])
+        for x in request.files.getlist("files"):
+            result = cloudinary.uploader.upload(x)
+            # fetch for the user
+            
+            # update the user with the given cloudinary image UR
 
-        # fetch for the user
-        print(2)
-        print(3)
-        if not user1 :
-            return jsonify("Your hotel is not found"), 404
-        # update the user with the given cloudinary image UR
-
-        print(4)
-        user1 = City(name=name, description = description, url= result['secure_url'])
-        print(5)
-        db.session.add(user1)
-        db.session.commit()
-        print(6)
-
+            user1 = City(name=name, description = description, url= result['secure_url'])
+            db.session.add(user1)
+            db.session.commit()
         return jsonify(user1.serialize()), 200
     else:
         print(7)
         raise APIException('Missing profile_image on the FormData')
-        
-
-    return jsonify({"msg": "La ciudad fue creada exitosamente"}), 200
-
+    print("*********", hotel.id)
+    return jsonify({"msg": "El hotel fue creado exitosamente", "id": hotel.id}), 200
+    
+    
 @api.route('/cities', methods=['GET'])
 def get_cities():
     cities = City.query.all()

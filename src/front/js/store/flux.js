@@ -101,13 +101,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			newHotel: paramsForm => {
 				let body = new FormData();
 				for (let i in Object.keys(paramsForm)) {
+					console.log(Object.keys(paramsForm)[i], paramsForm[Object.keys(paramsForm)[i]]);
 					body.append(Object.keys(paramsForm)[i], paramsForm[Object.keys(paramsForm)[i]]);
 				}
-
-				body.append("files", getStore().files);
-
+				for (let i in getStore().files) {
+					body.append("files", getStore().files[i]);
+				}
 				const requestPost = {
 					method: "POST",
+					// headers: { "Content-Type": "multipart/form-data" },
 					body: body
 				};
 
@@ -136,12 +138,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			newCitie: paramsForm => {
 				let body = new FormData();
 				for (let i in Object.keys(paramsForm)) {
+					console.log(Object.keys(paramsForm)[i], paramsForm[Object.keys(paramsForm)[i]]);
 					body.append(Object.keys(paramsForm)[i], paramsForm[Object.keys(paramsForm)[i]]);
 				}
-				body.append("files", getStore().files);
-
+				for (let i in getStore().files) {
+					body.append("files", getStore().files[i]);
+				}
 				const requestPost = {
 					method: "POST",
+					// headers: { "Content-Type": "multipart/form-data" },
 					body: body
 				};
 
