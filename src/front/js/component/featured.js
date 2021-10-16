@@ -20,7 +20,7 @@ export const Featured = props => {
 			<div className="d-flex justify-content-around hotel-item">
 				<Link to={`/hotel/${props.id}`}>
 					<div className="landingImg3">
-						<img className="card-img border-radius50" src={props.url} alt="Jacuzzi" />
+						<img className="card-img border-radius50" src={props.url} alt="Hotel" />
 					</div>
 					<div>
 						<div className="cardFeatured posiFeat"></div>

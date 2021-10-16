@@ -45,7 +45,7 @@ export const List = props => {
 									<ChoiceHotel
 										key={index}
 										name={hotel.name}
-										url={hotel.HotelArchives[0].url}
+										url={hotel.HotelArchives[0] ? hotel.HotelArchives[0].url : ""}
 										rooms={hotel.rooms}
 										id={hotel.id}></ChoiceHotel>
 								);

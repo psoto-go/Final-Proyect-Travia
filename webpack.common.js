@@ -49,7 +49,7 @@ module.exports = {
       Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown"
     }),
     new HtmlWebpackPlugin({
-        favicon: '4geeks.ico',
+        favicon: 'src/front/img/favicon-96x96.png',
         template: 'template.html'
     }),
     new Dotenv({ safe: true, systemvars: true })

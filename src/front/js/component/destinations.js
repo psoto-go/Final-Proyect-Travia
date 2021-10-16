@@ -38,7 +38,7 @@ export const Destinations = () => {
 				<Featured
 					key={indexa}
 					name={hotel.name}
-					url={hotel.HotelArchives[0].url}
+					url={hotel.HotelArchives[0] ? hotel.HotelArchives[0].url : ""}
 					city_id={city.id}
 					id={hotel.id}
 				/>
@@ -70,10 +70,10 @@ export const Destinations = () => {
 	return (
 		<div className="mt-5">
 			<ul className="nav nav-pills pillsResponsive justify-content-center" id="pills-tab" role="tablist">
-				{listCities}
+				{listCities ? listCities : ""}
 			</ul>
 			<div className="tab-content " id="pills-tabContent">
-				{listCitiesDetails}
+				{listCitiesDetails ? listCitiesDetails : ""}
 			</div>
 		</div>
 	);

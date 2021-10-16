@@ -30,6 +30,7 @@ import { ProfileReservations } from "./pages/profileReservations";
 import { OnlyCitie } from "./pages/onlyCitie";
 import { Why } from "./pages/why";
 import { Success } from "./pages/SuccessPayment";
+import { Whatsapp } from "./component/whatsapp";
 
 export const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -38,6 +39,7 @@ export const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
+					<Whatsapp />
 					<Switch>
 						<Route exact path="/">
 							<Home />
